@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+.front {
+  height: 100vh;
+  background-color: hsl(204, 94%, 14%);
+  position: relative;
+}
+.frontimage {
+  position: absolute;
+  height: 100vh;
+  width: 300px;
+  transform: rotate(-180deg);
+  right: 0px;
+  background-color: black;
+}
+.component1 {
+  position: absolute;
+  top: 200px;
+  left: 180px;
+}
+.component2{
+  display: flex;
+  width: 30vw;
+}
+.component2a{
+  position: "absolute"
+}
+.component3 {
+  position: absolute;
+  bottom: 250px;
+}
+.component4 {
+  position: absolute;
+  left: 350px;
+  bottom: 50px;
+}
+.component5 {
+  position: absolute;
+  bottom: 2px;
+}
+.component6 {
+  position: absolute;
+  right: 450px;
+  margin-top: 50px;
+}
+.header{
+  display: flex;
+}
+
+.heading {
+  font-size: 24px;
+  margin-left: 40px;
+  font-family: Comfortaa;
+  padding-top: 20px;
+}
+
+.navbar {
+  padding-top: 20px;
+  margin: auto;
+  width: 50vw;
+}
+
+.navlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+  margin-right: 150px;
+  font-family: Comfortaa;
+}
+
+.navitem {
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+}
+
+.navitem:hover {
+  text-decoration: underline;
+}
+
+.dropdownmenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border: 1px solid #ddd;
+}
+
+.dropdown:hover .dropdownmenu {
+  display: block;
+}
+
+.dropdownitem {
+  padding: 8px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #007bff;
+}
+
+.dropdownitem:hover {
+  background: #f0f0f0;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #007bff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.text {
+  margin-top: 50px;
+  font-size: 50px;
+  text-align: center;
+  font-family: Wendy One;
+}
+.buttons {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bolder;
+}
+.btn1 {
+  border-radius: 30px;
+  width: 190px;
+  height: 40px;
+  background-color: #01d0fd;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(1, 208, 253, 0.5); /* Shadow around each side of the button */
+  transition: box-shadow 0.3s ease;
+}
+.btn1:hover {
+  box-shadow: 0 6px 12px rgba(1, 208, 253, 0.6); /* Enhanced shadow on hover */
+}
+.btn2 {
+  border-radius: 30px;
+  width: 190px;
+  margin-left: 20px;
+  height: 40px;
+  background-color: #fd7a03;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(253, 122, 3, 0.6); /* Light shadow with button color */
+  transition: box-shadow 0.3s ease;
+}
+.btn2:hover {
+  box-shadow: 0 6px 12px rgba(253, 122, 3, 0.6); /* Slightly enhanced shadow on hover */
+}
+.information {
+  width: 50vw;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+  color: #d2d2d2;
+}
+.frontPic {
+  position: absolute;
+  height: 100vh;
+  width: 400px;
+  right: 0px;
+  background-image: url("/images/FrontPicture.png");
+  background-size: cover;
+  background-position: center;
+}
+.positionContainer {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+}
+
+.line1 {
+  position: absolute;
+}
+
+.line2 {
+  position: absolute;
+}
+
+/* Responsive design */
+
+
+@media (max-width: 1024px) {
+  .frontPic,
+  .component1,
+  .component2a,
+  .component3,
+  .component4,
+  .component5,
+  .component6 {
+    display: none;
+  }
+  .heading {
+    margin-left: 20px;
+  }
+  .navbar {
+    width: 75vw;
+  }
+  
+.navlist {
+  gap: 10px;
+}
+.text {
+  margin-top: 50px;
+  font-size: 45px;
+  width: 100vw;
+}
+.btn1 , .btn2{
+  width: 150px;
+}
+.information {
+  width: 80vw;
+}
+.front{
+  height: 115vh;
+}
+}
+
+
+
