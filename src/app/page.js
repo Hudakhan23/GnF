@@ -1,5 +1,5 @@
 "use client";
-import Component1 from "@/svgComponents/component1";
+import Component1 from "@/svgComponents/Component1";
 import styles from "./page.module.css";
 import Component2 from "@/svgComponents/Component2";
 import Component3 from "@/svgComponents/Component3";
