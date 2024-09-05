@@ -55,7 +55,7 @@ export default function page() {
           <Component1 />
         </div>
         <div className={styles.text}>
-          <h1 style={{ color: "#FD7A05" }}>Pakistan's Leading</h1>
+          <h1 style={{ color: "#FD7A05" }}>Pakistan&apos;s Leading</h1>
           <h1 style={{ color: "#F9FDFF" }}>Artist Facilitation Company</h1>
         </div>
         <div className={styles.buttons}>

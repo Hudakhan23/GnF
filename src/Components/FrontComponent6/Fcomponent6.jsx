@@ -3,7 +3,8 @@ import styles from './fcomponent6.module.css'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Box } from "@mui/material";
+import { Box, ImageList } from "@mui/material";
+import Image from 'next/image';
 
 const artistData = [
     { name: 'Atif Aslam', img: 'images/Atifaslam.png' },
