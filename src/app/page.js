@@ -10,14 +10,26 @@ import Line1 from "@/svgComponents/Line1";
 import Line2 from "@/svgComponents/Line2";
 import FComponent2 from "@/Components/FrontComponent2/FComponent2";
 import Fcomponent3 from "@/Components/FrontComponent3/Fcomponent3";
-import Fcomponent4 from "@/Components/FrontComponent4/Fcomponent4";
 import Fcomponent5 from "@/Components/FrontComponent5/Fcomponent5";
 import Fcomponent6 from "@/Components/FrontComponent6/Fcomponent6";
 import Fcomponent7 from "@/Components/FrontComponent7/Fcomponent7";
+import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
+import Footer from "@/Components/Footer/Footer";
+import Fcomponent9 from "@/Components/FrontComponent9/Fcomponent9";
+import FComponent10 from "@/Components/FrontComponent10/FComponent10";
 export default function page() {
   return (
     <>
       <div className={styles.front}>
+        <div className={styles.cube}>
+          <img src="/images/cube.png"></img>
+        </div>
+        <div className={styles.cube3}>
+          <img src="/images/cube3.png"></img>
+        </div>
+        <div className={styles.cube1}>
+          <img src="/images/cube 1.png"></img>
+        </div>
         <div className={styles.frontPic}>
           <div className={styles.positionContainer}>
             <div className={styles.line1}>
@@ -39,7 +51,7 @@ export default function page() {
                   Home
                 </li>
                 <li class={`${styles.navitem} ${styles.dropdown}`} id="artist">
-                  Artist
+                  Artist&#11163;
                   <ul class={styles.dropdownmenu}>
                     <li class={styles.dropdownitem}>All Artists</li>
                     <li class={styles.dropdownitem}>Popular Artists</li>
@@ -54,9 +66,10 @@ export default function page() {
          <div className={styles.component1}>
           <Component1 />
         </div>
+        {/* <div className={styles.shadowcircle}> </div> */}
         <div className={styles.text}>
-          <h1 style={{ color: "#FD7A05" }}>Pakistan&apos;s Leading</h1>
-          <h1 style={{ color: "#F9FDFF" }}>Artist Facilitation Company</h1>
+          <h1 style={{ color: "#FF7A00", textShadow:" 0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Pakistan&apos;s Leading</h1>
+          <h1 style={{ color: "#F9FDFF",textShadow: "0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Artist Facilitation Company</h1>
         </div>
         <div className={styles.buttons}>
           <button className={styles.btn1}>Book an Artist</button>
@@ -64,11 +77,12 @@ export default function page() {
         </div>
         <div className={styles.information}>
           <p>
-            Lorem ipsum dolor sit amet, cons Lorem ipsum dolor sit amet, cons
-            sum dolor sit amet, cons Lorem ipsum dolor sit amet, cons dolor sit
-            amet, cons Lorem ipsum dolor sit amet, cons met, cons Lorem ipsum
-            dolor sit amet, cons
+          GnF Events provides 24/7 artist and event management, delivering innovative solutions for 
           </p>
+          <p>artists and unparalleled service for global events. We are committed to excellence ,</p>
+          <p> loyalty , and exceeding client expectations.  Our global network ensures </p>
+          <p>top-tier support across all industries, and we pride ourselves </p>
+          <p>on crafting memorable, high-impact experiences.</p>
         </div>
         <div className={styles.component3}>
           <Component3 />
@@ -84,10 +98,12 @@ export default function page() {
         </div>
       </div>
       <FComponent2/>
-         <Fcomponent3/>
-        <Fcomponent5/>
-        <Fcomponent6/>
-        <Fcomponent7/>
+      <Fcomponent7/>
+      <Fcomponent6/>
+      <Fcomponent8/>
+      <Fcomponent9/>
+      <FComponent10/>
+      <Footer/>
     </>
   );
 }

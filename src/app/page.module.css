@@ -5,6 +5,26 @@
   background-color: hsl(204, 94%, 14%);
   position: relative;
 }
+.cube{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  right: 500px;
+  top: 85px;
+}
+.cube3{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 110px;
+}
+.cube1{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 43vw;
+  top: 85vh;
+}
 .frontimage {
   position: absolute;
   height: 100vh;
@@ -13,10 +33,26 @@
   right: 0px;
   background-color: black;
 }
+.shadow{
+  position: absolute;
+}
+.shadowcircle{
+  position: absolute;
+  box-shadow: 0px 0px 1275.12px rgba(0, 209, 255, 0.5),
+  0px 0px 728.64px rgba(0, 209, 255, 0.5),
+  0px 0px 425.04px rgba(0, 209, 255, 0.5),
+  0px 0px 212.52px rgba(0, 209, 255, 0.5),
+  0px 0px 60.72px rgba(0, 209, 255, 0.5),
+  0px 0px 30.36px rgba(0, 209, 255, 0.7);
+  width: 250px;
+  height: 5px;
+  left: 500px;
+  top: 30vh;
+}
 .component1 {
   position: absolute;
-  top: 200px;
-  left: 180px;
+  top: 170px;
+  left: 100px;
 }
 .component2{
   display: flex;
@@ -27,11 +63,11 @@
 }
 .component3 {
   position: absolute;
-  bottom: 250px;
+  bottom: 180px;
 }
 .component4 {
   position: absolute;
-  left: 350px;
+  left: 230px;
   bottom: 50px;
 }
 .component5 {
@@ -49,7 +85,7 @@
 
 .heading {
   font-size: 24px;
-  margin-left: 40px;
+  margin-left: 10px;
   font-family: Comfortaa;
   padding-top: 20px;
 }
@@ -118,21 +154,21 @@
   left: 0;
 }
 .text {
-  margin-top: 50px;
-  font-size: 50px;
+  margin-top: 90px;
+  font-size: 55px;
   text-align: center;
   font-family: Wendy One;
+  line-height: 55px;
 }
 .buttons {
   text-align: center;
   margin-top: 40px;
-  font-weight: bolder;
 }
 .btn1 {
   border-radius: 30px;
-  width: 190px;
-  height: 40px;
-  background-color: #01d0fd;
+  width: 170px;
+  height: 35px;
+  background-color: #00D1FF;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(1, 208, 253, 0.5); /* Shadow around each side of the button */
   transition: box-shadow 0.3s ease;
@@ -142,23 +178,20 @@
 }
 .btn2 {
   border-radius: 30px;
-  width: 190px;
+  width: 170px;
   margin-left: 20px;
-  height: 40px;
-  background-color: #fd7a03;
+  height: 35px;
+  background-color: #FD7A03;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(253, 122, 3, 0.6); /* Light shadow with button color */
+  box-shadow:  0px 0px 1275.12px rgba(187, 58, 153, 0.3), 0px 0px 728.64px rgba(187, 58, 153, 0.3), 0px 0px 425.04px rgba(187, 58, 153, 0.3), 0px 0px 212.52px rgba(187, 58, 153, 0.3), 0px 0px 60.72px rgba(187, 58, 153, 0.3), 0px 0px 30.36px rgba(187, 58, 153, 0.3);
   transition: box-shadow 0.3s ease;
-}
-.btn2:hover {
-  box-shadow: 0 6px 12px rgba(253, 122, 3, 0.6); /* Slightly enhanced shadow on hover */
 }
 .information {
   width: 50vw;
   margin: auto;
   margin-top: 60px;
   text-align: center;
-  color: #d2d2d2;
+  color: #D2D2D2;
 }
 .frontPic {
   position: absolute;
@@ -188,41 +221,75 @@
 /* Responsive design */
 
 
-@media (max-width: 1024px) {
-  .frontPic,
+@media (min-width: 990px) and (max-width: 1200px) 
+{
+  .frontPic{
+    width: 350px;
+  }
+  .line1{
+    position: absolute;
+    right: 1px
+  }
+  .line2{
+    position: absolute;
+    right: 1px;
+  }
+.text {
+  margin-top: 50px;
+  font-size: 42px;
+  width: 100vw;
+}
+.information{
+  width: 60vw;
+}
+.information p{
+  display: inline;
+}
+.cube{
+  right: 35%;
+  top: 10%;
+}
+.component1{
+  left: 50px;
+}
+.component6{
+  right: 300px;
+}
+}
+@media (min-width: 300px) and (max-width: 990px) {
+ .frontPic,
   .component1,
   .component2a,
   .component3,
   .component4,
   .component5,
-  .component6 {
+  .component6,
+  .cube,
+  .cube3,
+  .cube1 {
     display: none;
   }
-  .heading {
-    margin-left: 20px;
-  }
   .navbar {
-    width: 75vw;
+    width: 80vw;
   }
-  
-.navlist {
-  gap: 10px;
-}
 .text {
   margin-top: 50px;
-  font-size: 45px;
-  width: 100vw;
+  font-size: 35px;
+  width: 80vw;
+  margin: auto;
 }
 .btn1 , .btn2{
   width: 150px;
 }
 .information {
-  width: 80vw;
+  width: 75vw;
+  margin-top: 30px;
 }
-.front{
-  height: 115vh;
+.information p{
+  display: inline;
+}
+.buttons{
+  margin-top: 20px;
 }
 }
-
-
 

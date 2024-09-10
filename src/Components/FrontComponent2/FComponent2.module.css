@@ -1,42 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
 .main{
-    background-color: white;
-    height: 70vh;
+    background-color: #FDF9F4;
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    margin-top: 150px;
+    padding-top: 170px;
 }
 .pic{
-    background-color: #D9D9D9;
-    height:300px;
+    height:40vh;
     width: 40vw;
+    object-fit: contain;
+    margin-left: 60px;
 }
 .text{
-    margin-left: 50px;
     color: black;
-    width: 35vw;
+    width: 45vw;
     height: 200px;
-    margin-top: 25px;
+    margin-left: 50px;
 }
 .h1{
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 750;
     color: #393939;
-    font-style: Mulish;
+    line-height: 40px;
 }
 .para{
-    margin-top: 15px;
+    margin-top: 10px;
     color: #757575;
-    font-style: Poppins;
     font-weight: 600;
+    width: 44vw;
+    font-size: 1rem;
 }
 .btn{
     background-color: #FD7A03;
-    width: 200px;
+    width: 170px;
     height: 40px;
-    border-radius: 15px;
-    margin-top: 30px;
-    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: white;
+    font-style: 'Mulish';
+    font-size: 14px;
+    font-weight: 500;
 }
 
 @media (max-width: 1024px) {
@@ -50,10 +54,13 @@
         width: 70vw;
     }
     .text{
-        width: 70vw;
+        width: 80vw;
         margin-left: 0px;
     }
     .btn{
         width: 150px;
+    }
+    .para{
+        width: 85vw;
     }
 }

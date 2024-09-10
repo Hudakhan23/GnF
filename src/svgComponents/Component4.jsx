@@ -4,8 +4,8 @@ export default function Component4() {
   return (
     <div>
       <svg
-        width="70"
-        height="90"
+        width="60"
+        height="80"
         viewBox="0 0 120 125"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
