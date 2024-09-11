@@ -41,7 +41,7 @@ export default function Fcomponent8() {
         <p>Our Recent Events</p>
         <div className={styles.text}>
           <p className={styles.line}>
-          Take a glimpse at the vibrant events we've recently hosted, where star-studded performances and
+          Take a glimpse at the vibrant events we&apos;ve recently hosted, where star-studded performances and
           </p>
           <p className={styles.line}>
              unforgettable moments came to life. Each poster tells the story of an incredible
