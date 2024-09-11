@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Fcomponent7.module.css";
 export default function Fcomponent7() {
@@ -34,7 +35,6 @@ export default function Fcomponent7() {
           </p>
         </div>
       </div>
-      {/* Add extra cards from 3dm website */}
       <div className={styles.background1}>
         <div className={styles.card3}>
           <p className={styles.text}>Event</p>

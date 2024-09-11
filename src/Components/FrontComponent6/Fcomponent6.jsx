@@ -1,9 +1,10 @@
+"use client";
 import React from "react";
 import styles from "./fcomponent6.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Box, ImageList } from "@mui/material";
+import { Box } from "@mui/material";
 
 const artistData = [
   { name: "Atif Aslam", img: "images/AtifAslam.jpg" },

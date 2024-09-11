@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from './Fcomponent9.module.css';
 import "slick-carousel/slick/slick.css";

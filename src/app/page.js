@@ -9,8 +9,6 @@ import Component6 from "@/svgComponents/Component6";
 import Line1 from "@/svgComponents/Line1";
 import Line2 from "@/svgComponents/Line2";
 import FComponent2 from "@/Components/FrontComponent2/FComponent2";
-import Fcomponent3 from "@/Components/FrontComponent3/Fcomponent3";
-import Fcomponent5 from "@/Components/FrontComponent5/Fcomponent5";
 import Fcomponent6 from "@/Components/FrontComponent6/Fcomponent6";
 import Fcomponent7 from "@/Components/FrontComponent7/Fcomponent7";
 import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
@@ -66,7 +64,6 @@ export default function page() {
          <div className={styles.component1}>
           <Component1 />
         </div>
-        {/* <div className={styles.shadowcircle}> </div> */}
         <div className={styles.text}>
           <h1 style={{ color: "#FF7A00", textShadow:" 0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Pakistan&apos;s Leading</h1>
           <h1 style={{ color: "#F9FDFF",textShadow: "0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Artist Facilitation Company</h1>

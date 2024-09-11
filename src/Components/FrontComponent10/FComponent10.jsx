@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Fcomponent10.module.css";
 export default function FComponent10() {
