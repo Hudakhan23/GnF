@@ -17,7 +17,7 @@
 .line{
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 17px;
     color: #757575;
     width: 65vw;
     text-align: center;
@@ -33,7 +33,17 @@
     width: 250px;
     line-height: 30px;
 }
-@media (max-width: 1024px) {
+.artistImage{
+    width:100%;
+    height:100%;
+    border-radius: 15px;
+}
+.artistContainer{
+    width: 250px;
+    height: 280px;
+    object-fit: cover;
+}
+@media (max-width: 989px) {
     .text{
         flex-direction: column;
         align-items: center;
@@ -42,13 +52,14 @@
     .line{
         width: 80vw;
     }
-    .images {
-        height: 200px;
+    .artistContainer{
+        width: 90vw;
     }
-
-    .artistName {
-        font-size: 10px; 
-        margin-left: 13px;
-        margin-top: 150px;
+    .artistImage{
+        width:70%;
+        border-radius: 15px;
+    }
+    .artistName{
+        width: 200px;
     }
 }

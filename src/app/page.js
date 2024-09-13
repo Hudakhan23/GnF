@@ -94,13 +94,13 @@ export default function page() {
           <Component6 />
         </div>
       </div>
-      <FComponent2/>
-      <Fcomponent7/>
+     <FComponent2/>
+       <Fcomponent7/>
       <Fcomponent6/>
       <Fcomponent8/>
-      <Fcomponent9/>
+      {/* <Fcomponent9/>
       <FComponent10/>
-      <Footer/>
+      <Footer/> */}
     </>
   );
 }

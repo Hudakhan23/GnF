@@ -17,7 +17,7 @@ export default function Fcomponent7() {
       <div className={styles.background}>
         <div className={styles.card1}>
           <p className={styles.text}>Singer</p>
-          <p className={styles.text1}>Facilitation</p>
+          <p className={styles.text2}>Facilitation</p>
           <p className={styles.line2}>
           Access renowned singers to elevate your events with exceptional live performances. We ensure the perfect vocal talent to enhance your occasion.
           </p>
@@ -38,14 +38,14 @@ export default function Fcomponent7() {
       <div className={styles.background1}>
         <div className={styles.card3}>
           <p className={styles.text}>Event</p>
-          <p className={styles.text1}>Planning</p>
+          <p className={styles.text2}>Planning</p>
           <p className={styles.line2}>
           We craft every detail with precision, ensuring your event is both seamless and memorable. Trust us to bring your vision to life with creativity and excellence, leaving a lasting impression on your guests.
           </p>
         </div>
         <div className={styles.card2}>
           <p className={styles.text}>Artist</p>
-          <p className={styles.text1}>Management</p>
+          <p className={styles.text2}>Management</p>
           <p className={styles.line2}>
           We manage top talent with dedication, handling bookings and partnerships to ensure exceptional performances on every stage. Our focus is on maximizing their impact and success.
           </p>

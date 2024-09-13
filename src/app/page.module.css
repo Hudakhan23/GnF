@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
 .front {
-  height: 100vh;
+  height: 641px;
   background-color: hsl(204, 94%, 14%);
   position: relative;
 }
@@ -22,32 +22,8 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  left: 43vw;
-  top: 85vh;
-}
-.frontimage {
-  position: absolute;
-  height: 100vh;
-  width: 300px;
-  transform: rotate(-180deg);
-  right: 0px;
-  background-color: black;
-}
-.shadow{
-  position: absolute;
-}
-.shadowcircle{
-  position: absolute;
-  box-shadow: 0px 0px 1275.12px rgba(0, 209, 255, 0.5),
-  0px 0px 728.64px rgba(0, 209, 255, 0.5),
-  0px 0px 425.04px rgba(0, 209, 255, 0.5),
-  0px 0px 212.52px rgba(0, 209, 255, 0.5),
-  0px 0px 60.72px rgba(0, 209, 255, 0.5),
-  0px 0px 30.36px rgba(0, 209, 255, 0.7);
-  width: 250px;
-  height: 5px;
-  left: 500px;
-  top: 30vh;
+  left: 550px;
+  top: 550px;
 }
 .component1 {
   position: absolute;
@@ -56,7 +32,6 @@
 }
 .component2{
   display: flex;
-  width: 30vw;
 }
 .component2a{
   position: "absolute"
@@ -88,21 +63,22 @@
   margin-left: 10px;
   font-family: Comfortaa;
   padding-top: 20px;
+  display: inline;
 }
 
 .navbar {
   padding-top: 20px;
-  margin: auto;
-  width: 50vw;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: absolute;
 }
 
 .navlist {
   list-style: none;
   padding: 0;
-  margin: 0;
   display: flex;
   gap: 30px;
-  margin-right: 150px;
   font-family: Comfortaa;
 }
 
@@ -195,7 +171,7 @@
 }
 .frontPic {
   position: absolute;
-  height: 100vh;
+  height: 641px;
   width: 400px;
   right: 0px;
   background-image: url("/images/FrontPicture.png");
@@ -223,6 +199,9 @@
 
 @media (min-width: 990px) and (max-width: 1200px) 
 {
+  .front{
+    width: 100vw;
+  }
   .frontPic{
     width: 350px;
   }
@@ -256,7 +235,7 @@
   right: 300px;
 }
 }
-@media (min-width: 300px) and (max-width: 990px) {
+@media (max-width: 989px) {
  .frontPic,
   .component1,
   .component2a,
@@ -269,27 +248,36 @@
   .cube1 {
     display: none;
   }
-  .navbar {
-    width: 80vw;
+  .navlist{
+    gap: 1px;
+    margin-left: 30px;
   }
 .text {
-  margin-top: 50px;
+  padding-top: 40px;
   font-size: 35px;
-  width: 80vw;
+  width: 85vw;
   margin: auto;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
 }
 .btn1 , .btn2{
   width: 150px;
 }
 .information {
-  width: 75vw;
-  margin-top: 30px;
+  width: 80vw;
+  margin-top: 50px;
 }
 .information p{
   display: inline;
 }
 .buttons{
-  margin-top: 20px;
+  margin-top: 40px;
+}
+.front{
+  height: auto;
+  padding-bottom: 30px;
 }
 }
 

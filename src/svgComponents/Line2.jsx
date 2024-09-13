@@ -5,7 +5,7 @@ export default function Line2() {
     <div>
       <svg
         width="380"
-        height="100vh"
+        height="641px"
         viewBox="0 0 428 1168"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

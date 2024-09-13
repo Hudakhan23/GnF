@@ -21,7 +21,7 @@
   font-weight: 700;
   font-size: 17px;
   color: #757575;
-  width: 60vw;
+  width: 65vw;
   margin-top: 10px;
   text-align: center;
 }
@@ -86,13 +86,12 @@
   line-height: 33px;
   text-align: center;
 }
-.text1 {
+.text2 {
   color: #393939;
   font-family: "Mulish", sans-serif;
   font-weight: 600;
   font-size: 29px;
   text-align: center;
-  margin-top: 8px;
 }
 
 .line2 {
@@ -106,20 +105,18 @@
   align-self: center;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 990px) and (max-width: 1200px) {
   .line {
-    width: 90vw;
+    width: 80vw;
     margin-top: 20px;
   }
-  .background {
-    margin-top: 50px;
-    flex-direction: column;
+  .background{
+    width: 90vw;
     gap: 30px;
   }
-  .card1,
-  .card2,
-  .card3 {
-    width: 70vw;
+  .background1 {
+    width: 90vw;
+    gap: 30px;
   }
   .text {
     padding-top: 20px;
@@ -127,4 +124,35 @@
   .line2 {
     margin-bottom: 20px;
   }
+  .text1{
+    line-height: 7px;
+  }
 }
+
+@media (max-width: 989px) {
+  .text1, .line{
+    display: inline;
+    line-height: 25px;
+    padding-top: 20px;
+  }
+  .bg{
+    width: 85vw;
+    margin: auto;
+  }
+  .background{
+    width: 80vw;
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .background1{
+    width: 80vw;
+    flex-direction: column;
+    height: auto;
+    gap: 40px;
+    padding-bottom: 30px;
+  }
+}
+
