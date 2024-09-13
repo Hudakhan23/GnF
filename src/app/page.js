@@ -15,6 +15,8 @@ import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
 import Footer from "@/Components/Footer/Footer";
 import Fcomponent9 from "@/Components/FrontComponent9/Fcomponent9";
 import FComponent10 from "@/Components/FrontComponent10/FComponent10";
+import {Wendy_One } from "next/font/google";
+const wendyOne = Wendy_One({ subsets: ["latin"], weight: '400', });
 export default function page() {
   return (
     <>
@@ -64,7 +66,7 @@ export default function page() {
          <div className={styles.component1}>
           <Component1 />
         </div>
-        <div className={styles.text}>
+        <div className={`${styles.text} ${wendyOne.className}`}>
           <h1 style={{ color: "#FF7A00", textShadow:" 0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Pakistan&apos;s Leading</h1>
           <h1 style={{ color: "#F9FDFF",textShadow: "0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Artist Facilitation Company</h1>
         </div>
