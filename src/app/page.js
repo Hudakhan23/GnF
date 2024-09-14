@@ -100,9 +100,9 @@ export default function page() {
        <Fcomponent7/>
       <Fcomponent6/>
       <Fcomponent8/>
-      {/* <Fcomponent9/>
+      <Fcomponent9/>
       <FComponent10/>
-      <Footer/> */}
+      <Footer/>
     </>
   );
 }

@@ -1,26 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
-.bg{
-    background-color: #FDF9F4;
-}
+
 .main{
-    display: flex;
     padding-top: 153px;
     padding-bottom: 140px;
-    width: 90vw;
-    margin: auto;
+    background-color: #FDF9F4;
+}
+.content{
+    display: flex;
+    justify-content: center;
 }
 .pic{
     object-fit: contain;
 }
 .pic img{
-    width: 550px;
-    height: 300px;
+    width: 600px;
+    height: 350px;
 }
 .text{
     height: 200px;
     margin-left: 30px;
-    width: 550px;
+    width: 500px;
 }
 .h1{
     font-size: 35px;
@@ -41,10 +41,12 @@
 }
 @media (max-width: 989px) {
     .main{
-        flex-direction: column;
         height: auto;
         padding-top: 70px;
         padding-bottom: 70px;
+    }
+    .content{
+        flex-direction: column;
     }
     .pic img{
         height: 220px;
@@ -58,7 +60,6 @@
         margin:auto
     }
     .para{
-        width: 85vw;
         font-size: 0.9rem;
         padding-top: 5px;
     }

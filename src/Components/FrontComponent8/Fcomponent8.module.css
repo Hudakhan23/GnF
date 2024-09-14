@@ -33,7 +33,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70vh; /* Full viewport height */
+    height: 400px; /* Full viewport height */
     padding: 30px;
     box-sizing: border-box;
   }
@@ -48,7 +48,6 @@
   .image {
     width: 100%;
     height: 300px; /* Adjust height as needed */
-    object-fit: contain;
   }
   
   /* Style for the navigation buttons */
@@ -75,5 +74,35 @@
   .swiper-button-prev {
     left: 10px; /* Position to the left */
   }
+
+/* Responsive design */
+@media (min-width: 990px) and (max-width: 1200px) {
+    .line{
+      display: inline;
+    }
+    .text{
+      margin: auto;
+      text-align: center;
+    }
+    .bg{
+      width: 75vw;
+    }
+}
+@media (max-width: 989px) {
+  .line{
+    display: inline;
+  }
+  .text{
+    margin: auto;
+    text-align: center;
+  }
+  .bg{
+    width: 90vw;
+  }
+  .image{
+    height: 200px;
+  }
+}
+
   
   

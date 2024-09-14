@@ -43,7 +43,7 @@ export default function Fcomponent6() {
   };
 
   return (
-    <div style={{backgroundColor:"#FDF9F4", height:"610px"}}>
+    <div className={styles.content}>
       <div className={styles.text}>
         <p>Popular Artist</p>
         <p className={styles.line}>

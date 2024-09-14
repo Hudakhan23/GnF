@@ -3,16 +3,18 @@ import React from "react";
 import styles from "./Fcomponent10.module.css";
 export default function FComponent10() {
   const Allies = [
-    "Allies/Allies1.jpeg",
-    "Allies/Allies2.jpeg",
-    "Allies/Allies3.jpeg",
-    "Allies/Allies4.jpeg",
-    "Allies/Allies5.jpeg",
-    "Allies/Allies6.jpeg",
-    "Allies/Allies7.jpeg",
-    "Allies/Allies8.jpeg",
-    "Allies/Allies9.jpeg",
-    "Allies/Allies10.jpeg",
+    "Allies/Allies1.png",
+    "Allies/Allies2.png",
+    "Allies/Allies3.png",
+    "Allies/Allies4.png",
+    "Allies/Allies5.png",
+    "Allies/Allies6.png",
+    "Allies/Allies7.png",
+    "Allies/Allies8.png",
+    "Allies/Allies9.png",
+    "Allies/Allies10.png",
+    "Allies/Allies11.png",
+    "Allies/Allies12.png",
   ];
   return (
     <div>
