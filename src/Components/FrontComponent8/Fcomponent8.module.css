@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 
 .bg{
     color: #393939;
-    font-style: Mulish;
     font-size: 35px;
-    font-weight: 700;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width:70vw;
+    width:860px;
     margin: auto;
     padding-top: 50px;
 }
 .line{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
+    font-size: 16px;
     color: #757575;
     margin-top: 10px;
     text-align: center;
@@ -32,10 +27,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90vw;
     height: 400px; /* Full viewport height */
-    padding: 30px;
     box-sizing: border-box;
+    margin: auto;
+    padding-top: 30px;
   }
   
   /* Style for Swiper */
@@ -47,7 +43,7 @@
   /* Center images and apply effects */
   .image {
     width: 100%;
-    height: 300px; /* Adjust height as needed */
+    height: 350px; /* Adjust height as needed */
   }
   
   /* Style for the navigation buttons */
@@ -98,9 +94,6 @@
   }
   .bg{
     width: 90vw;
-  }
-  .image{
-    height: 200px;
   }
 }
 

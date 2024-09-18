@@ -1,14 +1,17 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Comfortaa,Mulish } from "next/font/google";
+const mulish = Mulish({ subsets: ["latin"], weight: "400" });
+const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
 export default function Footer() {
   return (
     <div className={styles.main}>
       <div className={styles.footer}>
         <div className={styles.first}>
-          <h1 class={styles.heading}>GnF</h1>
+          <h1 class={`${styles.heading} ${comfortaa.className}`}>GnF</h1>
         </div>
-        <div className={styles.office}>
+        <div className={`${styles.office} ${mulish.className}`}>
           <h1 style={{marginBottom:20 , fontSize:"25px"}}>Office</h1>
           <p><i class="fa-sharp fa-solid fa-location-dot" style={{marginRight:10}}></i>  93 D, Divine Garden Lahore,Pakistan</p>
           <a href="mailto:glowfanzevents@gmail.com" style={{textDecoration:"underline"}}>
@@ -18,13 +21,16 @@ export default function Footer() {
           <p style={{marginLeft:37}}>0321 9492571</p>
         </div>
         <div className={styles.connection}>
+        <h1 style={{marginBottom:20 , fontSize:"25px" , display:"block"}}>Connections</h1>
+        <div className={styles.icons}>
           <p><i class="fa-brands fa-facebook"></i></p>
           <p><i class="fa-brands fa-instagram"></i></p>
           <p><i class="fa-brands fa-whatsapp"></i></p>
         </div>
+        </div>
       </div>
       <hr />
-      <div className={styles.info}>
+      <div className={`${styles.info} ${mulish.className}`}>
           <p>
             Follow us on social media for the latest updates and events. Contact
             us anytime for more information!

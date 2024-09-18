@@ -1,0 +1,77 @@
+.background{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 130px;
+    padding-bottom: 130px;
+}
+.sliderContainer {
+    width: 600px
+}
+
+.imageContainer {
+    padding: 0 10px;
+    object-fit: contain;
+}
+
+.image {
+    width: 600px;
+    height: 370px; /* Set the desired height */
+    border-radius: 10px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow effect */
+}
+
+.slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+}
+
+.slick-prev::before, .slick-next::before {
+    font-size: 40px;
+    color: #000;
+}
+
+
+.text{
+    height: auto;
+    margin-left: 30px;
+    width: 500px;
+}
+.h1{
+    font-size: 30px;
+    color: #393939;
+}
+.para{
+    margin-top: 10px;
+    color: #757575;
+    font-size: 16px;
+}
+.heading{
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+@media (max-width: 989px) {
+    .background{
+        flex-direction: column;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .image{
+        width: 80vw;
+    }
+    .text{
+        padding-top: 40px;
+        margin-left: 0px;
+        width: 85vw;
+    }
+    .sliderContainer{
+        width: 80vw;
+    }
+    .para{
+        width: 85vw;
+    }
+}

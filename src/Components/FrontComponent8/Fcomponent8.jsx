@@ -12,6 +12,9 @@ import {
   Navigation,
   EffectCoverflow,
 } from "swiper/modules";
+import { Mulish,Poppins } from "next/font/google";
+const mulish=Mulish({ subsets: ["latin"], weight: '800', });
+const poppins=Poppins({subsets:["latin"], weight:'600'})
 export default function Fcomponent8() {
   const RecentShows = [
     "RecentShows/10Aug2024.jpeg",
@@ -38,15 +41,15 @@ export default function Fcomponent8() {
   return (
     <div>
       <div className={styles.bg}>
-        <p>Our Recent Events</p>
+        <p className={mulish.className}>Our Recent Events</p>
         <div className={styles.text}>
-          <p className={styles.line}>
+          <p className={`${styles.line} ${poppins.className}`}>
           Take a glimpse at the vibrant events we&apos;ve recently hosted, where star-studded performances and 
           </p>
-          <p className={styles.line}>
+          <p className={`${styles.line} ${poppins.className}`}>
              unforgettable moments came to life. Each poster tells the story of an incredible
           </p>
-          <p className={styles.line}>
+          <p className={`${styles.line} ${poppins.className}`}>
             experience, capturing the essence of our spectacular shows.
           </p>
         </div>
@@ -60,16 +63,17 @@ export default function Fcomponent8() {
             delay: 2500,
             disableOnInteraction: false,
           }}
-          navigation={true}
           effect="coverflow"
-          coverflowEffect={{
-            depth: 100,
-            rotate: 50,
-            scale: 1,
-            slideShadows: true,
-            stretch: 0,
+          breakpoints={{
+            // Display 1 slide at a time at a max width of 989px
+            0: {
+              slidesPerView: 1,
+            },
+            990: {
+              slidesPerView: 3,
+            },
           }}
-          modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
+          modules={[Autoplay, Pagination, Navigation,  EffectCoverflow]}
           className={styles.mySwiper}
         >
           {RecentShows.map((show, index) => (

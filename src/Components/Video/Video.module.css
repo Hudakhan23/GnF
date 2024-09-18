@@ -1,0 +1,46 @@
+.background {
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 209, 255, 0.35) 0%,
+    rgba(243, 34, 165, 0.45) 126.72%
+  );
+}
+.text {
+  width: 400px;
+  height: 150px;
+  font-size: 35px;
+  color: #393939;
+  line-height: 40px;
+  padding-top: 20px;
+  margin-left: 70px;
+}
+.music {
+  background: linear-gradient(268.45deg, #00d1ff 1.81%, #f322a5 88.06%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.information{
+    font-size: 16px;
+    width: 500px;
+    line-height: 20px;
+    color: #757575;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 989px){
+    .text{
+        font-size: 25px;
+        width: 90vw;
+        margin-left: 30px;
+        line-height: 25px;
+    }
+    .information{
+        font-size: 14px;
+        width: 80vw;
+    }
+}

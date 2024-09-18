@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
 
 .main{
-    padding-top: 153px;
-    padding-bottom: 140px;
+    padding-top: 80px;
+    padding-bottom: 60px;
     background-color: #FDF9F4;
 }
 .content{
@@ -14,21 +12,23 @@
     object-fit: contain;
 }
 .pic img{
-    width: 600px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
 }
 .text{
     height: 200px;
     margin-left: 30px;
-    width: 500px;
+    width: 450px;
+    margin-top: 60px;
 }
 .h1{
-    font-size: 35px;
+    font-size: 40px;
     font-weight: 750;
     color: #393939;
 }
 .para{
-    margin-top: 20px;
+    margin-top: 30px;
     color: #757575;
     font-weight: 600;
     font-size: 16px;
@@ -40,6 +40,9 @@
     }
 }
 @media (max-width: 989px) {
+    .h1{
+        font-size: 30px;
+    }
     .main{
         height: auto;
         padding-top: 70px;
@@ -49,8 +52,8 @@
         flex-direction: column;
     }
     .pic img{
-        height: 220px;
-        width: 80vw;
+        height: 300px;
+        width:300px ;
         margin: auto;
     }
     .text{
@@ -61,6 +64,5 @@
     }
     .para{
         font-size: 0.9rem;
-        padding-top: 5px;
     }
 }

@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import styles from "./FComponent2.module.css";
+import {Mulish, Poppins } from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: '600', });
+const mulish=Mulish({ subsets: ["latin"], weight: '700', });
 export default function FComponent2() {
   return (
     <>
@@ -10,8 +13,8 @@ export default function FComponent2() {
           <img src="/images/CEO.jpeg" alt="CEO Picture" />
         </div>
         <div className={styles.text}>
-          <p className={styles.h1}>Introducing Our CEO </p>
-          <p className={styles.para}>
+          <p className={`${styles.h1} ${mulish.className}`}>Introducing Our CEO </p>
+          <p className={`${styles.para} ${poppins.className}`}>
             Aamir Mehmood Rana, Founder & CEO of GnF Events, brings over two
             decades of expertise from Jang Media Group and PTV. His career
             highlights include leading major projects and expanding his

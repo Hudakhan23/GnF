@@ -15,8 +15,11 @@ import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
 import Footer from "@/Components/Footer/Footer";
 import Fcomponent9 from "@/Components/FrontComponent9/Fcomponent9";
 import FComponent10 from "@/Components/FrontComponent10/FComponent10";
-import {Wendy_One } from "next/font/google";
-const wendyOne = Wendy_One({ subsets: ["latin"], weight: '400', });
+import { Comfortaa, Wendy_One } from "next/font/google";
+import Events from "@/Components/Events/Events";
+import Video from "@/Components/Video/Video";
+const wendyOne = Wendy_One({ subsets: ["latin"], weight: "400" });
+const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
 export default function page() {
   return (
     <>
@@ -42,33 +45,49 @@ export default function page() {
         </div>
         <div className={styles.header}>
           <div className={styles.component2}>
-          <div className={styles.component2a}><Component2/></div>
-            <h1 class={styles.heading}>GnF</h1>
+            <div className={styles.component2a}>
+              <Component2 />
+            </div>
+            <h1 class={`${styles.heading} ${comfortaa.className}`}>GnF</h1>
           </div>
           <div class={styles.navbar}>
-              <ul class={styles.navlist}>
-                <li class={styles.navitem} id="home">
-                  Home
-                </li>
-                <li class={`${styles.navitem} ${styles.dropdown}`} id="artist">
-                  Artist&#11163;
-                  <ul class={styles.dropdownmenu}>
-                    <li class={styles.dropdownitem}>All Artists</li>
-                    <li class={styles.dropdownitem}>Popular Artists</li>
-                  </ul>
-                </li>
-                <li class={styles.navitem} id="about">
-                  Contact
-                </li>
-              </ul>
-          </div> 
+            <ul class={`${styles.navlist} ${comfortaa.className}`}>
+              <li class={styles.navitem} id="home">
+                Home
+              </li>
+              <li class={`${styles.navitem} ${styles.dropdown}`} id="artist">
+                Artist&#11163;
+                <ul class={styles.dropdownmenu}>
+                  <li class={styles.dropdownitem}>All Artists</li>
+                  <li class={styles.dropdownitem}>Popular Artists</li>
+                </ul>
+              </li>
+              <li class={styles.navitem} id="about">
+                Contact
+              </li>
+            </ul>
+          </div>
         </div>
-         <div className={styles.component1}>
+        <div className={styles.component1}>
           <Component1 />
         </div>
         <div className={`${styles.text} ${wendyOne.className}`}>
-          <h1 style={{ color: "#FF7A00", textShadow:" 0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Pakistan&apos;s Leading</h1>
-          <h1 style={{ color: "#F9FDFF",textShadow: "0px 4px 30px rgba(0, 209, 255, 0.37)" }}>Artist Facilitation Company</h1>
+          <h1
+            style={{
+              color: "#FF7A00",
+              textShadow: " 0px 4px 30px rgba(0, 209, 255, 0.37)",
+            }}
+          >
+            Pakistan&apos;s Leading
+          </h1>
+          <h1
+            style={{
+              color: "#F9FDFF",
+              textShadow: "0px 4px 30px rgba(0, 209, 255, 0.37)",
+            }}
+          >
+            Artist Facilitation Company
+          </h1>
         </div>
         <div className={styles.buttons}>
           <button className={styles.btn1}>Book an Artist</button>
@@ -76,10 +95,18 @@ export default function page() {
         </div>
         <div className={styles.information}>
           <p>
-          GnF Events provides 24/7 artist and event management, delivering innovative solutions for 
+            GnF Events provides 24/7 artist and event management, delivering
+            innovative solutions for
           </p>
-          <p>artists and unparalleled service for global events. We are committed to excellence ,</p>
-          <p> loyalty , and exceeding client expectations.  Our global network ensures </p>
+          <p>
+            artists and unparalleled service for global events. We are committed
+            to excellence ,
+          </p>
+          <p>
+            {" "}
+            loyalty , and exceeding client expectations. Our global network
+            ensures{" "}
+          </p>
           <p>top-tier support across all industries, and we pride ourselves </p>
           <p>on crafting memorable, high-impact experiences.</p>
         </div>
@@ -96,13 +123,14 @@ export default function page() {
           <Component6 />
         </div>
       </div>
-     <FComponent2/>
-       <Fcomponent7/>
-      <Fcomponent6/>
-      <Fcomponent8/>
-      <Fcomponent9/>
-      <FComponent10/>
-      <Footer/>
+      <Events />
+      <Video />
+      <FComponent2 />
+      <Fcomponent7 />
+      <Fcomponent6 />
+      <Fcomponent8 />
+      <FComponent10 />
+      <Footer />
     </>
   );
 }

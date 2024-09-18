@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
+import { Mulish,Poppins } from "next/font/google";
+const mulish=Mulish({ subsets: ["latin"], weight: '800', });
+const poppins=Poppins({subsets:["latin"], weight:'600'})
 
 const artistData = [
   { name: "Atif Aslam", img: "images/AtifAslam.jpg" },
@@ -44,13 +47,13 @@ export default function Fcomponent6() {
 
   return (
     <div className={styles.content}>
-      <div className={styles.text}>
+      <div className={`${styles.text} ${mulish.className}`}>
         <p>Popular Artist</p>
-        <p className={styles.line}>
+        <p className={`${styles.line} ${poppins.className}`}>
         Explore the talents of some of the most celebrated artists in the industry. From soulful melodies to electrifying performances, these singers have left an indelible mark on the world of music. 
         </p>
       </div>
-      <Box sx={{ width: "60vw", margin: "auto",
+      <Box sx={{ width: "800px", margin: "auto",
          "@media (max-width: 989px)": {
           width: "65vw",
           margin: "auto"

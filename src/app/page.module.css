@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Wendy+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap");
+
 .front {
   height: 641px;
   background-color: hsl(204, 94%, 14%);
   position: relative;
+  width: 100vw;
 }
 .cube{
   position: absolute;
@@ -61,7 +61,6 @@
 .heading {
   font-size: 24px;
   margin-left: 10px;
-  font-family: Comfortaa;
   padding-top: 20px;
   display: inline;
 }
@@ -79,7 +78,6 @@
   padding: 0;
   display: flex;
   gap: 30px;
-  font-family: Comfortaa;
 }
 
 .navitem {
@@ -133,7 +131,6 @@
   margin-top: 90px;
   font-size: 55px;
   text-align: center;
-  font-family: Wendy One;
   line-height: 55px;
 }
 .buttons {
@@ -163,7 +160,7 @@
   transition: box-shadow 0.3s ease;
 }
 .information {
-  width: 50vw;
+  width: 700px;
   margin: auto;
   margin-top: 60px;
   text-align: center;
@@ -255,7 +252,7 @@
 .text {
   padding-top: 40px;
   font-size: 35px;
-  /* width: 85vw; */
+  width: 95vw;
   margin: auto;
 }
 .buttons{
@@ -263,7 +260,7 @@
   justify-content: center;
 }
 .btn1 , .btn2{
-  width: 150px;
+  width: 130px;
 }
 .information {
   width: 80vw;
