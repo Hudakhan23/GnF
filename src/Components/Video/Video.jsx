@@ -9,7 +9,7 @@ export default function Video() {
       <div className={`${styles.text} ${mulish.className}`}>
         <p><span style={{color:"#FD7A03"}}>Show</span> the world</p>
         <p>you know <span className={styles.music}>music</span></p>
-        <p className={`${styles.information} ${poppins.className}`}>Join hands with GnF to bring your favorite artists to the global stage. Whether it&apos;s concerts, events, or festivals, we help you create unforgettable musical experiences.</p>
+        <p className={`${styles.information} ${poppins.className}`}>Join hands with GnF to bring your favorite artists to the global stage. Whether it&lsquo;s concerts, events, or festivals, we help you create unforgettable musical experiences.</p>
       </div>
     </div>
   )
