@@ -1,13 +1,13 @@
 "use client";
-import React from 'react'
-import styles from './Events.module.css'
+import React from "react"
+import styles from "./Events.module.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import {Mulish,Poppins } from 'next/font/google';
-const mulish=Mulish({ subsets: ["latin"], weight: '800', });
-const poppins=Poppins({subsets:["latin"], weight:'600'})
-const popins=Poppins({subsets:["latin"], weight:'700'})
+import {Mulish,Poppins } from "next/font/google";
+const mulish=Mulish({ subsets: ["latin"], weight: "800", });
+const poppins=Poppins({subsets:["latin"], weight:"600"})
+const popins=Poppins({subsets:["latin"], weight:"700"})
 export default function Events() {
     const settings = {
         infinite: true,
