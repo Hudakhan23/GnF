@@ -64,7 +64,7 @@ export default function Events() {
           <p className={`${styles.h1} ${mulish.className}`}>GnF Events </p>
           <p className={`${styles.para} ${poppins.className}`}>
             <p className={`${styles.heading} ${popins.className}`}>Your gateway to extraordinary entertainment experiences.</p>
-          At GnF Events, we specialize in connecting the world with top-tier artists, events, and performances. Whether it&apos;s a concert, comedy show, or a special appearance, we ensure a seamless experience from start to finish. With our global reach and expert management, we bring unforgettable moments to life for any occasion, anywhere.
+          At GnF Events, we specialize in connecting the world with top&ndash;tier artists, events, and performances. Whether it&apos;s a concert, comedy show, or a special appearance, we ensure a seamless experience from start to finish. With our global reach and expert management, we bring unforgettable moments to life for any occasion, anywhere.
           Our dedicated team works around the clock to curate events that leave a lasting impression. With GnF, you don&apos;t just attend events &ndash; you experience them
           </p>
         </div>
