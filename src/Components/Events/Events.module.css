@@ -61,18 +61,18 @@
         padding-bottom: 60px;
     }
     .image{
-        width: 80vw;
+        width: 70vw;
     }
     .text{
         padding-top: 40px;
         margin-left: 0px;
-        width: 85vw;
+        width: 70vw;
     }
     .sliderContainer{
-        width: 80vw;
+        width: 70vw;
     }
     .para{
-        width: 85vw;
+        width: 65vw;
     }
 }
 @media (max-width: 768px) {

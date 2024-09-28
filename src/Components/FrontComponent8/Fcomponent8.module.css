@@ -91,12 +91,14 @@
   .text{
     margin: auto;
     text-align: center;
+    width: 75vw;
   }
   .bg{
     width: 80vw;
   }
   .container{
     width: 70vw;
+    margin-top: 40px;
   }
   .image{
     height: 450px;

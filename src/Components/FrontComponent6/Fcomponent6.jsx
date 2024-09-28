@@ -62,7 +62,7 @@ export default function Fcomponent6() {
       </div>
       <Box sx={{ width: "800px", margin: "auto",
          "@media (max-width: 989px)": {
-          width: "75vw",
+          width: "70vw",
           margin: "auto"
         },
         "@media(max-width: 1200px)": {
