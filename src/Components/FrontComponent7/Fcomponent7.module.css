@@ -1,10 +1,13 @@
+.main{
+  background-color: #FDF9F4;
+}
 .bg {
   color: #393939;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 70px;
+  padding-top: 50px;
 }
 .heading {
   color: #393939;
@@ -22,20 +25,15 @@
   line-height: 15px;
 }
 .background {
-  height: 450px;
-  width: 1050px;
+  width: 980px;
   margin: auto;
   display: flex;
   justify-content: space-around; /* Distributes the cards evenly */
   align-items: center; /* Centers the cards vertically */
-}
-.background1 {
-  height: 350px;
-  width: 1050px;
-  margin: auto;
-  display: flex;
-  justify-content: space-around; /* Distributes the cards evenly */
-  align-items: center; /* Centers the cards vertically */
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }
 
 .card1 {
@@ -93,29 +91,6 @@
   line-height: 20px;
 }
 
-@media (min-width: 990px) and (max-width: 1200px) {
-  .line {
-    width: 80vw;
-    margin-top: 20px;
-  }
-  .background{
-    width: 90vw;
-    gap: 30px;
-  }
-  .background1 {
-    width: 90vw;
-    gap: 30px;
-  }
-  .text {
-    padding-top: 20px;
-  }
-  .line2 {
-    margin-bottom: 20px;
-  }
-  .text1{
-    line-height: 7px;
-  }
-}
 
 @media (max-width: 989px) {
   .text1, .line{
@@ -129,18 +104,17 @@
   }
   .background{
     width: 80vw;
-    flex-direction: column;
     height: auto;
     gap: 40px;
     padding-top: 50px;
     padding-bottom: 40px;
   }
-  .background1{
-    width: 80vw;
-    flex-direction: column;
-    height: auto;
-    gap: 40px;
-    padding-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .background{
+    gap: 30px;
+    width: 85vw;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
-

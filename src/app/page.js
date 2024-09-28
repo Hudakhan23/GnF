@@ -13,7 +13,6 @@ import Fcomponent6 from "@/Components/FrontComponent6/Fcomponent6";
 import Fcomponent7 from "@/Components/FrontComponent7/Fcomponent7";
 import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
 import Footer from "@/Components/Footer/Footer";
-import Fcomponent9 from "@/Components/FrontComponent9/Fcomponent9";
 import FComponent10 from "@/Components/FrontComponent10/FComponent10";
 import { Comfortaa, Wendy_One } from "next/font/google";
 import Events from "@/Components/Events/Events";
@@ -56,7 +55,7 @@ export default function page() {
                 Home
               </li>
               <li class={`${styles.navitem} ${styles.dropdown}`} id="artist">
-                Artist&#11163;
+                Artist
                 <ul class={styles.dropdownmenu}>
                   <li class={styles.dropdownitem}>All Artists</li>
                   <li class={styles.dropdownitem}>Popular Artists</li>
@@ -123,8 +122,8 @@ export default function page() {
           <Component6 />
         </div>
       </div>
-      <Events />
-      <Video />
+       <Events />
+       <Video />
       <FComponent2 />
       <Fcomponent7 />
       <Fcomponent6 />

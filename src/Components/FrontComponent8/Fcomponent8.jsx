@@ -17,6 +17,7 @@ const mulish=Mulish({ subsets: ["latin"], weight: '800', });
 const poppins=Poppins({subsets:["latin"], weight:'600'})
 export default function Fcomponent8() {
   const RecentShows = [
+    "RecentShows/25Sep2024.png",
     "RecentShows/10Aug2024.jpeg",
     "RecentShows/4May2024.jpeg",
     "RecentShows/27April2024.jpeg",
@@ -39,7 +40,7 @@ export default function Fcomponent8() {
     "RecentShows/22july2023.jpeg",
   ];
   return (
-    <div>
+    <div style={{backgroundColor: "#FDF9F4", marginTop:"70px"}}>
       <div className={styles.bg}>
         <p className={mulish.className}>Our Recent Events</p>
         <div className={styles.text}>

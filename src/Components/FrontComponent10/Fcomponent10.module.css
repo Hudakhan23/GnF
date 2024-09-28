@@ -5,9 +5,7 @@
     justify-content: center;
     padding-top: 60px;
 }
-.background{
-    background-color: #FDF9F4;
-}
+
 .main{
     object-fit: contain;
     width: 250px;
@@ -17,7 +15,7 @@
     justify-content:center;
 }
 .image{
-    width: 200px;
+    width: 150px;
     height: 100px;
 }
 .allies{
@@ -27,7 +25,6 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding-bottom: 50px;
 }
 .allies:last-child {
     justify-content: center;
@@ -40,10 +37,12 @@
     }
     .allies{
         gap: 20px;
+        width: 80vw;
+        margin: auto;
     }
     .image{
         width: 100px;
-        height: 50px;
+        height: 70px;
     }
     .main{
         width: 110px;

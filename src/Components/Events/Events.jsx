@@ -39,11 +39,7 @@ export default function Events() {
         "EventHighlights/E17.jpeg",
         "EventHighlights/E18.jpeg",
         "EventHighlights/E19.jpeg",
-        "EventHighlights/E20.jpeg",
-        "EventHighlights/E21.jpeg",
-        "EventHighlights/E22.jpeg",
-        "EventHighlights/E23.jpeg",
-        "EventHighlights/E24.jpeg",
+        "EventHighlights/E20.jpeg"
       ];    
   return (
     <div className={styles.background}>

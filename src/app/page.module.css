@@ -194,7 +194,7 @@
 /* Responsive design */
 
 
-@media (min-width: 990px) and (max-width: 1200px) 
+@media (min-width: 993px) and (max-width: 1200px) 
 {
   .front{
     width: 100vw;
@@ -252,7 +252,7 @@
 .text {
   padding-top: 40px;
   font-size: 35px;
-  width: 95vw;
+  width: 80vw;
   margin: auto;
 }
 .buttons{
@@ -263,7 +263,7 @@
   width: 130px;
 }
 .information {
-  width: 80vw;
+  width: 60vw;
   margin-top: 50px;
 }
 .information p{
@@ -277,4 +277,13 @@
   padding-bottom: 30px;
 }
 }
-
+@media (max-width: 768px) {
+  .information{
+    width: 63vw;
+  }
+}
+@media (max-width: 576px) {
+  .information{
+    width: 83vw;
+  }
+}

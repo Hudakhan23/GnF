@@ -38,6 +38,13 @@ export default function Fcomponent6() {
       {
         breakpoint: 989, // max-width of 990px
         settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 576, // max-width of 990px
+        settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
@@ -55,10 +62,18 @@ export default function Fcomponent6() {
       </div>
       <Box sx={{ width: "800px", margin: "auto",
          "@media (max-width: 989px)": {
-          width: "65vw",
+          width: "75vw",
           margin: "auto"
         },
-        "@media (min-width: 990px) and (max-width: 1200px)": {
+        "@media(max-width: 1200px)": {
+          width: "80vw",
+          margin: "auto"
+        },
+        "@media(max-width: 786px)": {
+          width: "80vw",
+          margin: "auto"
+        },
+        "@media(max-width: 576px)": {
           width: "80vw",
           margin: "auto"
         },

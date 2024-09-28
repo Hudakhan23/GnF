@@ -1,8 +1,7 @@
 
 .main{
-    padding-top: 80px;
+    padding-top: 100px;
     padding-bottom: 60px;
-    background-color: #FDF9F4;
 }
 .content{
     display: flex;
@@ -12,15 +11,16 @@
     object-fit: contain;
 }
 .pic img{
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
 }
 .text{
     height: 200px;
     margin-left: 30px;
     width: 450px;
-    margin-top: 60px;
+    margin-top: 30px;
+    margin-left: 100px;
 }
 .h1{
     font-size: 40px;
@@ -34,7 +34,7 @@
     font-size: 16px;
 }
 
-@media (min-width: 990px) and (max-width: 1200px)  {
+@media (max-width: 1200px)  {
     .main{
         padding-top: 110px;
     }
@@ -53,16 +53,34 @@
     }
     .pic img{
         height: 300px;
-        width:300px ;
+        width:70vw ;
+        border-radius: 0px;
         margin: auto;
     }
     .text{
         padding-top: 20px;
         height: auto;
-        width: 80vw;
+        width: 70vw;
         margin:auto
     }
     .para{
         font-size: 0.9rem;
+    }
+}
+@media (max-width: 768px) {
+    .text{
+        width: 75vw;
+    }
+    .pic img{
+        border-radius: 0px;
+        width: 75vw;
+    }
+}
+@media (max-width: 576px) {
+    .pic img{
+        width: 80vw;
+    }
+    .text{
+        width: 80vw;
     }
 }

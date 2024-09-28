@@ -6,7 +6,7 @@ const mulish=Mulish({ subsets: ["latin"], weight: '800', });
 const poppins=Poppins({subsets:["latin"], weight:'600'})
 export default function Fcomponent7() {
   return (
-    <>
+    <div className={styles.main}>
       <div className={styles.bg}>
         <p className={`${styles.heading} ${mulish.className}`}>What we do?</p>
         <div className={styles.text1}>
@@ -37,8 +37,6 @@ export default function Fcomponent7() {
           Book high-profile celebrities to make your event stand out with exclusive appearances and interactions. Create unforgettable moments with top industry stars.
           </p>
         </div>
-      </div>
-      <div className={styles.background1}>
         <div className={styles.card3}>
           <p className={`${styles.text} ${mulish.className}`}>Event</p>
           <p className={`${styles.text2} ${mulish.className}`}>Planning</p>
@@ -60,6 +58,6 @@ export default function Fcomponent7() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

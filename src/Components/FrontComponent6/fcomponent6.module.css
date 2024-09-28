@@ -1,7 +1,4 @@
-.content{
-    background-color:#FDF9F4;
-    height:610px;
-}
+
 .text{
     color: #393939;
     font-size: 35px;
@@ -9,9 +6,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 80px;
     margin-bottom: 60px;
-    padding-top: 60px;
 }
 .line{
     font-size: 17px;
@@ -50,17 +46,26 @@
         width: 80vw;
     }
     .artistContainer{
-        width: 90vw;
+        width: 70vw;
     }
     .artistImage{
-        width:70%;
+        width:55%;
         border-radius: 15px;
     }
     .artistName{
         width: 200px;
     }
-    .content{
-        background-color:#FDF9F4;
-        height:680px;
+}
+@media (max-width: 576px) {
+    .artistImage{
+        width:90%;
+        border-radius: 15px;
+        margin: auto;
+    }
+    .artistContainer{
+        width: 80vw;
+    }
+    .artistName{
+      margin-left: 30px;
     }
 }
