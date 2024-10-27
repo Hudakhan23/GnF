@@ -12,11 +12,12 @@ import FComponent2 from "@/Components/FrontComponent2/FComponent2";
 import Fcomponent6 from "@/Components/FrontComponent6/Fcomponent6";
 import Fcomponent7 from "@/Components/FrontComponent7/Fcomponent7";
 import Fcomponent8 from "@/Components/FrontComponent8/Fcomponent8";
-import Footer from "@/Components/Footer/Footer";
 import FComponent10 from "@/Components/FrontComponent10/FComponent10";
 import { Comfortaa, Wendy_One } from "next/font/google";
 import Events from "@/Components/Events/Events";
 import Video from "@/Components/Video/Video";
+import Footerr from "@/Components/Footerr/Footerr";
+import Footer from "@/Components/Footer/Footer";
 const wendyOne = Wendy_One({ subsets: ["latin"], weight: "400" });
 const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
 export default function page() {
@@ -123,13 +124,14 @@ export default function page() {
         </div>
       </div>
        <Events />
-       <Video />
+        <Video />
       <FComponent2 />
       <Fcomponent7 />
       <Fcomponent6 />
       <Fcomponent8 />
       <FComponent10 />
-      <Footer />
+      {/* <Footerr/> */}
+      <Footer/>
     </>
   );
 }

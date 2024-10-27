@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Comfortaa,Mulish } from "next/font/google";
-const mulish = Mulish({ subsets: ["latin"], weight: "400" });
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { Comfortaa, Mulish } from "next/font/google";
+const mulish = Mulish({ subsets: ["latin"], weight: "600" });
 const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
 export default function Footer() {
   return (
-    <div className={styles.main}>
+    <>
+      {/* <div className={styles.main}>
       <div className={styles.footer}>
         <div className={styles.first}>
           <h1 class={`${styles.heading} ${comfortaa.className}`}>GnF</h1>
@@ -20,7 +21,7 @@ export default function Footer() {
           <p><i class="fa-solid fa-phone" style={{marginRight:10}}></i> 0300 9492571</p>
           <p style={{marginLeft:37}}>0321 9492571</p>
         </div>
-        <div className={styles.connection}>
+        <div className={`${styles.connection} ${mulish.className}`}>
         <h1 style={{marginBottom:20 , fontSize:"25px" , display:"block"}}>Connections</h1>
         <div className={styles.icons}>
           <p><i class="fa-brands fa-facebook"></i></p>
@@ -30,13 +31,16 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-      <div className={`${styles.info} ${mulish.className}`}>
+    </div> */}
+      <div className={styles.bg}>
+        <div className={`${styles.info} ${mulish.className}`}>
           <p>
             Follow us on social media for the latest updates and events. Contact
             us anytime for more information!
           </p>
           &copy; GnF Events. All rights reserved.
         </div>
-    </div>
+      </div>
+    </>
   );
 }

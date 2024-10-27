@@ -22,17 +22,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: add a shadow effect */
 }
 
-.slick-prev, .slick-next {
-    width: 40px;
-    height: 40px;
-    z-index: 1;
-}
-
-.slick-prev::before, .slick-next::before {
-    font-size: 40px;
-    color: #000;
-}
-
 
 .text{
     height: auto;
@@ -61,7 +50,7 @@
         padding-bottom: 60px;
     }
     .image{
-        width: 70vw;
+        width: 75vw;
     }
     .text{
         padding-top: 40px;
@@ -69,10 +58,10 @@
         width: 70vw;
     }
     .sliderContainer{
-        width: 70vw;
+        width: 75vw;
     }
     .para{
-        width: 65vw;
+        width: 70vw;
     }
 }
 @media (max-width: 768px) {
@@ -83,12 +72,28 @@
         width: 75vw;
     }
     .para{
-        width: 70vw;
+        width: 65vw;
     }
 }
 @media (max-width: 576px) {
     .image{
+        height: 250px;
         width: 90vw;
-        height: 300px;
+    }
+    .sliderContainer{
+        width: 95vw;
+    }
+    .imageContainer{
+        width: 90vw;
+    }
+    .text{
+        width: 95vw;
+        margin-left: 20px;
+    }
+    .para{
+        width: 90vw;
+    }
+    .heading{
+        width: 90vw;
     }
 }

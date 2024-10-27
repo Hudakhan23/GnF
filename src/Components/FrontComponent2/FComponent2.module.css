@@ -26,9 +26,10 @@
     font-size: 40px;
     font-weight: 750;
     color: #393939;
+    margin-top: 10px;
 }
 .para{
-    margin-top: 30px;
+    margin-top: 10px;
     color: #757575;
     font-weight: 600;
     font-size: 16px;
@@ -79,8 +80,9 @@
 @media (max-width: 576px) {
     .pic img{
         width: 80vw;
+        height: 300px;
     }
     .text{
-        width: 80vw;
+        width: 85vw;
     }
 }

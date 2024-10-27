@@ -6,7 +6,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 60px;
 }
 .line{
@@ -47,14 +47,20 @@
     }
     .artistContainer{
         width: 65vw;
+        height: 350px;
     }
     .artistImage{
-        width:55%;
+        width:43%;
         border-radius: 15px;
     }
     .artistName{
         width: 200px;
     }
+}
+@media (max-width: 768px){
+.artistContainer{
+    height: 300px;
+}
 }
 @media (max-width: 576px) {
     .artistImage{

@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import styles from "./Fcomponent8.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,11 +13,12 @@ import {
   Navigation,
   EffectCoverflow,
 } from "swiper/modules";
-import { Mulish,Poppins } from "next/font/google";
-const mulish=Mulish({ subsets: ["latin"], weight: '800', });
-const poppins=Poppins({subsets:["latin"], weight:'600'})
+import { Mulish, Poppins } from "next/font/google";
+const mulish = Mulish({ subsets: ["latin"], weight: "800" });
+const poppins = Poppins({ subsets: ["latin"], weight: "600" });
 export default function Fcomponent8() {
   const RecentShows = [
+    "RecentShows/18Oct2024.jpeg",
     "RecentShows/25Sep2024.png",
     "RecentShows/10Aug2024.jpeg",
     "RecentShows/4May2024.jpeg",
@@ -40,15 +42,17 @@ export default function Fcomponent8() {
     "RecentShows/22july2023.jpeg",
   ];
   return (
-    <div style={{backgroundColor: "#FDF9F4", marginTop:"70px"}}>
+    <div style={{ backgroundColor: "#FDF9F4", marginTop: "70px" }}>
       <div className={styles.bg}>
         <p className={mulish.className}>Our Recent Events</p>
         <div className={styles.text}>
           <p className={`${styles.line} ${poppins.className}`}>
-          Take a glimpse at the vibrant events we&apos;ve recently hosted, where star-studded performances and 
+            Take a glimpse at the vibrant events we&apos;ve recently hosted,
+            where star-studded performances and &nbsp;
           </p>
           <p className={`${styles.line} ${poppins.className}`}>
-             unforgettable moments came to life. Each poster tells the story of an incredible
+            unforgettable moments came to life. Each poster tells the story of
+            an incredible
           </p>
           <p className={`${styles.line} ${poppins.className}`}>
             experience, capturing the essence of our spectacular shows.
@@ -74,12 +78,20 @@ export default function Fcomponent8() {
               slidesPerView: 3,
             },
           }}
-          modules={[Autoplay, Pagination, Navigation,  EffectCoverflow]}
+          modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
           className={styles.mySwiper}
         >
           {RecentShows.map((show, index) => (
-            <SwiperSlide key={index} style={{objectFit:"contain"}}>
-              <img className={styles.image} src={show} alt={`Recent Show ${index}`} />
+            <SwiperSlide key={index} style={{ objectFit: "contain" }}>
+              {/* <img className={styles.image} src={show} alt={`Recent Show ${index}`} /> */}
+              <Image
+                className={styles.image}
+                src={`/${show}`}
+                alt={`Recent Show ${index}`}
+                width={1080}
+                height={600} 
+                quality={100} 
+              />
             </SwiperSlide>
           ))}
         </Swiper>
