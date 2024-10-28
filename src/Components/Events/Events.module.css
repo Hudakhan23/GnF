@@ -5,11 +5,11 @@
     align-items: center;
     padding-top: 130px;
     padding-bottom: 130px;
+    width: 100vw;
 }
 .sliderContainer {
     width: 600px
 }
-
 .imageContainer {
     padding: 0 10px;
     object-fit: contain;

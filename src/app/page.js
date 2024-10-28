@@ -16,7 +16,6 @@ import FComponent10 from "@/Components/FrontComponent10/FComponent10";
 import { Comfortaa, Wendy_One } from "next/font/google";
 import Events from "@/Components/Events/Events";
 import Video from "@/Components/Video/Video";
-import Footerr from "@/Components/Footerr/Footerr";
 import Footer from "@/Components/Footer/Footer";
 const wendyOne = Wendy_One({ subsets: ["latin"], weight: "400" });
 const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
@@ -130,7 +129,6 @@ export default function page() {
       <Fcomponent6 />
       <Fcomponent8 />
       <FComponent10 />
-      {/* <Footerr/> */}
       <Footer/>
     </>
   );

@@ -7,22 +7,29 @@ const comfortaa = Comfortaa({ subsets: ["latin"], weight: "600" });
 export default function Footer() {
   return (
     <>
-      {/* <div className={styles.main}>
+      <div className={styles.main}>
       <div className={styles.footer}>
-        <div className={styles.first}>
-          <h1 class={`${styles.heading} ${comfortaa.className}`}>GnF</h1>
-        </div>
         <div className={`${styles.office} ${mulish.className}`}>
-          <h1 style={{marginBottom:20 , fontSize:"25px"}}>Office</h1>
+        <h1 style={{marginBottom:10 , fontSize:"25px"}}>Get in Touch</h1>
           <p><i class="fa-sharp fa-solid fa-location-dot" style={{marginRight:10}}></i>  93 D, Divine Garden Lahore,Pakistan</p>
           <a href="mailto:glowfanzevents@gmail.com" style={{textDecoration:"underline"}}>
-            <p><i class="fa-solid fa-envelope" style={{marginRight:10}}></i> glowfanzevents@gmail.com </p>
+            <p><i class="fa-solid fa-envelope" style={{marginRight:10}}></i> gnfeventspakistan@gmail.com </p>
           </a>
           <p><i class="fa-solid fa-phone" style={{marginRight:10}}></i> 0300 9492571</p>
           <p style={{marginLeft:37}}>0321 9492571</p>
         </div>
+        <div className={`${styles.businesshours} ${mulish.className}`}>
+        <h1 style={{marginBottom:15 , fontSize:"25px"}}>Business Hours</h1>
+            <p>We&apos;re Available 24x7</p>
+            <p>Timing: 12:00 pm to 7:00 pm</p>
+            <p>Support Hours: 24/7 everyday</p>
+        </div>
+        <div className={`${styles.mission} ${mulish.className}`}>
+            <h1 style={{marginBottom:10 , fontSize:"25px"}}>Our Mission Statement</h1>
+            <p style={{width:"280px", lineHeight:"22px"}}>GnF Events is one of Pakistan&apos;s trusted entertainment booking platform, dedicated to offering the very best singers, bands, comedians, and entertainers for all kinds of events, from corporate dinners and weddings to cruises, parties, and festivals.</p>
+        </div>
         <div className={`${styles.connection} ${mulish.className}`}>
-        <h1 style={{marginBottom:20 , fontSize:"25px" , display:"block"}}>Connections</h1>
+        <h1 style={{marginBottom:10 , fontSize:"25px" , display:"block"}}>Connections</h1>
         <div className={styles.icons}>
           <p><i class="fa-brands fa-facebook"></i></p>
           <p><i class="fa-brands fa-instagram"></i></p>
@@ -31,7 +38,7 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-    </div> */}
+    </div>
       <div className={styles.bg}>
         <div className={`${styles.info} ${mulish.className}`}>
           <p>
