@@ -31,9 +31,9 @@ export default function Footer() {
         <div className={`${styles.connection} ${mulish.className}`}>
         <h1 style={{marginBottom:10 , fontSize:"25px" , display:"block"}}>Connections</h1>
         <div className={styles.icons}>
-          <p><i class="fa-brands fa-facebook"></i></p>
-          <p><i class="fa-brands fa-instagram"></i></p>
-          <p><i class="fa-brands fa-whatsapp"></i></p>
+          <a href="https://www.facebook.com/glow.fanz?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i> </a>
+          <a href="https://www.instagram.com/gnfeventsofficial?igsh=MW9ybm9qZmhrcXd5ZA==" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+          <a  href="https://wa.me/<+923219492571>" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
         </div>
       </div>
