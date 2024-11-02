@@ -30,7 +30,6 @@
 .allies:last-child {
     justify-content: center;
 }
-
 @media (max-width: 989px) {
     .bg{
         width: 90vw;

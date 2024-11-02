@@ -98,6 +98,7 @@
   }
   .image{
     height: 350px;
+    margin: auto;
   }
   .text{
     width: 90vw;

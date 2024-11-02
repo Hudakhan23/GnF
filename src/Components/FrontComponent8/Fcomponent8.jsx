@@ -82,7 +82,7 @@ export default function Fcomponent8() {
           className={styles.mySwiper}
         >
           {RecentShows.map((show, index) => (
-            <SwiperSlide key={index} style={{ objectFit: "contain" }}>
+            <SwiperSlide key={index} style={{ objectFit: "contain", margin:"auto"}}>
               {/* <img className={styles.image} src={show} alt={`Recent Show ${index}`} /> */}
               <Image
                 className={styles.image}

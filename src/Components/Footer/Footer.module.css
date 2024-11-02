@@ -25,6 +25,7 @@
 .office{
     font-size: 17px;
     line-height: 35px;
+    /* width: 320px; */
 }
 .icons{
     display: flex;
@@ -33,18 +34,26 @@
 .connection{
     display: flex;
     flex-direction: column;
+    /* width: 320px; */
 }
+/* .mission{
+    width: 320px;
+} */
 .businesshours{
     font-size: 17px;
     line-height: 30px;
+    /* width: 320px; */
 }
 @media (max-width: 989px) {
     .footer{
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 55px;
     }
     .mission{
-        width: 400px;
+        width: 320px;
+    }
+    .connection{
+        width:240px ;
     }
     .info{
         width: 85vw;
