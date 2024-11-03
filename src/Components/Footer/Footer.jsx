@@ -16,7 +16,7 @@ export default function Footer() {
             <p><i class="fa-solid fa-envelope" style={{marginRight:10}}></i> gnfeventspakistan@gmail.com </p>
           </a>
           <p><i class="fa-solid fa-phone" style={{marginRight:10}}></i> 0300 9492571</p>
-          <p style={{marginLeft:37}}>0321 9492571</p>
+          <p><i class="fa-solid fa-phone" style={{marginRight:10}}></i> 0321 9492571</p>
         </div>
         <div className={`${styles.businesshours} ${mulish.className}`}>
         <h1 style={{marginBottom:15 , fontSize:"25px"}}>Business Hours</h1>
