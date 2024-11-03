@@ -46,6 +46,7 @@
 @media (max-width: 989px) {
     .background{
         flex-direction: column;
+        overflow-x: hidden; 
         padding-top: 60px;
         padding-bottom: 60px;
     }
@@ -81,7 +82,7 @@
         width: 90vw;
     }
     .sliderContainer{
-        width: 95vw;
+        width: 90vw;
     }
     .imageContainer{
         width: 90vw;
