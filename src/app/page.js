@@ -1,4 +1,5 @@
 "use client";
+import Link from 'next/link';
 import Component1 from "@/svgComponents/Component1";
 import styles from "./page.module.css";
 import Component2 from "@/svgComponents/Component2";
@@ -61,8 +62,10 @@ export default function page() {
                   <li class={styles.dropdownitem}>Popular Artists</li>
                 </ul>
               </li>
-              <li class={styles.navitem} id="about">
-                Contact
+              <li className={styles.navitem} id="about">
+                <Link href="/contact">
+                  <li className={styles.navlink}>Contact</li>
+                </Link>
               </li>
             </ul>
           </div>
@@ -122,14 +125,14 @@ export default function page() {
           <Component6 />
         </div>
       </div>
-       <Events />
-        <Video />
+      <Events />
+      <Video />
       <FComponent2 />
       <Fcomponent7 />
       <Fcomponent6 />
       <Fcomponent8 />
       <FComponent10 />
-      <Footer/>
+      <Footer />
     </>
   );
 }
