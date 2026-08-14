@@ -1,0 +1,180 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+/* Slow, barely-there gold drift so the band feels alive without motion noise. */
+.aura {
+  position: absolute;
+  inset: -30% -10%;
+  background: radial-gradient(
+      42% 38% at 22% 30%,
+      rgba(198, 160, 92, 0.16) 0%,
+      rgba(198, 160, 92, 0) 70%
+    ),
+    radial-gradient(
+      38% 34% at 78% 72%,
+      rgba(198, 160, 92, 0.1) 0%,
+      rgba(198, 160, 92, 0) 70%
+    );
+  animation: drift 22s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+  }
+}
+
+.inner {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 110px var(--page-padding);
+}
+
+.head {
+  max-width: 62ch;
+  margin-bottom: 72px;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1.02;
+}
+
+.intro {
+  margin: 22px 0 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: rgba(246, 243, 237, 0.68);
+}
+
+.spotlight {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.spotlight + .spotlight {
+  margin-top: 96px;
+  padding-top: 96px;
+  border-top: 1px solid rgba(198, 160, 92, 0.2);
+}
+
+.mediaWrap {
+  position: relative;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid rgba(198, 160, 92, 0.3);
+}
+
+.media > :first-child {
+  filter: grayscale(0.35) contrast(1.05);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s;
+}
+
+.mediaWrap:hover .media > :first-child {
+  filter: grayscale(0);
+  transform: scale(1.04);
+}
+
+.badge {
+  position: absolute;
+  top: 24px;
+  left: -1px;
+  background: var(--gold);
+  color: var(--background);
+  padding: 10px 20px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.descriptor {
+  margin: 0 0 14px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-weight: 500;
+  font-size: clamp(52px, 6vw, 84px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+
+.statement {
+  margin: 26px 0 0;
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: rgba(246, 243, 237, 0.72);
+  max-width: 52ch;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.chip {
+  border: 1px solid rgba(198, 160, 92, 0.45);
+  color: rgba(246, 243, 237, 0.85);
+  padding: 7px 15px;
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+@media (max-width: 1000px) {
+  .inner {
+    padding: 80px var(--page-padding);
+  }
+
+  .head {
+    margin-bottom: 48px;
+  }
+
+  .spotlight {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mediaWrap {
+    max-width: 440px;
+  }
+
+  .spotlight + .spotlight {
+    margin-top: 64px;
+    padding-top: 64px;
+  }
+}

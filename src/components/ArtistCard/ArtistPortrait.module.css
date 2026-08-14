@@ -1,0 +1,44 @@
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  filter: grayscale(0.85) contrast(1.05);
+  transition: filter 0.5s, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    var(--tilt, 135deg),
+    #17130d 0%,
+    #100e0a 55%,
+    #1b1610 100%
+  );
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 80% at 50% 20%,
+    rgba(198, 160, 92, 0.14) 0%,
+    rgba(198, 160, 92, 0) 62%
+  );
+  pointer-events: none;
+}
+
+.monogram {
+  font-family: var(--font-display), serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(198, 160, 92, 0.55);
+}

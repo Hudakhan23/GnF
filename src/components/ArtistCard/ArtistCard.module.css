@@ -1,83 +1,166 @@
 .card {
+  display: block;
   position: relative;
-  min-height: 0;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  color: var(--text);
   background: var(--surface);
+  animation: cardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.card a {
-  position: absolute;
-  inset: 0;
-  display: block;
+.card:hover {
   color: var(--text);
 }
 
-.image {
-  object-fit: cover;
-  object-position: center 20%;
-  filter: grayscale(0.85) contrast(1.05);
-  transition: filter 500ms ease, transform 700ms ease;
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.overlay {
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.card:hover .media > :first-child {
+  filter: grayscale(0);
+  transform: scale(1.06);
+}
+
+.scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 48%, rgba(14, 12, 9, 0.92) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(14, 12, 9, 0) 40%,
+    rgba(14, 12, 9, 0.55) 72%,
+    rgba(14, 12, 9, 0.95) 100%
+  );
   pointer-events: none;
+  transition: opacity 0.5s;
 }
 
-.content {
+.badge {
   position: absolute;
-  right: 24px;
-  bottom: 20px;
-  left: 24px;
-  display: grid;
-  gap: 5px;
-}
-
-.content strong {
-  font-family: var(--font-display);
-  font-size: clamp(27px, 2.6vw, 34px);
-  font-weight: 500;
-  line-height: 1.05;
-}
-
-.content small,
-.content span {
-  font-size: 10.5px;
+  top: 14px;
+  left: 14px;
+  background: var(--gold);
+  color: var(--background);
+  padding: 6px 12px;
+  font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.content small {
-  color: var(--text-secondary);
-}
-
-.content span {
-  margin-top: 3px;
-  color: var(--gold);
-}
-
-.card:hover .image,
-.card:focus-within .image {
-  filter: grayscale(0) contrast(1);
-  transform: scale(1.04);
-}
-
-.featured .content {
-  right: 20px;
-  bottom: 16px;
+.body {
+  position: absolute;
   left: 20px;
+  right: 20px;
+  bottom: 18px;
+  pointer-events: none;
 }
 
-.featured .content strong {
-  font-size: 23px;
+.name {
+  margin: 0;
+  font-family: var(--font-display), serif;
+  font-size: 26px;
+  line-height: 1.12;
+  color: var(--text);
 }
 
+.descriptor {
+  margin: 4px 0 0;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(246, 243, 237, 0.6);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s;
+}
+
+.tag {
+  border: 1px solid rgba(198, 160, 92, 0.45);
+  color: rgba(246, 243, 237, 0.85);
+  padding: 4px 10px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.cta {
+  display: block;
+  margin-top: 0;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s,
+    margin-top 0.45s;
+}
+
+.card:hover .tags,
+.card:focus-visible .tags {
+  max-height: 60px;
+  opacity: 1;
+}
+
+.card:hover .cta,
+.card:focus-visible .cta {
+  max-height: 30px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+/*
+ * Touch devices never fire hover, so the supporting tags stay visible. The
+ * scrim has to reach further up to keep the taller text block legible, and
+ * the CTA is dropped — the whole card is already tappable.
+ */
 @media (hover: none) {
-  .image {
-    filter: grayscale(0.25) contrast(1.02);
+  .tags {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .scrim {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 12, 9, 0) 18%,
+      rgba(14, 12, 9, 0.5) 48%,
+      rgba(14, 12, 9, 0.88) 74%,
+      rgba(14, 12, 9, 0.97) 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .name {
+    font-size: 22px;
   }
 }

@@ -64,6 +64,57 @@ a {
   outline-offset: 4px;
 }
 
+/* Shared primitives used by the artist directory, spotlight and booking flow. */
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.btn-gold,
+.btn-outline {
+  display: inline-block;
+  min-height: 44px;
+  padding: 16px 34px;
+  cursor: pointer;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.btn-gold {
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: var(--background);
+  font-weight: 700;
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  border-color: var(--gold-hover);
+  background: var(--gold-hover);
+}
+
+.btn-outline {
+  border: 1px solid var(--gold-border-strong);
+  background: transparent;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

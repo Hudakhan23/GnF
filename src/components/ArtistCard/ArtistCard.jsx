@@ -1,25 +1,34 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./ArtistCard.module.css";
+import ArtistPortrait from "./ArtistPortrait";
+import { MANAGEMENT, cardTags, descriptorFor } from "@/data/artists";
 
-export default function ArtistCard({ artist, featured = false, sizes, priority = false }) {
+export default function ArtistCard({ artist, priority }) {
+  const isExclusive = artist.managementType === "exclusive";
+  const tags = cardTags(artist);
+
   return (
-    <article className={`${styles.card} ${featured ? styles.featured : ""}`}>
-      <a href={artist.href} aria-label={`View ${artist.name} booking details`}>
-        <Image
-          src={artist.image}
-          alt={`${artist.name} — artist booking through GnF Events`}
-          fill
-          sizes={sizes || "(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 33vw"}
-          className={styles.image}
-          priority={priority}
-        />
-        <span className={styles.overlay} />
-        <span className={styles.content}>
-          <strong>{artist.name}</strong>
-          {!featured && <small>{artist.tag}</small>}
-          <span>Booking details →</span>
-        </span>
-      </a>
-    </article>
+    <Link href={`/artists/${artist.slug}`} className={styles.card}>
+      <div className={styles.media}>
+        <ArtistPortrait artist={artist} priority={priority} />
+        <div className={styles.scrim} />
+        {isExclusive && (
+          <span className={styles.badge}>{MANAGEMENT.exclusive.badge}</span>
+        )}
+      </div>
+
+      <div className={styles.body}>
+        <p className={styles.name}>{artist.name}</p>
+        <p className={styles.descriptor}>{descriptorFor(artist)}</p>
+        <div className={styles.tags}>
+          {tags.map((t) => (
+            <span key={t} className={styles.tag}>
+              {t}
+            </span>
+          ))}
+        </div>
+        <span className={styles.cta}>View profile →</span>
+      </div>
+    </Link>
   );
 }

@@ -164,20 +164,27 @@ export default function Home() {
 
         <section id="services" className={`${styles.services} ${styles.deferred}`}>
           <div className={styles.serviceInner}>
-            <p className={styles.eyebrow}>What we do</p>
-            <h2>Two pillars. One standard: unforgettable.</h2>
+            <div className={styles.serviceHeading}>
+              <div>
+                <p className={styles.eyebrow}>What we do</p>
+                <h2>
+                  Our services. One standard: <em>unforgettable.</em>
+                </h2>
+              </div>
+              <p className={styles.serviceNote}>
+                We provide end-to-end management and facilitation to make your
+                events iconic — from concept to flawless execution.
+              </p>
+            </div>
             <div className={styles.serviceGrid}>
-              {services.map((service) => (
+              {services.map((service, index) => (
                 <article className={styles.serviceCard} key={service.title}>
                   <Image src={service.image} alt={service.alt} fill sizes="(max-width: 800px) 100vw, 50vw" />
                   <span className={styles.cardShade} />
                   <div className={styles.serviceContent}>
-                    <p>{service.eyebrow}</p>
+                    <p>{String(index + 1).padStart(2, "0")}</p>
                     <h3>{service.title}</h3>
                     <div>{service.description}</div>
-                    <ul>
-                      {service.tags.map((tag) => <li key={tag}>{tag}</li>)}
-                    </ul>
                   </div>
                 </article>
               ))}
