@@ -1,0 +1,147 @@
+.hero,
+.roster {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-right: var(--page-padding);
+  padding-left: var(--page-padding);
+}
+
+.hero {
+  padding-top: 110px;
+  padding-bottom: 72px;
+}
+
+.hero > p {
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 16ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 500;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.hero > div {
+  max-width: 64ch;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: 15.5px;
+  line-height: 1.78;
+}
+
+.roster {
+  padding-bottom: 130px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.customCta {
+  display: flex;
+  margin-top: 80px;
+  padding: 56px;
+  border: 1px solid var(--gold-border-strong);
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.customCta h2 {
+  max-width: 22ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.customCta p {
+  max-width: 58ch;
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.customCta a {
+  display: inline-grid;
+  min-height: 54px;
+  padding: 17px 38px;
+  background: var(--gold);
+  color: var(--background);
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.customCta a:hover,
+.customCta a:focus-visible {
+  background: var(--gold-hover);
+}
+
+.disclaimer {
+  max-width: 78ch;
+  margin: 28px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 76px;
+    padding-bottom: 52px;
+  }
+
+  .hero h1 {
+    font-size: clamp(52px, 16vw, 72px);
+  }
+
+  .roster {
+    padding-bottom: 88px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customCta {
+    margin-top: 52px;
+    padding: 34px 26px;
+  }
+
+  .customCta h2 {
+    font-size: 34px;
+  }
+
+  .customCta a {
+    width: 100%;
+  }
+}

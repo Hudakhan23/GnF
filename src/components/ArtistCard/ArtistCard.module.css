@@ -1,0 +1,83 @@
+.card {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--surface);
+}
+
+.card a {
+  position: absolute;
+  inset: 0;
+  display: block;
+  color: var(--text);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(0.85) contrast(1.05);
+  transition: filter 500ms ease, transform 700ms ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 48%, rgba(14, 12, 9, 0.92) 100%);
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  left: 24px;
+  display: grid;
+  gap: 5px;
+}
+
+.content strong {
+  font-family: var(--font-display);
+  font-size: clamp(27px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.content small,
+.content span {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.content small {
+  color: var(--text-secondary);
+}
+
+.content span {
+  margin-top: 3px;
+  color: var(--gold);
+}
+
+.card:hover .image,
+.card:focus-within .image {
+  filter: grayscale(0) contrast(1);
+  transform: scale(1.04);
+}
+
+.featured .content {
+  right: 20px;
+  bottom: 16px;
+  left: 20px;
+}
+
+.featured .content strong {
+  font-size: 23px;
+}
+
+@media (hover: none) {
+  .image {
+    filter: grayscale(0.25) contrast(1.02);
+  }
+}

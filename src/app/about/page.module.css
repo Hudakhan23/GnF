@@ -1,0 +1,287 @@
+.hero,
+.introduction,
+.leadership > div,
+.gallery {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-right: var(--page-padding);
+  padding-left: var(--page-padding);
+}
+
+.hero {
+  padding-top: 110px;
+  padding-bottom: 80px;
+}
+
+.hero > p,
+.bio > p,
+.gallery > p {
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6.5vw, 92px);
+  font-weight: 500;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.hero h1 em,
+.cta h2 em {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.introduction {
+  display: grid;
+  padding-bottom: 110px;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.introduction h2,
+.bio h2,
+.gallery h2,
+.cta h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.introduction p,
+.bio > div {
+  margin: 24px 0 0;
+  color: var(--text-secondary);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+.stats {
+  display: flex;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--gold-border-strong);
+  gap: clamp(25px, 4vw, 56px);
+}
+
+.stats div {
+  display: grid;
+  gap: 6px;
+}
+
+.stats strong {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.stats span {
+  color: var(--text-muted);
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.leadership {
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  background: var(--surface);
+}
+
+.leadership > div {
+  display: grid;
+  padding-block: 120px;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.portrait img {
+  object-fit: cover;
+  filter: saturate(0.9);
+}
+
+.bio > p {
+  margin-bottom: 18px;
+}
+
+.bio h2 {
+  font-size: clamp(44px, 5vw, 56px);
+}
+
+.bio strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.gallery {
+  padding-top: 110px;
+  padding-bottom: 110px;
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+.gallery h2 {
+  margin-bottom: 48px;
+  font-size: clamp(40px, 4.2vw, 58px);
+}
+
+.gallery > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.gallery figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--surface);
+}
+
+.gallery figure img {
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.gallery figure:hover img {
+  transform: scale(1.05);
+}
+
+.cta {
+  position: relative;
+  min-height: 470px;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-border);
+}
+
+.cta > img {
+  object-fit: cover;
+}
+
+.cta > span {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 12, 9, 0.88);
+}
+
+.cta > div {
+  position: relative;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 130px var(--page-padding);
+  text-align: center;
+}
+
+.cta h2 {
+  max-width: 20ch;
+  margin: 0 auto;
+  font-size: clamp(44px, 5.5vw, 72px);
+  text-wrap: balance;
+}
+
+.cta > div > div {
+  display: flex;
+  margin-top: 44px;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta a {
+  display: inline-grid;
+  min-height: 54px;
+  padding: 17px 42px;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cta a:first-child {
+  background: var(--gold);
+  color: var(--background);
+}
+
+.cta a:last-child {
+  border: 1px solid rgba(246, 243, 237, 0.42);
+}
+
+.cta a:hover,
+.cta a:focus-visible {
+  border-color: var(--gold-hover);
+  background: var(--gold-hover);
+  color: var(--background);
+}
+
+@media (max-width: 850px) {
+  .introduction,
+  .leadership > div {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .portrait {
+    max-width: 600px;
+  }
+
+  .gallery > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 76px;
+    padding-bottom: 62px;
+  }
+
+  .introduction {
+    padding-bottom: 76px;
+  }
+
+  .leadership > div {
+    padding-block: 76px;
+  }
+
+  .gallery {
+    padding-block: 76px;
+  }
+
+  .gallery > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .cta > div {
+    padding-block: 92px;
+  }
+
+  .cta a {
+    width: 100%;
+  }
+}

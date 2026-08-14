@@ -1,0 +1,28 @@
+.viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: marquee var(--marquee-duration) linear infinite;
+  will-change: transform;
+}
+
+.reverse {
+  animation-direction: reverse;
+}
+
+.pause:hover .track,
+.pause:focus-within .track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation-play-state: paused;
+    transform: translateX(0);
+  }
+}
