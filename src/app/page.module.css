@@ -6,6 +6,26 @@
   align-items: flex-end;
 }
 
+@keyframes slowZoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+@keyframes heroFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sectionReveal {
+  from { opacity: 0; transform: translateY(42px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .heroMedia,
 .heroShade,
 .heroSideShade {
@@ -158,6 +178,14 @@
   contain-intrinsic-size: auto 800px;
 }
 
+@supports (animation-timeline: view()) {
+  .deferred {
+    animation: sectionReveal linear both;
+    animation-timeline: view(block);
+    animation-range: entry 0% cover 28%;
+  }
+}
+
 .positioning,
 .artistSection,
 .serviceInner,
@@ -262,10 +290,10 @@
   gap: 18px;
 }
 
-.artistMosaic article:nth-child(1) { height: 460px; grid-column: span 5; }
-.artistMosaic article:nth-child(2) { height: 460px; grid-column: span 4; }
-.artistMosaic article:nth-child(3) { height: 460px; grid-column: span 3; }
-.artistMosaic article:nth-child(n + 4) { height: 400px; grid-column: span 3; }
+.artistMosaic > :nth-child(1) { height: 460px; grid-column: span 5; }
+.artistMosaic > :nth-child(2) { height: 460px; grid-column: span 4; }
+.artistMosaic > :nth-child(3) { height: 460px; grid-column: span 3; }
+.artistMosaic > :nth-child(n + 4) { height: 400px; grid-column: span 3; }
 
 .services,
 .work {
@@ -548,12 +576,12 @@
     grid-template-columns: 1fr;
   }
 
-  .artistMosaic article:nth-child(n) {
+  .artistMosaic > :nth-child(n) {
     height: 430px;
     grid-column: span 6;
   }
 
-  .artistMosaic article:last-child {
+  .artistMosaic > :last-child {
     grid-column: 4 / span 6;
   }
 
@@ -606,8 +634,8 @@
     grid-template-columns: 1fr;
   }
 
-  .artistMosaic article:nth-child(n),
-  .artistMosaic article:last-child {
+  .artistMosaic > :nth-child(n),
+  .artistMosaic > :last-child {
     height: auto;
     grid-column: 1;
   }
@@ -663,5 +691,13 @@
 
   .tickerItem {
     font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .deferred {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }

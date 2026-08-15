@@ -7,8 +7,18 @@
   display: flex;
   width: max-content;
   align-items: center;
-  animation: marquee var(--marquee-duration) linear infinite;
+  animation: marqueeTrack var(--marquee-duration) linear infinite;
   will-change: transform;
+}
+
+@keyframes marqueeTrack {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .reverse {

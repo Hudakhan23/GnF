@@ -3,12 +3,15 @@ import styles from "./ArtistCard.module.css";
 import ArtistPortrait from "./ArtistPortrait";
 import { MANAGEMENT, cardTags, descriptorFor } from "@/data/artists";
 
-export default function ArtistCard({ artist, priority }) {
+export default function ArtistCard({ artist, priority, featured = false }) {
   const isExclusive = artist.managementType === "exclusive";
   const tags = cardTags(artist);
 
   return (
-    <Link href={`/artists/${artist.slug}`} className={styles.card}>
+    <Link
+      href={`/artists/${artist.slug}`}
+      className={`${styles.card} ${featured ? styles.featured : ""}`}
+    >
       <div className={styles.media}>
         <ArtistPortrait artist={artist} priority={priority} />
         <div className={styles.scrim} />

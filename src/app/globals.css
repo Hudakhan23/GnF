@@ -115,26 +115,6 @@ a {
   color: var(--gold);
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@keyframes heroUp {
-  from { opacity: 0; transform: translateY(60px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroFade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slowZoom {
-  from { transform: scale(1.08); }
-  to { transform: scale(1); }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

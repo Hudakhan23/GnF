@@ -28,6 +28,12 @@
   overflow: hidden;
 }
 
+/* The home mosaic supplies its own editorial card heights. */
+.featured .media {
+  height: 100%;
+  aspect-ratio: auto;
+}
+
 .card:hover .media > :first-child {
   filter: grayscale(0);
   transform: scale(1.06);
@@ -159,7 +165,12 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
+  .featured .media {
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
   .name {
     font-size: 22px;
   }
