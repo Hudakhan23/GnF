@@ -95,14 +95,15 @@ export const ARTISTS = [
         "Introduced to music by her father at the age of three and performing publicly by six, Nish has built a career spanning television soundtracks, original releases, and live collaborations across Pakistan and the international circuit.",
       stats: [
         { value: "474M+", label: "Khuda Aur Mohabbat OST views" },
-        { value: "800K+", label: "Monthly Spotify listeners" },
-        { value: "2021", label: "BBC Future Sounds Artist" },
+        { value: "42M+", label: "Khuda Aur Mohabbat Spotify streams" },
+        { value: "97K+", label: "Monthly Spotify listeners" },
       ],
       careerHighlights: [
         "Performed the Khuda Aur Mohabbat OST with Rahat Fateh Ali Khan, surpassing 474 million views on YouTube.",
+        "The Khuda Aur Mohabbat Original Score has surpassed 42 million streams on Spotify.",
         "Named a BBC Asian Network Future Sounds Artist in 2021.",
         "Released original music including Mera Mann Dhunde, which surpassed one million YouTube views.",
-        "Built an international streaming audience reaching 800K+ monthly Spotify listeners.",
+        "Reached more than 97,000 monthly Spotify listeners in August 2026.",
       ],
       osts: [
         "Khuda Aur Mohabbat",
