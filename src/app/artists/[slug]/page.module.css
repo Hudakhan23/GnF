@@ -425,9 +425,13 @@
   align-items: start;
 }
 
-.managementPoster {
+.managementPosterWrap {
   position: sticky;
   top: 96px;
+}
+
+.managementPoster {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--gold-border-strong);
   background: var(--surface);
@@ -499,6 +503,124 @@
   margin-top: 14px;
 }
 
+.youtubePanel {
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--gold-border-strong);
+  background:
+    linear-gradient(135deg, rgba(198, 160, 92, 0.1), transparent 58%),
+    var(--surface);
+}
+
+.youtubeHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.youtubeHeading p {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.youtubeHeading h3 {
+  margin: 0;
+  font-size: clamp(30px, 3vw, 40px);
+}
+
+.youtubeHeading > span {
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.youtubeStats {
+  display: grid;
+  margin: 30px 0 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.youtubeStats div {
+  min-width: 0;
+}
+
+.youtubeStats dt {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1;
+}
+
+.youtubeStats dd {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.youtubeMeta {
+  display: flex;
+  margin-top: 18px;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 12px;
+}
+
+.youtubeMeta span + span {
+  position: relative;
+}
+
+.youtubeMeta span + span::before {
+  position: absolute;
+  left: -13px;
+  color: var(--gold);
+  content: "·";
+}
+
+.youtubeNote {
+  margin: 18px 0 0;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.youtubeLink {
+  display: inline-flex;
+  margin-top: 24px;
+  color: var(--gold);
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.youtubeLink::after {
+  margin-left: 10px;
+  content: "↗";
+}
+
+.youtubeLink:hover,
+.youtubeLink:focus-visible {
+  color: var(--gold-hover);
+}
+
 .socialActions {
   display: flex;
   flex-wrap: wrap;
@@ -546,7 +668,7 @@
     grid-template-columns: 1fr;
   }
 
-  .managementPoster {
+  .managementPosterWrap {
     position: relative;
     top: auto;
     width: min(100%, 680px);
@@ -578,6 +700,28 @@
 
   .profileStats dd {
     margin-bottom: 18px;
+  }
+
+  .youtubeHeading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .youtubeStats {
+    grid-template-columns: 1fr;
+  }
+
+  .youtubeStats div + div {
+    padding-top: 18px;
+    border-top: 1px solid var(--white-border);
+  }
+
+  .youtubeMeta {
+    flex-direction: column;
+  }
+
+  .youtubeMeta span + span::before {
+    content: none;
   }
 
   .socialActions a {

@@ -229,13 +229,15 @@ export default async function ArtistBookingPage({ params }) {
             </div>
 
             <div className={styles.profileGrid}>
-              <div className={styles.managementPoster}>
-                <Image
-                  src={artist.profile.poster}
-                  alt={`${artist.name} exclusive management and worldwide bookings poster`}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 45vw"
-                />
+              <div className={styles.managementPosterWrap}>
+                <div className={styles.managementPoster}>
+                  <Image
+                    src={artist.profile.poster}
+                    alt={`${artist.name} exclusive management and worldwide bookings poster`}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 45vw"
+                  />
+                </div>
               </div>
 
               <div className={styles.profileDetails}>
@@ -276,13 +278,56 @@ export default async function ArtistBookingPage({ params }) {
                   </p>
                 </article>
 
+                {artist.profile.youtube && (
+                  <aside
+                    className={styles.youtubePanel}
+                    aria-label={`${artist.name} official YouTube channel`}
+                  >
+                    <div className={styles.youtubeHeading}>
+                      <div>
+                        <p>Official YouTube channel</p>
+                        <h3>{artist.profile.youtube.handle}</h3>
+                      </div>
+                      <span aria-hidden="true">YouTube</span>
+                    </div>
+
+                    <dl className={styles.youtubeStats}>
+                      {artist.profile.youtube.stats.map((stat) => (
+                        <div key={stat.label}>
+                          <dt>{stat.value}</dt>
+                          <dd>{stat.label}</dd>
+                        </div>
+                      ))}
+                    </dl>
+
+                    <div className={styles.youtubeMeta}>
+                      <span>{artist.profile.youtube.country}</span>
+                      <span>Joined {artist.profile.youtube.joined}</span>
+                    </div>
+
+                    <p className={styles.youtubeNote}>
+                      Channel totals shown here are separate from the 474M+
+                      views achieved by the Khuda Aur Mohabbat OST.
+                    </p>
+
+                    <a
+                      href={artist.socials.youtube}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.youtubeLink}
+                    >
+                      Visit {artist.profile.youtube.handle}
+                    </a>
+                  </aside>
+                )}
+
                 <div className={styles.socialActions}>
                   <a
                     href={artist.socials.youtube}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Watch on YouTube
+                    Watch music on YouTube
                   </a>
                   <a
                     href={artist.socials.spotify}

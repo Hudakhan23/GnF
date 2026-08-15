@@ -85,7 +85,7 @@ export const ARTISTS = [
     metaDescription:
       "Book Nish Asher through GnF Events, her exclusive worldwide management team. Pop vocalist and Khuda Aur Mohabbat OST performer with 474M+ YouTube views.",
     socials: {
-      youtube: "https://www.youtube.com/user/NishOfficial",
+      youtube: "https://www.youtube.com/@NishOfficial",
       spotify: "https://open.spotify.com/artist/1csq4cvlItPMh7H9v1G5UF",
     },
     profile: {
@@ -127,6 +127,16 @@ export const ARTISTS = [
       ],
       education:
         "Nish studied Vocal Performance and Music Theory at ICMP London, completing her degree-level musical education in 2025.",
+      youtube: {
+        handle: "@NishOfficial",
+        country: "United Kingdom",
+        joined: "13 July 2011",
+        stats: [
+          { value: "86.7K", label: "Subscribers" },
+          { value: "93", label: "Videos" },
+          { value: "17.9M+", label: "Official channel views" },
+        ],
+      },
     },
   }),
 
