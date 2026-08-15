@@ -646,6 +646,74 @@
   color: var(--gold);
 }
 
+.artistFaq {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 96px var(--page-padding);
+  border-top: 1px solid var(--gold-border);
+}
+
+.faqHeading {
+  display: grid;
+  margin-bottom: 48px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+  column-gap: clamp(44px, 8vw, 110px);
+  align-items: end;
+}
+
+.faqHeading .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.faqHeading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 4.8vw, 66px);
+  font-weight: 500;
+  line-height: 1;
+  scroll-margin-top: 120px;
+}
+
+.faqHeading > p:last-child {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.faqGrid {
+  display: grid;
+  border-top: 1px solid var(--gold-border);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.faqGrid article {
+  padding: 30px 34px 32px 0;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.faqGrid article:nth-child(even) {
+  padding-right: 0;
+  padding-left: 34px;
+  border-left: 1px solid var(--gold-border);
+}
+
+.faqGrid h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.4vw, 31px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.faqGrid p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
 .related {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -676,6 +744,11 @@
 
   .suitabilityList span {
     font-size: 21px;
+  }
+
+  .faqHeading {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
   }
 }
 
@@ -722,6 +795,20 @@
 
   .youtubeMeta span + span::before {
     content: none;
+  }
+
+  .artistFaq {
+    padding-block: 76px;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .faqGrid article,
+  .faqGrid article:nth-child(even) {
+    padding: 26px 0;
+    border-left: 0;
   }
 
   .socialActions a {

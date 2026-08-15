@@ -62,6 +62,7 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   tagline: opts.tagline || null,
   bio: opts.bio || null,
   metaDescription: opts.metaDescription || null,
+  seo: opts.seo || null,
   socials: opts.socials || null,
   profile: opts.profile || null,
   gallery: opts.gallery || [],
@@ -79,18 +80,25 @@ export const ARTISTS = [
     featured: true,
     gender: F,
     genZ: true,
+    country: "UK",
     image: "/artists/nish-asher.jpeg",
     tagline: "Pop vocalist & OST performer",
-    bio: "Nish Asher is a versatile pop vocalist known for her distinctive voice, acclaimed OST performances, and cross-genre musical style. Beginning her musical journey at just three years old, Nish has collaborated with celebrated names including Rahat Fateh Ali Khan, Ali Zafar, Farhan Saeed, and Asim Azhar. A BBC Asian Network Future Sounds Artist, she continues to build her presence across Pakistan and the international music scene.",
+    bio: "Nish Asher is a UK-based Pakistani pop singer and OST vocalist known for her distinctive voice, acclaimed television soundtracks, and cross-genre musical style. Beginning her musical journey at just three years old, Nish has collaborated with celebrated names including Rahat Fateh Ali Khan, Ali Zafar, Farhan Saeed, and Asim Azhar. A BBC Asian Network Future Sounds Artist, she performs for audiences across Pakistan and the international music scene.",
     metaDescription:
-      "Book Nish Asher through GnF Events, her exclusive worldwide management team. Pop vocalist and Khuda Aur Mohabbat OST performer with 474M+ YouTube views.",
+      "Nish Asher is the UK-based Pakistani pop singer behind the Khuda Aur Mohabbat OST with Rahat Fateh Ali Khan. Explore her music and official worldwide bookings.",
+    seo: {
+      title: "Nish Asher | Singer, OST Artist & Official Booking",
+      modified: "2026-08-15T00:00:00+05:00",
+    },
     socials: {
       youtube: "https://www.youtube.com/@NishOfficial",
       spotify: "https://open.spotify.com/artist/1csq4cvlItPMh7H9v1G5UF",
+      appleMusic: "https://music.apple.com/gb/artist/nish-asher/1401971246",
     },
     profile: {
       poster: "/artists/nish-asher-management.webp",
-      headline: "A distinctive pop voice with a global audience",
+      heroTitle: "pop singer & OST artist",
+      headline: "Nish Asher: career, OSTs & music",
       summary:
         "Introduced to music by her father at the age of three and performing publicly by six, Nish has built a career spanning television soundtracks, original releases, and live collaborations across Pakistan and the international circuit.",
       stats: [
@@ -137,6 +145,33 @@ export const ARTISTS = [
           { value: "17.9M+", label: "Official channel views" },
         ],
       },
+      faqs: [
+        {
+          question: "Who is Nish Asher?",
+          answer:
+            "Nish Asher is a UK-based Pakistani pop singer, live performer, and television OST vocalist. She is known for a cross-genre style and collaborations with leading Pakistani singers and composers.",
+        },
+        {
+          question: "Did Nish Asher sing the Khuda Aur Mohabbat OST?",
+          answer:
+            "Yes. Nish Asher performed the Khuda Aur Mohabbat title song with Rahat Fateh Ali Khan. The official OST has surpassed 474 million views on YouTube.",
+        },
+        {
+          question: "Which Pakistani drama OSTs has Nish Asher sung?",
+          answer:
+            "Her television soundtrack credits include Khuda Aur Mohabbat, Aye Musht-e-Khaak, Malaal-e-Yaar, Prem Gali, Fairytale, and Mohabbat Daagh Ki Surat.",
+        },
+        {
+          question: "How can I book Nish Asher for an event?",
+          answer:
+            "Nish Asher is exclusively managed by GnF Events for worldwide bookings. Send the event date, city or country, venue, event type, and audience details to the GnF management team for availability and a formal quote.",
+        },
+        {
+          question: "Where can I listen to Nish Asher?",
+          answer:
+            "Nish Asher's music is available through her official @NishOfficial YouTube channel, Spotify artist profile, and Apple Music artist profile.",
+        },
+      ],
     },
   }),
 
@@ -615,7 +650,8 @@ export const relatedArtists = (artist, limit = 4) =>
         a.genres.filter((g) => artist.genres.includes(g)).length * 2 +
         (a.artistType === artist.artistType ? 1 : 0) +
         (a.country === artist.country ? 0.5 : 0) +
-        (a.featured ? 0.25 : 0),
+        (a.featured ? 0.25 : 0) +
+        (a.image ? 0.4 : 0),
     }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score)

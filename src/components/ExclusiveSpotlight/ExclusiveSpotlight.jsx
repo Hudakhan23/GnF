@@ -57,7 +57,7 @@ export default function ExclusiveSpotlight({ artists, allArtists }) {
                   href={`/artists/${artist.slug}`}
                   className="btn-outline"
                 >
-                  View profile
+                  View {artist.name} profile
                 </Link>
               </div>
             </div>

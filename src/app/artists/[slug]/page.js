@@ -26,17 +26,35 @@ export async function generateMetadata({ params }) {
   const artist = getArtist(slug);
   if (!artist) return {};
 
+  const title = artist.seo?.title || `Book ${artist.name} for an Event`;
+  const socialTitle = artist.seo?.title || `${title} | GnF Events`;
+  const image = artist.image
+    ? {
+        url: artist.image,
+        width: artist.slug === "nish-asher" ? 1125 : undefined,
+        height: artist.slug === "nish-asher" ? 1386 : undefined,
+        alt: `${artist.name} — ${artist.tag}`,
+      }
+    : null;
+
   return {
-    title: `Book ${artist.name} for an Event`,
+    title: artist.seo?.title ? { absolute: artist.seo.title } : title,
     description: artist.description,
     alternates: { canonical: artist.href },
     openGraph: {
-      title: `Book ${artist.name} for an Event | GnF Events`,
+      title: socialTitle,
       description: artist.description,
       url: `${SITE_URL}${artist.href}`,
-      images: artist.image
-        ? [{ url: artist.image, alt: `${artist.name} booking enquiry` }]
-        : undefined,
+      siteName: "GnF Events",
+      locale: "en_PK",
+      type: "profile",
+      images: image ? [image] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: socialTitle,
+      description: artist.description,
+      images: image ? [image] : undefined,
     },
   };
 }
@@ -69,26 +87,95 @@ export default async function ArtistBookingPage({ params }) {
     `Hi GnF Events, I want to enquire about booking ${artist.name}. My event date/city is: `,
   );
 
+  const artistUrl = `${SITE_URL}${artist.href}`;
+  const artistId = `${artistUrl}#artist`;
+  const imageUrl = artist.image ? `${SITE_URL}${artist.image}` : null;
+  const personSchema = {
+    "@type": "Person",
+    "@id": artistId,
+    name: artist.name,
+    url: artistUrl,
+    ...(artist.profile?.youtube?.handle
+      ? { alternateName: artist.profile.youtube.handle }
+      : {}),
+    ...(artist.bio ? { description: artist.bio } : {}),
+    ...(imageUrl
+      ? {
+          image: {
+            "@type": "ImageObject",
+            "@id": `${artistUrl}#primary-image`,
+            url: imageUrl,
+            contentUrl: imageUrl,
+            ...(artist.slug === "nish-asher"
+              ? { width: 1125, height: 1386 }
+              : {}),
+            caption: `${artist.name} — ${artist.tag}`,
+          },
+        }
+      : {}),
+    jobTitle: artist.profile
+      ? ["Singer", "Pop vocalist", "OST performer"]
+      : artist.artistType,
+    ...(artist.country !== "Pakistan"
+      ? {
+          homeLocation: {
+            "@type": "Country",
+            name: artist.country === "UK" ? "United Kingdom" : artist.country,
+          },
+        }
+      : {}),
+    ...(artist.socials ? { sameAs: Object.values(artist.socials) } : {}),
+    ...(artist.profile
+      ? {
+          award: "BBC Asian Network Future Sounds Artist 2021",
+          affiliation: { "@id": `${SITE_URL}/#organization` },
+        }
+      : {}),
+  };
+
   const schema = [
+    ...(artist.profile
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "@id": `${artistUrl}#profile-page`,
+            url: artistUrl,
+            name: artist.seo?.title || `${artist.name} artist profile`,
+            headline: artist.profile.headline,
+            description: artist.description,
+            inLanguage: "en-PK",
+            ...(artist.seo?.modified
+              ? { dateModified: artist.seo.modified }
+              : {}),
+            ...(imageUrl
+              ? { primaryImageOfPage: { "@id": `${artistUrl}#primary-image` } }
+              : {}),
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            mainEntity: personSchema,
+          },
+        ]
+      : []),
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "@id": `${artistUrl}#booking-service`,
       name: `${artist.name} event booking enquiry`,
       description: artist.description,
-      url: `${SITE_URL}${artist.href}`,
-      ...(artist.image ? { image: `${SITE_URL}${artist.image}` } : {}),
+      url: artistUrl,
+      ...(imageUrl ? { image: imageUrl } : {}),
       serviceType: isExclusive
         ? "Exclusive artist management"
         : "Artist booking facilitation",
-      areaServed: { "@type": "Country", name: "Pakistan" },
+      areaServed: [
+        { "@type": "Country", name: "Pakistan" },
+        { "@type": "Place", name: "Worldwide" },
+      ],
       provider: { "@id": `${SITE_URL}/#organization` },
-      about: {
-        "@type": "Person",
-        name: artist.name,
-        ...(artist.bio ? { description: artist.bio } : {}),
-        ...(artist.socials
-          ? { sameAs: Object.values(artist.socials) }
-          : {}),
+      about: artist.profile ? { "@id": artistId } : personSchema,
+      availableChannel: {
+        "@type": "ServiceChannel",
+        serviceUrl: bookingUrl,
       },
     },
     {
@@ -137,7 +224,15 @@ export default async function ArtistBookingPage({ params }) {
               {isExclusive ? "Exclusive management" : "Artist booking enquiry"}
             </p>
             <h1>
-              Book <em>{artist.name}</em> for your event
+              {artist.profile?.heroTitle ? (
+                <>
+                  <em>{artist.name}</em> — {artist.profile.heroTitle}
+                </>
+              ) : (
+                <>
+                  Book <em>{artist.name}</em> for your event
+                </>
+              )}
             </h1>
             <p className={styles.tag}>{artist.tag}</p>
 
@@ -211,7 +306,10 @@ export default async function ArtistBookingPage({ params }) {
         </section>
 
         {artist.profile && (
-          <section className={styles.profileStory}>
+          <section
+            className={styles.profileStory}
+            id={`${artist.slug}-profile`}
+          >
             <div className={styles.profileIntro}>
               <div>
                 <p className={styles.eyebrow}>Career &amp; music</p>
@@ -313,7 +411,7 @@ export default async function ArtistBookingPage({ params }) {
                     <a
                       href={artist.socials.youtube}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="me noreferrer"
                       className={styles.youtubeLink}
                     >
                       Visit {artist.profile.youtube.handle}
@@ -325,19 +423,52 @@ export default async function ArtistBookingPage({ params }) {
                   <a
                     href={artist.socials.youtube}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="me noreferrer"
                   >
                     Watch music on YouTube
                   </a>
                   <a
                     href={artist.socials.spotify}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="me noreferrer"
                   >
                     Listen on Spotify
                   </a>
+                  {artist.socials.appleMusic && (
+                    <a
+                      href={artist.socials.appleMusic}
+                      target="_blank"
+                      rel="me noreferrer"
+                    >
+                      Listen on Apple Music
+                    </a>
+                  )}
                 </div>
               </div>
+            </div>
+          </section>
+        )}
+
+        {artist.profile?.faqs && (
+          <section
+            className={styles.artistFaq}
+            aria-labelledby={`${artist.slug}-faq-heading`}
+          >
+            <div className={styles.faqHeading}>
+              <p className={styles.eyebrow}>Artist information</p>
+              <h2 id={`${artist.slug}-faq-heading`}>About {artist.name}</h2>
+              <p>
+                Quick answers about {artist.name}&apos;s music, OST career, and
+                official bookings.
+              </p>
+            </div>
+            <div className={styles.faqGrid}>
+              {artist.profile.faqs.map((item) => (
+                <article key={item.question}>
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </article>
+              ))}
             </div>
           </section>
         )}

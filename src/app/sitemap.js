@@ -1,7 +1,7 @@
 import { artists } from "@/data/artists";
 import { SITE_URL } from "@/data/site";
 
-const lastModified = new Date("2026-08-14T00:00:00+05:00");
+const lastModified = new Date("2026-08-15T00:00:00+05:00");
 
 export default function sitemap() {
   const staticPages = [
@@ -18,9 +18,13 @@ export default function sitemap() {
 
   const artistPages = artists.map((artist) => ({
     url: `${SITE_URL}${artist.href}`,
-    lastModified,
-    changeFrequency: "monthly",
-    priority: 0.8,
+    lastModified: artist.seo?.modified
+      ? new Date(artist.seo.modified)
+      : lastModified,
+    changeFrequency:
+      artist.managementType === "exclusive" ? "weekly" : "monthly",
+    priority: artist.managementType === "exclusive" ? 1 : 0.8,
+    ...(artist.image ? { images: [`${SITE_URL}${artist.image}`] } : {}),
   }));
 
   return [...staticPages, ...artistPages];

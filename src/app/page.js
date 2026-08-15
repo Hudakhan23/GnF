@@ -71,12 +71,23 @@ const serviceSchema = {
   },
 };
 
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: "GnF Events",
+  alternateName: "GnF Events Pakistan",
+  inLanguage: "en-PK",
+  publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
 const exclusiveHomeArtist = getArtist("nish-asher");
 
 export default function Home() {
   return (
     <>
-      <JsonLd data={[organizationSchema, serviceSchema]} />
+      <JsonLd data={[organizationSchema, websiteSchema, serviceSchema]} />
       <Header active="home" overlay />
       <main>
         <section className={styles.hero}>
@@ -180,7 +191,7 @@ export default function Home() {
                 className={styles.primaryButton}
                 href={exclusiveHomeArtist.href}
               >
-                View Artist Profile
+                View Nish Asher Profile
               </a>
               <a
                 className={styles.secondaryButton}
