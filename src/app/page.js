@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
 import Marquee from "@/components/Marquee/Marquee";
+import Reveal from "@/components/Reveal/Reveal";
 import { featuredArtists } from "@/data/artists";
 import {
   allyLogos,
@@ -124,7 +125,7 @@ export default function Home() {
           />
         </section>
 
-        <section className={`${styles.positioning} ${styles.deferred}`}>
+        <Reveal className={`${styles.positioning} ${styles.deferred}`}>
           <h2>Your gateway to extraordinary entertainment experiences</h2>
           <div>
             <p>
@@ -140,9 +141,9 @@ export default function Home() {
               <div><strong>Global</strong><span>Network</span></div>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className={`${styles.artistSection} ${styles.deferred}`}>
+        <Reveal className={`${styles.artistSection} ${styles.deferred}`}>
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.eyebrow}>The roster</p>
@@ -160,9 +161,9 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
+        </Reveal>
 
-        <section id="services" className={`${styles.services} ${styles.deferred}`}>
+        <Reveal id="services" className={`${styles.services} ${styles.deferred}`}>
           <div className={styles.serviceInner}>
             <div className={styles.serviceHeading}>
               <div>
@@ -190,9 +191,9 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section id="work" className={`${styles.work} ${styles.deferred}`}>
+        <Reveal id="work" className={`${styles.work} ${styles.deferred}`}>
           <div className={styles.workHeading}>
             <div>
               <p className={styles.eyebrow}>The work</p>
@@ -228,9 +229,9 @@ export default function Home() {
               </div>
             )}
           />
-        </section>
+        </Reveal>
 
-        <section className={`${styles.leadership} ${styles.deferred}`}>
+        <Reveal className={`${styles.leadership} ${styles.deferred}`}>
           <div className={styles.leadershipInner}>
             <div className={styles.ceoImage}>
               <Image
@@ -253,9 +254,9 @@ export default function Home() {
               <a className={styles.textLink} href="/about">About GnF →</a>
             </div>
           </div>
-        </section>
+        </Reveal>
 
-        <section className={`${styles.allies} ${styles.deferred}`} aria-label="Trusted allies">
+        <Reveal className={`${styles.allies} ${styles.deferred}`} aria-label="Trusted allies">
           <p>Our trusted allies</p>
           <Marquee
             items={allyLogos}
@@ -266,9 +267,9 @@ export default function Home() {
               </div>
             )}
           />
-        </section>
+        </Reveal>
 
-        <section className={`${styles.cta} ${styles.deferred}`}>
+        <Reveal className={`${styles.cta} ${styles.deferred}`}>
           <Image src="/EventHighlights/E12.jpeg" alt="Concert stage" fill sizes="100vw" />
           <span />
           <div>
@@ -286,7 +287,7 @@ export default function Home() {
               <a className={styles.secondaryButton} href="/contact">Contact us</a>
             </div>
           </div>
-        </section>
+        </Reveal>
       </main>
       <Footer />
     </>
