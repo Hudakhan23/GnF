@@ -13,6 +13,7 @@ import {
 
 const GENRE_FACETS = FACETS.filter((f) => f.group === "genre");
 const MORE_FACETS = FACETS.filter((f) => f.group === "more");
+const PAGE_SIZE = 24;
 
 // Facets that would never match anything are dropped rather than shown dead.
 const usable = (facets) => facets.filter((f) => ARTISTS.some(f.match));
@@ -23,6 +24,7 @@ export default function ArtistDirectory() {
   const [sort, setSort] = useState("featured");
   const [moreOpen, setMoreOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const moreRef = useRef(null);
 
   const genreFacets = useMemo(() => usable(GENRE_FACETS), []);
@@ -32,6 +34,8 @@ export default function ArtistDirectory() {
     () => sortArtists(filterArtists(ARTISTS, { query, facets }), sort),
     [query, facets, sort]
   );
+
+  const visibleResults = results.slice(0, visibleCount);
 
   useEffect(() => {
     if (!moreOpen) return;
@@ -57,12 +61,22 @@ export default function ArtistDirectory() {
     };
   }, [drawerOpen]);
 
-  const toggle = (id) =>
-    setFacets((f) => (f.includes(id) ? f.filter((x) => x !== id) : [...f, id]));
+  const toggle = (id) => {
+    setVisibleCount(PAGE_SIZE);
+    setFacets((f) =>
+      f.includes(id) ? f.filter((x) => x !== id) : [...f, id]
+    );
+  };
 
   const clearAll = () => {
+    setVisibleCount(PAGE_SIZE);
     setFacets([]);
     setQuery("");
+  };
+
+  const updateSort = (value) => {
+    setVisibleCount(PAGE_SIZE);
+    setSort(value);
   };
 
   const activeMore = facets.filter((id) =>
@@ -107,7 +121,10 @@ export default function ArtistDirectory() {
           <input
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setVisibleCount(PAGE_SIZE);
+              setQuery(e.target.value);
+            }}
             placeholder="Search artists..."
             aria-label="Search artists by name"
             className={styles.search}
@@ -144,7 +161,7 @@ export default function ArtistDirectory() {
             <span className={styles.srOnly}>Sort artists</span>
             <select
               value={sort}
-              onChange={(e) => setSort(e.target.value)}
+              onChange={(e) => updateSort(e.target.value)}
               className={styles.control}
             >
               {SORTS.map((s) => (
@@ -167,9 +184,10 @@ export default function ArtistDirectory() {
 
       <div className={styles.chipRow}>{controls}</div>
 
-      <div className={styles.status}>
+      <div className={styles.status} aria-live="polite">
         <p className={styles.count}>
-          {results.length} {results.length === 1 ? "artist" : "artists"}
+          Showing {Math.min(visibleCount, results.length)} of {results.length}{" "}
+          {results.length === 1 ? "artist" : "artists"}
         </p>
         {(facets.length > 0 || query) && (
           <button type="button" className={styles.clear} onClick={clearAll}>
@@ -179,15 +197,31 @@ export default function ArtistDirectory() {
       </div>
 
       {results.length ? (
-        <div className={styles.grid}>
-          {results.map((artist, i) => (
-            <ArtistCard
-              key={artist.slug}
-              artist={artist}
-              priority={i < 6}
-            />
-          ))}
-        </div>
+        <>
+          <div className={styles.grid}>
+            {visibleResults.map((artist, i) => (
+              <ArtistCard
+                key={artist.slug}
+                artist={artist}
+                priority={i < 6}
+              />
+            ))}
+          </div>
+          {visibleCount < results.length && (
+            <div className={styles.loadMoreWrap}>
+              <button
+                type="button"
+                className={styles.loadMore}
+                onClick={() => setVisibleCount((count) => count + PAGE_SIZE)}
+              >
+                Load more artists
+              </button>
+              <p>
+                {results.length - visibleCount} more in the GnF network
+              </p>
+            </div>
+          )}
+        </>
       ) : (
         <div className={styles.empty}>
           <p className={styles.emptyTitle}>No artists match that search.</p>
@@ -224,7 +258,7 @@ export default function ArtistDirectory() {
               <p className={styles.drawerLabel}>Sort</p>
               <select
                 value={sort}
-                onChange={(e) => setSort(e.target.value)}
+                onChange={(e) => updateSort(e.target.value)}
                 className={styles.drawerSort}
                 aria-label="Sort artists"
               >

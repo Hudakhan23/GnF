@@ -163,7 +163,7 @@ export default function Home() {
               alt="Nish Asher — exclusive artist officially managed by GnF Events"
               fill
               sizes="(max-width: 900px) 100vw, 48vw"
-              quality={86}
+              quality={85}
             />
           </div>
           <div className={styles.exclusiveContent}>

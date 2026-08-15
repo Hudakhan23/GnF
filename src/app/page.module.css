@@ -657,6 +657,12 @@
   justify-content: center;
 }
 
+@media (min-width: 701px) and (max-width: 1050px) {
+  .hero h1 {
+    font-size: clamp(58px, 7.4vw, 76px);
+  }
+}
+
 @media (max-width: 900px) {
   .positioning,
   .leadershipInner,

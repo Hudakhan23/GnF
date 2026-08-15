@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./ArtistPortrait.module.css";
 
 const initials = (name) =>
@@ -23,12 +24,14 @@ const angle = (name) => {
 export default function ArtistPortrait({ artist, className = "", priority }) {
   if (artist.image) {
     return (
-      <img
+      <Image
         src={artist.image}
         alt={artist.name}
+        fill
+        sizes="(max-width: 360px) calc(100vw - 40px), (max-width: 900px) 50vw, 30vw"
         className={`${styles.image} ${className}`}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
+        priority={priority}
+        quality={75}
       />
     );
   }

@@ -32,7 +32,10 @@
 }
 
 .copy nav a {
+  display: inline-flex;
+  min-height: 28px;
   color: var(--gold);
+  align-items: center;
 }
 
 .eyebrow {
@@ -602,6 +605,7 @@
 
 .youtubeLink {
   display: inline-flex;
+  min-height: 36px;
   margin-top: 24px;
   color: var(--gold);
   align-items: center;
