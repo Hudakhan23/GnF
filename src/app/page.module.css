@@ -192,6 +192,89 @@
   gap: 80px;
 }
 
+.exclusiveFeature {
+  display: grid;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 10px var(--page-padding) 110px;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(48px, 7vw, 96px);
+  align-items: center;
+}
+
+.exclusivePoster {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--gold-border-strong);
+  background: var(--surface);
+  aspect-ratio: 1;
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
+}
+
+.exclusivePoster img {
+  object-fit: cover;
+}
+
+.exclusiveContent h2 {
+  max-width: 15ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.exclusiveContent h2 em {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.exclusiveLead {
+  max-width: 58ch;
+  margin: 28px 0 0;
+  color: var(--text-secondary);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+.exclusiveMetrics {
+  display: grid;
+  margin-top: 34px;
+  padding-block: 24px;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.exclusiveMetrics div {
+  display: grid;
+  gap: 8px;
+}
+
+.exclusiveMetrics strong {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.exclusiveMetrics span {
+  max-width: 16ch;
+  color: var(--text-muted);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.exclusiveContent .actions {
+  margin-top: 34px;
+}
+
 .positioning h2,
 .sectionHeading h2,
 .serviceInner > h2,
@@ -576,9 +659,14 @@
 
 @media (max-width: 900px) {
   .positioning,
-  .leadershipInner {
+  .leadershipInner,
+  .exclusiveFeature {
     grid-template-columns: 1fr;
     gap: 52px;
+  }
+
+  .exclusivePoster {
+    width: min(100%, 680px);
   }
 
   .serviceGrid {
@@ -622,8 +710,17 @@
 
   .positioning,
   .serviceInner,
-  .leadershipInner {
+  .leadershipInner,
+  .exclusiveFeature {
     padding-block: 76px;
+  }
+
+  .exclusiveFeature {
+    padding-top: 0;
+  }
+
+  .exclusiveMetrics {
+    gap: 12px;
   }
 
   .stats {

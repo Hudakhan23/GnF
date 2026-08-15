@@ -61,7 +61,9 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   needsReview: Boolean(opts.needsReview),
   tagline: opts.tagline || null,
   bio: opts.bio || null,
+  metaDescription: opts.metaDescription || null,
   socials: opts.socials || null,
+  profile: opts.profile || null,
   gallery: opts.gallery || [],
   videos: opts.videos || [],
 });
@@ -78,8 +80,53 @@ export const ARTISTS = [
     gender: F,
     genZ: true,
     image: "/artists/nish-asher.jpeg",
-    tagline: "Signed to GnF Events",
-    bio: "Nish Asher is a GnF Events signed artist. Her management, bookings, and performance schedule are handled exclusively by our team.",
+    tagline: "Pop vocalist & OST performer",
+    bio: "Nish Asher is a versatile pop vocalist known for her distinctive voice, acclaimed OST performances, and cross-genre musical style. Beginning her musical journey at just three years old, Nish has collaborated with celebrated names including Rahat Fateh Ali Khan, Ali Zafar, Farhan Saeed, and Asim Azhar. A BBC Asian Network Future Sounds Artist, she continues to build her presence across Pakistan and the international music scene.",
+    metaDescription:
+      "Book Nish Asher through GnF Events, her exclusive worldwide management team. Pop vocalist and Khuda Aur Mohabbat OST performer with 474M+ YouTube views.",
+    socials: {
+      youtube: "https://www.youtube.com/user/NishOfficial",
+      spotify: "https://open.spotify.com/artist/1csq4cvlItPMh7H9v1G5UF",
+    },
+    profile: {
+      poster: "/artists/nish-asher-management.webp",
+      headline: "A distinctive pop voice with a global audience",
+      summary:
+        "Introduced to music by her father at the age of three and performing publicly by six, Nish has built a career spanning television soundtracks, original releases, and live collaborations across Pakistan and the international circuit.",
+      stats: [
+        { value: "474M+", label: "Khuda Aur Mohabbat OST views" },
+        { value: "800K+", label: "Monthly Spotify listeners" },
+        { value: "2021", label: "BBC Future Sounds Artist" },
+      ],
+      careerHighlights: [
+        "Performed the Khuda Aur Mohabbat OST with Rahat Fateh Ali Khan, surpassing 474 million views on YouTube.",
+        "Named a BBC Asian Network Future Sounds Artist in 2021.",
+        "Released original music including Mera Mann Dhunde, which surpassed one million YouTube views.",
+        "Built an international streaming audience reaching 800K+ monthly Spotify listeners.",
+      ],
+      osts: [
+        "Khuda Aur Mohabbat",
+        "Aye Musht-e-Khaak",
+        "Malaal-e-Yaar",
+        "Prem Gali",
+        "Fairytale",
+        "Mohabbat Daagh Ki Surat",
+      ],
+      collaborations: [
+        "Rahat Fateh Ali Khan",
+        "Ali Zafar",
+        "Farhan Saeed",
+        "Asim Azhar",
+      ],
+      composers: [
+        "Naveed Nashad",
+        "Adrian David",
+        "Sahir Ali Bagga",
+        "Shani Arshad",
+      ],
+      education:
+        "Nish studied Vocal Performance and Music Theory at ICMP London, completing her degree-level musical education in 2025.",
+    },
   }),
 
   // ------------------------------------------------------------------ network
@@ -692,9 +739,10 @@ export const artists = ARTISTS.map((a) => ({
       : `Hi GnF Events, I'd like to check ${a.name}'s availability for my event.`
   ),
   description:
-    a.managementType === "exclusive"
+    a.metaDescription ||
+    (a.managementType === "exclusive"
       ? `${a.name} is exclusively managed by GnF Events. Send your event date, city and occasion to book directly through our management team.`
-      : `Send GnF Events your event date, city and occasion to enquire about ${a.name}'s availability through our artist facilitation network.`,
+      : `Send GnF Events your event date, city and occasion to enquire about ${a.name}'s availability through our artist facilitation network.`),
 }));
 
 export const getArtist = (slug) => artists.find((a) => a.slug === slug) || null;

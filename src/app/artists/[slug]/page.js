@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import ArtistCard from "@/components/ArtistCard/ArtistCard";
 import ArtistPortrait from "@/components/ArtistCard/ArtistPortrait";
@@ -81,7 +82,14 @@ export default async function ArtistBookingPage({ params }) {
         : "Artist booking facilitation",
       areaServed: { "@type": "Country", name: "Pakistan" },
       provider: { "@id": `${SITE_URL}/#organization` },
-      about: { "@type": "Person", name: artist.name },
+      about: {
+        "@type": "Person",
+        name: artist.name,
+        ...(artist.bio ? { description: artist.bio } : {}),
+        ...(artist.socials
+          ? { sameAs: Object.values(artist.socials) }
+          : {}),
+      },
     },
     {
       "@context": "https://schema.org",
@@ -201,6 +209,93 @@ export default async function ArtistBookingPage({ params }) {
             ))}
           </div>
         </section>
+
+        {artist.profile && (
+          <section className={styles.profileStory}>
+            <div className={styles.profileIntro}>
+              <div>
+                <p className={styles.eyebrow}>Career &amp; music</p>
+                <h2>{artist.profile.headline}</h2>
+                <p>{artist.profile.summary}</p>
+              </div>
+              <dl className={styles.profileStats}>
+                {artist.profile.stats.map((stat) => (
+                  <div key={stat.label}>
+                    <dt>{stat.value}</dt>
+                    <dd>{stat.label}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <div className={styles.profileGrid}>
+              <div className={styles.managementPoster}>
+                <Image
+                  src={artist.profile.poster}
+                  alt={`${artist.name} exclusive management and worldwide bookings poster`}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 45vw"
+                />
+              </div>
+
+              <div className={styles.profileDetails}>
+                <article>
+                  <h3>Career highlights</h3>
+                  <ul>
+                    {artist.profile.careerHighlights.map((highlight) => (
+                      <li key={highlight}>{highlight}</li>
+                    ))}
+                  </ul>
+                </article>
+
+                <div className={styles.creditColumns}>
+                  <article>
+                    <h3>Selected OSTs</h3>
+                    <ul>
+                      {artist.profile.osts.map((ost) => (
+                        <li key={ost}>{ost}</li>
+                      ))}
+                    </ul>
+                  </article>
+                  <article>
+                    <h3>Collaborations</h3>
+                    <ul>
+                      {artist.profile.collaborations.map((name) => (
+                        <li key={name}>{name}</li>
+                      ))}
+                    </ul>
+                  </article>
+                </div>
+
+                <article className={styles.education}>
+                  <h3>Musical education &amp; composers</h3>
+                  <p>{artist.profile.education}</p>
+                  <p>
+                    Composer collaborations include{" "}
+                    {artist.profile.composers.join(", ")}.
+                  </p>
+                </article>
+
+                <div className={styles.socialActions}>
+                  <a
+                    href={artist.socials.youtube}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Watch on YouTube
+                  </a>
+                  <a
+                    href={artist.socials.spotify}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Listen on Spotify
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         <section className={styles.process}>
           <p className={styles.eyebrow}>How it works</p>

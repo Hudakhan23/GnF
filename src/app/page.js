@@ -5,7 +5,7 @@ import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
 import Marquee from "@/components/Marquee/Marquee";
 import Reveal from "@/components/Reveal/Reveal";
-import { featuredArtists } from "@/data/artists";
+import { featuredArtists, getArtist } from "@/data/artists";
 import {
   allyLogos,
   marqueeHighlights,
@@ -70,6 +70,8 @@ const serviceSchema = {
     servicePhone: { "@type": "ContactPoint", telephone: PHONE_PRIMARY },
   },
 };
+
+const exclusiveHomeArtist = getArtist("nish-asher");
 
 export default function Home() {
   return (
@@ -139,6 +141,55 @@ export default function Home() {
               <div><strong>2016</strong><span>Founded</span></div>
               <div><strong>24/7</strong><span>Support</span></div>
               <div><strong>Global</strong><span>Network</span></div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal className={`${styles.exclusiveFeature} ${styles.deferred}`}>
+          <div className={styles.exclusivePoster}>
+            <Image
+              src={exclusiveHomeArtist.profile.poster}
+              alt="Nish Asher — exclusive artist officially managed by GnF Events"
+              fill
+              sizes="(max-width: 900px) 100vw, 48vw"
+              quality={86}
+            />
+          </div>
+          <div className={styles.exclusiveContent}>
+            <p className={styles.eyebrow}>
+              Exclusive artist · Worldwide bookings
+            </p>
+            <h2>
+              Nish Asher, <em>officially managed</em> by GnF Events
+            </h2>
+            <p className={styles.exclusiveLead}>
+              A versatile pop vocalist and acclaimed OST performer, Nish Asher
+              is known for the Khuda Aur Mohabbat title track with Rahat Fateh
+              Ali Khan — now at more than 474 million YouTube views.
+            </p>
+            <div className={styles.exclusiveMetrics}>
+              {exclusiveHomeArtist.profile.stats.map((stat) => (
+                <div key={stat.label}>
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+            <div className={styles.actions}>
+              <a
+                className={styles.primaryButton}
+                href={exclusiveHomeArtist.href}
+              >
+                View Artist Profile
+              </a>
+              <a
+                className={styles.secondaryButton}
+                href={exclusiveHomeArtist.bookingUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book Nish Asher
+              </a>
             </div>
           </div>
         </Reveal>
