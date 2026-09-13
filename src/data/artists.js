@@ -258,10 +258,14 @@ export const ARTISTS = [
     gender: F,
     image: "/artists/afshan-zaibi.jpg",
   }),
-  A("Ahmed Jahanzeb", "Singer", ["Pop", "Playback"]),
-  A("Akhtar Chanal Zahri", "Singer", ["Folk"]),
-  A("Akram Rahi", "Singer", ["Folk"]),
-  A("Ali Azmat", "Singer", ["Rock"]),
+  A("Ahmed Jahanzeb", "Singer", ["Pop", "Playback"], {
+    image: "/artists/ahmed-jahanzeb.jpeg",
+  }),
+  A("Akhtar Chanal Zahri", "Singer", ["Folk"], {
+    image: "/artists/akhtar-chanal-zahri.jpg",
+  }),
+  A("Akram Rahi", "Singer", ["Folk"], { image: "/artists/akram-rahi.jpeg" }),
+  A("Ali Azmat", "Singer", ["Rock"], { image: "/artists/ali-azmat.avif" }),
   A("Ali Sethi", "Singer", ["Ghazal", "Classical", "Sufi"]),
   A("Amanat Ali", "Singer", ["Pop", "Classical"]),
   A("Annie Khalid", "Singer", ["Pop"], { gender: F, country: "UK" }),
@@ -343,7 +347,9 @@ export const ARTISTS = [
   A("Ali Tariq", "Singer", ["Pop"]),
   A("Asif Ali Santoo Khan", "Qawwal", ["Qawwali"]),
   A("Shahbaz Fayyaz Qawwal", "Qawwal", ["Qawwali"]),
-  A("Akbar Ali Khan", "Qawwal", ["Qawwali", "Classical"]),
+  A("Akbar Ali Khan", "Qawwal", ["Qawwali", "Classical"], {
+    image: "/artists/akbar-ali-khan.jpg",
+  }),
   A("Junaid Bashir", "Singer", ["Sufi", "Classical"]),
   A("Faiz Brothers Qawwal", "Qawwal", ["Qawwali"], { gender: G }),
   A("Josh The Band", "Band", ["Bhangra", "Pop"], {
@@ -463,8 +469,8 @@ export const ARTISTS = [
 
   // ---------------------------------------------- second intake (added later)
   A("Sarmad Qadeer", "Singer", ["Pop", "Folk"]),
-  A("Alamgir", "Singer", ["Pop"]),
-  A("Ali Haider", "Singer", ["Pop"]),
+  A("Alamgir", "Singer", ["Pop"], { image: "/artists/alamgir.jpg" }),
+  A("Ali Haider", "Singer", ["Pop"], { image: "/artists/ali-haider.jpg" }),
   A("Hasan Jahangir", "Singer", ["Pop"]),
   A("Zohaib Hassan", "Singer", ["Pop"]),
   A("Bilal Khan", "Singer", ["Pop"]),
@@ -503,7 +509,9 @@ export const ARTISTS = [
   A("Asfar Hussain", "Singer", ["Rock", "Pop"]),
   A("Junaid Khan", "Singer", ["Rock", "Pop"]),
   A("Ali Noor", "Singer", ["Rock"]),
-  A("Ali Hamza", "Singer", ["Rock", "Pop"]),
+  A("Ali Hamza", "Singer", ["Rock", "Pop"], {
+    image: "/artists/ali-hamza.jpeg",
+  }),
   A("Uzair Jaswal", "Singer", ["Rock", "Pop"]),
   A("Adnan Dhool", "Singer", ["Pop", "Sufi"], {
     image: "/artists/adnan-dhool.jpg",
@@ -599,7 +607,10 @@ export const ARTISTS = [
   // Performers, hosts & speakers
   A("Mahira Khan", "Performer", [], { gender: F, tagline: "Actor & performer" }),
   A("Fawad Khan", "Performer", [], { tagline: "Actor & singer" }),
-  A("Ahad Raza Mir", "Performer", [], { tagline: "Actor & singer" }),
+  A("Ahad Raza Mir", "Performer", [], {
+    tagline: "Actor & singer",
+    image: "/artists/ahad-raza-mir.jpeg",
+  }),
   A("Ayesha Omer", "Performer", [], { gender: F, tagline: "Actor & singer" }),
   A("Shahzad Nawaz", "Performer", [], { tagline: "Actor & filmmaker" }),
   A("Nighat Chaudhry", "Performer", [], {
@@ -626,7 +637,10 @@ export const ARTISTS = [
   A("Asif Hussain Samraat", "Singer", [], { needsReview: true }),
   A("Tahir Mithu", "Singer", [], { needsReview: true }),
   A("Shehroze Hussan", "Singer", [], { needsReview: true }),
-  A("Ali Khan", "Singer", [], { needsReview: true }),
+  A("Ali Khan", "Singer", [], {
+    needsReview: true,
+    image: "/artists/ali-khan.webp",
+  }),
   A("Jaffer Zaidi", "Singer", [], { needsReview: true }),
   A("Rizwan Butt", "Performer", [], { needsReview: true }),
   A("Irteassh", "Performer", [], { needsReview: true }),
@@ -635,7 +649,10 @@ export const ARTISTS = [
   A("Nimra Rafiq", "Singer", [], { gender: F, needsReview: true }),
   A("Shahab Hussain", "Singer", [], { needsReview: true }),
   A("Shamali Afghan", "Singer", [], { needsReview: true }),
-  A("Aizaz Sohail", "Performer", [], { needsReview: true }),
+  A("Aizaz Sohail", "Performer", [], {
+    needsReview: true,
+    image: "/artists/aizaz-sohail.jpeg",
+  }),
   A("Mehdi Maloof", "Performer", [], { needsReview: true }),
   A("Noman Ali Rajper", "Performer", [], { needsReview: true }),
   A("Noorima Rehan", "Singer", [], { gender: F, needsReview: true }),
@@ -643,7 +660,10 @@ export const ARTISTS = [
   A("Zeeshan Ali", "Performer", [], { needsReview: true }),
   A("Zoha Waseem", "Singer", [], { gender: F, needsReview: true }),
   A("Murtaza Qazilbash", "Performer", [], { needsReview: true }),
-  A("Ahsan Pervaiz", "Singer", [], { needsReview: true }),
+  A("Ahsan Pervaiz", "Singer", [], {
+    needsReview: true,
+    image: "/artists/ahsan-pervaiz.jpeg",
+  }),
   A("Ziggy", "Performer", [], { needsReview: true }),
 ];
 
