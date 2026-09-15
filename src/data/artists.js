@@ -267,10 +267,20 @@ export const ARTISTS = [
   A("Akram Rahi", "Singer", ["Folk"], { image: "/artists/akram-rahi.jpeg" }),
   A("Ali Azmat", "Singer", ["Rock"], { image: "/artists/ali-azmat.avif" }),
   A("Ali Sethi", "Singer", ["Ghazal", "Classical", "Sufi"]),
-  A("Amanat Ali", "Singer", ["Pop", "Classical"]),
-  A("Annie Khalid", "Singer", ["Pop"], { gender: F, country: "UK" }),
-  A("Arieb Azhar", "Singer", ["Sufi", "Folk"]),
-  A("Arif Lohar", "Singer", ["Folk"]),
+  A("Amanat Ali", "Singer", ["Pop", "Classical"], {
+    image: "/artists/amanat-ali.jpg",
+  }),
+  A("Annie Khalid", "Singer", ["Pop"], {
+    gender: F,
+    country: "UK",
+    image: "/artists/annie-khalid.jpg",
+  }),
+  A("Arieb Azhar", "Singer", ["Sufi", "Folk"], {
+    image: "/artists/arieb-azhar.jpg",
+  }),
+  A("Arif Lohar", "Singer", ["Folk"], {
+    image: "/artists/arif-lohar.jpeg",
+  }),
   A("Asrar", "Singer", ["Sufi"]),
   A("Attaullah Khan Esakhelvi", "Singer", ["Folk", "Ghazal"]),
   A("Bohemia", "Rapper", ["Rap / Hip-Hop"], { country: "USA" }),
@@ -318,6 +328,7 @@ export const ARTISTS = [
     gender: F,
     genZ: true,
     country: "USA",
+    image: "/artists/annural-khalid.jpeg",
   }),
   A("Shehzad Roy", "Singer", ["Pop"]),
   A("Raafay Israr", "Singer", ["Pop"], { genZ: true }),
@@ -390,12 +401,19 @@ export const ARTISTS = [
     tagline: "Szilvia Simotics",
   }),
   A("Tahir Abbas", "Performer", [], { needsReview: true }),
-  A("Alka Yagnik", "Singer", ["Playback"], { gender: F, country: "India" }),
+  A("Alka Yagnik", "Singer", ["Playback"], {
+    gender: F,
+    country: "India",
+    image: "/artists/alka-yagnik.jpg",
+  }),
   A("Mulazim Hussain", "Singer", ["Sufi", "Folk"]),
   A("Laal Band", "Band", ["Rock", "Sufi"], { gender: G }),
   A("Roxen", "Band", ["Rock"], { gender: G, tagline: "Roxen Band" }),
   A("Shreya Ghoshal", "Singer", ["Playback"], { gender: F, country: "India" }),
-  A("Arijit Singh", "Singer", ["Playback"], { country: "India" }),
+  A("Arijit Singh", "Singer", ["Playback"], {
+    country: "India",
+    image: "/artists/arijit-singh.jpeg",
+  }),
   A("Sehar Gul Khan", "Singer", ["Pop"], { gender: F, genZ: true }),
   A("Richa Sharma", "Singer", ["Sufi", "Playback"], {
     gender: F,
@@ -407,10 +425,14 @@ export const ARTISTS = [
   A("Nirmal Roy", "Singer", ["Pop", "Sufi"]),
   A("Ghafar Lehri", "Performer", [], { needsReview: true }),
   A("Hanif Raja", "Performer", [], { needsReview: true }),
-  A("Amanat Chan", "Comedian", []),
+  A("Amanat Chan", "Comedian", [], {
+    image: "/artists/amanat-chan.jpeg",
+  }),
   A("Agha Majid", "Comedian", [], { image: "/artists/agha-majid.jpeg" }),
   A("Saleem Albela", "Comedian", []),
-  A("Asghar Khoso", "Comedian", []),
+  A("Asghar Khoso", "Comedian", [], {
+    image: "/artists/asghar-khoso.jpeg",
+  }),
   A("Bushra Ansari", "Host", [], {
     gender: F,
     tagline: "Actor, host & comedian",
@@ -441,6 +463,7 @@ export const ARTISTS = [
     gender: F,
     genZ: true,
     needsReview: true,
+    image: "/artists/arishma-maryam.jpeg",
   }),
   A("Shakeel Siddiqui", "Comedian", []),
   A("Naseem Vicky", "Comedian", []),
@@ -498,7 +521,9 @@ export const ARTISTS = [
   A("Abbas Ali Khan", "Singer", ["Sufi", "Pop"], {
     image: "/artists/abbas-ali-khan.jpg",
   }),
-  A("Asad Abbas", "Singer", ["Ghazal", "Sufi"]),
+  A("Asad Abbas", "Singer", ["Ghazal", "Sufi"], {
+    image: "/artists/asad-abbas.jpeg",
+  }),
   A("Ali Pervaiz Mehdi", "Singer", ["Ghazal", "Classical"]),
   A("Ustaad Naseer-ud-din Saami", "Singer", ["Classical"]),
   A("Rustam Fateh Ali Khan", "Singer", ["Classical", "Qawwali"]),
@@ -506,7 +531,9 @@ export const ARTISTS = [
   A("Karam Abbas", "Qawwal", ["Qawwali", "Classical"]),
   A("Ghulam Ali Qadri", "Qawwal", ["Qawwali"]),
   A("Riaz Qadri", "Qawwal", ["Qawwali"]),
-  A("Asfar Hussain", "Singer", ["Rock", "Pop"]),
+  A("Asfar Hussain", "Singer", ["Rock", "Pop"], {
+    image: "/artists/asfar-hussain.png",
+  }),
   A("Junaid Khan", "Singer", ["Rock", "Pop"]),
   A("Ali Noor", "Singer", ["Rock"]),
   A("Ali Hamza", "Singer", ["Rock", "Pop"], {
@@ -545,7 +572,10 @@ export const ARTISTS = [
   A("Haniya Aslam", "Singer", ["Folk", "Pop"], { gender: F }),
   A("Rachel Viccaji", "Singer", ["Pop"], { gender: F }),
   A("Zoe Viccaji", "Singer", ["Pop"], { gender: F }),
-  A("Alycia Dias", "Singer", ["Pop"], { gender: F }),
+  A("Alycia Dias", "Singer", ["Pop"], {
+    gender: F,
+    image: "/artists/alycia-dias.jpeg",
+  }),
   A("Fizza Javed", "Singer", ["Pop"], { gender: F }),
   A("Samra Khan", "Singer", ["Pop"], { gender: F }),
   A("Natasha Khan", "Singer", ["Pop"], { gender: F }),
@@ -617,14 +647,25 @@ export const ARTISTS = [
     gender: F,
     tagline: "Classical dancer",
   }),
-  A("Anwar Maqsood", "Host", [], { tagline: "Writer, host & satirist" }),
+  A("Anwar Maqsood", "Host", [], {
+    tagline: "Writer, host & satirist",
+    image: "/artists/anwar-maqsood.jpg",
+  }),
 
   // International
   A("Shilpa Rao", "Singer", ["Playback"], { gender: F, country: "India" }),
-  A("Arooj Aftab", "Singer", ["Sufi"], { gender: F, country: "USA" }),
+  A("Arooj Aftab", "Singer", ["Sufi"], {
+    gender: F,
+    country: "USA",
+    image: "/artists/arooj-aftab.webp",
+  }),
   A("Krewella", "Band", [], { gender: G, country: "USA", tagline: "DJ duo" }),
   A("Karpe", "Band", ["Rap / Hip-Hop"], { gender: G, country: "Norway" }),
-  A("Amanda Delara", "Singer", ["Pop"], { gender: F, country: "Norway" }),
+  A("Amanda Delara", "Singer", ["Pop"], {
+    gender: F,
+    country: "Norway",
+    image: "/artists/amanda-delara.avif",
+  }),
   A("Sumru Ağıryürüyen", "Singer", ["Folk"], {
     gender: F,
     country: "Turkey",
