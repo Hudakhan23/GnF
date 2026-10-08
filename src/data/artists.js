@@ -51,6 +51,7 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   name,
   slug: opts.slug || slugify(name),
   image: opts.image || null,
+  imagePosition: opts.imagePosition || null,
   genres,
   artistType,
   managementType: opts.managementType || "network",
@@ -294,7 +295,10 @@ export const ARTISTS = [
   A("Gul Panra", "Singer", ["Folk", "Pop"], { gender: F }),
   A("Jaz Dhami", "Singer", ["Bhangra"], { country: "UK" }),
   A("Hamid Ali Khan", "Singer", ["Classical", "Ghazal"]),
-  A("Hasan Raheem", "Singer", ["Pop", "Rap / Hip-Hop"], { genZ: true }),
+  A("Hasan Raheem", "Singer", ["Pop", "Rap / Hip-Hop"], {
+    genZ: true,
+    image: "/artists/hasan-raheem.jpg",
+  }),
   A("Hina Nasrullah", "Singer", ["Sufi", "Folk"], { gender: F }),
   A("Hira Mani", "Host", [], { gender: F, tagline: "Actor & host" }),
   A("Humaira Arshad", "Singer", ["Folk", "Pop"], { gender: F }),
@@ -308,15 +312,27 @@ export const ARTISTS = [
   A("Zeb Bangash", "Singer", ["Folk", "Pop"], { gender: F }),
   A("Meesha Shafi", "Singer", ["Rock", "Pop"], { gender: F }),
   A("Momina Mustehsan", "Singer", ["Pop"], { gender: F }),
-  A("Shae Gill", "Singer", ["Pop"], { gender: F, genZ: true }),
+  A("Shae Gill", "Singer", ["Pop"], {
+    gender: F,
+    genZ: true,
+    image: "/artists/shae-gill.jpg",
+    imagePosition: "75% 24%",
+  }),
   A("Eva B", "Rapper", ["Rap / Hip-Hop"], { gender: F, genZ: true }),
-  A("Young Stunners", "Band", ["Rap / Hip-Hop"], { gender: G, genZ: true }),
+  A("Young Stunners", "Band", ["Rap / Hip-Hop"], {
+    gender: G,
+    genZ: true,
+    image: "/artists/young-stunners-new.jpg",
+  }),
   A("Umair Jaswal", "Singer", ["Rock"]),
   A("Rohail Hyatt", "Producer", [], { tagline: "Producer & composer" }),
   A("Strings", "Band", ["Pop", "Rock"], { gender: G }),
   A("Bilal Maqsood", "Singer", ["Pop"]),
   A("Faisal Kapadia", "Singer", ["Pop"]),
-  A("Kaifi Khalil", "Singer", ["Pop", "Folk"], { genZ: true }),
+  A("Kaifi Khalil", "Singer", ["Pop", "Folk"], {
+    genZ: true,
+    image: "/artists/kaifi-khalil.jpg",
+  }),
   A("Abdul Hannan", "Singer", ["Pop"], {
     genZ: true,
     image: "/artists/abdul-hannan.jpg",
@@ -332,7 +348,10 @@ export const ARTISTS = [
   }),
   A("Shehzad Roy", "Singer", ["Pop"]),
   A("Raafay Israr", "Singer", ["Pop"], { genZ: true }),
-  A("Maanu", "Singer", ["Pop", "Rap / Hip-Hop"], { genZ: true }),
+  A("Maanu", "Singer", ["Pop", "Rap / Hip-Hop"], {
+    genZ: true,
+    image: "/artists/maanu.webp",
+  }),
   A("Jani", "Rapper", ["Rap / Hip-Hop"], { genZ: true }),
   A("Taha G", "Singer", ["Pop"], { genZ: true }),
   A("Fariha Pervez", "Singer", ["Pop", "Ghazal"], { gender: F }),
@@ -340,9 +359,14 @@ export const ARTISTS = [
     genZ: true,
     image: "/artists/afusic.jpeg",
   }),
-  A("Bayaan", "Band", ["Rock", "Pop"], { gender: G, genZ: true }),
+  A("Bayaan", "Band", ["Rock", "Pop"], {
+    gender: G,
+    genZ: true,
+    image: "/artists/bayaan-user.jpg",
+  }),
   A("Samar Jafri", "Performer", [], {
     genZ: true,
+    image: "/artists/samar-jafri.jpg",
     tagline: "Actor & performer",
   }),
   A("JJ47", "Rapper", ["Rap / Hip-Hop"], { genZ: true }),
@@ -699,7 +723,11 @@ export const ARTISTS = [
   A("Noorima Rehan", "Singer", [], { gender: F, needsReview: true }),
   A("Umair Butt", "Performer", [], { needsReview: true }),
   A("Zeeshan Ali", "Performer", [], { needsReview: true }),
-  A("Zoha Waseem", "Singer", [], { gender: F, needsReview: true }),
+  A("Zoha Waseem", "Singer", [], {
+    gender: F,
+    needsReview: true,
+    image: "/artists/zoha-waseem.jpg",
+  }),
   A("Murtaza Qazilbash", "Performer", [], { needsReview: true }),
   A("Ahsan Pervaiz", "Singer", [], {
     needsReview: true,
@@ -887,3 +915,150 @@ export const featuredArtistSlugs = [
 export const featuredArtists = featuredArtistSlugs
   .map(getArtist)
   .filter(Boolean);
+
+// Homepage discovery picks follow the client-provided order.
+const homepageNextWavePicks = [
+  {
+    slug: "young-stunners",
+    name: "Young Stunners",
+    image: "/artists/young-stunners-new.jpg",
+    genres: ["Urdu rap", "Hip-hop"],
+    artistType: "Duo",
+    memberLine: "Talha Anjum · Talhah Yunus",
+    discoveryDescriptor: "Karachi duo at the center of Urdu hip-hop’s new wave.",
+  },
+  {
+    slug: "hasan-raheem",
+    name: "Hasan Raheem",
+    image: "/artists/hasan-raheem.jpg",
+    genres: ["Alt-pop", "R&B"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Shape-shifting pop and R&B with a playful edge.",
+  },
+  {
+    slug: "abdul-hannan",
+    name: "Abdul Hannan",
+    genres: ["Indie pop"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Melodic songwriting and intimate, modern pop.",
+  },
+  {
+    slug: "maanu",
+    name: "Maanu",
+    image: "/artists/maanu.webp",
+    genres: ["Indie pop", "R&B"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "A mellow, genre-blending voice in new Pakistani pop.",
+  },
+  {
+    slug: "umair",
+    name: "Umair",
+    image: "/artists/umair.jpg",
+    genres: ["Hip-hop", "Production"],
+    artistType: "Producer · artist",
+    discoveryDescriptor: "A sought-after producer shaping contemporary rap and pop.",
+  },
+  {
+    slug: "annural-khalid",
+    name: "Annural Khalid",
+    genres: ["Pop", "R&B"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Soulful vocals and South Asian melodies in modern pop.",
+  },
+  {
+    slug: "afusic",
+    name: "Afusic",
+    genres: ["Pop", "R&B"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "A new pop voice behind the global crossover Pal Pal.",
+  },
+  {
+    slug: "alisoomromusic",
+    name: "Ali Soomro",
+    image: "/artists/ali-soomro.jpg",
+    genres: ["Pop", "Production"],
+    artistType: "Producer · artist",
+    discoveryDescriptor: "Producer and collaborator behind a new wave of pop hits.",
+  },
+  {
+    slug: "kaifi-khalil",
+    name: "Kaifi Khalil",
+    image: "/artists/kaifi-khalil.jpg",
+    genres: ["Pop", "Balochi influences"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Expressive songwriting rooted in Balochi and Urdu melody.",
+  },
+  {
+    slug: "bayaan",
+    name: "Bayaan",
+    image: "/artists/bayaan-user.jpg",
+    genres: ["Alternative rock"],
+    artistType: "Band",
+    discoveryDescriptor: "Lahore’s alternative band with expansive, poetic sound.",
+  },
+  {
+    slug: "samar-jafri",
+    name: "Samar Jafri",
+    image: "/artists/samar-jafri.jpg",
+    genres: ["Pop", "Soundtrack"],
+    artistType: "Singer · actor",
+    discoveryDescriptor: "A young performer moving between original pop and OSTs.",
+  },
+  {
+    slug: "rovalio",
+    name: "Rovalio",
+    image: "/artists/rovalio.jpg",
+    genres: ["Pop", "Production"],
+    artistType: "Producer · artist",
+    discoveryDescriptor: "Melodic, atmospheric production across Pakistan’s new pop.",
+  },
+  {
+    slug: "shae-gill",
+    name: "Shae Gill",
+    image: "/artists/shae-gill.jpg",
+    imagePosition: "75% 24%",
+    genres: ["Pop", "Soul"],
+    artistType: "Singer",
+    discoveryDescriptor: "A distinctive pop-soul voice with a cross-border audience.",
+  },
+  {
+    slug: "zoha-waseem",
+    name: "Zoha Waseem",
+    image: "/artists/zoha-waseem.jpg",
+    genres: ["Pop"],
+    artistType: "Singer",
+    discoveryDescriptor: "A rising pop vocalist with a warm, melodic delivery.",
+  },
+  {
+    slug: "murtaza-qizilbash",
+    name: "Murtaza Qizilbash",
+    image: "/artists/murtaza-qizilbash.jpg",
+    genres: ["Pop"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Stripped-back, emotional Urdu pop and ballads.",
+  },
+  {
+    slug: "sheheryar-rehan",
+    name: "Sheheryar Rehan",
+    image: "/artists/sheheryar-rehan.jpg",
+    genres: ["Indie pop"],
+    artistType: "Singer · songwriter",
+    discoveryDescriptor: "Intimate indie pop built around poetic storytelling.",
+  },
+];
+
+export const homepageNextWaveArtists = homepageNextWavePicks.map((pick) => {
+  const rosterArtist = getArtist(pick.slug);
+  const bookingUrl = whatsappLink(
+    `Hi GnF Events, I’d like to enquire about booking ${pick.name}${pick.memberLine ? ` (${pick.memberLine})` : ""} for my event. Please let me know the booking options and availability.`
+  );
+
+  return {
+    ...rosterArtist,
+    ...pick,
+    image: rosterArtist?.image || pick.image || null,
+    href: rosterArtist?.href || null,
+    managementType: rosterArtist?.managementType || "network",
+    bookingUrl,
+  };
+});

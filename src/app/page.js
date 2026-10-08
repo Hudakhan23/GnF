@@ -1,11 +1,12 @@
 import Image from "next/image";
 import ArtistCard from "@/components/ArtistCard/ArtistCard";
 import Footer from "@/components/Footer/Footer";
+import GenZArtistCarousel from "@/components/GenZArtistCarousel/GenZArtistCarousel";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
 import Marquee from "@/components/Marquee/Marquee";
 import Reveal from "@/components/Reveal/Reveal";
-import { featuredArtists, getArtist } from "@/data/artists";
+import { featuredArtists, getArtist, homepageNextWaveArtists } from "@/data/artists";
 import {
   allyLogos,
   marqueeHighlights,
@@ -83,6 +84,35 @@ const websiteSchema = {
 };
 
 const exclusiveHomeArtist = getArtist("nish-asher");
+const nextWaveArtists = homepageNextWaveArtists.map(
+  ({
+    slug,
+    name,
+    image,
+    imagePosition,
+    genres,
+    artistType,
+    managementType,
+    href,
+    bookingUrl,
+    discoveryDescriptor,
+    profile,
+    memberLine,
+  }) => ({
+    slug,
+    name,
+    image,
+    imagePosition,
+    genres,
+    artistType,
+    managementType,
+    href,
+    bookingUrl,
+    discoveryDescriptor,
+    memberLine,
+    isOstArtist: Boolean(profile?.heroTitle?.includes("OST")),
+  }),
+);
 
 export default function Home() {
   return (
@@ -107,7 +137,7 @@ export default function Home() {
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Artist Facilitation · Event Management · Since 2016</p>
             <h1>
-              We put Pakistan&apos;s <em>greatest artists</em> on your stage
+              Find the right artist. <em>Own the night.</em>
             </h1>
             <div className={styles.heroBottom}>
               <div className={styles.actions}>
@@ -115,12 +145,13 @@ export default function Home() {
                   Book an Artist
                 </a>
                 <a className={styles.secondaryButton} href="/artists">
-                  Explore the Roster
+                  Explore Artists
                 </a>
               </div>
               <p>
-                24/7 artist and event management — concerts, corporate dinners,
-                weddings, cruises, and festivals, in Pakistan and worldwide.
+                Discover and book Pakistani performers for concerts, campus
+                shows, weddings, and private events. Our team brings the artist
+                and the production together.
               </p>
             </div>
           </div>
@@ -137,6 +168,8 @@ export default function Home() {
             )}
           />
         </section>
+
+        <GenZArtistCarousel artists={nextWaveArtists} />
 
         <Reveal className={`${styles.positioning} ${styles.deferred}`}>
           <h2>Your gateway to extraordinary entertainment experiences</h2>
