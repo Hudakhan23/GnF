@@ -10,6 +10,7 @@ export const occasions = [
 // Newest event first. Every poster lives in /public/RecentShows/ — swap
 // entries here to re-curate the home marquee.
 export const showPosters = [
+  "2026-10-10-ns-chauhan-faisalabad.jpeg",
   "2026-04-25-sarmad-qadeer-kot-momin.jpeg",
   "2026-04-16-abrar-ul-haq-lahore.jpeg",
   "2026-02-12-falak-shabir-faisalabad.jpeg",
