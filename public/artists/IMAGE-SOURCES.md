@@ -271,7 +271,6 @@ These are locally optimized copies of publicly served profile, booking, editoria
 - `irteassh.webp` — Coke Studio performance still featuring Irteassh from the official [Ghoom Taana video](https://www.youtube.com/watch?v=DngeAcpK6LI).
 - `shamali-afghan.webp` — performance photo from [The Express Tribune's Coke Studio feature](https://tribune.com.pk/story/2106162/shamali-afghan-steals-show-pakistans-coke-studio).
 - `riaz-qadri.webp` — cropped portrait from [SBS Punjabi's Riaz Qadri interview](https://www.sbs.com.au/language/punjabi/en/podcast-episode/riaz-qadri-pakistans-high-voltage-sufi-singer/42yb28r2s).
-- `zuhaib-ramzan-bhatti.webp` — cropped portrait from [Zuhaib Ramzan Bhatti's Fankar Online artist gallery](https://www.fankaronline.com/artist/zuhaib-ramzan-bhatti).
 - `ghulam-ali-qadri.webp` — cover art for “Mera Murshid Ali Maula” from [Ghulam Ali Qadri's Shazam artist profile](https://www.shazam.com/artist/ghulam-ali-qadri/1471814588).
 
 These assets are local copies of images served publicly on their source pages. The source pages are recorded for attribution and provenance; they do not state that the images are licensed for reuse.

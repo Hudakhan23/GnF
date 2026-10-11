@@ -442,10 +442,6 @@ export const ARTISTS = [
   A("Juggy D", "Singer", ["Bhangra"], { country: "UK" }),
   A("Leo Twins", "Band", ["Rock", "Pop"], { gender: G }),
   A("Shuja Haider", "Singer", ["Pop", "Playback"]),
-  A("Falak Ijaz & Hurya Waqas", "Qawwal", ["Qawwali"], {
-    gender: F,
-    tagline: "Female qawwal duo",
-  }),
   A("DJ Weaw", "DJ", [], {
     gender: F,
     country: "International",
@@ -490,10 +486,6 @@ export const ARTISTS = [
   }),
   A("Farah Saadya", "Comedian", [], { gender: F }),
   A("Qasim Ali Shah", "Speaker", [], { tagline: "Motivational speaker" }),
-  A("Magic & Illusion Show", "Specialty Act", [], {
-    gender: G,
-    tagline: "Stage magic & illusion",
-  }),
   A("Neha Kakkar", "Singer", ["Playback", "Pop"], {
     gender: F,
     country: "India",
@@ -504,7 +496,6 @@ export const ARTISTS = [
   }),
   A("Rizwan Muazzam Qawwals", "Qawwal", ["Qawwali", "Sufi"], { gender: G }),
   A("Rafaqat Ali Khan", "Singer", ["Classical", "Sufi"]),
-  A("Zuhaib Ramzan Bhatti", "Performer", [], { needsReview: true }),
   A("Sadia Anwar", "Performer", [], { gender: F, needsReview: true }),
   A("Horeya Asmat", "Singer", [], { gender: F, genZ: true, needsReview: true }),
   A("Sukhbir", "Singer", ["Bhangra"], { country: "India" }),
@@ -665,7 +656,6 @@ export const ARTISTS = [
   A("Takatak", "Band", ["Rock"], { gender: G }),
   A("Kaavish", "Band", ["Pop"], { gender: G }),
   A("Mauj", "Band", ["Pop", "Rock"], { gender: G }),
-  A("Mole", "Band", ["Rock"], { gender: G }),
   A("SYMT", "Band", ["Rock"], { gender: G }),
   A("Soch", "Band", ["Pop"], { gender: G }),
   A("Sajid & Zeeshan", "Band", ["Pop"], { gender: G }),
@@ -768,7 +758,6 @@ export const ARTISTS = [
     needsReview: true,
     image: "/artists/ahsan-pervaiz.jpeg",
   }),
-  A("Ziggy", "Performer", [], { needsReview: true }),
 ];
 
 // ------------------------------------------------------------------ selectors

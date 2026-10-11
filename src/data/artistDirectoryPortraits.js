@@ -813,7 +813,4 @@ export const ARTIST_DIRECTORY_PORTRAITS = {
   "Zohaib Hassan": {
     "image": "/artists/deezer-6298640.jpg"
   },
-  "Zuhaib Ramzan Bhatti": {
-    "image": "/artists/zuhaib-ramzan-bhatti.webp"
-  }
 };
