@@ -13,14 +13,15 @@
  * Copy for both cases lives in MANAGEMENT (below) — components read from it
  * rather than hardcoding label strings, so the distinction cannot drift.
  *
- * image: null renders a neutral monogram placeholder. To add a real photo,
- * drop the file in /public/artists/ and set image: "/artists/<file>".
+ * Explicit image options take priority; the curated portrait map fills
+ * additional directory entries while unmatched artists keep monogram art.
  *
  * Entries flagged `needsReview: true` are names we could not confidently
  * classify by genre — they carry no genre claims until confirmed.
  */
 
 import { whatsappLink } from "./site";
+import { ARTIST_DIRECTORY_PORTRAITS } from "./artistDirectoryPortraits";
 
 export const MANAGEMENT = {
   exclusive: {
@@ -50,8 +51,10 @@ const slugify = (name) =>
 const A = (name, artistType, genres = [], opts = {}) => ({
   name,
   slug: opts.slug || slugify(name),
-  image: opts.image || null,
-  imagePosition: opts.imagePosition || null,
+  image: opts.image || ARTIST_DIRECTORY_PORTRAITS[name]?.image || null,
+  imagePosition:
+    opts.imagePosition || ARTIST_DIRECTORY_PORTRAITS[name]?.position || null,
+  imageFit: opts.imageFit || ARTIST_DIRECTORY_PORTRAITS[name]?.fit || null,
   genres,
   artistType,
   managementType: opts.managementType || "network",
@@ -252,8 +255,16 @@ export const ARTISTS = [
     tagline: "Composer & singer",
   }),
 
-  A("Yashal Shahid", "Singer", ["Pop"], { gender: F, genZ: true }),
-  A("AUR", "Band", ["Pop"], { gender: G, genZ: true }),
+  A("Yashal Shahid", "Singer", ["Pop"], {
+    gender: F,
+    genZ: true,
+    image: "/artists/yashal-shahid.jpg",
+  }),
+  A("AUR", "Band", ["Pop"], {
+    gender: G,
+    genZ: true,
+    image: "/artists/aur.jpg",
+  }),
   A("Naseebo Lal", "Singer", ["Folk"], { gender: F }),
   A("Afshan Zaibi", "Singer", ["Folk"], {
     gender: F,
@@ -267,7 +278,9 @@ export const ARTISTS = [
   }),
   A("Akram Rahi", "Singer", ["Folk"], { image: "/artists/akram-rahi.jpeg" }),
   A("Ali Azmat", "Singer", ["Rock"], { image: "/artists/ali-azmat.avif" }),
-  A("Ali Sethi", "Singer", ["Ghazal", "Classical", "Sufi"]),
+  A("Ali Sethi", "Singer", ["Ghazal", "Classical", "Sufi"], {
+    image: "/artists/ali-sethi.jpg",
+  }),
   A("Amanat Ali", "Singer", ["Pop", "Classical"], {
     image: "/artists/amanat-ali.jpg",
   }),
@@ -282,15 +295,19 @@ export const ARTISTS = [
   A("Arif Lohar", "Singer", ["Folk"], {
     image: "/artists/arif-lohar.jpeg",
   }),
-  A("Asrar", "Singer", ["Sufi"]),
-  A("Attaullah Khan Esakhelvi", "Singer", ["Folk", "Ghazal"]),
+  A("Asrar", "Singer", ["Sufi"], { image: "/artists/asrar.jpg" }),
+  A("Attaullah Khan Esakhelvi", "Singer", ["Folk", "Ghazal"], {
+    image: "/artists/attaullah-khan-esakhelvi.jpg",
+  }),
   A("Bohemia", "Rapper", ["Rap / Hip-Hop"], { country: "USA" }),
   A("Damia Farooq", "Singer", ["Pop"], { gender: F, genZ: true }),
   A("Dr Masuma Anwar", "Singer", ["Sufi", "Folk"], { gender: F }),
   A("Elizabeth Rai", "Singer", ["Pop"], { gender: F }),
   A("Faakhir Mehmood", "Singer", ["Pop"]),
   A("Farah Anwar", "Singer", ["Pop"], { gender: F }),
-  A("Farhan Saeed", "Singer", ["Pop"]),
+  A("Farhan Saeed", "Singer", ["Pop"], {
+    image: "/artists/farhan-saeed.jpg",
+  }),
   A("Ghulam Ali", "Singer", ["Ghazal"]),
   A("Gul Panra", "Singer", ["Folk", "Pop"], { gender: F }),
   A("Jaz Dhami", "Singer", ["Bhangra"], { country: "UK" }),
@@ -310,15 +327,25 @@ export const ARTISTS = [
   A("Qurat Ul Ain Balouch", "Singer", ["Pop", "Sufi"], { gender: F }),
   A("Nooran Lal", "Singer", ["Sufi", "Folk"], { gender: F }),
   A("Zeb Bangash", "Singer", ["Folk", "Pop"], { gender: F }),
-  A("Meesha Shafi", "Singer", ["Rock", "Pop"], { gender: F }),
-  A("Momina Mustehsan", "Singer", ["Pop"], { gender: F }),
+  A("Meesha Shafi", "Singer", ["Rock", "Pop"], {
+    gender: F,
+    image: "/artists/meesha-shafi.jpg",
+  }),
+  A("Momina Mustehsan", "Singer", ["Pop"], {
+    gender: F,
+    image: "/artists/momina-mustehsan.jpg",
+  }),
   A("Shae Gill", "Singer", ["Pop"], {
     gender: F,
     genZ: true,
     image: "/artists/shae-gill.jpg",
     imagePosition: "75% 24%",
   }),
-  A("Eva B", "Rapper", ["Rap / Hip-Hop"], { gender: F, genZ: true }),
+  A("Eva B", "Rapper", ["Rap / Hip-Hop"], {
+    gender: F,
+    genZ: true,
+    image: "/artists/eva-b.jpg",
+  }),
   A("Young Stunners", "Band", ["Rap / Hip-Hop"], {
     gender: G,
     genZ: true,
@@ -577,9 +604,17 @@ export const ARTISTS = [
     genZ: true,
     image: "/artists/abdullah-siddiqui.jpeg",
   }),
-  A("Faris Shafi", "Rapper", ["Rap / Hip-Hop"]),
-  A("Talha Anjum", "Rapper", ["Rap / Hip-Hop"], { genZ: true }),
-  A("Talhah Yunus", "Rapper", ["Rap / Hip-Hop"], { genZ: true }),
+  A("Faris Shafi", "Rapper", ["Rap / Hip-Hop"], {
+    image: "/artists/faris-shafi.jpg",
+  }),
+  A("Talha Anjum", "Rapper", ["Rap / Hip-Hop"], {
+    genZ: true,
+    image: "/artists/talha-anjum.jpg",
+  }),
+  A("Talhah Yunus", "Rapper", ["Rap / Hip-Hop"], {
+    genZ: true,
+    image: "/artists/talhah-yunus.jpg",
+  }),
   A("Young Desi", "Rapper", ["Rap / Hip-Hop"]),
 
   A("Tina Sani", "Singer", ["Ghazal"], { gender: F }),

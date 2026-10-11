@@ -9,3 +9,276 @@
 - `samar-jafri.jpg`, `rovalio.jpg`, `zoha-waseem.jpg`, `murtaza-qizilbash.jpg`, `sheheryar-rehan.jpg` — Artist profile images from Spotify's public CDN.
 - `shae-gill.jpg` — Image supplied by the user in this conversation.
 - `kaifi-khalil.jpg` — Image supplied by the user in this conversation.
+
+## Additional artist directory portraits
+
+- `ali-sethi.jpg` — Wasserman artist media page: https://www.teamwass.com/music/ali-sethi/
+- `farhan-saeed.jpg` — Farhan Saeed's Spotify artist profile: https://open.spotify.com/artist/1W67L8OH9z7C3b9YJJbVYq
+- `meesha-shafi.jpg` — Forbes feature about the release of *Khilnay Ko*: https://www.forbes.com/sites/sonyarehman/2025/04/23/six-years-in-the-making--meesha-shafi-launches-her-debut-album/
+- `momina-mustehsan.jpg` — Stony Brook University 40 Under Forty profile: https://www.stonybrook.edu/40underforty/2017/people/Momina-Mustehsan
+- `yashal-shahid.jpg` — Fankar Lok artist profile: https://fankarlokentertainment.com/yashal-shahid/
+- `aur.jpg` — AUR's official X profile: https://x.com/AURmusic__
+- `talha-anjum.jpg` — Talha Anjum's official X post: https://x.com/talhahanjum/status/1992563286479630347
+- `talhah-yunus.jpg` — Talhah Yunus's official X profile: https://x.com/TalhahYunus
+- `faris-shafi.jpg` — Luminato Festival artist profile: https://www.luminatofestival.com/artist-page/FarisShafi
+- `eva-b.jpg` — The News feature on Eva B: https://www.thenews.com.pk/tns/detail/1076362-eva-b-noticed-by-grammys-global-spin-series
+- `attaullah-khan-esakhelvi.jpg` — Attaullah Khan Esakhelvi's X profile: https://x.com/EsakhelviKhan
+- `asrar.jpg` — Asrar's official YouTube channel: https://www.youtube.com/channel/UCBfUmyIysxBYp-YASjRBJUw
+
+These files are local copies of publicly served promotional/profile imagery. The source pages are recorded for provenance; they do not themselves state a reuse license.
+
+## Additional artist directory portraits
+
+- deezer-6826823.jpg — Ali Noor ([Deezer artist profile](https://www.deezer.com/artist/6826823)).
+- deezer-85780552.jpg — Asif Ali Santoo Khan ([Deezer artist profile](https://www.deezer.com/artist/85780552)).
+- deezer-69116992.jpg — Auj ([Deezer artist profile](https://www.deezer.com/artist/69116992)).
+- deezer-891590.jpg — Bohemia ([Deezer artist profile](https://www.deezer.com/artist/891590)).
+- deezer-14818035.jpg — Chand Tara Orchestra ([Deezer artist profile](https://www.deezer.com/artist/14818035)).
+- deezer-141950802.jpg — Farheen Raza Jaffry ([Deezer artist profile](https://www.deezer.com/artist/141950802)).
+- deezer-6476173.jpg — Fawad Khan ([Deezer artist profile](https://www.deezer.com/artist/6476173)).
+- deezer-12613.jpg — Ghulam Ali ([Deezer artist profile](https://www.deezer.com/artist/12613)).
+- deezer-5402292.jpg — Gul Panra ([Deezer artist profile](https://www.deezer.com/artist/5402292)).
+- deezer-299657.jpg — H-Dhami ([Deezer artist profile](https://www.deezer.com/artist/299657)).
+- deezer-5521202.jpg — Hamayoon Khan ([Deezer artist profile](https://www.deezer.com/artist/5521202)).
+- deezer-123097.jpg — Hamid Ali Khan ([Deezer artist profile](https://www.deezer.com/artist/123097)).
+- deezer-4709679.jpg — Hasan Jahangir ([Deezer artist profile](https://www.deezer.com/artist/4709679)).
+- deezer-4271492.jpg — Humaira Arshad ([Deezer artist profile](https://www.deezer.com/artist/4271492)).
+- deezer-1092615.jpg — Imran Khan ([Deezer artist profile](https://www.deezer.com/artist/1092615)).
+- deezer-10199716.jpg — Jaffer Zaidi ([Deezer artist profile](https://www.deezer.com/artist/10199716)).
+- deezer-5526343.jpg — Jal Band ([Deezer artist profile](https://www.deezer.com/artist/5526343)).
+- deezer-5407277.jpg — Jani ([Deezer artist profile](https://www.deezer.com/artist/5407277)).
+- deezer-4059801.jpg — Jasmine Sandlas ([Deezer artist profile](https://www.deezer.com/artist/4059801)).
+- deezer-122474.jpg — Javed Bashir ([Deezer artist profile](https://www.deezer.com/artist/122474)).
+- deezer-4680264.jpg — Jaz Dhami ([Deezer artist profile](https://www.deezer.com/artist/4680264)).
+- deezer-4019231.jpg — Jeffrey Iqbal ([Deezer artist profile](https://www.deezer.com/artist/4019231)).
+- deezer-7208124.jpg — Jimmy Khan ([Deezer artist profile](https://www.deezer.com/artist/7208124)).
+- deezer-131557.jpg — Juggy D ([Deezer artist profile](https://www.deezer.com/artist/131557)).
+- deezer-11034304.jpg — Junaid Khan ([Deezer artist profile](https://www.deezer.com/artist/11034304)).
+- deezer-1137658.jpg — Karakoram ([Deezer artist profile](https://www.deezer.com/artist/1137658)).
+- deezer-6356590.jpg — Kashif Ali ([Deezer artist profile](https://www.deezer.com/artist/6356590)).
+- deezer-4041.jpg — Kashmir ([Deezer artist profile](https://www.deezer.com/artist/4041)).
+- deezer-69039032.jpg — Khumariyaan ([Deezer artist profile](https://www.deezer.com/artist/69039032)).
+- deezer-1707587.jpg — Krewella ([Deezer artist profile](https://www.deezer.com/artist/1707587)).
+- deezer-12815449.jpg — Leo Twins ([Deezer artist profile](https://www.deezer.com/artist/12815449)).
+- deezer-146121292.jpg — Mahira Khan ([Deezer artist profile](https://www.deezer.com/artist/146121292)).
+- deezer-113837912.jpg — Mehdi Maloof ([Deezer artist profile](https://www.deezer.com/artist/113837912)).
+- deezer-11053812.jpg — Mehwish Hayat ([Deezer artist profile](https://www.deezer.com/artist/11053812)).
+- deezer-245308.jpg — Mekaal Hasan Band ([Deezer artist profile](https://www.deezer.com/artist/245308)).
+- deezer-52756812.jpg — Mishal Khawaja ([Deezer artist profile](https://www.deezer.com/artist/52756812)).
+- deezer-5642449.jpg — Mizraab ([Deezer artist profile](https://www.deezer.com/artist/5642449)).
+- deezer-56356382.jpg — Mughal-e-Funk ([Deezer artist profile](https://www.deezer.com/artist/56356382)).
+- deezer-9545598.jpg — Nabeel Shaukat Ali ([Deezer artist profile](https://www.deezer.com/artist/9545598)).
+- deezer-254898.jpg — Naeem Abbas Rufi ([Deezer artist profile](https://www.deezer.com/artist/254898)).
+- deezer-259631692.jpg — Nafees Ahmed ([Deezer artist profile](https://www.deezer.com/artist/259631692)).
+- deezer-96587.jpg — Naseebo Lal ([Deezer artist profile](https://www.deezer.com/artist/96587)).
+- deezer-129846.jpg — Neha Kakkar ([Deezer artist profile](https://www.deezer.com/artist/129846)).
+- deezer-11034300.jpg — Nirmal Roy ([Deezer artist profile](https://www.deezer.com/artist/11034300)).
+- deezer-1352325.jpg — Nooran Lal ([Deezer artist profile](https://www.deezer.com/artist/1352325)).
+- deezer-5615063.jpg — Niazi Brothers ([Deezer artist profile](https://www.deezer.com/artist/5615063)).
+- deezer-5521203.jpg — Qayaas ([Deezer artist profile](https://www.deezer.com/artist/5521203)).
+- deezer-14772971.jpg — Raafay Israr ([Deezer artist profile](https://www.deezer.com/artist/14772971)).
+- deezer-10336498.jpg — REHMA ([Deezer artist profile](https://www.deezer.com/artist/10336498)).
+- deezer-110142.jpg — Richa Sharma ([Deezer artist profile](https://www.deezer.com/artist/110142)).
+- deezer-1695232.jpg — Rostam Mirlashari ([Deezer artist profile](https://www.deezer.com/artist/1695232)).
+- deezer-79345642.jpg — Sahara UK ([Deezer artist profile](https://www.deezer.com/artist/79345642)).
+- deezer-1309703.jpg — Sain Zahoor ([Deezer artist profile](https://www.deezer.com/artist/1309703)).
+- deezer-11790235.jpg — Sanwal Esakhelvi ([Deezer artist profile](https://www.deezer.com/artist/11790235)).
+- deezer-9545606.jpg — Sara Haider ([Deezer artist profile](https://www.deezer.com/artist/9545606)).
+- deezer-5934017.jpg — Sara Raza Khan ([Deezer artist profile](https://www.deezer.com/artist/5934017)).
+- deezer-5260185.jpg — Sarmad Qadeer ([Deezer artist profile](https://www.deezer.com/artist/5260185)).
+- deezer-15095123.jpg — Sabri Sisters ([Deezer artist profile](https://www.deezer.com/artist/15095123)).
+- deezer-161715482.jpg — Shahbaz Fayyaz Qawwal ([Deezer artist profile](https://www.deezer.com/artist/161715482)).
+- deezer-1652966.jpg — Shahida Mini ([Deezer artist profile](https://www.deezer.com/artist/1652966)).
+- deezer-263592491.jpg — Shahzaman Ali Khan ([Deezer artist profile](https://www.deezer.com/artist/263592491)).
+- deezer-14772893.jpg — Shamoon Ismail ([Deezer artist profile](https://www.deezer.com/artist/14772893)).
+- deezer-99019.jpg — Shazia Manzoor ([Deezer artist profile](https://www.deezer.com/artist/99019)).
+- deezer-113607.jpg — Shehzad Roy ([Deezer artist profile](https://www.deezer.com/artist/113607)).
+- deezer-1212166.jpg — Shilpa Rao ([Deezer artist profile](https://www.deezer.com/artist/1212166)).
+- deezer-4284306.jpg — Shiraz Uppal ([Deezer artist profile](https://www.deezer.com/artist/4284306)).
+- deezer-98371.jpg — Shreya Ghoshal ([Deezer artist profile](https://www.deezer.com/artist/98371)).
+- deezer-1399883.jpg — Shuja Haider ([Deezer artist profile](https://www.deezer.com/artist/1399883)).
+- deezer-1193498.jpg — Shweta Subram ([Deezer artist profile](https://www.deezer.com/artist/1193498)).
+- deezer-113572.jpg — Sukhbir ([Deezer artist profile](https://www.deezer.com/artist/113572)).
+- deezer-7683596.jpg — Tahir Abbas ([Deezer artist profile](https://www.deezer.com/artist/7683596)).
+- deezer-5538848.jpg — The Sketches ([Deezer artist profile](https://www.deezer.com/artist/5538848)).
+- deezer-101563.jpg — Tina Sani ([Deezer artist profile](https://www.deezer.com/artist/101563)).
+- deezer-7726724.jpg — Umair Jaswal ([Deezer artist profile](https://www.deezer.com/artist/7726724)).
+- deezer-5521206.jpg — Uzair Jaswal ([Deezer artist profile](https://www.deezer.com/artist/5521206)).
+- deezer-53966772.jpg — Zain Zohaib ([Deezer artist profile](https://www.deezer.com/artist/53966772)).
+- deezer-1062448.jpg — Zeb and Haniya ([Deezer artist profile](https://www.deezer.com/artist/1062448)).
+- deezer-3933651.jpg — Zoe Viccaji ([Deezer artist profile](https://www.deezer.com/artist/3933651)).
+- deezer-52562202.jpg — Zoha Zuberi ([Deezer artist profile](https://www.deezer.com/artist/52562202)).
+- deezer-6298640.jpg — Zohaib Hassan ([Deezer artist profile](https://www.deezer.com/artist/6298640)).
+- deezer-1580353.jpg — Sumru Ağıryürüyen ([Deezer artist profile](https://www.deezer.com/artist/1580353)).
+- deezer-121814.jpg — Saira Naseem ([Deezer artist profile](https://www.deezer.com/artist/121814)).
+- deezer-5215335.jpg — Hina Nasrullah ([Deezer artist profile](https://www.deezer.com/artist/5215335)).
+- deezer-111012.jpg — Shabnam Majeed ([Deezer artist profile](https://www.deezer.com/artist/111012)).
+- deezer-10753984.jpg — Bakshi Brothers ([Deezer artist profile](https://www.deezer.com/artist/10753984)).
+- deezer-158773362.jpg — Butt Brothers ([Deezer artist profile](https://www.deezer.com/artist/158773362)).
+- farida-khanum.jpg — Farida Khanum ([Deezer artist profile](https://www.deezer.com/artist/93557)); locally cropped from profile artwork.
+- deezer-261539771.jpg — Khadija Dilnawaz ([Deezer artist profile](https://www.deezer.com/artist/261539771)).
+- deezer-1614295.jpg — Zack Knight ([Deezer artist profile](https://www.deezer.com/artist/1614295)).
+- dr-masuma-anwar.jpg — Dr Masuma Anwar ([source](https://x.com/drmasumaanwar)).
+- hira-mani.jpg — Hira Mani ([source](https://www.thenews.com.pk/magazine/instep-today/639465-hira-mani)).
+- nadeem-abbas-lonay-wala.jpg — Nadeem Abbas Loonay Wala ([source](https://x.com/NadeemAbbaspk)).
+- fareed-ayaz-qawwal.jpg — Fareed Ayaz Qawwal ([source](https://www.westmountmag.ca/fareed-ayaz-abu-muhammad-ensemble-qawwali-traquenart/)).
+- ayesha-jehanzeb.jpg — Ayesha Jehanzeb ([source](https://www.urduvoa.com/a/how-police-response-in-domestic-violence-cases/7696539.html)).
+- laal-band.jpg — Laal Band ([source](https://commons.wikimedia.org/wiki/File:Laal_Performing.jpg)).
+- nasir-chinyoti.jpg — Nasir Chinyoti ([source](https://www.desiblitz.com/content/25-best-pakistani-stage-artists-of-all-time)).
+- farah-saadya.jpg — Farah Saadya ([source](https://www.taar.tv/ur/%D8%B4%D8%A7%D8%AF%DB%8C-%D8%B4%D8%AF%DB%81-%D9%85%D8%B1%D8%AF-%D8%B3%DB%92-%D8%A8%DB%8C%D8%A7%DB%81-%DA%A9%DB%92-%D8%AE%D9%84%D8%A7%D9%81-%D9%81%D8%B1%D8%AD-%D8%B3%D8%B9%D8%AF%DB%8C%DB%81-%DA%A9/)).
+- rizwan-muazzam-qawwals.jpg — Rizwan Muazzam Qawwals ([source](https://www.saareymusic.com/artist/rizwan-muazzam-ali-khan)).
+- horeya-asmat.jpg — Horeya Asmat ([source](https://www.horeyaasmat.com/biography)).
+- surriya-khanum.jpg — Surriya Khanum ([source](https://www.dailymotion.com/video/x35mq1c)).
+- noor-zehra.jpg — Noor Zehra ([source](https://b10live.cn/events/20240525-1)).
+- wajeeha-naqvi.jpg — Wajeeha Naqvi ([source](https://www.thenews.com.pk/tns/detail/865507-introducing-wajiha-ather-naqvi)).
+- mauj.jpg — Mauj ([source](https://www.thenews.com.pk/magazine/instep-today/269976-salt-arts-and-mauj-join-forces-for-a-new-show)).
+- marvi-saiban.jpg — Marvi Saiban ([source](https://www.thenews.com.pk/magazine/us/1194552-here-she-comes-victoriously)).
+- ayesha-omar.jpg — Ayesha Omer ([source](https://www.thenews.com.pk/latest/838055-ayesha-omar-says-palestinians-need-support-even-after-israel-ceasefire)).
+- nighat-chaudhry.jpg — Nighat Chaudhry ([source](https://www.independenturdu.com/node/119406)).
+- humaira-channa.jpg — Humaira Channa ([source](https://www.dawn.com/news/1210223/spotlight-im-in-love-with-music)).
+- manj-musik.jpg — Manj Musik ([source](https://timesofindia.indiatimes.com/Entertainment/Punjabi/Music/Exclusive-Interview-with-Manj-Musik/articleshow/44815921.cms)).
+- tahseen-sakina.jpg — Tahseen Sakina ([source](https://fankarbooking.com/artist-details?id=225)).
+- qasim-ali-shah.jpg — Qasim Ali Shah ([source](https://www.qasimalishah.com/)).
+- rafaqat-ali-khan.jpg — Rafaqat Ali Khan ([source](https://www.last.fm/music/Rafaqat+Ali+Khan)).
+- komal-rizvi.jpg — Komal Rizvi ([source](https://www.dawn.com/news/1193153)).
+- mai-dhai.jpg — Mai Dhai ([source](https://schedule.sxsw.com/2015/events/event_MS30612)).
+- fizza-javed.jpg — Fizza Javed ([source](https://www.youlinmagazine.com/article/an-evening-with-fizza-javed/Mjk4MQ==)).
+- rahma-ali.jpg — Rahma Ali ([source](https://www.pak101.com/c/gallery/view/47921/previous/Rahma_Ali/Rahma_Ali_Pakistani_Female_Actress_And_Singer_Celebrity)).
+- mazhar-rahi.jpg — Mazhar Rahi ([Spotify release artwork](https://open.spotify.com/track/61Uv1F53QwdKB5M7FsJQ7v)).
+- risham-faiz-bhutta.jpg — Risham Faiz Bhutta ([source](https://www.thenews.com.pk/magazine/you/1213916-risham-faiz-bhutta)).
+- karavan.jpg — Karavan ([source](https://tribune.com.pk/story/469717/we-will-keep-touring-until-you-tell-us-to-stop-karavan)).
+- sain-tufail.jpg — Sain Tufail ([source](https://www.dailymotion.com/video/x4bsx1s)).
+- aunty-disco-project.jpg — Aunty Disco Project ([source](https://tribune.com.pk/article/5793/the-end-of-aunty-disco-project)).
+- josh-the-band.jpg — Josh The Band ([source](https://tribune.com.pk/story/1696768/qurram-hussain-recalls-early-days-josh)).
+- suhail-ahmed.jpg — Suhail Ahmed ([source](https://www.independenturdu.com/node/122141)).
+- khalil-haider.jpg — Khalil Haider ([source](https://open.spotify.com/artist/5MT0oSPTMJUmjukkRPPPKN)).
+- riaz-ali-khan.jpg — Riaz Ali Khan ([source](https://music.amazon.in/tracks/B0G2L4P9VT)).
+
+These are locally optimized copies of publicly served profile, booking, editorial, or performance images. Source pages are recorded for provenance and do not necessarily grant reuse permission.
+- ali-pervaiz-mehdi.jpg — Ali Pervaiz Mehdi ([source](https://open.spotify.com/album/6Jutwi1Cqd2Ke7YBkg15V0)).
+- ali-tariq.jpg — Ali Tariq ([source](https://x.com/AliTariqMusic)).
+- basit-ali.jpg — Basit Ali ([source](https://www.dailymotion.com/video/x4tfenf)).
+- bilal-khan.jpg — Bilal Khan ([source](https://tribune.com.pk/story/1500155/going-us-best-decision-bilal-khan)).
+- chakwal-group.jpg — Chakwal Group ([source](https://images.dawn.com/news/1175830/we-dont-want-to-be-famous-chakwals-singers-just-want-to-keep-their-ancient-folk-tradition-alive)).
+- damia-farooq.jpg — Damia Farooq ([source](https://soundcloud.com/damia-farooq/chand-jalta-raha-ost)).
+- faakhir-mehmood.jpg — Faakhir Mehmood ([source](https://x.com/Faakhir_Mehmood)).
+- faisal-kapadia.jpg — Faisal Kapadia ([source](https://images.dawn.com/news/amp/1192342)).
+- fariha-pervez.jpg — Fariha Pervez ([source](https://www.pak101.com/c/gallery/view/4590/Fariha_Pervez/Fariha_Pervez)).
+- hanif-raja.jpg — Hanif Raja ([source](https://tribune.com.pk/story/2594597/veteran-comedian-hanif-raja-announces-stage-comeback-on-eidul-fitr)).
+- jawad-ahmad.jpg — Jawad Ahmad ([source](https://www.geo.tv/amp/141925-Singer-Jawad-Ahmad-aspires-to-start-his-own-party)).
+- justin-bibis.jpg — Justin Bibis ([source](https://www.forbes.com/sites/sonyarehman/2023/11/05/introducing-a-star-music-duo-the-justin-bibis/)).
+- kaavish.jpg — Kaavish ([source](https://dubai.platinumlist.net/event-tickets/coke-studio-live/)).
+- laila-khan.jpg — Laila Khan portrait by Lailakhandolll ([Wikimedia Commons file](https://commons.wikimedia.org/wiki/File:Laila_khan_Singer.jpg)), CC BY-SA 4.0; used unmodified.
+- malkoo.jpg — Malkoo ([source](https://fankarbooking.com/artist-details?id=10)).
+- naseem-vicky.jpg — Naseem Vicky ([source](https://wegreenkw.com/entertainment/naseem-vicky/)).
+- naseer-shahab.jpg — Naseer & Shahab ([source](https://sangeetsiteblog.wordpress.com/2019/07/12/naseer-and-shahab-release-kaghaz-ki-kashti/)).
+- natasha-khan.jpg — Natasha Khan ([source](https://www.thenews.com.pk/magazine/you/232432-Natasha-Khan)).
+- asif-ali-santoo-khan.jpg — Asif Ali Santoo Khan performing ([Le Monde feature](https://www.lemonde.fr/musiques/article/2015/01/30/avec-asif-ali-santoo-khan-la-musique-se-fait-amour-paix-et-danse_4567051_1654986.html)).
+- auj-live.jpg — Auj band portrait ([Business Recorder feature](https://www.brecorder.com/news/40107816)).
+- aunty-disco-project-live.jpg — Aunty Disco Project live at Get Your Aunty On! ([Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Auntydiscoprojectlive.jpg)); license and author details are provided on the file page; image used unmodified.
+- bakshi-brothers-live.jpg — Bakshi Brothers performing ([Dawn feature](https://www.dawn.com/news/1407502/bakshi-brothers-enthrall-audience)).
+- hina-nasrullah-live.jpg — Hina Nasrullah performing ([City42 feature](https://www.city42.tv/31-Mar-2024/127910)).
+- noori.jpg — Noori ([source](https://tribune.com.pk/story/1248154/daily-grind-ali-noor-ali-hamza-noori)).
+- overload.jpg — Overload ([source](https://www.dawn.com/news/1219388/overload-makes-it-to-sxsw)).
+- rohail-hyatt.jpg — Rohail Hyatt ([source](https://x.com/rohailhyatt)).
+- saleem-albela.jpg — Saleem Albela ([source](https://showbuzz.agency/artist/saleem-albela/)).
+- sanam-marvi.jpg — Sanam Marvi ([source](https://centerstageus.org/artists/sanam-marvi)).
+- strings.jpg — Strings ([source](https://www.geo.tv/latest/341597-pakistani-band-strings-announce-to-part-ways-after-33-years)).
+- taha-g.jpg — Taha G ([source](https://www.easterneye.biz/taha-g-making-music-for-the-mind-heart-and-soul/)).
+- weaw.jpg — DJ Weaw ([source](https://djanetop.com/djanes/weaw/)).
+- zeb-bangash.jpg — Zeb Bangash ([source](https://x.com/OfficialZeb)).
+- nimra-mehra.jpg — Nimra Mehra ([source](https://www.thenews.com.pk/magazine/you/1161711-nimra-mehra)).
+- deezer-4707582.jpg — Bilal Maqsood ([Deezer artist profile](https://www.deezer.com/artist/4707582)).
+- deezer-9919354.jpg — Haroon Shahid ([Deezer artist profile](https://www.deezer.com/artist/9919354)).
+- deezer-14271403.jpg — Karpe ([Deezer artist profile](https://www.deezer.com/artist/14271403)).
+- deezer-12240368.jpg — Manwa Sisters ([Deezer artist profile](https://www.deezer.com/artist/12240368)).
+- deezer-11034306.jpg — Mohsin Abbas Haider ([Deezer artist profile](https://www.deezer.com/artist/11034306)).
+- deezer-9545602.jpg — Mulazim Hussain ([Deezer artist profile](https://www.deezer.com/artist/9545602)).
+- deezer-11162044.jpg — Natasha Baig ([Deezer artist profile](https://www.deezer.com/artist/11162044)).
+- deezer-14947051.jpg — Nimra Rafiq ([Deezer artist profile](https://www.deezer.com/artist/14947051)).
+- deezer-245275342.jpg — Noorima Rehan ([Deezer artist profile](https://www.deezer.com/artist/245275342)).
+- deezer-6040364.jpg — Qurat Ul Ain Balouch ([Deezer artist profile](https://www.deezer.com/artist/6040364)).
+- deezer-5521207.jpg — Rachel Viccaji ([Deezer artist profile](https://www.deezer.com/artist/5521207)).
+- deezer-9703226.jpg — Rizwan Butt ([Deezer artist profile](https://www.deezer.com/artist/9703226)).
+- deezer-1016382.jpg — Rustam Fateh Ali Khan ([Deezer artist profile](https://www.deezer.com/artist/1016382)).
+- deezer-1222737.jpg — Sher Mian Dad Khan ([Deezer artist profile](https://www.deezer.com/artist/1222737)).
+- deezer-5621539.jpg — Soch ([Deezer artist profile](https://www.deezer.com/artist/5621539)).
+- deezer-8272454.jpg — Surj RDB ([Deezer artist profile](https://www.deezer.com/artist/8272454)).
+- deezer-157906232.jpg — Wahab Bugti ([Deezer artist profile](https://www.deezer.com/artist/157906232)).
+- deezer-10824052.jpg — Young Desi ([Deezer artist profile](https://www.deezer.com/artist/10824052)).
+- deezer-124692502.jpg — Zahoor ([Deezer artist profile](https://www.deezer.com/artist/124692502)).
+- deezer-80035792.jpg — Zeeshan Ali ([Deezer artist profile](https://www.deezer.com/artist/80035792)).
+- natasha-noorani.jpg — Natasha Noorani ([source](https://tribune.com.pk/story/2447596/listen-natasha-nooranis-ronaq-is-danceable-and-defiant)).
+- rozeo.jpg — Rozeo ([source](https://www.forbes.com/sites/sonyarehman/2023/06/19/unapologetically-rizzy-redefining-rap-in-pakistan/)).
+- lyari-underground.jpg — Lyari Underground ([source](https://tribune.com.pk/story/2063721/rappers-from-lug-mistreated-at-lyari-literature-festival-organisers-issue-apology)).
+- farah-anwar.jpg — Farah Anwar ([source](https://soundcloud.com/farah-anwar-official)).
+- faraz-anwar.jpg — Faraz Anwar ([source](https://tribune.com.pk/story/2329645/indian-fans-touch-our-feet-but-people-here-call-us-kafir-and-listen-to-indian-songs-faraz-anwar)).
+- banurs-band.jpg — Banur's Band ([source](https://www.dailymotion.com/video/x7nqfw2)).
+- barkat-jamal-fakir-troupe.jpg — Barkat Jamal Fakir Troupe ([source](https://gulfnews.com/entertainment/pakistani-cinema/coke-studio-season-12-opens-with-lots-of-soul-1.67278623)).
+- murtaza-qazilbash.jpg — Murtaza Qazilbash ([Spotify artist profile](https://open.spotify.com/artist/6hIXwlI4wny3zYuB6cDBBk)).
+- jabar-abbas.jpg — Jabar Abbas ([source](https://open.spotify.com/artist/5Ntz2EeYEUfWokuJdtXlkR)).
+- jj47.jpg — JJ47 ([source](https://open.spotify.com/artist/1SlrUQlFRfExXSCkHsQgBc)).
+- bushra-ansari.jpg — Bushra Ansari ([source](https://www.dawn.com/news/amp/1519772)).
+- shakeel-siddiqui.jpg — Shakeel Siddiqui ([source](https://tribune.com.pk/story/2406808/when-it-comes-to-humour-pakistan-is-always-ahead-of-india-shakeel-siddiqui)).
+- raheem-shah.jpg — Raheem Shah ([source](https://www.pakpedia.pk/raheem-shah/)).
+- momin-durrani.jpg — Momin Durrani ([source](https://tribune.com.pk/story/907432/music-and-momin-durrani-go-hand-in-hand)).
+- danyal-zafar.jpg — Danyal Zafar ([source](https://www.thenews.com.pk/latest/810721-danyal-zafar-candidly-dishes-over-his-emotional-tana-bana-debut)).
+- ustaad-naseer-ud-din-saami.jpg — Ustaad Naseer-ud-din Saami ([source](https://tribune.com.pk/story/751231/sufisticated-celebrating-amir-khusrau-via-saami)).
+- usman-riaz.jpg — Usman Riaz ([source](https://images.dawn.com/news/1176561/i-want-to-show-the-west-we-can-make-animation-as-well-as-them-says-usman-riaz)).
+- zarsanga.jpg — Zarsanga ([source](https://www.independenturdu.com/node/33901)).
+- samra-khan.jpg — Samra Khan ([source](https://www.thenews.com.pk/magazine/you/152786-Samra-Khan)).
+- zara-madani.jpg — Zara Madani ([source](https://www.beyondmusic.org/artist/2647)).
+- junoon.jpg — Junoon ([source](https://www.youlinmagazine.com/story/walking-down-memory-lane-some-of-pakistans-most-iconic-bands/MTc1Ng%3D%3D)).
+- entity-paradigm.jpg — Entity Paradigm ([source](https://soundcloud.com/umair-quraishi/sets/entity-paradigm-ep)).
+- takatak.jpg — Takatak ([source](https://www.redbull.com/pk-en/takatak-phantom-fevers-and-prog-metal)).
+- sajid-zeeshan.jpg — Sajid & Zeeshan ([source](https://images.dawn.com/news/1186453/sajid-zeeshans-newest-track-is-soft-soulful-and-devoid-of-any-kind-of-gimmickry)).
+- sounds-of-kolachi.jpg — Sounds of Kolachi ([source](https://www.redbull.com/pk-en/sounds-of-kolachi-has-changed-our-perspective-toward-music-ahsan-bari)).
+- lucky-naghma.jpg — Lucky & Naghma ([source](https://www.thequint.com/entertainment/music/coke-studio-pakistan-11-trangender-singers-viral-promo)).
+- harsakhiyan.jpg — Harsakhiyan ([source](https://www.sbs.com.au/language/urdu/en/podcast-episode/three-sisters-bringing-classical-sufi-music-to-australia/lff8pwaox)).
+- gharvi-group.jpg — Gharvi Group ([source](https://www.arabnews.com/node/2546051/amp)).
+- shahzad-nawaz.jpg — Shahzad Nawaz ([source](https://wegreenkw.com/entertainment/shahzad-nawaz/)).
+- kashif-din.jpg — Kashif Din ([source](https://soundcloud.com/therealhunzik/bo-giyam-burushaski-song-coke-studio-12-kashif-din)).
+- noman-ali-rajper.jpg — Noman Ali Rajper ([source](https://open.spotify.com/artist/0C5woxKQWlOaYpJc1X7FXF)).
+- umair-butt.jpg — Umair Butt ([source](https://www.thenews.com.pk/magazine/you/1239389-umair-butt)).
+- star-shah.jpg — Star Shah ([source](https://www.thenews.com.pk/magazine/instep-today/1205007-introducing-star-shah)).
+- zaw-ali.jpg — Zaw Ali ([source](https://dailytimes.com.pk/423823/sajjad-alis-daughter-releases-new-single-about-women-empowerment/)).
+- shahab-hussain.jpg — Shahab Hussain ([source](https://open.spotify.com/artist/4bBGi3ViY36psd55ThPkDv)).
+
+## Expanded roster portraits (October 2026)
+
+- `junaid-bashir.webp` — Javed Bashir and Junaid Bashir in the official Me Muzik performance video: [Piya Unplugged](https://www.youtube.com/watch?v=VCRJXEeRncw).
+- `faiz-brothers-qawwal.webp` — performance still from the [Faiz Brothers official YouTube channel](https://www.youtube.com/channel/UCJtLzhmG4Xz3wHafDa4ohRQ).
+- `havi.webp` — Havi's public [Spotify artist profile](https://open.spotify.com/artist/3P8ZD2X9kQJfeVcjr3GLP4).
+- `priti-kaur.webp` — Priti Kaur portrait from the [City of Birmingham Symphony Orchestra vocalist profile](https://cbso.co.uk/index.php/actions/tools/tools/download-file?id=358455).
+- `roxen.webp` — group promotional photo from [Roxen Band's Fankar Online profile](https://fankaronline.com/artist/roxen-band/).
+- `sehar-gul-khan.webp` — Sehar Gul Khan public artist image from Spotify's CDN; artist identity cross-checked with [her public music profile](https://soundcloud.com/user-721010967).
+- `iftikhar-thakur.webp` — Iftikhar Thakur portrait from [Pak101's artist gallery](https://www.pak101.com/c/gallery/view/5273/iftikhar_thakur/iftikhar_thakur).
+- `wahdat-rameez.webp` — performance artwork from Wahdat Rameez's [official artist site](https://wahdatrameez.com/).
+- `babar-mangi.webp` — Babar Mangi's [Spotify artist profile](https://open.spotify.com/artist/7zDKZRpusSBsdEa3sUvnQv).
+- `nizam-torwali.webp` — group performance artwork for Nizam Torwali's Coke Studio collaboration, [Arab News](https://www.arabnews.pk/node/2557966/pakistan).
+- `muazzam-ali-khan.webp` — artist image from [Muazzam Ali Khan's Deezer profile](https://www.deezer.com/artist/4687727).
+- `karam-abbas.webp` — performance photo from the official [Coke Studio Season 8 performance](https://www.youtube.com/watch?v=zn2fZh7ZUFI).
+- `farhan-rais-khan.webp` — performance portrait from the [Coke Studio Pakistan artist feature](https://www.youtube.com/watch?v=yJtCMYRiFBo).
+- `shani-arshad.webp` — portrait from [Shani Arshad's official site](https://shaniarshad.com/).
+- `talal-qureshi.webp` — portrait from [Dawn's interview with Talal Qureshi](https://www.dawn.com/news/1816404/the-icon-interview-talal-readies-for-take-off).
+- `shamu-bai.webp` — Shamu Bai performance photo from [Dawn's Coke Studio Explorer feature](https://images.dawn.com/news/amp/1180362).
+- `haniya-aslam.webp` — Haniya Aslam live portrait from [INCPak's tribute](https://www.incpak.com/entertainment/singer-and-guitarist-haniya-aslam-passes-away/).
+- `siege.webp` — band performance artwork from the [Best of Seige album page](https://mr-punjab.com/best-of-seige-album/33458).
+- `hydr.webp` — HYDR artist portrait; identity cross-checked with the [Rearts official label](https://rearts.co/).
+- `malang-party.webp` — Malang Party performance photo from [The News feature](https://www.thenews.com.pk/tns/detail/568468-resurgence-of-malang-party-birth-surkhwaab).
+- `asif-hussain-samraat.webp` — performance still from the official [Rohail Hyatt / Coke Studio video](https://www.youtube.com/watch?v=7vS3EL0DBGQ).
+- `tahir-mithu.webp` — performance portrait from [Tahir Mithu's Audiomack artist page](https://audiomack.com/tahir-mithu/song/jeay-shah-noorani-2881277).
+- `irteassh.webp` — Coke Studio performance still featuring Irteassh from the official [Ghoom Taana video](https://www.youtube.com/watch?v=DngeAcpK6LI).
+- `shamali-afghan.webp` — performance photo from [The Express Tribune's Coke Studio feature](https://tribune.com.pk/story/2106162/shamali-afghan-steals-show-pakistans-coke-studio).
+- `riaz-qadri.webp` — cropped portrait from [SBS Punjabi's Riaz Qadri interview](https://www.sbs.com.au/language/punjabi/en/podcast-episode/riaz-qadri-pakistans-high-voltage-sufi-singer/42yb28r2s).
+- `zuhaib-ramzan-bhatti.webp` — cropped portrait from [Zuhaib Ramzan Bhatti's Fankar Online artist gallery](https://www.fankaronline.com/artist/zuhaib-ramzan-bhatti).
+- `ghulam-ali-qadri.webp` — cover art for “Mera Murshid Ali Maula” from [Ghulam Ali Qadri's Shazam artist profile](https://www.shazam.com/artist/ghulam-ali-qadri/1471814588).
+
+These assets are local copies of images served publicly on their source pages. The source pages are recorded for attribution and provenance; they do not state that the images are licensed for reuse.
+- `elizabeth-rai.webp` — artist gallery portrait from [Elizabeth Rai's Fankar Online profile](https://fankaronline.com/artist/elizabeth-rai/).
+- `fakir-juman-shah.webp` — ensemble performance photo captioned “Fakir Juman Shah performing at the Lahooti Melo” by [Dawn](https://www.dawn.com/news/1304288/soundcheck-what-to-keep-an-ear-out-for-in-2017).
+- `ghafar-lehri.webp` — cropped performer photo from the Ghaffar Lehri performance videos embedded on [his Fankar Online profile](https://fankaronline.com/artist/ghafar-lehri/).
+- `sadia-anwar.webp` — stage photo from [Sadia Anwar's Fankar Online artist profile](https://www.fankaronline.com/artist/sadia-anwar).
+- `symt.webp` — group photo captioned with SYMT members Farhan Ali, Haroon Shahid, and Hassan Omar by [Bandbaji](https://bandbaji.wordpress.com/2011/12/31/annual-issue-2011-the-year-of-intrigue-music/).
+- `waqar-ehsin.webp` — artist profile photo from [Waqar Ehsin's SoundCloud page](https://soundcloud.com/waqar-ehsin/tracks).
+- `shehroze-hussan.webp` — photo from Dawn's [City of Lights Festival feature](https://images.dawn.com/news/1173694), captioned as a sitar workshop with Shehroze Hussain and Yousaf Kerai.

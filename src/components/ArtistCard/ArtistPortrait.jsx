@@ -30,7 +30,14 @@ export default function ArtistPortrait({ artist, className = "", priority }) {
         fill
         sizes="(max-width: 360px) calc(100vw - 40px), (max-width: 900px) 50vw, 30vw"
         className={`${styles.image} ${className}`}
-        style={artist.imagePosition ? { objectPosition: artist.imagePosition } : undefined}
+        style={
+          artist.imagePosition || artist.imageFit
+            ? {
+                objectPosition: artist.imagePosition || undefined,
+                objectFit: artist.imageFit || undefined,
+              }
+            : undefined
+        }
         priority={priority}
         quality={75}
       />
