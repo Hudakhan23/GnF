@@ -24,7 +24,7 @@ facilitation and event management company.
 
 ## Development
 
-Requires Node.js 20.9 or newer (Node 22 LTS recommended).
+Requires Node.js 24.x, as declared in `package.json`.
 
 ```bash
 npm install

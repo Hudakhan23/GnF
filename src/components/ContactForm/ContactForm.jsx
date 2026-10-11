@@ -24,7 +24,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form className={styles.form} onSubmit={submit}>
+    <form className={styles.form} method="post" onSubmit={submit}>
       <h2>Send an enquiry</h2>
       <div className={styles.twoColumns}>
         <label>

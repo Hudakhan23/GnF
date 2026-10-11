@@ -3,8 +3,7 @@ import BookingButton from "@/components/BookingForm/BookingButton";
 import ExclusiveSpotlight from "@/components/ExclusiveSpotlight/ExclusiveSpotlight";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import JsonLd from "@/components/JsonLd/JsonLd";
-import { ARTISTS, EXCLUSIVE_ARTISTS, artists } from "@/data/artists";
+import { ARTISTS, EXCLUSIVE_ARTISTS } from "@/data/artists";
 import { SITE_URL } from "@/data/site";
 import styles from "./page.module.css";
 
@@ -22,26 +21,11 @@ export const metadata = {
   },
 };
 
-const itemListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Artists available for event booking enquiries",
-  url: `${SITE_URL}/artists`,
-  numberOfItems: artists.length,
-  itemListElement: artists.map((artist, index) => ({
-    "@type": "ListItem",
-    position: index + 1,
-    name: artist.name,
-    url: `${SITE_URL}${artist.href}`,
-  })),
-};
-
 const COUNTRIES = new Set(ARTISTS.map((a) => a.country));
 
 export default function ArtistsPage() {
   return (
     <>
-      <JsonLd data={itemListSchema} />
       <Header active="artists" />
       <main>
         <section className={styles.hero}>

@@ -125,7 +125,7 @@ export default function BookingModal({ artist, artists = [], onClose }) {
         </h2>
         <p className={styles.note}>{management.statement}</p>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.form} method="post" onSubmit={handleSubmit}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="bk-artist">
               Artist *
