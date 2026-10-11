@@ -770,47 +770,40 @@ export const ARTIST_DIRECTORY_PORTRAITS = {
     "image": "/artists/waqar-ehsin.webp"
   },
   "Young Desi": {
-    "image": "/artists/deezer-10824052.jpg",
-    "fit": "contain"
+    "image": "/artists/young-desi.webp"
   },
   "Zack Knight": {
-    "image": "/artists/deezer-1614295.jpg",
-    "fit": "contain"
+    "image": "/artists/zack-knight.webp"
   },
   "Zahoor": {
-    "image": "/artists/deezer-124692502.jpg",
-    "fit": "contain"
+    "image": "/artists/zahoor.webp"
   },
   "Zain Zohaib": {
     "image": "/artists/deezer-53966772.jpg",
     "fit": "contain"
   },
   "Zara Madani": {
-    "image": "/artists/zara-madani.jpg"
+    "image": "/artists/zara-madani.webp"
   },
   "Zarsanga": {
-    "image": "/artists/zarsanga.jpg"
+    "image": "/artists/zarsanga.webp"
   },
   "Zaw Ali": {
-    "image": "/artists/zaw-ali.jpg"
+    "image": "/artists/zaw-ali.webp"
   },
   "Zeb Bangash": {
-    "image": "/artists/zeb-bangash.jpg"
-  },
-  "Zeb and Haniya": {
-    "image": "/artists/deezer-1062448.jpg",
-    "fit": "contain"
+    "image": "/artists/zeb-bangash.webp"
   },
   "Zeeshan Ali": {
     "image": "/artists/deezer-80035792.jpg"
   },
   "Zoe Viccaji": {
-    "image": "/artists/deezer-3933651.jpg"
+    "image": "/artists/zoe-viccaji.webp"
   },
   "Zoha Zuberi": {
     "image": "/artists/deezer-52562202.jpg"
   },
   "Zohaib Hassan": {
-    "image": "/artists/deezer-6298640.jpg"
+    "image": "/artists/zohaib-hassan.webp"
   },
 };

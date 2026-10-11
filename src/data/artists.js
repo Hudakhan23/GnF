@@ -258,7 +258,6 @@ export const ARTISTS = [
   A("Yashal Shahid", "Singer", ["Pop"], {
     gender: F,
     genZ: true,
-    image: "/artists/yashal-shahid.jpg",
   }),
   A("AUR", "Band", ["Pop"], {
     gender: G,
@@ -659,7 +658,6 @@ export const ARTISTS = [
   A("SYMT", "Band", ["Rock"], { gender: G }),
   A("Soch", "Band", ["Pop"], { gender: G }),
   A("Sajid & Zeeshan", "Band", ["Pop"], { gender: G }),
-  A("Zeb and Haniya", "Band", ["Folk", "Pop"], { gender: G }),
   A("The Sketches", "Band", ["Sufi", "Folk"], { gender: G }),
   A("Khumariyaan", "Band", ["Folk"], { gender: G }),
   A("Mughal-e-Funk", "Band", ["Folk"], { gender: G }),
