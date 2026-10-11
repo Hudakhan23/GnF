@@ -769,6 +769,9 @@ export const ARTIST_DIRECTORY_PORTRAITS = {
   "Waqar Ehsin": {
     "image": "/artists/waqar-ehsin.webp"
   },
+  "Yashal Shahid": {
+    "image": "/artists/yashal-shahid.webp"
+  },
   "Young Desi": {
     "image": "/artists/young-desi.webp"
   },
