@@ -7,14 +7,22 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
 import {
-  ARTISTS,
+  ARTIST_OPTIONS,
   MANAGEMENT,
+  bookingArtist,
   artists,
   getArtist,
+  isIndexable,
   relatedArtists,
   suitabilityFor,
 } from "@/data/artists";
-import { SITE_URL, whatsappLink } from "@/data/site";
+import {
+  ORGANIZATION_SCHEMA_ID,
+  SITE_NAME,
+  SITE_URL,
+  whatsappLink,
+} from "@/data/site";
+import { breadcrumbSchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -26,8 +34,8 @@ export async function generateMetadata({ params }) {
   const artist = getArtist(slug);
   if (!artist) return {};
 
-  const title = artist.seo?.title || `Book ${artist.name} for an Event`;
-  const socialTitle = artist.seo?.title || `${title} | GnF Events`;
+  const title = artist.seoTitle;
+  const socialTitle = artist.seo?.title || `${title} | ${SITE_NAME}`;
   const image = artist.image
     ? {
         url: artist.image,
@@ -41,11 +49,12 @@ export async function generateMetadata({ params }) {
     title: artist.seo?.title ? { absolute: artist.seo.title } : title,
     description: artist.description,
     alternates: { canonical: artist.href },
+    ...(isIndexable(artist) ? {} : { robots: { index: false, follow: true } }),
     openGraph: {
       title: socialTitle,
       description: artist.description,
       url: `${SITE_URL}${artist.href}`,
-      siteName: "GnF Events",
+      siteName: SITE_NAME,
       locale: "en_PK",
       type: "profile",
       images: image ? [image] : undefined,
@@ -95,8 +104,15 @@ export default async function ArtistBookingPage({ params }) {
     "@id": artistId,
     name: artist.name,
     url: artistUrl,
-    ...(artist.profile?.youtube?.handle
-      ? { alternateName: artist.profile.youtube.handle }
+    ...(artist.profile?.youtube?.handle || artist.aliases.length
+      ? {
+          alternateName: [
+            ...artist.aliases,
+            ...(artist.profile?.youtube?.handle
+              ? [artist.profile.youtube.handle]
+              : []),
+          ],
+        }
       : {}),
     ...(artist.bio ? { description: artist.bio } : {}),
     ...(imageUrl
@@ -128,7 +144,7 @@ export default async function ArtistBookingPage({ params }) {
     ...(artist.profile
       ? {
           award: "BBC Asian Network Future Sounds Artist 2021",
-          affiliation: { "@id": `${SITE_URL}/#organization` },
+          affiliation: { "@id": ORGANIZATION_SCHEMA_ID },
         }
       : {}),
   };
@@ -171,39 +187,24 @@ export default async function ArtistBookingPage({ params }) {
         { "@type": "Country", name: "Pakistan" },
         { "@type": "Place", name: "Worldwide" },
       ],
-      provider: { "@id": `${SITE_URL}/#organization` },
+      provider: { "@id": ORGANIZATION_SCHEMA_ID },
       about: artist.profile ? { "@id": artistId } : personSchema,
       availableChannel: {
         "@type": "ServiceChannel",
         serviceUrl: bookingUrl,
       },
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Artists",
-          item: `${SITE_URL}/artists`,
-        },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: artist.name,
-          item: `${SITE_URL}${artist.href}`,
-        },
-      ],
-    },
+    breadcrumbSchema([
+      ["Artists", "/artists"],
+      [artist.name, artist.href],
+    ]),
   ];
 
   return (
     <>
       <JsonLd data={schema} />
-      <Header active="artists" />
-      <main>
+      <Header active="artists" bookingHref={bookingUrl} />
+      <main data-artist={artist.slug}>
         <section className={styles.hero}>
           <div className={styles.portraitWrap}>
             <div className={styles.portrait}>
@@ -257,8 +258,12 @@ export default async function ArtistBookingPage({ params }) {
               <p>{management.statement}</p>
             </div>
 
-            <div className={styles.actions}>
-              <BookingButton artist={artist} artists={ARTISTS}>
+            <div className={styles.actions} data-cta="artist_hero">
+              <BookingButton
+                artist={bookingArtist(artist)}
+                artists={ARTIST_OPTIONS}
+                source="artist_hero"
+              >
                 {isExclusive ? `Book ${artist.name}` : "Request booking"}
               </BookingButton>
               <a
@@ -501,6 +506,9 @@ export default async function ArtistBookingPage({ params }) {
               </p>
             </li>
           </ol>
+          <p className={styles.processLink}>
+            <a href="/how-to-book">Read the full booking guide →</a>
+          </p>
         </section>
 
         {related.length > 0 && (
@@ -514,7 +522,7 @@ export default async function ArtistBookingPage({ params }) {
           </section>
         )}
 
-        <section className={styles.bottomCta}>
+        <section className={styles.bottomCta} data-cta="artist_bottom">
           <div>
             <p>Ready to start?</p>
             <h2>Bring {artist.name} to your stage</h2>

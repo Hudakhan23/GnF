@@ -3,7 +3,14 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
 import { aboutHighlights } from "@/data/shows";
-import { SITE_URL, WHATSAPP_URL } from "@/data/site";
+import {
+  ORGANIZATION_SCHEMA_ID,
+  SITE_URL,
+  WHATSAPP_GENERAL_MESSAGE,
+  whatsappLink,
+} from "@/data/site";
+import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -12,6 +19,7 @@ export const metadata = {
     "Meet GnF Events, a Lahore-based artist facilitation and event management company serving concerts, weddings, corporate events and private celebrations since 2016.",
   alternates: { canonical: "/about" },
   openGraph: {
+    ...DEFAULT_OPEN_GRAPH,
     title: "About GnF Events",
     description:
       "Artist facilitation and event management built on trusted coordination, responsive support and memorable productions.",
@@ -25,13 +33,13 @@ const aboutSchema = {
   "@type": "AboutPage",
   name: "About GnF Events",
   url: `${SITE_URL}/about`,
-  mainEntity: { "@id": `${SITE_URL}/#organization` },
+  mainEntity: { "@id": ORGANIZATION_SCHEMA_ID },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <JsonLd data={aboutSchema} />
+      <JsonLd data={[aboutSchema, breadcrumbSchema([["About", "/about"]])]} />
       <Header active="about" />
       <main>
         <section className={styles.hero}>
@@ -118,7 +126,14 @@ export default function AboutPage() {
           <div>
             <h2>Let&apos;s create your next <em>unforgettable</em> event</h2>
             <div>
-              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer">Book via WhatsApp</a>
+              <a
+                href={whatsappLink(WHATSAPP_GENERAL_MESSAGE)}
+                target="_blank"
+                rel="noreferrer"
+                data-cta="about_cta"
+              >
+                Book via WhatsApp
+              </a>
               <a href="/contact">Contact us</a>
             </div>
           </div>

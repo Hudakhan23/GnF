@@ -1,4 +1,5 @@
 .form {
+  position: relative;
   display: flex;
   padding: clamp(30px, 4vw, 52px);
   border: 1px solid var(--gold-border-strong);
@@ -12,6 +13,29 @@
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 500;
+}
+
+.fields {
+  display: flex;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.fields:disabled input,
+.fields:disabled select,
+.fields:disabled textarea {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pending {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 .twoColumns {
@@ -35,6 +59,7 @@
 }
 
 .form input,
+.form select,
 .form textarea {
   width: 100%;
   border: 1px solid var(--gold-border-strong);
@@ -42,7 +67,7 @@
   background: var(--background);
   color: var(--text);
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   padding: 15px 16px;
 }
 
@@ -56,7 +81,81 @@
   color: var(--text-muted);
 }
 
+.form select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%),
+    linear-gradient(135deg, var(--gold) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 38px;
+}
+
+.form input[aria-invalid="true"],
+.form select[aria-invalid="true"] {
+  border-color: #e0846c;
+}
+
+.error {
+  color: #f0a08a;
+  font-size: 13px;
+  font-style: normal;
+}
+
+.alert {
+  padding: 14px 16px;
+  border-left: 2px solid #e0846c;
+  background: rgba(224, 132, 108, 0.08);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.alert p {
+  margin: 0;
+}
+
+.alert p + p {
+  margin-top: 8px;
+}
+
+.alert a,
+.success a,
+.success strong {
+  color: var(--gold);
+}
+
+.alert a {
+  text-decoration: underline;
+}
+
+.success {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.form h2:focus {
+  outline: none;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.form button:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
 .form input:focus,
+.form select:focus,
 .form textarea:focus {
   border-color: var(--gold);
   outline: 1px solid var(--gold);
@@ -85,8 +184,8 @@
 
 .note {
   margin: -12px 0 0;
-  color: var(--text-muted);
-  font-size: 11.5px;
+  color: var(--text-secondary);
+  font-size: 12px;
 }
 
 @media (max-width: 600px) {

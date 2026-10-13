@@ -1,5 +1,10 @@
 import { Archivo, Cormorant_Garamond } from "next/font/google";
+import ConversionTracker from "@/components/Analytics/ConversionTracker";
+import GoogleAnalytics from "@/components/Analytics/GoogleAnalytics";
+import JsonLd from "@/components/JsonLd/JsonLd";
 import { SITE_NAME, SITE_URL } from "@/data/site";
+import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -36,43 +41,38 @@ export const metadata = {
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "en_PK",
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    title: "Artist Booking in Pakistan | GnF Events",
-    description:
-      "Bring Pakistan's leading artists to your stage with end-to-end booking and event coordination.",
-    images: [
-      {
-        url: "/EventHighlights/E14.jpeg",
-        width: 1080,
-        height: 707,
-        alt: "Live concert produced by GnF Events",
-      },
-    ],
-  },
+  // No layout-level canonical: each page declares its own, so a route that
+  // forgets one is never canonicalised to the homepage.
+  openGraph: DEFAULT_OPEN_GRAPH,
   twitter: {
     card: "summary_large_image",
     title: "Artist Booking in Pakistan | GnF Events",
     description: "Pakistani singer booking and event management from GnF Events.",
     images: ["/EventHighlights/E14.jpeg"],
   },
+  // index/follow is the default; stating it here would contradict the
+  // noindex Next.js adds to 404s and to non-indexable artist pages.
   robots: {
-    index: true,
-    follow: true,
     googleBot: {
-      index: true,
-      follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,
     },
   },
   category: "entertainment",
+  verification: verification(),
 };
+
+/** Search-engine ownership tags, only when the IDs are configured. */
+function verification() {
+  const google = process.env.GOOGLE_SITE_VERIFICATION;
+  const bing = process.env.BING_SITE_VERIFICATION;
+  if (!google && !bing) return undefined;
+  return {
+    ...(google ? { google } : {}),
+    ...(bing ? { other: { "msvalidate.01": bing } } : {}),
+  };
+}
 
 export const viewport = {
   themeColor: "#0E0C09",
@@ -88,7 +88,12 @@ export default function RootLayout({ children }) {
       className={`${archivo.variable} ${cormorant.variable}`}
       data-scroll-behavior="smooth"
     >
-      <body>{children}</body>
+      <body>
+        <JsonLd data={[organizationSchema, websiteSchema]} />
+        {children}
+        <ConversionTracker />
+        <GoogleAnalytics />
+      </body>
     </html>
   );
 }

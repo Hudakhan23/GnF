@@ -1,0 +1,79 @@
+.main {
+  max-width: var(--max-width);
+  min-height: 60vh;
+  margin: 0 auto;
+  padding: 150px var(--page-padding) 120px;
+}
+
+.main h1 {
+  max-width: 14ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(46px, 6vw, 84px);
+  font-weight: 500;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.main h1 em {
+  color: var(--gold);
+}
+
+.text {
+  max-width: 52ch;
+  margin: 26px 0 0;
+  color: var(--text-secondary);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.popular {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--gold-border);
+}
+
+.popular h2 {
+  margin: 0 0 14px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.popular ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  gap: 10px 26px;
+  list-style: none;
+}
+
+.popular a {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.popular a:hover,
+.popular a:focus-visible {
+  color: var(--gold);
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding-top: 110px;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WHATSAPP_URL } from "@/data/site";
+import { WHATSAPP_GENERAL_MESSAGE, whatsappLink } from "@/data/site";
 import styles from "./Header.module.css";
 
 const links = [
@@ -11,9 +11,9 @@ const links = [
   { label: "Contact", href: "/contact", key: "contact" },
 ];
 
-function Navigation({ active }) {
+function Navigation({ active, bookingHref }) {
   return (
-    <nav className={styles.nav} aria-label="Primary navigation">
+    <nav className={styles.nav} aria-label="Primary navigation" data-cta="header">
       {links.map((link) => (
         <a
           href={link.href}
@@ -25,7 +25,7 @@ function Navigation({ active }) {
       ))}
       <a
         className={styles.booking}
-        href={WHATSAPP_URL}
+        href={bookingHref}
         target="_blank"
         rel="noreferrer"
       >
@@ -35,7 +35,15 @@ function Navigation({ active }) {
   );
 }
 
-export default function Header({ active, overlay = false }) {
+/**
+ * `bookingHref` lets a page swap the generic WhatsApp prefill for a
+ * page-specific one (artist pages pass the artist's enquiry message).
+ */
+export default function Header({
+  active,
+  overlay = false,
+  bookingHref = whatsappLink(WHATSAPP_GENERAL_MESSAGE),
+}) {
   return (
     <header className={`${styles.header} ${overlay ? styles.overlay : ""}`}>
       <div className={styles.inner}>
@@ -52,7 +60,7 @@ export default function Header({ active, overlay = false }) {
         </a>
 
         <div className={styles.desktopNav}>
-          <Navigation active={active} />
+          <Navigation active={active} bookingHref={bookingHref} />
         </div>
 
         <details className={styles.mobileMenu}>
@@ -62,7 +70,7 @@ export default function Header({ active, overlay = false }) {
             <span />
           </summary>
           <div className={styles.mobilePanel}>
-            <Navigation active={active} />
+            <Navigation active={active} bookingHref={bookingHref} />
           </div>
         </details>
       </div>

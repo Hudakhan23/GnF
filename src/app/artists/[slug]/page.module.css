@@ -819,3 +819,14 @@
     width: 100%;
   }
 }
+
+.processLink {
+  margin: 28px 0 0;
+  font-size: 14px;
+}
+
+.processLink a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -1,10 +1,12 @@
-import { artists } from "@/data/artists";
+import { artists, isIndexable } from "@/data/artists";
+import { imageRightsStatus } from "@/data/imageRights";
 import { SITE_URL } from "@/data/site";
 
 export default function sitemap() {
   const staticPages = [
     ["", 1, "weekly"],
     ["/artists", 0.9, "weekly"],
+    ["/how-to-book", 0.7, "monthly"],
     ["/about", 0.6, "monthly"],
     ["/contact", 0.8, "monthly"],
   ].map(([path, priority, changeFrequency]) => ({
@@ -13,7 +15,9 @@ export default function sitemap() {
     priority,
   }));
 
-  const artistPages = artists.map((artist) => ({
+  // Only pages we want indexed, and only images whose usage rights the
+  // business has confirmed (see src/data/imageRights.js).
+  const artistPages = artists.filter(isIndexable).map((artist) => ({
     url: `${SITE_URL}${artist.href}`,
     ...(artist.seo?.modified
       ? { lastModified: new Date(artist.seo.modified) }
@@ -21,7 +25,9 @@ export default function sitemap() {
     changeFrequency:
       artist.managementType === "exclusive" ? "weekly" : "monthly",
     priority: artist.managementType === "exclusive" ? 1 : 0.8,
-    ...(artist.image ? { images: [`${SITE_URL}${artist.image}`] } : {}),
+    ...(imageRightsStatus(artist.image) === "approved"
+      ? { images: [`${SITE_URL}${artist.image}`] }
+      : {}),
   }));
 
   return [...staticPages, ...artistPages];

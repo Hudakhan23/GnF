@@ -15,46 +15,18 @@ import {
   showPosters,
 } from "@/data/shows";
 import {
-  ADDRESS,
-  EMAIL,
+  ORGANIZATION_SCHEMA_ID,
   PHONE_PRIMARY,
   SITE_URL,
-  WHATSAPP_URL,
+  WHATSAPP_GENERAL_MESSAGE,
   whatsappLink,
 } from "@/data/site";
+import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
 import styles from "./page.module.css";
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": ["Organization", "LocalBusiness"],
-  "@id": `${SITE_URL}/#organization`,
-  name: "GnF Events",
-  url: SITE_URL,
-  logo: `${SITE_URL}/logo-gold.png`,
-  image: `${SITE_URL}/EventHighlights/E14.jpeg`,
-  description:
-    "Artist facilitation and event management company for singer, celebrity and entertainment bookings in Pakistan and worldwide.",
-  foundingDate: "2016",
-  email: EMAIL,
-  telephone: PHONE_PRIMARY,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "93 D, Divine Garden",
-    addressLocality: "Lahore",
-    addressCountry: "PK",
-  },
-  areaServed: ["Pakistan", "Lahore", "Karachi", "Islamabad", "Worldwide"],
-  sameAs: [
-    "https://www.facebook.com/glow.fanz",
-    "https://www.instagram.com/gnfeventsofficial",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: PHONE_PRIMARY,
-    contactType: "artist booking",
-    availableLanguage: ["English", "Urdu"],
-    areaServed: "PK",
-  },
+export const metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { ...DEFAULT_OPEN_GRAPH, url: SITE_URL },
 };
 
 const serviceSchema = {
@@ -63,24 +35,13 @@ const serviceSchema = {
   "@id": `${SITE_URL}/#artist-booking-service`,
   name: "Singer and Artist Booking in Pakistan",
   serviceType: "Artist facilitation and event management",
-  provider: { "@id": `${SITE_URL}/#organization` },
+  provider: { "@id": ORGANIZATION_SCHEMA_ID },
   areaServed: { "@type": "Country", name: "Pakistan" },
   availableChannel: {
     "@type": "ServiceChannel",
     serviceUrl: `${SITE_URL}/contact`,
-    servicePhone: { "@type": "ContactPoint", telephone: PHONE_PRIMARY },
+    servicePhone: { "@type": "ContactPoint", telephone: PHONE_PRIMARY.e164 },
   },
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": `${SITE_URL}/#website`,
-  url: SITE_URL,
-  name: "GnF Events",
-  alternateName: "GnF Events Pakistan",
-  inLanguage: "en-PK",
-  publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
 const exclusiveHomeArtist = getArtist("nish-asher");
@@ -117,7 +78,7 @@ const nextWaveArtists = homepageNextWaveArtists.map(
 export default function Home() {
   return (
     <>
-      <JsonLd data={[organizationSchema, websiteSchema, serviceSchema]} />
+      <JsonLd data={serviceSchema} />
       <Header active="home" overlay />
       <main>
         <section className={styles.hero}>
@@ -141,7 +102,13 @@ export default function Home() {
             </h1>
             <div className={styles.heroBottom}>
               <div className={styles.actions}>
-                <a className={styles.primaryButton} href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+                <a
+                  className={styles.primaryButton}
+                  href={whatsappLink(WHATSAPP_GENERAL_MESSAGE)}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cta="home_hero"
+                >
                   Book an Artist
                 </a>
                 <a className={styles.secondaryButton} href="/artists">
@@ -373,9 +340,10 @@ export default function Home() {
             <div className={styles.actions}>
               <a
                 className={styles.primaryButton}
-                href={whatsappLink("Hi GnF Events, I'd like to book an artist for my event.")}
+                href={whatsappLink(WHATSAPP_GENERAL_MESSAGE)}
                 target="_blank"
                 rel="noreferrer"
+                data-cta="home_cta"
               >
                 Book via WhatsApp
               </a>

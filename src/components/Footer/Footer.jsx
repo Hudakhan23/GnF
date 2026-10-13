@@ -5,6 +5,7 @@ import {
   PHONE_PRIMARY,
   PHONE_SECONDARY,
   socialLinks,
+  telHref,
 } from "@/data/site";
 import styles from "./Footer.module.css";
 
@@ -17,10 +18,11 @@ const socialEntries = [
 export default function Footer({ compact = false }) {
   if (compact) {
     return (
-      <footer className={styles.footer}>
+      <footer className={styles.footer} data-cta="footer">
         <div className={styles.compact}>
           <p>© {new Date().getFullYear()} GnF Events. All rights reserved.</p>
           <div className={styles.socials}>
+            <a href="/how-to-book">How to book</a>
             {socialEntries.map(([label, href]) => (
               <a href={href} target="_blank" rel="noreferrer" key={label}>
                 {label}
@@ -33,7 +35,7 @@ export default function Footer({ compact = false }) {
   }
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-cta="footer">
       <div className={styles.grid}>
         <div>
           <a className={styles.brand} href="/">
@@ -50,8 +52,8 @@ export default function Footer({ compact = false }) {
           <h2>Get in touch</h2>
           <address>{ADDRESS}</address>
           <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-          <a href={`tel:${PHONE_PRIMARY}`}>0300 9492571</a>
-          <a href={`tel:${PHONE_SECONDARY}`}>0321 9492571</a>
+          <a href={telHref(PHONE_PRIMARY)}>{PHONE_PRIMARY.display}</a>
+          <a href={telHref(PHONE_SECONDARY)}>{PHONE_SECONDARY.display}</a>
         </div>
         <div>
           <h2>Business hours</h2>
@@ -68,7 +70,10 @@ export default function Footer({ compact = false }) {
         </div>
       </div>
       <div className={styles.legal}>
-        <p>© {new Date().getFullYear()} GnF Events. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} GnF Events. All rights reserved. ·{" "}
+          <a href="/how-to-book">How to book an artist</a>
+        </p>
       </div>
     </footer>
   );

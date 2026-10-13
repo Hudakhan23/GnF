@@ -504,3 +504,12 @@
     display: none;
   }
 }
+
+.emptyActions {
+  display: flex;
+  margin-top: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}

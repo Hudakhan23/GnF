@@ -3,6 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import styles from "./ArtistDirectory.module.css";
 import ArtistCard from "@/components/ArtistCard/ArtistCard";
+import BookingButton from "@/components/BookingForm/BookingButton";
+import { whatsappLink } from "@/data/site";
+import { EVENTS, track } from "@/lib/analytics";
 import {
   ARTISTS,
   FACETS,
@@ -18,7 +21,7 @@ const PAGE_SIZE = 24;
 // Facets that would never match anything are dropped rather than shown dead.
 const usable = (facets) => facets.filter((f) => ARTISTS.some(f.match));
 
-export default function ArtistDirectory() {
+export default function ArtistDirectory({ artistOptions = [] }) {
   const [query, setQuery] = useState("");
   const [facets, setFacets] = useState([]);
   const [sort, setSort] = useState("featured");
@@ -36,6 +39,21 @@ export default function ArtistDirectory() {
   );
 
   const visibleResults = results.slice(0, visibleCount);
+  const trimmedQuery = query.trim();
+
+  // Report each distinct empty search once, after typing pauses. Only the
+  // fact that a search found nothing is sent — never the text typed. The
+  // query is kept locally (not sent) purely to avoid duplicate events.
+  const reportedQueries = useRef(new Set());
+  useEffect(() => {
+    if (results.length || !trimmedQuery) return;
+    const timer = setTimeout(() => {
+      if (reportedQueries.current.has(trimmedQuery)) return;
+      reportedQueries.current.add(trimmedQuery);
+      track(EVENTS.searchNoResults, { cta_location: "artist_directory" });
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, [results.length, trimmedQuery]);
 
   useEffect(() => {
     if (!moreOpen) return;
@@ -229,9 +247,32 @@ export default function ArtistDirectory() {
             Our network reaches well beyond this roster — tell us who you have
             in mind and we will source them.
           </p>
-          <button type="button" className="btn-outline" onClick={clearAll}>
-            Reset filters
-          </button>
+          <div className={styles.emptyActions} data-cta="search_no_results">
+            <BookingButton
+              artists={artistOptions}
+              defaultArtistName={trimmedQuery}
+              source="search_no_results"
+            >
+              {trimmedQuery && trimmedQuery.length <= 24
+                ? `Ask about ${trimmedQuery}`
+                : "Ask us about an artist"}
+            </BookingButton>
+            {trimmedQuery && (
+              <a
+                className="btn-outline"
+                href={whatsappLink(
+                  `Hi GnF Events, can you help me book ${trimmedQuery} for my event?\nEvent type: \nDate: \nCity: `
+                )}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ask on WhatsApp
+              </a>
+            )}
+            <button type="button" className={styles.clear} onClick={clearAll}>
+              Reset filters
+            </button>
+          </div>
         </div>
       )}
 

@@ -73,6 +73,11 @@
   font-size: 12.5px;
 }
 
+.legal a:hover,
+.legal a:focus-visible {
+  color: var(--gold);
+}
+
 .compact {
   display: flex;
   min-height: 108px;

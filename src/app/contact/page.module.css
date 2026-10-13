@@ -69,6 +69,19 @@
   line-height: 1.6;
 }
 
+.rows p {
+  display: block;
+}
+
+.rows p a {
+  margin: 0;
+}
+
+.rowNote {
+  color: var(--text-muted);
+  font-size: 12.5px;
+}
+
 .rows a:hover,
 .rows a:focus-visible {
   color: var(--gold);

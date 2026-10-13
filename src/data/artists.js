@@ -20,8 +20,8 @@
  * classify by genre — they carry no genre claims until confirmed.
  */
 
-import { whatsappLink } from "./site";
-import { ARTIST_DIRECTORY_PORTRAITS } from "./artistDirectoryPortraits";
+import { whatsappLink } from "./site.js";
+import { ARTIST_DIRECTORY_PORTRAITS } from "./artistDirectoryPortraits.js";
 
 export const MANAGEMENT = {
   exclusive: {
@@ -64,6 +64,9 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   genZ: Boolean(opts.genZ),
   needsReview: Boolean(opts.needsReview),
   tagline: opts.tagline || null,
+  // Other spellings actually in use (press, the artist's own channels). Never
+  // a reason for a separate page — they feed search and alternateName only.
+  aliases: opts.aliases || [],
   bio: opts.bio || null,
   metaDescription: opts.metaDescription || null,
   seo: opts.seo || null,
@@ -770,22 +773,79 @@ export const NETWORK_ARTISTS = ARTISTS.filter(
 
 export const FEATURED_ARTISTS = ARTISTS.filter((a) => a.featured);
 
-/** Artists sharing a genre or artistType, nearest matches first. */
-export const relatedArtists = (artist, limit = 4) =>
-  ARTISTS.filter((a) => a.slug !== artist.slug)
-    .map((a) => ({
-      artist: a,
-      score:
-        a.genres.filter((g) => artist.genres.includes(g)).length * 2 +
-        (a.artistType === artist.artistType ? 1 : 0) +
-        (a.country === artist.country ? 0.5 : 0) +
-        (a.featured ? 0.25 : 0) +
-        (a.image ? 0.4 : 0),
-    }))
-    .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit)
-    .map((r) => r.artist);
+/**
+ * The one indexability rule — robots meta, the sitemap and related-artist
+ * preference all read it. `needsReview` entries are names whose classification
+ * is unconfirmed, so their pages would rest on unverified data; they stay
+ * reachable for visitors but are `noindex, follow` and out of the sitemap.
+ * A missing genre alone is not a reason: comedians, hosts, actors and
+ * producers legitimately have none.
+ */
+export const isIndexable = (artist) =>
+  Boolean(artist?.slug) && !artist.needsReview;
+
+/** Name + slug only — enough for the booking form's artist suggestions. */
+export const ARTIST_OPTIONS = ARTISTS.map(({ name, slug }) => ({ name, slug }));
+
+/** The fields the booking dialog needs, so pages don't ship whole profiles. */
+export const bookingArtist = ({ name, slug, managementType }) => ({
+  name,
+  slug,
+  managementType,
+});
+
+// Stable 32-bit FNV-1a hash, used to break ties without favouring the same
+// few popular artists on every page.
+const hash = (text) => {
+  let h = 2166136261;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+};
+
+const RELATED_LIMIT = 4;
+const RELATED_MAX_INBOUND = 12;
+
+/**
+ * Related artists, computed once at build time: closest musical match first
+ * (shared genres, then same artist type), ties broken by a per-page hash, and
+ * no artist receives more than RELATED_MAX_INBOUND related links sitewide.
+ */
+const RELATED_BY_SLUG = (() => {
+  const inbound = new Map();
+  const result = new Map();
+  for (const artist of ARTISTS) {
+    const ranked = ARTISTS.filter((a) => a.slug !== artist.slug)
+      .map((a) => ({
+        artist: a,
+        score:
+          a.genres.filter((g) => artist.genres.includes(g)).length * 2 +
+          (a.artistType === artist.artistType ? 1 : 0) +
+          (a.country === artist.country ? 0.5 : 0),
+        tie: hash(`${artist.slug}:${a.slug}`),
+      }))
+      .filter((r) => r.score >= 1)
+      .sort(
+        (a, b) =>
+          b.score - a.score ||
+          Number(isIndexable(b.artist)) - Number(isIndexable(a.artist)) ||
+          a.tie - b.tie
+      );
+    const picks = [];
+    for (const { artist: candidate } of ranked) {
+      if ((inbound.get(candidate.slug) || 0) >= RELATED_MAX_INBOUND) continue;
+      picks.push(candidate);
+      inbound.set(candidate.slug, (inbound.get(candidate.slug) || 0) + 1);
+      if (picks.length === RELATED_LIMIT) break;
+    }
+    result.set(artist.slug, picks);
+  }
+  return result;
+})();
+
+export const relatedArtists = (artist) => RELATED_BY_SLUG.get(artist.slug) || [];
 
 /** The one-line descriptor shown under a name on cards and profiles. */
 export const descriptorFor = (artist) =>
@@ -892,7 +952,12 @@ export const filterArtists = (list, { query = "", facets = [] } = {}) => {
   const moreFacets = selected.filter((f) => f.group === "more");
 
   return list.filter((a) => {
-    if (q && !a.name.toLowerCase().includes(q)) return false;
+    if (
+      q &&
+      !a.name.toLowerCase().includes(q) &&
+      !a.aliases.some((alias) => alias.toLowerCase().includes(q))
+    )
+      return false;
     if (genreFacets.length && !genreFacets.some((f) => f.match(a))) return false;
     if (moreFacets.length && !moreFacets.every((f) => f.match(a))) return false;
     return true;
@@ -901,6 +966,46 @@ export const filterArtists = (list, { query = "", facets = [] } = {}) => {
 
 export const facetCount = (facet, list = ARTISTS) =>
   list.filter(facet.match).length;
+
+// ----------------------------------------------------------- page metadata
+
+const NATIONALITY = {
+  Pakistan: "Pakistani",
+  India: "Indian",
+  UK: "UK-based",
+  USA: "US-based",
+  Canada: "Canada-based",
+};
+
+/**
+ * e.g. "Pakistani Sufi Singer" — built only from roster data, never invented.
+ * `inline` lowercases the artist type for use mid-sentence ("Sufi singer").
+ */
+const describe = (a, { inline = false } = {}) => {
+  const genre = a.genres[0];
+  const redundant =
+    genre &&
+    a.artistType.toLowerCase().startsWith(genre.slice(0, 5).toLowerCase());
+  const type =
+    inline && a.artistType !== "DJ" ? a.artistType.toLowerCase() : a.artistType;
+  return [NATIONALITY[a.country], genre && !redundant ? genre : null, type]
+    .filter(Boolean)
+    .join(" ");
+};
+
+// The layout appends " | GnF Events"; drop "for Events" when the result
+// would run past ~65 characters in search results.
+const seoTitleFor = (a) => {
+  const base = `Book ${a.name} – ${describe(a)}`;
+  return base.length + " for Events | GnF Events".length <= 65
+    ? `${base} for Events`
+    : base;
+};
+
+const seoDescriptionFor = (a) => {
+  const [first, second] = suitabilityFor(a).map((o) => o.toLowerCase());
+  return `Book ${a.name}, ${describe(a, { inline: true })}, for ${first} and ${second}. GnF Events in Lahore checks availability through its artist network.`;
+};
 
 // ---------------------------------------------------- compatibility exports
 // Codex's pages/sitemap import { artists, getArtist } — keep those working,
@@ -914,11 +1019,12 @@ export const artists = ARTISTS.map((a) => ({
       ? `Hi GnF Events, I'd like to book ${a.name} for my event.`
       : `Hi GnF Events, I'd like to check ${a.name}'s availability for my event.`
   ),
+  seoTitle: a.seo?.title || seoTitleFor(a),
   description:
     a.metaDescription ||
     (a.managementType === "exclusive"
       ? `${a.name} is exclusively managed by GnF Events. Send your event date, city and occasion to book directly through our management team.`
-      : `Send GnF Events your event date, city and occasion to enquire about ${a.name}'s availability through our artist facilitation network.`),
+      : seoDescriptionFor(a)),
 }));
 
 export const getArtist = (slug) => artists.find((a) => a.slug === slug) || null;

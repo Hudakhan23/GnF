@@ -1,4 +1,27 @@
 /** @type {import('next').NextConfig} */
+
+// Artist pages removed from the roster on 2026-10-12 (commits 3f541eb, ce0e88d).
+// They were in the sitemap until then, so send any remaining traffic to the
+// directory instead of a 404.
+const REMOVED_ARTIST_SLUGS = [
+  "zeb-and-haniya",
+  "falak-ijaz-and-hurya-waqas",
+  "magic-and-illusion-show",
+  "zuhaib-ramzan-bhatti",
+  "mole",
+  "ziggy",
+];
+
+const SECURITY_HEADERS = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=(), payment=()",
+  },
+];
+
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
@@ -8,16 +31,17 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     deviceSizes: [360, 640, 750, 828, 1080, 1200, 1360, 1920],
     imageSizes: [64, 96, 128, 256, 384],
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.platinumlist.net", pathname: "/upload/artist/**" },
-      { protocol: "https", hostname: "cdn.prod.website-files.com", pathname: "/**" },
-      { protocol: "https", hostname: "is1-ssl.mzstatic.com", pathname: "/image/thumb/**" },
-      { protocol: "https", hostname: "cdn-az.allevents.in", pathname: "/events5/banners/**" },
-      { protocol: "https", hostname: "fankarlokentertainment.com", pathname: "/wp-content/uploads/2025/09/**" },
-      { protocol: "https", hostname: "i1.sndcdn.com", pathname: "/avatars-**" },
-      { protocol: "https", hostname: "i.scdn.co", pathname: "/image/**" },
-      { protocol: "https", hostname: "image-cdn-ak.spotifycdn.com", pathname: "/image/**" },
-    ],
+    // All artwork is served from /public; no remote image hosts are allowed.
+  },
+  async redirects() {
+    return REMOVED_ARTIST_SLUGS.map((slug) => ({
+      source: `/artists/${slug}`,
+      destination: "/artists",
+      permanent: true,
+    }));
+  },
+  async headers() {
+    return [{ source: "/:path*", headers: SECURITY_HEADERS }];
   },
 };
 

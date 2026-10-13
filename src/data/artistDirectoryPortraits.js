@@ -1,4 +1,4 @@
-/* Local artist portraits; provenance is recorded in /public/artists/IMAGE-SOURCES.md. */
+/* Local artist portraits; provenance is recorded in docs/image-rights/IMAGE-SOURCES.md (not publicly served). */
 export const ARTIST_DIRECTORY_PORTRAITS = {
   "Ali Noor": {
     "image": "/artists/deezer-6826823.jpg"

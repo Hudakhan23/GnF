@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./ExclusiveSpotlight.module.css";
 import ArtistPortrait from "@/components/ArtistCard/ArtistPortrait";
 import BookingButton from "@/components/BookingForm/BookingButton";
-import { MANAGEMENT, descriptorFor } from "@/data/artists";
+import { MANAGEMENT, descriptorFor, bookingArtist } from "@/data/artists";
 
 /**
  * Editorial treatment for exclusively managed artists. Renders one spotlight
@@ -50,7 +50,11 @@ export default function ExclusiveSpotlight({ artists, allArtists }) {
                 <span className={styles.chip}>{artist.country}</span>
               </div>
               <div className={styles.actions}>
-                <BookingButton artist={artist} artists={allArtists}>
+                <BookingButton
+                  artist={bookingArtist(artist)}
+                  artists={allArtists}
+                  source="exclusive_spotlight"
+                >
                   Book {artist.name}
                 </BookingButton>
                 <Link

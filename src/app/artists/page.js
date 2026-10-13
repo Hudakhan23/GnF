@@ -1,10 +1,14 @@
 import ArtistDirectory from "@/components/ArtistDirectory/ArtistDirectory";
+import ArtistIndex from "@/components/ArtistIndex/ArtistIndex";
 import BookingButton from "@/components/BookingForm/BookingButton";
 import ExclusiveSpotlight from "@/components/ExclusiveSpotlight/ExclusiveSpotlight";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import { ARTISTS, EXCLUSIVE_ARTISTS } from "@/data/artists";
+import JsonLd from "@/components/JsonLd/JsonLd";
+import { ARTISTS, ARTIST_OPTIONS, EXCLUSIVE_ARTISTS } from "@/data/artists";
 import { SITE_URL } from "@/data/site";
+import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -13,6 +17,7 @@ export const metadata = {
     "Browse the GnF Events artist network across music, qawwali, entertainment, comedy and international talent. Contact us for artist availability, coordination and event management.",
   alternates: { canonical: "/artists" },
   openGraph: {
+    ...DEFAULT_OPEN_GRAPH,
     title: "Pakistani Singers & Artists for Booking | GnF Events",
     description:
       "Browse leading Pakistani and international artists, then start an availability enquiry for your wedding, corporate event, concert or festival.",
@@ -26,6 +31,7 @@ const COUNTRIES = new Set(ARTISTS.map((a) => a.country));
 export default function ArtistsPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema([["Artists", "/artists"]])} />
       <Header active="artists" />
       <main>
         <section className={styles.hero}>
@@ -64,7 +70,10 @@ export default function ArtistsPage() {
           </div>
         </section>
 
-        <ExclusiveSpotlight artists={EXCLUSIVE_ARTISTS} allArtists={ARTISTS} />
+        <ExclusiveSpotlight
+          artists={EXCLUSIVE_ARTISTS}
+          allArtists={ARTIST_OPTIONS}
+        />
 
         <section className={styles.directoryHead}>
           <p className="eyebrow">Artist network</p>
@@ -78,7 +87,9 @@ export default function ArtistsPage() {
           </p>
         </section>
 
-        <ArtistDirectory />
+        <ArtistDirectory artistOptions={ARTIST_OPTIONS} />
+
+        <ArtistIndex />
 
         <section className={styles.enquiryWrap}>
           <aside className={styles.enquiry}>
@@ -91,7 +102,9 @@ export default function ArtistsPage() {
                 comedians, and celebrities across Pakistan and abroad.
               </p>
             </div>
-            <BookingButton artists={ARTISTS}>Start an enquiry</BookingButton>
+            <BookingButton artists={ARTIST_OPTIONS} source="artists_not_listed">
+              Start an enquiry
+            </BookingButton>
           </aside>
           <p className={styles.disclaimer}>
             Availability is subject to the artist&apos;s schedule and
