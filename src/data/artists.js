@@ -94,7 +94,7 @@ export const ARTISTS = [
     gender: F,
     genZ: true,
     country: "UK",
-    image: "/artists/nish-asher.jpeg",
+    image: "/artists/nish-asher-official.jpg",
     tagline: "Pop vocalist & OST performer",
     bio: "Nish Asher is a UK-based Pakistani pop singer and OST vocalist known for her distinctive voice, acclaimed television soundtracks, and cross-genre musical style. Beginning her musical journey at just three years old, Nish has collaborated with celebrated names including Rahat Fateh Ali Khan, Ali Zafar, Farhan Saeed, and Asim Azhar. A BBC Asian Network Future Sounds Artist, she performs for audiences across Pakistan and the international music scene.",
     metaDescription:
@@ -276,13 +276,13 @@ export const ARTISTS = [
   A("Naseebo Lal", "Singer", ["Folk"], { gender: F }),
   A("Afshan Zaibi", "Singer", ["Folk"], {
     gender: F,
-    image: "/artists/afshan-zaibi.jpg",
+    image: "/artists/afshan-zaibi-official.jpg",
   }),
   A("Ahmed Jahanzeb", "Singer", ["Pop", "Playback"], {
-    image: "/artists/ahmed-jahanzeb.jpeg",
+    image: "/artists/ahmed-jahanzeb-official.jpg",
   }),
   A("Akhtar Chanal Zahri", "Singer", ["Folk"], {
-    image: "/artists/akhtar-chanal-zahri.jpg",
+    image: "/artists/akhtar-chanal-zahri-official.jpg",
   }),
   A("Akram Rahi", "Singer", ["Folk"], {
     image: "/artists/akram-rahi-commons.jpg",
@@ -307,15 +307,15 @@ export const ARTISTS = [
     image: "/artists/ali-sethi.jpg",
   }),
   A("Amanat Ali", "Singer", ["Pop", "Classical"], {
-    image: "/artists/amanat-ali.jpg",
+    image: "/artists/amanat-ali-official.jpg",
   }),
   A("Annie Khalid", "Singer", ["Pop"], {
     gender: F,
     country: "UK",
-    image: "/artists/annie-khalid.jpg",
+    image: "/artists/annie-khalid-official.jpg",
   }),
   A("Arieb Azhar", "Singer", ["Sufi", "Folk"], {
-    image: "/artists/arieb-azhar.jpg",
+    image: "/artists/arieb-azhar-official.jpg",
   }),
   A("Arif Lohar", "Singer", ["Folk"], {
     image: "/artists/arif-lohar-commons.jpg",
@@ -393,7 +393,7 @@ export const ARTISTS = [
   }),
   A("Abdul Hannan", "Singer", ["Pop"], {
     genZ: true,
-    image: "/artists/abdul-hannan.jpg",
+    image: "/artists/abdul-hannan-official.jpg",
   }),
   A("Shazia Manzoor", "Singer", ["Folk"], { gender: F }),
   A("Malkoo", "Singer", ["Folk"]),
@@ -402,7 +402,7 @@ export const ARTISTS = [
     gender: F,
     genZ: true,
     country: "USA",
-    image: "/artists/annural-khalid.jpeg",
+    image: "/artists/annural-khalid-official.jpg",
   }),
   A("Shehzad Roy", "Singer", ["Pop"]),
   A("Raafay Israr", "Singer", ["Pop"], { genZ: true }),
@@ -415,7 +415,7 @@ export const ARTISTS = [
   A("Fariha Pervez", "Singer", ["Pop", "Ghazal"], { gender: F }),
   A("Afusic", "Singer", ["Pop"], {
     genZ: true,
-    image: "/artists/afusic.jpeg",
+    image: "/artists/afusic-official.jpg",
   }),
   A("Bayaan", "Band", ["Rock", "Pop"], {
     gender: G,
@@ -518,7 +518,7 @@ export const ARTISTS = [
     bio: "Hanif Raja is a veteran Pakistani stage and television comedian and host, known for the show Chup Chupa Kay.",
   }),
   A("Amanat Chan", "Comedian", [], {
-    image: "/artists/amanat-chan.jpeg",
+    image: "/artists/amanat-chan-official.jpg",
   }),
   A("Agha Majid", "Comedian", [], { image: "/artists/agha-majid.jpeg" }),
   A("Saleem Albela", "Comedian", []),
@@ -561,7 +561,7 @@ export const ARTISTS = [
     genZ: true,
     tagline: "Dhol player",
     aliases: ["Arishma"],
-    image: "/artists/arishma-maryam.jpeg",
+    image: "/artists/arishma-maryam-official.jpg",
     bio: "Arishma Maryam is a Lahore-based dhol player who performs at weddings and cultural events.",
   }),
   A("Shakeel Siddiqui", "Comedian", []),
@@ -602,7 +602,7 @@ export const ARTISTS = [
       licenseHref: "https://creativecommons.org/publicdomain/zero/1.0/",
     },
   }),
-  A("Ali Haider", "Singer", ["Pop"], { image: "/artists/ali-haider.jpg" }),
+  A("Ali Haider", "Singer", ["Pop"], { image: "/artists/ali-haider-official.jpg" }),
   A("Hasan Jahangir", "Singer", ["Pop"]),
   A("Zohaib Hassan", "Singer", ["Pop"]),
   A("Bilal Khan", "Singer", ["Pop"]),
@@ -641,16 +641,16 @@ export const ARTISTS = [
   A("Ghulam Ali Qadri", "Qawwal", ["Qawwali"]),
   A("Riaz Qadri", "Qawwal", ["Qawwali"]),
   A("Asfar Hussain", "Singer", ["Rock", "Pop"], {
-    image: "/artists/asfar-hussain.png",
+    image: "/artists/asfar-hussain-official.jpg",
   }),
   A("Junaid Khan", "Singer", ["Rock", "Pop"]),
   A("Ali Noor", "Singer", ["Rock"]),
   A("Ali Hamza", "Singer", ["Rock", "Pop"], {
-    image: "/artists/ali-hamza.jpeg",
+    image: "/artists/ali-hamza-official.jpg",
   }),
   A("Uzair Jaswal", "Singer", ["Rock", "Pop"]),
   A("Adnan Dhool", "Singer", ["Pop", "Sufi"], {
-    image: "/artists/adnan-dhool.jpg",
+    image: "/artists/adnan-dhool-official.jpg",
   }),
   A("Faraz Anwar", "Singer", ["Rock"], { tagline: "Guitarist & composer" }),
   A("Farhan Rais Khan", "Singer", ["Classical"], { tagline: "Sitar maestro" }),
@@ -660,7 +660,7 @@ export const ARTISTS = [
   A("Talal Qureshi", "Producer", [], { tagline: "Producer & electronic artist" }),
   A("Abdullah Siddiqui", "Singer", ["Pop"], {
     genZ: true,
-    image: "/artists/abdullah-siddiqui.jpeg",
+    image: "/artists/abdullah-siddiqui-official.jpg",
   }),
   A("Faris Shafi", "Rapper", ["Rap / Hip-Hop"], {
     image: "/artists/faris-shafi.jpg",
@@ -692,7 +692,7 @@ export const ARTISTS = [
   A("Alycia Dias", "Singer", ["Pop"], {
     gender: F,
     country: "India",
-    image: "/artists/alycia-dias.jpeg",
+    image: "/artists/alycia-dias-official.jpg",
   }),
   A("Fizza Javed", "Singer", ["Pop"], { gender: F }),
   A("Samra Khan", "Singer", ["Pop"], { gender: F }),

@@ -14,9 +14,28 @@
  * Images stay on their pages while the review is in progress; move a path into
  * APPROVED_IMAGES only once permission is confirmed.
  */
-// Openly licensed (Wikimedia Commons); the required credit is shown on the
-// artist page via `imageCredit` in src/data/artists.js.
+// Openly licensed (Wikimedia Commons / Flickr, credit shown on the artist page via
+// `imageCredit`), or taken from the artist's official channel with GnF's
+// confirmed permission.
 export const APPROVED_IMAGES = new Set([
+  "/artists/abdul-hannan-official.jpg",
+  "/artists/abdullah-siddiqui-official.jpg",
+  "/artists/adnan-dhool-official.jpg",
+  "/artists/afshan-zaibi-official.jpg",
+  "/artists/afusic-official.jpg",
+  "/artists/ahmed-jahanzeb-official.jpg",
+  "/artists/akhtar-chanal-zahri-official.jpg",
+  "/artists/ali-haider-official.jpg",
+  "/artists/ali-hamza-official.jpg",
+  "/artists/alycia-dias-official.jpg",
+  "/artists/amanat-ali-official.jpg",
+  "/artists/amanat-chan-official.jpg",
+  "/artists/annie-khalid-official.jpg",
+  "/artists/annural-khalid-official.jpg",
+  "/artists/arieb-azhar-official.jpg",
+  "/artists/arishma-maryam-official.jpg",
+  "/artists/asfar-hussain-official.jpg",
+  "/artists/nish-asher-official.jpg",
   "/artists/akram-rahi-commons.jpg",
   "/artists/ali-azmat-flickr.jpg",
   "/artists/alamgir-commons.jpg",
