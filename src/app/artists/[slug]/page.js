@@ -213,6 +213,23 @@ export default async function ArtistBookingPage({ params }) {
             {isExclusive && (
               <span className={styles.badge}>{MANAGEMENT.exclusive.badge}</span>
             )}
+            {artist.imageCredit && (
+              <p className={styles.photoCredit}>
+                Photo:{" "}
+                <a href={artist.imageCredit.href} target="_blank" rel="noopener noreferrer">
+                  {artist.imageCredit.text}
+                </a>
+                ,{" "}
+                <a
+                  href={artist.imageCredit.licenseHref}
+                  target="_blank"
+                  rel="noopener noreferrer license"
+                >
+                  {artist.imageCredit.license}
+                </a>
+                , via Wikimedia Commons
+              </p>
+            )}
           </div>
 
           <div className={styles.copy}>

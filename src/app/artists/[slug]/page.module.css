@@ -285,6 +285,18 @@
   position: relative;
 }
 
+.photoCredit {
+  margin: 8px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.photoCredit a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .badge {
   position: absolute;
   top: 22px;

@@ -55,6 +55,8 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   imagePosition:
     opts.imagePosition || ARTIST_DIRECTORY_PORTRAITS[name]?.position || null,
   imageFit: opts.imageFit || ARTIST_DIRECTORY_PORTRAITS[name]?.fit || null,
+  // Required credit for openly licensed photos: { text, href, license, licenseHref }.
+  imageCredit: opts.imageCredit || null,
   genres,
   artistType,
   managementType: opts.managementType || "network",
@@ -295,7 +297,13 @@ export const ARTISTS = [
     image: "/artists/arieb-azhar.jpg",
   }),
   A("Arif Lohar", "Singer", ["Folk"], {
-    image: "/artists/arif-lohar.jpeg",
+    image: "/artists/arif-lohar-commons.jpg",
+    imageCredit: {
+      text: "PILAC TV",
+      href: "https://commons.wikimedia.org/wiki/File:Arif_Lohar_2021.png",
+      license: "CC BY 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by/3.0/",
+    },
   }),
   A("Asrar", "Singer", ["Sufi"], { image: "/artists/asrar.jpg" }),
   A("Attaullah Khan Esakhelvi", "Singer", ["Folk", "Ghazal"], {
@@ -424,12 +432,19 @@ export const ARTISTS = [
   A("Manj Musik", "Singer", ["Bhangra", "Rap / Hip-Hop"], { country: "UK" }),
   A("Sahara UK", "Band", ["Bhangra"], { gender: G, country: "UK" }),
 
-  A("Havi", "Singer", [], {
-    needsReview: true,
+  A("Havi", "Singer", ["Pop", "Alternative"], {
     tagline: "Abdur Rahman Sajid",
+    aliases: ["HAVI", "Abdur Rahman Sajid", "Abdul Rehman Sajid"],
+    bio: "HAVI (Abdur Rahman Sajid) is a Karachi-based singer-songwriter and the former lead vocalist of the rock band AUJ, named Spotify's RADAR Pakistan artist for Q3 2026.",
   }),
-  A("Shahzaman Ali Khan", "Singer", [], { needsReview: true }),
-  A("Tahseen Sakina", "Singer", [], { gender: F, needsReview: true }),
+  A("Shahzaman Ali Khan", "Qawwal", ["Qawwali", "Sufi"], {
+    aliases: ["Shah Zaman", "Shahzaman Fateh Ali Khan"],
+    bio: "Shahzaman Ali Khan is a Pakistani qawwali singer and the son of Rahat Fateh Ali Khan, who sang the original soundtrack of the ARY drama Bismil.",
+  }),
+  A("Tahseen Sakina", "Singer", ["Sufi", "Folk"], {
+    gender: F,
+    bio: "Tahseen Sakina is a Sufi singer from Gujranwala who performed an Abida Parveen tribute at the UK's Sangam Festival in 2022.",
+  }),
   A("Khadija Dilnawaz", "Singer", [], { gender: F, needsReview: true }),
   A("Sher Mian Dad Khan", "Qawwal", ["Qawwali", "Sufi"]),
   A("Ayesha Jehanzeb", "Host", [], { gender: F, needsReview: true }),
@@ -472,8 +487,10 @@ export const ARTISTS = [
   A("Nasir Chinyoti", "Comedian", []),
   A("Zaw Ali", "Singer", ["Sufi", "Pop"]),
   A("Nirmal Roy", "Singer", ["Pop", "Sufi"]),
-  A("Ghafar Lehri", "Performer", [], { needsReview: true }),
-  A("Hanif Raja", "Performer", [], { needsReview: true }),
+  A("Ghafar Lehri", "Comedian", [], { needsReview: true }),
+  A("Hanif Raja", "Comedian", ["Comedy"], {
+    bio: "Hanif Raja is a veteran Pakistani stage and television comedian and host, known for the show Chup Chupa Kay.",
+  }),
   A("Amanat Chan", "Comedian", [], {
     image: "/artists/amanat-chan.jpeg",
   }),
@@ -499,15 +516,27 @@ export const ARTISTS = [
   A("Rizwan Muazzam Qawwals", "Qawwal", ["Qawwali", "Sufi"], { gender: G }),
   A("Rafaqat Ali Khan", "Singer", ["Classical", "Sufi"]),
   A("Sadia Anwar", "Performer", [], { gender: F, needsReview: true }),
-  A("Horeya Asmat", "Singer", [], { gender: F, genZ: true, needsReview: true }),
-  A("Sukhbir", "Singer", ["Bhangra"], { country: "India" }),
-  A("Manwa Sisters", "Singer", [], { gender: G, needsReview: true }),
-  A("Mazhar Rahi", "Singer", [], { needsReview: true }),
-  A("Arishma Maryam", "Singer", [], {
+  A("Horeya Asmat", "Performer", ["Dhol", "Sufi", "Folk"], {
     gender: F,
     genZ: true,
-    needsReview: true,
+    tagline: "Dhol player",
+    bio: "Horeya Asmat is a Lahore-based dhol player who performs Sufi and folk sets.",
+  }),
+  A("Sukhbir", "Singer", ["Bhangra"], { country: "India" }),
+  A("Manwa Sisters", "Qawwal", ["Qawwali", "Sufi", "Folk"], {
+    gender: G,
+    bio: "The Manwa Sisters are a female qawwali trio from Faisalabad.",
+  }),
+  A("Mazhar Rahi", "Singer", ["Punjabi", "Bhangra", "Folk"], {
+    bio: "Mazhar Rahi is a Pakistani Punjabi singer known for songs including Nashe Diye Botle and Bilo Tari Ba Phar Kay.",
+  }),
+  A("Arishma Maryam", "Performer", ["Dhol", "Folk"], {
+    gender: F,
+    genZ: true,
+    tagline: "Dhol player",
+    aliases: ["Arishma"],
     image: "/artists/arishma-maryam.jpeg",
+    bio: "Arishma Maryam is a Lahore-based dhol player who performs at weddings and cultural events.",
   }),
   A("Shakeel Siddiqui", "Comedian", []),
   A("Naseem Vicky", "Comedian", []),
@@ -516,7 +545,9 @@ export const ARTISTS = [
   A("Komal Rizvi", "Singer", ["Pop"], { gender: F }),
   A("Naeem Abbas Rufi", "Singer", ["Folk"]),
   A("Nabeel Shaukat Ali", "Singer", ["Pop", "Playback"]),
-  A("Wahdat Rameez", "Singer", [], { needsReview: true }),
+  A("Wahdat Rameez", "Singer", ["Classical", "Sufi", "Folk"], {
+    bio: "Wahdat Rameez is a classical, Sufi and folk vocalist from Pakpattan.",
+  }),
   A("Mehwish Hayat", "Performer", [], {
     gender: F,
     tagline: "Actor & performer",
@@ -536,7 +567,15 @@ export const ARTISTS = [
 
   // ---------------------------------------------- second intake (added later)
   A("Sarmad Qadeer", "Singer", ["Pop", "Folk"]),
-  A("Alamgir", "Singer", ["Pop"], { image: "/artists/alamgir.jpg" }),
+  A("Alamgir", "Singer", ["Pop"], {
+    image: "/artists/alamgir-commons.jpg",
+    imageCredit: {
+      text: "AlexRic26",
+      href: "https://commons.wikimedia.org/wiki/File:Alamgir_4.4.jpg",
+      license: "CC0 1.0",
+      licenseHref: "https://creativecommons.org/publicdomain/zero/1.0/",
+    },
+  }),
   A("Ali Haider", "Singer", ["Pop"], { image: "/artists/ali-haider.jpg" }),
   A("Hasan Jahangir", "Singer", ["Pop"]),
   A("Zohaib Hassan", "Singer", ["Pop"]),
@@ -699,7 +738,13 @@ export const ARTISTS = [
   }),
   A("Anwar Maqsood", "Host", [], {
     tagline: "Writer, host & satirist",
-    image: "/artists/anwar-maqsood.jpg",
+    image: "/artists/anwar-maqsood-commons.jpg",
+    imageCredit: {
+      text: "BBC Urdu",
+      href: "https://commons.wikimedia.org/wiki/File:Anwar_Maqsood,_ca._2020.jpg",
+      license: "CC BY 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by/3.0/",
+    },
   }),
 
   // International
@@ -707,7 +752,13 @@ export const ARTISTS = [
   A("Arooj Aftab", "Singer", ["Sufi"], {
     gender: F,
     country: "USA",
-    image: "/artists/arooj-aftab.webp",
+    image: "/artists/arooj-aftab-commons.jpg",
+    imageCredit: {
+      text: "Philip Romano",
+      href: "https://commons.wikimedia.org/wiki/File:AroojAftab-byPhilipRomano.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
   }),
   A("Krewella", "Band", [], { gender: G, country: "USA", tagline: "DJ duo" }),
   A("Karpe", "Band", ["Rap / Hip-Hop"], { gender: G, country: "Norway" }),
@@ -725,36 +776,60 @@ export const ARTISTS = [
 
   // Names we could not confidently classify — no genre claims until confirmed.
   A("Riaz Ali Khan", "Singer", [], { needsReview: true }),
-  A("Asif Hussain Samraat", "Singer", [], { needsReview: true }),
+  A("Asif Hussain Samraat", "Singer", ["Folk", "Semi-classical"], {
+    aliases: ["Asif Hussain Samrat"],
+    bio: "Asif Hussain Samraat is a folk and semi-classical singer who featured on Coke Studio Pakistan Season 4 in 2011.",
+  }),
   A("Tahir Mithu", "Singer", [], { needsReview: true }),
   A("Shehroze Hussan", "Singer", [], { needsReview: true }),
   A("Ali Khan", "Singer", [], {
     needsReview: true,
     image: "/artists/ali-khan.webp",
   }),
-  A("Jaffer Zaidi", "Singer", [], { needsReview: true }),
-  A("Rizwan Butt", "Performer", [], { needsReview: true }),
-  A("Irteassh", "Performer", [], { needsReview: true }),
+  A("Jaffer Zaidi", "Singer", ["Pop", "Semi-classical", "Fusion"], {
+    bio: "Jaffer Zaidi is a Karachi-born singer-songwriter and composer, the lead vocalist of the band Kaavish and a Coke Studio Pakistan artist.",
+  }),
+  A("Rizwan Butt", "Singer", ["Pop", "Rock", "Sufi"], {
+    bio: "Rizwan Butt is a Lahore-born singer-songwriter and guitarist known for Nescafe Basement and Coke Studio Pakistan.",
+  }),
+  A("Irteassh", "Band", ["A cappella", "Classical", "Pop"], {
+    gender: G,
+    bio: "Irteassh is a Karachi-based all-female a cappella group formed in 2017.",
+  }),
   A("Waqar Ehsin", "Performer", [], { needsReview: true }),
-  A("Kashif Din", "Performer", [], { needsReview: true }),
-  A("Nimra Rafiq", "Singer", [], { gender: F, needsReview: true }),
+  A("Kashif Din", "Singer", ["Folk"], {
+    bio: "Kashif Din is a singer from Hunza who performed Bo Giyam in Burushaski on Coke Studio Pakistan Season 12.",
+  }),
+  A("Nimra Rafiq", "Singer", ["Sufi", "Pop"], {
+    gender: F,
+    aliases: ["Nimra Rafique"],
+    bio: "Nimra Rafique is a Pakistani vocalist and Coke Studio backing vocalist.",
+  }),
   A("Shahab Hussain", "Singer", [], { needsReview: true }),
   A("Shamali Afghan", "Singer", [], { needsReview: true }),
-  A("Aizaz Sohail", "Performer", [], {
+  A("Aizaz Sohail", "Singer", ["Classical"], {
     needsReview: true,
     image: "/artists/aizaz-sohail.jpeg",
   }),
   A("Mehdi Maloof", "Performer", [], { needsReview: true }),
-  A("Noman Ali Rajper", "Performer", [], { needsReview: true }),
-  A("Noorima Rehan", "Singer", [], { gender: F, needsReview: true }),
-  A("Umair Butt", "Performer", [], { needsReview: true }),
-  A("Zeeshan Ali", "Performer", [], { needsReview: true }),
-  A("Zoha Waseem", "Singer", [], {
-    gender: F,
-    needsReview: true,
-    image: "/artists/zoha-waseem.jpg",
+  A("Noman Ali Rajper", "Singer", ["Sindhi", "Folk", "Fusion"], {
+    bio: "Noman Ali Rajper is a Sindhi singer from Khairpur featured on Aayi Aayi, the opening song of Coke Studio Pakistan Season 15.",
   }),
-  A("Murtaza Qazilbash", "Performer", [], { needsReview: true }),
+  A("Noorima Rehan", "Singer", [], { gender: F, needsReview: true }),
+  A("Umair Butt", "Singer", ["Punjabi"], {
+    bio: "Umair Butt is a Punjabi singer known for Coke Studio Pakistan's Neray Neray Vas and Blockbuster.",
+  }),
+  A("Zeeshan Ali", "Performer", [], { needsReview: true }),
+  A("Zoha Waseem", "Singer", ["Pop"], {
+    gender: F,
+    image: "/artists/zoha-waseem.jpg",
+    bio: "Zoha Waseem is a Pakistani singer known for the 2025 hit Majboor with Sheheryar Rehan.",
+  }),
+  A("Murtaza Qizilbash", "Singer", ["Pop"], {
+    aliases: ["Murtaza Qazilbash"],
+    image: "/artists/murtaza-qizilbash.jpg",
+    bio: "Murtaza Qizilbash is a Lahore-based Urdu singer-songwriter named Spotify's RADAR Pakistan artist for Q2 2026.",
+  }),
   A("Ahsan Pervaiz", "Singer", [], {
     needsReview: true,
     image: "/artists/ahsan-pervaiz.jpeg",

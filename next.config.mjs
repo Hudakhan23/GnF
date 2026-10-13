@@ -12,6 +12,11 @@ const REMOVED_ARTIST_SLUGS = [
   "ziggy",
 ];
 
+// Artist pages whose slug changed after a spelling correction.
+const RENAMED_ARTIST_SLUGS = {
+  "murtaza-qazilbash": "murtaza-qizilbash",
+};
+
 const SECURITY_HEADERS = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
@@ -34,11 +39,18 @@ const nextConfig = {
     // All artwork is served from /public; no remote image hosts are allowed.
   },
   async redirects() {
-    return REMOVED_ARTIST_SLUGS.map((slug) => ({
-      source: `/artists/${slug}`,
-      destination: "/artists",
-      permanent: true,
-    }));
+    return [
+      ...REMOVED_ARTIST_SLUGS.map((slug) => ({
+        source: `/artists/${slug}`,
+        destination: "/artists",
+        permanent: true,
+      })),
+      ...Object.entries(RENAMED_ARTIST_SLUGS).map(([from, to]) => ({
+        source: `/artists/${from}`,
+        destination: `/artists/${to}`,
+        permanent: true,
+      })),
+    ];
   },
   async headers() {
     return [{ source: "/:path*", headers: SECURITY_HEADERS }];

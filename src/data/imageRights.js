@@ -14,7 +14,14 @@
  * Images stay on their pages while the review is in progress; move a path into
  * APPROVED_IMAGES only once permission is confirmed.
  */
-export const APPROVED_IMAGES = new Set([]);
+// Openly licensed (Wikimedia Commons); the required credit is shown on the
+// artist page via `imageCredit` in src/data/artists.js.
+export const APPROVED_IMAGES = new Set([
+  "/artists/alamgir-commons.jpg",
+  "/artists/anwar-maqsood-commons.jpg",
+  "/artists/arif-lohar-commons.jpg",
+  "/artists/arooj-aftab-commons.jpg",
+]);
 
 export const CLIENT_SUPPLIED_IMAGES = new Set([
   "/artists/ayesha-jehanzeb.jpg",

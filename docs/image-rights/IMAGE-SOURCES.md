@@ -283,3 +283,12 @@ These assets are local copies of images served publicly on their source pages. T
 - `symt.webp` — group photo captioned with SYMT members Farhan Ali, Haroon Shahid, and Hassan Omar by [Bandbaji](https://bandbaji.wordpress.com/2011/12/31/annual-issue-2011-the-year-of-intrigue-music/).
 - `waqar-ehsin.webp` — artist profile photo from [Waqar Ehsin's SoundCloud page](https://soundcloud.com/waqar-ehsin/tracks).
 - `shehroze-hussan.webp` — photo from Dawn's [City of Lights Festival feature](https://images.dawn.com/news/1173694), captioned as a sitar workshop with Shehroze Hussain and Yousaf Kerai.
+
+## Openly licensed replacements (2026-10-13)
+
+Downloaded from Wikimedia Commons; licence and author read from the file page. The credit is shown on each artist page.
+
+- `alamgir-commons.jpg` — Alamgir, by AlexRic26, CC0 1.0 ([source](https://commons.wikimedia.org/wiki/File:Alamgir_4.4.jpg)). Replaces `alamgir.jpg` (no source record).
+- `anwar-maqsood-commons.jpg` — Anwar Maqsood, still from BBC Urdu (YouTube), CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Anwar_Maqsood,_ca._2020.jpg)). Replaces `anwar-maqsood.jpg` (no source record).
+- `arif-lohar-commons.jpg` — Arif Lohar in 2021, still from PILAC TV (YouTube), CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Arif_Lohar_2021.png)). Replaces `arif-lohar.jpeg` (no source record).
+- `arooj-aftab-commons.jpg` — Arooj Aftab, by Philip Romano, CC BY-SA 4.0, resized ([source](https://commons.wikimedia.org/wiki/File:AroojAftab-byPhilipRomano.jpg)). Replaces `arooj-aftab.webp` (no source record).
