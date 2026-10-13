@@ -429,7 +429,7 @@ export const ARTISTS = [
   A("Tahseen Sakina", "Singer", [], { gender: F, needsReview: true }),
   A("Khadija Dilnawaz", "Singer", [], { gender: F, needsReview: true }),
   A("Sher Mian Dad Khan", "Qawwal", ["Qawwali", "Sufi"]),
-  A("Ayesha Jehanzeb", "Singer", [], { gender: F, needsReview: true }),
+  A("Ayesha Jehanzeb", "Host", [], { gender: F, needsReview: true }),
   A("Priti Kaur", "Singer", [], { gender: F, needsReview: true }),
   A("Zack Knight", "Singer", ["Pop"], { country: "UK" }),
   A("Shweta Subram", "Singer", ["Playback", "Pop"], {
