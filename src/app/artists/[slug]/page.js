@@ -183,10 +183,14 @@ export default async function ArtistBookingPage({ params }) {
       serviceType: isExclusive
         ? "Exclusive artist management"
         : "Artist booking facilitation",
-      areaServed: [
-        { "@type": "Country", name: "Pakistan" },
-        { "@type": "Place", name: "Worldwide" },
-      ],
+      ...(artist.internationalOnly
+        ? {}
+        : {
+            areaServed: [
+              { "@type": "Country", name: "Pakistan" },
+              { "@type": "Place", name: "Worldwide" },
+            ],
+          }),
       provider: { "@id": ORGANIZATION_SCHEMA_ID },
       about: artist.profile ? { "@id": artistId } : personSchema,
       availableChannel: {
@@ -296,7 +300,11 @@ export default async function ArtistBookingPage({ params }) {
             <dl className={styles.details}>
               <div>
                 <dt>Service area</dt>
-                <dd>Pakistan &amp; international events</dd>
+                <dd>
+                  {artist.internationalOnly
+                    ? "International events only (not in Pakistan)"
+                    : "Pakistan & international events"}
+                </dd>
               </div>
               <div>
                 <dt>Response</dt>

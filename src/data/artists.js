@@ -64,6 +64,10 @@ const A = (name, artistType, genres = [], opts = {}) => ({
   country: opts.country || "Pakistan",
   gender: opts.gender || "male",
   genZ: Boolean(opts.genZ),
+  // Indian nationals cannot currently obtain permission to perform in Pakistan,
+  // so they are offered for international events only. Set explicitly for
+  // Indian nationals living elsewhere (country alone is where they are based).
+  internationalOnly: Boolean(opts.internationalOnly) || opts.country === "India",
   needsReview: Boolean(opts.needsReview),
   tagline: opts.tagline || null,
   // Other spellings actually in use (press, the artist's own channels). Never
@@ -448,7 +452,12 @@ export const ARTISTS = [
   A("Khadija Dilnawaz", "Singer", [], { gender: F, needsReview: true }),
   A("Sher Mian Dad Khan", "Qawwal", ["Qawwali", "Sufi"]),
   A("Ayesha Jehanzeb", "Host", [], { gender: F, needsReview: true }),
-  A("Priti Kaur", "Singer", [], { gender: F, needsReview: true }),
+  A("Priti Kaur", "Singer", ["Ghazal", "Sufi", "Bollywood"], {
+    gender: F,
+    country: "UK",
+    internationalOnly: true,
+    bio: "Priti Kaur is a UK-based vocalist performing ghazal, Sufi, devotional and Bollywood repertoire.",
+  }),
   A("Zack Knight", "Singer", ["Pop"], { country: "UK" }),
   A("Shweta Subram", "Singer", ["Playback", "Pop"], {
     gender: F,
@@ -665,6 +674,7 @@ export const ARTISTS = [
   A("Zoe Viccaji", "Singer", ["Pop"], { gender: F }),
   A("Alycia Dias", "Singer", ["Pop"], {
     gender: F,
+    country: "India",
     image: "/artists/alycia-dias.jpeg",
   }),
   A("Fizza Javed", "Singer", ["Pop"], { gender: F }),
@@ -806,7 +816,10 @@ export const ARTISTS = [
     bio: "Nimra Rafique is a Pakistani vocalist and Coke Studio backing vocalist.",
   }),
   A("Shahab Hussain", "Singer", [], { needsReview: true }),
-  A("Shamali Afghan", "Singer", [], { needsReview: true }),
+  A("Shamali Afghan", "Singer", ["Pashto", "Folk"], {
+    country: "International",
+    bio: "Shamali Afghan is a Pashto singer and harmonium player who collaborated with Zeb Bangash on the EP Love Letters from Kabul.",
+  }),
   A("Aizaz Sohail", "Singer", ["Classical"], {
     needsReview: true,
     image: "/artists/aizaz-sohail.jpeg",
