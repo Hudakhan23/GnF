@@ -117,7 +117,7 @@ These files are local copies of publicly served promotional/profile imagery. The
 - hira-mani.jpg — Hira Mani ([source](https://www.thenews.com.pk/magazine/instep-today/639465-hira-mani)).
 - nadeem-abbas-lonay-wala.jpg — Nadeem Abbas Loonay Wala ([source](https://x.com/NadeemAbbaspk)).
 - fareed-ayaz-qawwal.jpg — Fareed Ayaz Qawwal ([source](https://www.westmountmag.ca/fareed-ayaz-abu-muhammad-ensemble-qawwali-traquenart/)).
-- ayesha-jehanzeb.jpg — Ayesha Jehanzeb ([source](https://www.urduvoa.com/a/how-police-response-in-domestic-violence-cases/7696539.html)).
+- `ayesha-jehanzeb.jpg` — Image supplied by the user for Ayesha Jehanzeb on 2026-10-13 (usage permission not yet confirmed). Replaces an earlier image taken from a news report about her personal life, which must not be reused.
 - laal-band.jpg — Laal Band ([source](https://commons.wikimedia.org/wiki/File:Laal_Performing.jpg)).
 - nasir-chinyoti.jpg — Nasir Chinyoti ([source](https://www.desiblitz.com/content/25-best-pakistani-stage-artists-of-all-time)).
 - farah-saadya.jpg — Farah Saadya ([source](https://www.taar.tv/ur/%D8%B4%D8%A7%D8%AF%DB%8C-%D8%B4%D8%AF%DB%81-%D9%85%D8%B1%D8%AF-%D8%B3%DB%92-%D8%A8%DB%8C%D8%A7%DB%81-%DA%A9%DB%92-%D8%AE%D9%84%D8%A7%D9%81-%D9%81%D8%B1%D8%AD-%D8%B3%D8%B9%D8%AF%DB%8C%DB%81-%DA%A9/)).

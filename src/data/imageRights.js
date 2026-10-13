@@ -17,6 +17,7 @@
 export const APPROVED_IMAGES = new Set([]);
 
 export const CLIENT_SUPPLIED_IMAGES = new Set([
+  "/artists/ayesha-jehanzeb.jpg",
   "/artists/bayaan-user.jpg",
   "/artists/kaifi-khalil.jpg",
   "/artists/shae-gill.jpg",
