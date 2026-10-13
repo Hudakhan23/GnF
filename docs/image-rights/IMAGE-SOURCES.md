@@ -286,8 +286,10 @@ These assets are local copies of images served publicly on their source pages. T
 
 ## Openly licensed replacements (2026-10-13)
 
-Downloaded from Wikimedia Commons; licence and author read from the file page. The credit is shown on each artist page.
+Downloaded from Wikimedia Commons or Flickr (Creative Commons filter); licence and author read from the file page. The credit is shown on each artist page.
 
+- `akram-rahi-commons.jpg` — Akram Rahi, uploaded by Akramrahi786 (appears to be the artist's own account) as own work, CC BY-SA 4.0, resized ([source](https://commons.wikimedia.org/wiki/File:Akram_Rahi.jpg)). Replaces `akram-rahi.jpeg` (no source record).
+- `ali-azmat-flickr.jpg` — Ali Azmat on stage, 2015, by Muhammad Usama (MUsamaPK) on Flickr, CC BY 2.0, resized ([source](https://www.flickr.com/photos/133433497@N02/18861903050/)). Replaces `ali-azmat.avif` (no source record).
 - `alamgir-commons.jpg` — Alamgir, by AlexRic26, CC0 1.0 ([source](https://commons.wikimedia.org/wiki/File:Alamgir_4.4.jpg)). Replaces `alamgir.jpg` (no source record).
 - `anwar-maqsood-commons.jpg` — Anwar Maqsood, still from BBC Urdu (YouTube), CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Anwar_Maqsood,_ca._2020.jpg)). Replaces `anwar-maqsood.jpg` (no source record).
 - `arif-lohar-commons.jpg` — Arif Lohar in 2021, still from PILAC TV (YouTube), CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Arif_Lohar_2021.png)). Replaces `arif-lohar.jpeg` (no source record).

@@ -284,8 +284,25 @@ export const ARTISTS = [
   A("Akhtar Chanal Zahri", "Singer", ["Folk"], {
     image: "/artists/akhtar-chanal-zahri.jpg",
   }),
-  A("Akram Rahi", "Singer", ["Folk"], { image: "/artists/akram-rahi.jpeg" }),
-  A("Ali Azmat", "Singer", ["Rock"], { image: "/artists/ali-azmat.avif" }),
+  A("Akram Rahi", "Singer", ["Folk"], {
+    image: "/artists/akram-rahi-commons.jpg",
+    imageCredit: {
+      text: "Akramrahi786",
+      href: "https://commons.wikimedia.org/wiki/File:Akram_Rahi.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+  }),
+  A("Ali Azmat", "Singer", ["Rock"], {
+    image: "/artists/ali-azmat-flickr.jpg",
+    imageCredit: {
+      text: "Muhammad Usama",
+      href: "https://www.flickr.com/photos/133433497@N02/18861903050/",
+      license: "CC BY 2.0",
+      licenseHref: "https://creativecommons.org/licenses/by/2.0/",
+      source: "Flickr",
+    },
+  }),
   A("Ali Sethi", "Singer", ["Ghazal", "Classical", "Sufi"], {
     image: "/artists/ali-sethi.jpg",
   }),

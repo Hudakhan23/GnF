@@ -17,6 +17,8 @@
 // Openly licensed (Wikimedia Commons); the required credit is shown on the
 // artist page via `imageCredit` in src/data/artists.js.
 export const APPROVED_IMAGES = new Set([
+  "/artists/akram-rahi-commons.jpg",
+  "/artists/ali-azmat-flickr.jpg",
   "/artists/alamgir-commons.jpg",
   "/artists/anwar-maqsood-commons.jpg",
   "/artists/arif-lohar-commons.jpg",

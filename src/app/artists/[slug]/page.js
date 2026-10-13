@@ -231,7 +231,7 @@ export default async function ArtistBookingPage({ params }) {
                 >
                   {artist.imageCredit.license}
                 </a>
-                , via Wikimedia Commons
+                , via {artist.imageCredit.source || "Wikimedia Commons"}
               </p>
             )}
           </div>
