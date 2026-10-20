@@ -18,6 +18,7 @@
 // `imageCredit`), or taken from the artist's official channel with GnF's
 // confirmed permission.
 export const APPROVED_IMAGES = new Set([
+  "/artists/aag-official.jpg",
   "/artists/abdul-hannan-official.jpg",
   "/artists/abdullah-siddiqui-official.jpg",
   "/artists/adnan-dhool-official.jpg",
