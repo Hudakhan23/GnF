@@ -129,3 +129,31 @@ export function eventsArchiveSchema(events, roster = []) {
     }),
   };
 }
+
+/**
+ * ItemList of Schema.org Person / MusicGroup entities for the /artists directory.
+ * Establishes the canonical directory catalog for search engines.
+ */
+export function artistsDirectorySchema(roster = []) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "GnF Events Artist Directory",
+    description: "Complete roster of Pakistani and international artists available for booking.",
+    numberOfItems: roster.length,
+    itemListElement: roster.map((artist, index) => {
+      const isBand = artist.artistType === "Band";
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": isBand ? "MusicGroup" : "Person",
+          name: artist.name,
+          url: `${SITE_URL}${artist.href}`,
+          ...(artist.image ? { image: `${SITE_URL}${artist.image}` } : {}),
+          description: artist.tagline || artist.description,
+        },
+      };
+    }),
+  };
+}

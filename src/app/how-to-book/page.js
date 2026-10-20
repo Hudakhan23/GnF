@@ -60,10 +60,60 @@ const FACTORS = [
   "Hospitality and on-the-day logistics",
 ];
 
+const BOOKING_FAQS = [
+  {
+    question: "Can I book an artist who is not listed in your directory?",
+    answer:
+      "Yes. Even if a specific singer, band, or speaker is not currently listed in our directory, GnF Events maintains extensive relationships across Pakistan's music and entertainment industry and can facilitate bookings for almost any verified performer.",
+  },
+  {
+    question: "How are artist booking fees determined?",
+    answer:
+      "Artist fees vary based on event date, season, host city, venue capacity, performance duration, and the scale of the accompanying band or production setup. GnF Events negotiates directly with artist management to provide transparent, all-inclusive quotations.",
+  },
+  {
+    question: "Who handles stage sound, lighting, and technical riders?",
+    answer:
+      "GnF Events provides complete end-to-end event management. We coordinate the artist's technical rider (sound engineering, monitors, microphones, backline instruments) and production setup so your team does not have to manage technical logistics.",
+  },
+  {
+    question: "What is the difference between exclusive representation and network facilitation?",
+    answer:
+      "Artists marked as 'Exclusive' (such as Nish Asher) are officially managed by GnF Events worldwide. Artists marked as 'Booking Network' are independent performers whom GnF Events coordinates, books, and manages on your behalf through established industry partnerships.",
+  },
+  {
+    question: "How far in advance should I confirm an artist booking?",
+    answer:
+      "For high-demand wedding season dates (November through February) or major corporate festivals, we recommend locking in artist availability 6 to 12 weeks in advance. For standard private events, 3 to 6 weeks is generally sufficient.",
+  },
+  {
+    question: "Can GnF Events arrange artists for international events outside Pakistan?",
+    answer:
+      "Yes. GnF Events regularly coordinates international concerts, private destination weddings, and cultural festivals across Dubai, Turkey, the UK, Europe, and North America, handling international riders and travel logistics.",
+  },
+];
+
 export default function HowToBookPage() {
+  const schema = [
+    breadcrumbSchema([["How to book", "/how-to-book"]]),
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/how-to-book#faq`,
+      mainEntity: BOOKING_FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ];
+
   return (
     <>
-      <JsonLd data={breadcrumbSchema([["How to book", "/how-to-book"]])} />
+      <JsonLd data={schema} />
       <Header />
       <main className={styles.main}>
         <header className={styles.hero}>
@@ -133,6 +183,22 @@ export default function HowToBookPage() {
             Each artist page states which applies. You can browse the{" "}
             <Link href="/artists">full artist roster</Link>.
           </p>
+        </section>
+
+        <section className={styles.section} aria-labelledby="faq-title" id="faq">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <p>
+            Key answers to common questions about booking talent, event
+            logistics, contracts, and timelines.
+          </p>
+          <div className={styles.faqList}>
+            {BOOKING_FAQS.map((faq) => (
+              <article className={styles.faqItem} key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.contact} aria-labelledby="contact-title" data-cta="how_to_book">

@@ -8,7 +8,7 @@ import JsonLd from "@/components/JsonLd/JsonLd";
 import { ARTISTS, ARTIST_OPTIONS, EXCLUSIVE_ARTISTS } from "@/data/artists";
 import { SITE_URL } from "@/data/site";
 import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, artistsDirectorySchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -29,9 +29,14 @@ export const metadata = {
 const COUNTRIES = new Set(ARTISTS.map((a) => a.country));
 
 export default function ArtistsPage() {
+  const schema = [
+    breadcrumbSchema([["Artists", "/artists"]]),
+    artistsDirectorySchema(ARTISTS),
+  ];
+
   return (
     <>
-      <JsonLd data={breadcrumbSchema([["Artists", "/artists"]])} />
+      <JsonLd data={schema} />
       <Header active="artists" />
       <main>
         <section className={styles.hero}>
