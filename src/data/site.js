@@ -28,11 +28,11 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 /** Staffed office that clients can visit. */
 export const ADDRESS_PARTS = {
-  streetAddress: "93-D, Divine Garden",
+  streetAddress: "132 Block 15 B1, College Road, Township",
   addressLocality: "Lahore",
   addressCountry: "PK",
 };
-export const ADDRESS = "93-D, Divine Garden, Lahore, Pakistan";
+export const ADDRESS = "132 Block 15 B1, College Road, Township, Lahore, Pakistan";
 
 export function whatsappLink(message = "") {
   return message
