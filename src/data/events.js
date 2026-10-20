@@ -68,7 +68,7 @@ export const EVENTS = [
   { slug: "2024-11-02-nimra-mehra-waqar-ehsin-gujrat-gymkhana", date: "2024-11-02", artists: ["Nimra Mehra", "Waqar Ehsin"], title: "Live Concert", venue: "Gujrat Gymkhana", cities: ["Gujrat"], country: "Pakistan", category: "concert", credit: "powered", poster: poster("2Nov2024.jpeg") },
   { slug: "2024-10-18-sara-raza-khan-lahore", date: "2024-10-18", artists: ["Sara Raza Khan"], title: "Live Concert", venue: "", cities: ["Lahore"], country: "Pakistan", category: "concert", credit: "powered", poster: poster("18Oct2024.jpeg") },
   { slug: "2024-09-25-sara-raza-khan-lahore", date: "2024-09-25", artists: ["Sara Raza Khan"], title: "Live Music", venue: "", cities: ["Lahore"], country: "Pakistan", category: "concert", credit: "powered", poster: poster("25Sep2024.png") },
-  { slug: "2024-08-10-independence-day-concert-michigan", date: "2024-08-10", artists: ["Alamgir", "Inzi DX", "Aiza Shah"], title: "Pakistan Independence Day Celebration Concert", venue: "", cities: ["Michigan"], country: "USA", category: "international", credit: "powered", poster: poster("10Aug2024.jpeg") },
+  { slug: "2024-08-10-independence-day-concert-michigan", date: "2024-08-10", artists: ["Alamgir", "Inzi DX", "Aiza Shah"], title: "Pakistan Independence Day Celebration Concert", venue: "Pakistan Association of America", cities: ["Michigan"], country: "USA", category: "international", credit: "powered", poster: poster("10Aug2024.jpeg") },
   { slug: "2024-05-04-abrar-ul-haq-lahore", date: "2024-05-04", artists: ["Abrar ul Haq"], title: "Live in Lahore — corporate event", venue: "", cities: ["Lahore"], country: "Pakistan", category: "corporate", credit: "powered", poster: poster("4May2024.jpeg") },
   { slug: "2024-04-27-malkoo-lahore", date: "2024-04-27", artists: ["Malkoo"], title: "Live Concert — corporate event", venue: "", cities: ["Lahore"], country: "Pakistan", category: "corporate", credit: "powered", poster: poster("27April2024.jpeg") },
   { slug: "2024-03-09-live-concert-superior-mandi-bahauddin", date: "2024-03-09", artists: ["Nadeem Abbas Loonywala", "Malkaa", "Shameer Shazil", "Qalb-e-Abbas"], title: "Live Concert", venue: "Superior College Mandi Bahauddin", cities: ["Mandi Bahauddin"], country: "Pakistan", category: "campus", credit: "presented", poster: poster("9March2024.jpeg") },
@@ -135,6 +135,7 @@ export const INTERNATIONAL_PARTNERS = [
     city: "Brampton",
     country: "Canada",
     role: "Artists provided across multiple editions",
+    summary: "multiple editions",
     events: ["2023-07-22-falak-shabir-vibrant-brampton-festival"],
   },
   {
@@ -143,7 +144,17 @@ export const INTERNATIONAL_PARTNERS = [
     city: "Copenhagen",
     country: "Denmark",
     role: "Artists provided across multiple editions",
+    summary: "multiple editions",
     events: [],
+  },
+  {
+    name: "Pakistan Association of America",
+    logo: "/partners/pakistan-association-of-america.webp",
+    city: "Michigan",
+    country: "USA",
+    role: "Pakistan Independence Day Celebration Concert with Alamgir, Inzi DX and Aiza Shah",
+    summary: "Independence Day Concert 2024",
+    events: ["2024-08-10-independence-day-concert-michigan"],
   },
 ];
 
@@ -164,6 +175,7 @@ export const EVENT_HOSTS = [
   "Pakistan Society for Rheumatology",
   "Vibrant Brampton Festival, Canada",
   "Copenhagen Mela, Denmark",
+  "Pakistan Association of America, USA",
   "PC Hotel Lahore",
   "Lahore Global Village",
   "Gujrat Gymkhana",

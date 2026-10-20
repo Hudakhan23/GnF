@@ -78,7 +78,6 @@ const signature = SIGNATURE_EVENTS.map((project) => ({
 }));
 
 const abroad = stats.countriesAbroad.join(", ");
-const partnerCountries = INTERNATIONAL_PARTNERS.map((partner) => partner.country).join(" and ");
 const partnerEventSlugs = new Set(INTERNATIONAL_PARTNERS.flatMap((partner) => partner.events));
 const overseasShows = archive.filter(
   (event) => event.category === "international" && !partnerEventSlugs.has(event.slug),
@@ -205,9 +204,10 @@ export default function WorkPage() {
               </h2>
             </div>
             <p>
-              We have provided artists to festivals in {partnerCountries} across
-              multiple editions, and delivered shows for Pakistani communities
-              overseas.
+              We have provided artists to Vibrant Brampton Festival and
+              Copenhagen Mela across multiple editions, and delivered the
+              Pakistan Association of America&apos;s Independence Day concert
+              in Michigan.
             </p>
           </div>
           <ul className={styles.intlGrid}>

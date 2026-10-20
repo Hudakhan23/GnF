@@ -342,7 +342,7 @@ export default function Home() {
                 <Image src={partner.logo} alt="" width={44} height={44} />
                 <span>
                   <strong>{partner.name}</strong>
-                  {partner.country} · multiple editions
+                  {partner.country} · {partner.summary}
                 </span>
               </span>
             ))}
