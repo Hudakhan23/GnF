@@ -99,8 +99,9 @@ export default async function ArtistBookingPage({ params }) {
   const artistUrl = `${SITE_URL}${artist.href}`;
   const artistId = `${artistUrl}#artist`;
   const imageUrl = artist.image ? `${SITE_URL}${artist.image}` : null;
-  const personSchema = {
-    "@type": "Person",
+  const isBand = artist.artistType === "Band";
+  const entitySchema = {
+    "@type": isBand ? "MusicGroup" : "Person",
     "@id": artistId,
     name: artist.name,
     url: artistUrl,
@@ -129,17 +130,22 @@ export default async function ArtistBookingPage({ params }) {
           },
         }
       : {}),
-    jobTitle: artist.profile
-      ? ["Singer", "Pop vocalist", "OST performer"]
-      : artist.artistType,
-    ...(artist.country !== "Pakistan"
-      ? {
-          homeLocation: {
-            "@type": "Country",
-            name: artist.country === "UK" ? "United Kingdom" : artist.country,
-          },
-        }
-      : {}),
+    ...(isBand
+      ? { genre: artist.genres }
+      : {
+          jobTitle: artist.profile
+            ? ["Singer", "Pop vocalist", "OST performer"]
+            : artist.artistType,
+          ...(artist.country !== "Pakistan"
+            ? {
+                homeLocation: {
+                  "@type": "Country",
+                  name:
+                    artist.country === "UK" ? "United Kingdom" : artist.country,
+                },
+              }
+            : {}),
+        }),
     ...(artist.socials ? { sameAs: Object.values(artist.socials) } : {}),
     ...(artist.profile
       ? {
@@ -168,7 +174,7 @@ export default async function ArtistBookingPage({ params }) {
               ? { primaryImageOfPage: { "@id": `${artistUrl}#primary-image` } }
               : {}),
             isPartOf: { "@id": `${SITE_URL}/#website` },
-            mainEntity: personSchema,
+            mainEntity: entitySchema,
           },
         ]
       : []),
@@ -192,7 +198,7 @@ export default async function ArtistBookingPage({ params }) {
             ],
           }),
       provider: { "@id": ORGANIZATION_SCHEMA_ID },
-      about: artist.profile ? { "@id": artistId } : personSchema,
+      about: artist.profile ? { "@id": artistId } : entitySchema,
       availableChannel: {
         "@type": "ServiceChannel",
         serviceUrl: bookingUrl,
