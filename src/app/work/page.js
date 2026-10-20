@@ -33,7 +33,7 @@ import {
   whatsappLink,
 } from "@/data/site";
 import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, eventsArchiveSchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
 const stats = getEventStats();
@@ -102,6 +102,7 @@ export default function WorkPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema([["Our work", "/work"]])} />
+      <JsonLd data={eventsArchiveSchema(EVENTS, artists)} />
       <Header active="work" overlay />
       <main>
         <section className={styles.hero}>

@@ -1,3 +1,4 @@
+import { eventPlace, getArtistForEventArtist } from "@/data/events";
 import {
   ADDRESS_PARTS,
   EMAIL,
@@ -66,5 +67,65 @@ export function breadcrumbSchema(trail) {
       name,
       item: `${SITE_URL}${path}`,
     })),
+  };
+}
+
+/**
+ * ItemList of Schema.org Event entities for the /work show archive.
+ * Links performers to their /artists/[slug] booking profiles and organizer
+ * to the verified GnF Events organization entity.
+ */
+export function eventsArchiveSchema(events, roster = []) {
+  const datedEvents = events.filter((e) => Boolean(e.date));
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "GnF Events Show Archive",
+    itemListElement: datedEvents.map((event, index) => {
+      const performers = event.artists.map((name) => {
+        const artist = getArtistForEventArtist(name, roster);
+        if (artist) {
+          const isBand = artist.artistType === "Band";
+          return {
+            "@type": isBand ? "MusicGroup" : "Person",
+            name: artist.name,
+            url: `${SITE_URL}${artist.href}`,
+          };
+        }
+        return {
+          "@type": "PerformingGroup",
+          name,
+        };
+      });
+
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Event",
+          "@id": `${SITE_URL}/work#${event.slug}`,
+          url: `${SITE_URL}/work#${event.slug}`,
+          name: event.title || event.headline,
+          startDate: event.date,
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventScheduled",
+          image: `${SITE_URL}${event.poster}`,
+          description: `${event.title || event.headline} in ${eventPlace(event)}, produced by GnF Events.`,
+          location: {
+            "@type": "Place",
+            name: event.venue || eventPlace(event),
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: event.cities[0] || "Lahore",
+              addressCountry: event.country === "Pakistan" ? "PK" : event.country,
+            },
+          },
+          performer: performers.length === 1 ? performers[0] : performers,
+          organizer: {
+            "@id": ORGANIZATION_SCHEMA_ID,
+          },
+        },
+      };
+    }),
   };
 }
