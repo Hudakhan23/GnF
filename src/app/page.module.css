@@ -168,11 +168,6 @@
   font-style: normal;
 }
 
-.deferred {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 800px;
-}
-
 .positioning,
 .artistSection,
 .serviceInner,
