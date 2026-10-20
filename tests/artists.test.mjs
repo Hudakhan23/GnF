@@ -50,8 +50,8 @@ test("artists roster integrity", async (t) => {
     const confirmedIndexable = ARTISTS.filter(isIndexable);
     assert.equal(
       confirmedIndexable.length,
-      343,
-      "expected all 343 confirmed artists to be indexable"
+      342,
+      "expected all 342 confirmed artists to be indexable"
     );
   });
 

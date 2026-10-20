@@ -403,7 +403,12 @@ export const ARTISTS = [
   }),
   A("Hina Nasrullah", "Singer", ["Sufi", "Folk"], { gender: F }),
   A("Hira Mani", "Host", [], { gender: F, tagline: "Actor & host" }),
-  A("Humaira Arshad", "Singer", ["Folk", "Pop"], { gender: F }),
+  A("Humaira Arshad", "Singer", ["Pop", "Ghazal", "Folk"], {
+    gender: F,
+    tagline: "Pop & ghazal vocalist",
+    aliases: ["Humera Arshad"],
+    bio: "Humera Arshad is an acclaimed Pakistani pop and ghazal singer trained under Ustad Nusrat Fateh Ali Khan. With multi-award-winning hits including 'Sada Hoon Apnay Pyar Ki', 'Aashiqan Toon Tan Man', and 'Has Sadqe', she is a celebrated headliner for weddings, private galas, and television broadcasts.",
+  }),
   A("Jabar Abbas", "Singer", ["Pop", "Playback"]),
   A("Jal Band", "Band", ["Rock", "Pop"], {
     gender: G,
@@ -1303,11 +1308,6 @@ export const ARTISTS = [
     internationalOnly: true,
     tagline: "Legendary playback vocalist",
     bio: "Sonu Nigam is a legendary Indian playback singer and live concert performer with a career spanning over three decades, performing in more than a dozen languages and headlining prestigious concert halls worldwide.",
-  }),
-  A("Humera Arshad", "Singer", ["Pop", "Ghazal", "Folk"], {
-    gender: F,
-    tagline: "Pop & ghazal vocalist",
-    bio: "Humera Arshad is an acclaimed Pakistani pop and ghazal singer trained under Ustad Nusrat Fateh Ali Khan. With multi-award-winning hits including 'Sada Hoon Apnay Pyar Ki', 'Aashiqan Toon Tan Man', and 'Has Sadqe', she is a celebrated headliner for weddings, private galas, and television broadcasts.",
   }),
   A("Hamza Akram Qawwal", "Qawwal", ["Qawwali", "Sufi"], {
     tagline: "Sufi qawwali ensemble",

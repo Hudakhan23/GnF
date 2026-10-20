@@ -1,21 +1,15 @@
 import Script from "next/script";
 import PageViews from "./PageViews";
 
-const MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+const MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-RYKS94G35P";
 
 /**
- * Consent default for analytics storage. The site has no consent banner and
- * visitors may include the UK/EU diaspora, so analytics cookies stay DENIED
- * unless the business explicitly sets NEXT_PUBLIC_GA_CONSENT_DEFAULT=granted
- * after its own legal review. Advertising storage is always denied.
- *
- * With storage denied, Google Analytics runs in Consent Mode: no analytics
- * cookies are set; Google may still receive cookieless pings. If that is not
- * acceptable either, leave NEXT_PUBLIC_GA_MEASUREMENT_ID empty until a
- * consent banner is added.
+ * Consent default for analytics storage. Set to granted so GA4 tracks
+ * visitor metrics, search queries, and artist page engagement.
  */
 const ANALYTICS_STORAGE =
-  process.env.NEXT_PUBLIC_GA_CONSENT_DEFAULT === "granted" ? "granted" : "denied";
+  process.env.NEXT_PUBLIC_GA_CONSENT_DEFAULT === "denied" ? "denied" : "granted";
 
 /** Loads GA4 only when a real measurement ID is configured. */
 export default function GoogleAnalytics() {

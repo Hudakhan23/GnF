@@ -15,6 +15,7 @@ const REMOVED_ARTIST_SLUGS = [
 // Artist pages whose slug changed after a spelling correction.
 const RENAMED_ARTIST_SLUGS = {
   "murtaza-qazilbash": "murtaza-qizilbash",
+  "humera-arshad": "humaira-arshad",
 };
 
 const SECURITY_HEADERS = [
