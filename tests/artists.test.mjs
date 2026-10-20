@@ -147,4 +147,11 @@ test("artists roster integrity", async (t) => {
     const producerMatches = filterArtists(ARTISTS, { facets: ["producers"] });
     assert.ok(producerMatches.length >= 5, "Producer facet should match music producers");
   });
+
+  await t.test("every artist has valid suitability for FAQ generation", () => {
+    for (const a of ARTISTS) {
+      const suit = suitabilityFor(a);
+      assert.ok(Array.isArray(suit) && suit.length > 0, `artist ${a.slug} has no suitability tags`);
+    }
+  });
 });

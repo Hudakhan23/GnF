@@ -88,6 +88,46 @@ function introFor(artist) {
   return `${artist.name} is a ${what} from ${where}. Share your event date, city, venue and audience details and GnF Events will handle availability, fees and full event coordination.`;
 }
 
+function faqsForArtist(artist, suitability) {
+  if (artist.profile?.faqs?.length) return artist.profile.faqs;
+
+  const suitableEvents = suitability.slice(0, 3).join(", ");
+  const genreText = artist.genres.length
+    ? artist.genres.join(" and ")
+    : artist.artistType;
+  const performanceType =
+    artist.artistType === "Band"
+      ? "full live band performances"
+      : artist.artistType === "DJ"
+        ? "high-energy DJ and electronic sets"
+        : artist.artistType === "Qawwal"
+          ? "traditional Sufi qawwali mehfils"
+          : "live vocal entertainment";
+
+  return [
+    {
+      question: `How can I book ${artist.name} for an event?`,
+      answer: `You can enquire about booking ${artist.name} through GnF Events. Share your event date, city, venue, and estimated audience via our booking form or directly on WhatsApp at +92 321 9492571, and our artist facilitation team will verify schedule availability and technical requirements.`,
+    },
+    {
+      question: `What types of events is ${artist.name} suitable for?`,
+      answer: `${artist.name} is well-suited for ${suitableEvents || "live concerts, festivals, and private celebrations"}.${
+        artist.internationalOnly
+          ? " Please note that performances are arranged exclusively for international tours and destination events outside Pakistan."
+          : " Bookings are coordinated across major cities in Pakistan and international destinations."
+      }`,
+    },
+    {
+      question: `What performance format does ${artist.name} provide?`,
+      answer: `${artist.name} performs in the ${genreText} style, delivering ${performanceType} tailored to the scale and ambiance of your gathering.`,
+    },
+    {
+      question: `How far in advance should I submit a booking enquiry for ${artist.name}?`,
+      answer: `We recommend submitting your enquiry at least 4 to 8 weeks before your event date for domestic private and corporate galas, and 8 to 12 weeks in advance for peak festival seasons or overseas destination events, ensuring ample time for contract, rider, and logistical planning.`,
+    },
+  ];
+}
+
 export default async function ArtistBookingPage({ params }) {
   const { slug } = await params;
   const artist = getArtist(slug);
@@ -97,6 +137,7 @@ export default async function ArtistBookingPage({ params }) {
   const management = MANAGEMENT[artist.managementType];
   const related = relatedArtists(artist);
   const suitability = suitabilityFor(artist);
+  const faqs = faqsForArtist(artist, suitability);
   const pastEvents = getEventsForArtist(artist);
   const bookingUrl = whatsappLink(
     `Hi GnF Events, I want to enquire about booking ${artist.name}. My event date/city is: `,
@@ -214,6 +255,23 @@ export default async function ArtistBookingPage({ params }) {
       ["Artists", "/artists"],
       [artist.name, artist.href],
     ]),
+    ...(faqs.length
+      ? [
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "@id": `${artistUrl}#faq`,
+            mainEntity: faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          },
+        ]
+      : []),
   ];
 
   return (
@@ -491,21 +549,28 @@ export default async function ArtistBookingPage({ params }) {
           </section>
         )}
 
-        {artist.profile?.faqs && (
+        {faqs.length > 0 && (
           <section
             className={styles.artistFaq}
             aria-labelledby={`${artist.slug}-faq-heading`}
           >
             <div className={styles.faqHeading}>
-              <p className={styles.eyebrow}>Artist information</p>
-              <h2 id={`${artist.slug}-faq-heading`}>About {artist.name}</h2>
+              <p className={styles.eyebrow}>
+                {artist.profile?.faqs ? "Artist information" : "Booking FAQ"}
+              </p>
+              <h2 id={`${artist.slug}-faq-heading`}>
+                {artist.profile?.faqs
+                  ? `About ${artist.name}`
+                  : "Frequently asked questions"}
+              </h2>
               <p>
-                Quick answers about {artist.name}&apos;s music, OST career, and
-                official bookings.
+                {artist.profile?.faqs
+                  ? `Quick answers about ${artist.name}'s music, OST career, and official bookings.`
+                  : `Essential answers regarding event booking, suitability, and live performance coordination for ${artist.name}.`}
               </p>
             </div>
             <div className={styles.faqGrid}>
-              {artist.profile.faqs.map((item) => (
+              {faqs.map((item) => (
                 <article key={item.question}>
                   <h3>{item.question}</h3>
                   <p>{item.answer}</p>
