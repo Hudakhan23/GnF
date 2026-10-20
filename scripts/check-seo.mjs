@@ -31,7 +31,7 @@ const read = (file) => fs.readFileSync(path.join(APP_DIR, file), "utf8");
 const pages = new Map(); // route path -> html
 const addPage = (file, route) => pages.set(route, read(file));
 addPage("index.html", "/");
-for (const name of ["about", "artists", "contact", "how-to-book"]) {
+for (const name of ["about", "artists", "contact", "how-to-book", "work"]) {
   addPage(`${name}.html`, `/${name}`);
 }
 for (const file of fs.readdirSync(path.join(APP_DIR, "artists"))) {

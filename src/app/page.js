@@ -8,11 +8,23 @@ import Marquee from "@/components/Marquee/Marquee";
 import Reveal from "@/components/Reveal/Reveal";
 import { featuredArtists, getArtist, homepageNextWaveArtists } from "@/data/artists";
 import {
+  EVENTS,
+  EVENT_CATEGORIES,
+  HOME_FEATURED_EVENTS,
+  INTERNATIONAL_PARTNERS,
+  SIGNATURE_EVENTS,
+  categoryLabel,
+  eventHeadline,
+  eventPlace,
+  formatEventDate,
+  getEvent,
+  getEventStats,
+} from "@/data/events";
+import {
   allyLogos,
   marqueeHighlights,
   occasions,
   services,
-  showPosters,
 } from "@/data/shows";
 import {
   ORGANIZATION_SCHEMA_ID,
@@ -43,6 +55,19 @@ const serviceSchema = {
     servicePhone: { "@type": "ContactPoint", telephone: PHONE_PRIMARY.e164 },
   },
 };
+
+const workStats = getEventStats();
+const workFeatureProject = SIGNATURE_EVENTS[0];
+const workFeature = getEvent(workFeatureProject.slug);
+const workEvents = HOME_FEATURED_EVENTS.map(getEvent);
+const workCategories = EVENT_CATEGORIES.map((category) => ({
+  ...category,
+  count: EVENTS.filter((event) => event.category === category.key).length,
+}));
+const partnerEventSlugs = new Set(INTERNATIONAL_PARTNERS.flatMap((partner) => partner.events));
+const workOverseasShows = EVENTS.filter(
+  (event) => event.category === "international" && !partnerEventSlugs.has(event.slug),
+);
 
 const exclusiveHomeArtist = getArtist("nish-asher");
 const nextWaveArtists = homepageNextWaveArtists.map(
@@ -151,7 +176,7 @@ export default function Home() {
             <div className={styles.stats} aria-label="GnF Events at a glance">
               <div><strong>2016</strong><span>Founded</span></div>
               <div><strong>24/7</strong><span>Support</span></div>
-              <div><strong>Global</strong><span>Network</span></div>
+              <div><strong>{workStats.countriesAbroad.length + 1}</strong><span>Countries</span></div>
             </div>
           </div>
         </Reveal>
@@ -259,25 +284,98 @@ export default function Home() {
           <div className={styles.workHeading}>
             <div>
               <p className={styles.eyebrow}>The work</p>
-              <h2>Star-studded shows, season after season</h2>
+              <h2>
+                Star-studded shows, <em>season after season</em>
+              </h2>
             </div>
-            <p>
-              Each poster tells the story of an incredible experience, capturing
-              the energy of our shows and live productions.
-            </p>
+            <dl className={styles.workStats}>
+              <div><dt>Shows on record</dt><dd>{workStats.shows}</dd></div>
+              <div><dt>Cities in Pakistan</dt><dd>{workStats.pakistanCities}</dd></div>
+              <div><dt>Countries abroad</dt><dd>{workStats.countriesAbroad.length}</dd></div>
+            </dl>
           </div>
-          <Marquee
-            items={showPosters}
-            duration="60s"
-            pauseOnHover
-            className={styles.posterMarquee}
-            ariaLabel="Recent GnF Events show posters"
-            renderItem={(poster, index) => (
-              <div className={styles.poster} key={`${poster}-${index}`} aria-hidden={index >= showPosters.length}>
-                <Image src={poster} alt={index < showPosters.length ? `GnF Events recent show poster ${index + 1}` : ""} fill sizes="280px" />
-              </div>
-            )}
-          />
+          <nav className={styles.workTypes} aria-label="Browse our work by event type">
+            {workCategories.map((category) => (
+              <a href={`/work?type=${category.key}#archive`} key={category.key}>
+                {category.label} <span>{category.count}</span>
+              </a>
+            ))}
+          </nav>
+          <div className={styles.workGrid}>
+            <a className={styles.workFeature} href={`/work#${workFeature.slug}`}>
+              <span className={styles.workPoster}>
+                <Image
+                  src={workFeature.poster}
+                  alt={`Original poster: ${eventHeadline(workFeature)}, ${workFeature.title}, ${formatEventDate(workFeature)}`}
+                  fill
+                  sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 34vw"
+                />
+              </span>
+              <span className={styles.workFeatureBody}>
+                <span className={styles.workMeta}>Signature · {workFeatureProject.tag}</span>
+                <span className={styles.workFeatureTitle}>{workFeatureProject.title}</span>
+                <span className={styles.workPlace}>{eventPlace(workFeature)} · {formatEventDate(workFeature)}</span>
+              </span>
+            </a>
+            {workEvents.map((event) => (
+              <a className={styles.workCard} href={`/work#${event.slug}`} key={event.slug}>
+                <span className={styles.workPoster}>
+                  <Image
+                    src={event.poster}
+                    alt={`Original poster: ${eventHeadline(event)}, ${event.title}, ${formatEventDate(event)}`}
+                    fill
+                    sizes="(max-width: 700px) 50vw, (max-width: 1050px) 33vw, 22vw"
+                  />
+                </span>
+                <span className={styles.workMeta}>
+                  {formatEventDate(event)} · {categoryLabel(event.category)}
+                </span>
+                <span className={styles.workName}>{eventHeadline(event)}</span>
+                <span className={styles.workPlace}>{eventPlace(event)}</span>
+              </a>
+            ))}
+          </div>
+          <a className={styles.workIntl} href="/work#international">
+            <span className={styles.workIntlLabel}>International legacy</span>
+            {INTERNATIONAL_PARTNERS.map((partner) => (
+              <span className={styles.workIntlItem} key={partner.name}>
+                <Image src={partner.logo} alt="" width={44} height={44} />
+                <span>
+                  <strong>{partner.name}</strong>
+                  {partner.country} · {partner.summary}
+                </span>
+              </span>
+            ))}
+            {workOverseasShows.map((event) => (
+              <span className={styles.workIntlItem} key={event.slug}>
+                <span>
+                  <strong>{event.title}</strong>
+                  {eventPlace(event)} · {formatEventDate(event)}
+                </span>
+              </span>
+            ))}
+            <span className={styles.workIntlMore}>See international work →</span>
+          </a>
+          <div className={styles.workFooter}>
+            <p>
+              Concerts, campus festivals, corporate nights, private events and
+              international stages, with every poster dated and labelled.
+            </p>
+            <div className={styles.actions}>
+              <a className={styles.primaryButton} href="/work">
+                Explore all {workStats.shows} shows
+              </a>
+              <a
+                className={styles.secondaryButton}
+                href={whatsappLink(WHATSAPP_GENERAL_MESSAGE)}
+                target="_blank"
+                rel="noreferrer"
+                data-cta="home_work"
+              >
+                Discuss your event
+              </a>
+            </div>
+          </div>
           <Marquee
             items={marqueeHighlights}
             duration="50s"
@@ -324,8 +422,8 @@ export default function Home() {
             items={allyLogos}
             duration="40s"
             renderItem={(ally, index) => (
-              <div className={styles.ally} key={`${ally}-${index}`} aria-hidden={index >= allyLogos.length}>
-                <Image src={ally} alt={index < allyLogos.length ? `GnF Events partner ${index + 1}` : ""} fill sizes="170px" />
+              <div className={styles.ally} key={`${ally.src}-${index}`} aria-hidden={index >= allyLogos.length}>
+                <Image src={ally.src} alt={index < allyLogos.length ? ally.name : ""} fill sizes="170px" />
               </div>
             )}
           />

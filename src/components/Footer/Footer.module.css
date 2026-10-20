@@ -106,11 +106,19 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .grid a:not(.brand),
+  /* One link per row: email, each phone number and each social profile
+     stay on separate lines with a 40px tap height. */
+  .grid a:not(.brand) {
+    display: flex;
+    width: fit-content;
+    min-height: 40px;
+    margin-bottom: 0;
+    align-items: center;
+  }
+
   .socials a {
     display: inline-flex;
     min-height: 40px;
-    margin-bottom: 0;
     align-items: center;
   }
 }
