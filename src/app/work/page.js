@@ -22,6 +22,7 @@ import { services } from "@/data/shows";
 import {
   ADDRESS,
   EMAIL,
+  FOUNDING_YEAR,
   PHONE_PRIMARY,
   SITE_URL,
   WHATSAPP_GENERAL_MESSAGE,
@@ -36,7 +37,7 @@ const stats = getEventStats();
 
 export const metadata = {
   title: "Our Work — Concerts, Campus Festivals & Corporate Shows",
-  description: `${stats.shows} shows delivered by GnF Events across ${stats.pakistanCities} Pakistani cities and abroad: concerts, campus festivals, corporate events, private events and international stages, with the original posters.`,
+  description: `Shows delivered by GnF Events across Pakistan and abroad since ${FOUNDING_YEAR}: concerts, campus festivals, corporate events, private events and international stages, with the original posters.`,
   alternates: { canonical: "/work" },
   openGraph: {
     ...DEFAULT_OPEN_GRAPH,
@@ -77,7 +78,7 @@ const signature = SIGNATURE_EVENTS.map((project) => ({
   lineup: getEvent(project.slug).artists.join(", "),
 }));
 
-const abroad = stats.countriesAbroad.join(", ");
+const countries = ["Pakistan", ...stats.countriesAbroad];
 const partnerEventSlugs = new Set(INTERNATIONAL_PARTNERS.flatMap((partner) => partner.events));
 const overseasShows = archive.filter(
   (event) => event.category === "international" && !partnerEventSlugs.has(event.slug),
@@ -104,16 +105,16 @@ export default function WorkPage() {
           <span className={styles.heroShade} />
           <div className={styles.heroContent}>
             <p className="eyebrow">
-              Portfolio · {stats.firstYear} – {stats.lastYear}
+              Portfolio · Since {FOUNDING_YEAR}
             </p>
             <h1>
               The shows we&apos;ve put <em>on stage</em>
             </h1>
             <p className={styles.lede}>
               Concerts, campus festivals, corporate nights and international
-              stages. Every poster on this page is a GnF Events show, listed
-              with its date, venue and line-up as printed on the original
-              artwork.
+              stages across Pakistan and abroad since {FOUNDING_YEAR}. Each
+              poster here is a GnF Events show, listed with its date, venue and
+              line-up as printed on the original artwork.
             </p>
             <div className={styles.actions}>
               <a
@@ -126,25 +127,21 @@ export default function WorkPage() {
                 Discuss your event
               </a>
               <a className="btn-outline" href="#archive">
-                Browse all {stats.shows} shows
+                Browse the archive
               </a>
             </div>
             <dl className={styles.stats}>
               <div>
-                <dt>Shows on record</dt>
-                <dd>{stats.shows}</dd>
+                <dt>Delivering live shows since</dt>
+                <dd>{FOUNDING_YEAR}</dd>
               </div>
               <div>
-                <dt>Artists billed</dt>
-                <dd>{stats.artists}</dd>
+                <dt>Shows all over Pakistan</dt>
+                <dd>Nationwide</dd>
               </div>
               <div>
-                <dt>Cities in Pakistan</dt>
-                <dd>{stats.pakistanCities}</dd>
-              </div>
-              <div>
-                <dt>Countries abroad · {abroad}</dt>
-                <dd>{stats.countriesAbroad.length}</dd>
+                <dt>Countries · {countries.join(", ")}</dt>
+                <dd>{countries.length}</dd>
               </div>
             </dl>
           </div>
@@ -263,13 +260,12 @@ export default function WorkPage() {
         </section>
 
         <section className={styles.partner} aria-label="Returning partner">
-          <p className={styles.partnerCount}>{stats.superiorShows}</p>
           <div>
             <p className="eyebrow">A returning partner</p>
             <p className={styles.partnerText}>
-              Shows for Superior Group of Colleges campuses since January
-              2024, from gala nights in Lahore to festivals in Faisalabad,
-              Rawalpindi, Sialkot and Gujrat.
+              Repeat shows for Superior Group of Colleges campuses, from gala
+              nights in Lahore to festivals in Faisalabad, Rawalpindi, Sialkot
+              and Gujrat.
             </p>
           </div>
           <a className="btn-outline" href="/work?type=superior#archive">
@@ -282,12 +278,12 @@ export default function WorkPage() {
             <div>
               <p className="eyebrow">The archive</p>
               <h2 id="archive-title">
-                Every show, <em>newest first</em>
+                Selected shows, <em>newest first</em>
               </h2>
             </div>
             <p>
-              Tap any poster for the full artwork, line-up, venue and how GnF
-              Events is credited on it.
+              A selection from our poster archive. Tap any poster for the full
+              artwork, line-up, venue and how GnF Events is credited on it.
             </p>
           </div>
           <EventArchive events={archive} categories={categories} />

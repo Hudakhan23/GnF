@@ -1,6 +1,7 @@
 import {
   ADDRESS_PARTS,
   EMAIL,
+  FOUNDING_YEAR,
   ORGANIZATION_SCHEMA_ID,
   PHONE_PRIMARY,
   SITE_NAME,
@@ -25,7 +26,7 @@ export const organizationSchema = {
   image: `${SITE_URL}/EventHighlights/E14.jpeg`,
   description:
     "Lahore-based artist facilitation and event management company for singer, celebrity and entertainment bookings in Pakistan.",
-  foundingDate: "2016",
+  foundingDate: String(FOUNDING_YEAR),
   email: EMAIL,
   telephone: PHONE_PRIMARY.e164,
   address: { "@type": "PostalAddress", ...ADDRESS_PARTS },
