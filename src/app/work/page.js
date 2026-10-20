@@ -23,6 +23,7 @@ import {
   ADDRESS,
   EMAIL,
   FOUNDING_YEAR,
+  SHOWS_DELIVERED,
   PHONE_PRIMARY,
   SITE_URL,
   WHATSAPP_GENERAL_MESSAGE,
@@ -37,7 +38,7 @@ const stats = getEventStats();
 
 export const metadata = {
   title: "Our Work — Concerts, Campus Festivals & Corporate Shows",
-  description: `Shows delivered by GnF Events across Pakistan and abroad since ${FOUNDING_YEAR}: concerts, campus festivals, corporate events, private events and international stages, with the original posters.`,
+  description: `${SHOWS_DELIVERED} shows delivered by GnF Events across Pakistan and abroad since ${FOUNDING_YEAR}: concerts, campus festivals, corporate events, private events and international stages, with the original posters.`,
   alternates: { canonical: "/work" },
   openGraph: {
     ...DEFAULT_OPEN_GRAPH,
@@ -112,7 +113,8 @@ export default function WorkPage() {
             </h1>
             <p className={styles.lede}>
               Concerts, campus festivals, corporate nights and international
-              stages across Pakistan and abroad since {FOUNDING_YEAR}. Each
+              stages: {SHOWS_DELIVERED} shows across Pakistan and abroad
+              since {FOUNDING_YEAR}. Each
               poster here is a GnF Events show, listed with its date, venue and
               line-up as printed on the original artwork.
             </p>
@@ -132,8 +134,8 @@ export default function WorkPage() {
             </div>
             <dl className={styles.stats}>
               <div>
-                <dt>Delivering live shows since</dt>
-                <dd>{FOUNDING_YEAR}</dd>
+                <dt>Shows delivered since {FOUNDING_YEAR}</dt>
+                <dd>{SHOWS_DELIVERED}</dd>
               </div>
               <div>
                 <dt>Shows all over Pakistan</dt>
