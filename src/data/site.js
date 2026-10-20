@@ -30,6 +30,7 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const ADDRESS_PARTS = {
   streetAddress: "132 Block 15 B1, College Road, Township",
   addressLocality: "Lahore",
+  postalCode: "54770",
   addressCountry: "PK",
 };
 export const ADDRESS = "132 Block 15 B1, College Road, Township, Lahore, Pakistan";
