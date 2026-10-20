@@ -30,6 +30,7 @@ import {
   FOUNDING_YEAR,
   ORGANIZATION_SCHEMA_ID,
   PHONE_PRIMARY,
+  SHOWS_DELIVERED,
   SITE_URL,
   WHATSAPP_GENERAL_MESSAGE,
   whatsappLink,
@@ -290,7 +291,7 @@ export default function Home() {
               </h2>
             </div>
             <dl className={styles.workStats}>
-              <div><dt>Delivering shows since</dt><dd>{FOUNDING_YEAR}</dd></div>
+              <div><dt>Shows delivered since {FOUNDING_YEAR}</dt><dd>{SHOWS_DELIVERED}</dd></div>
               <div><dt>Shows all over Pakistan</dt><dd>Nationwide</dd></div>
               <div><dt>Countries</dt><dd>{workStats.countriesAbroad.length + 1}</dd></div>
             </dl>

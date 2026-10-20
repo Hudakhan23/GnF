@@ -4,6 +4,8 @@ export const ORGANIZATION_SCHEMA_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_SCHEMA_ID = `${SITE_URL}/#website`;
 /** Year GnF Events started delivering shows. */
 export const FOUNDING_YEAR = 2016;
+/** Total shows delivered since FOUNDING_YEAR, as stated by the business. */
+export const SHOWS_DELIVERED = "500+";
 export const EMAIL = "gnfeventspakistan@gmail.com";
 
 /**
