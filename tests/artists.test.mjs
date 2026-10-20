@@ -40,18 +40,18 @@ test("artists roster integrity", async (t) => {
     }
   });
 
-  await t.test("unconfirmed artists remain protected by needsReview flag (17 entries)", () => {
+  await t.test("all 336 artists are confirmed and indexable (0 pending review)", () => {
     const pendingReview = ARTISTS.filter((a) => !isIndexable(a));
     assert.equal(
       pendingReview.length,
-      17,
-      "expected exactly 17 unconfirmed artists to remain flagged with needsReview"
+      0,
+      "expected 0 artists to remain flagged with needsReview"
     );
     const confirmedIndexable = ARTISTS.filter(isIndexable);
     assert.equal(
       confirmedIndexable.length,
-      319,
-      "expected 319 confirmed artists to be indexable"
+      336,
+      "expected all 336 confirmed artists to be indexable"
     );
   });
 

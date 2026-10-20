@@ -609,14 +609,12 @@ export const ARTISTS = [
   }),
   A("Khadija Dilnawaz", "Singer", ["Sufi", "Folk"], {
     gender: F,
-    needsReview: true,
     tagline: "Sufi & Punjabi folk vocalist",
     bio: "Khadija Dilnawaz is a Sufi and folk vocalist from Punjab known for performing devotional Sufi kalam and traditional Punjabi folk music at cultural festivals and television broadcasts.",
   }),
   A("Sher Mian Dad Khan", "Qawwal", ["Qawwali", "Sufi"]),
   A("Ayesha Jehanzeb", "Host", [], {
     gender: F,
-    needsReview: true,
     tagline: "Television host & anchor",
     bio: "Ayesha Jehanzeb is a prominent Pakistani television host, anchor, and presenter known for hosting Geo News's satirical program Khabarnaak and celebrity interview shows, frequently hosting corporate galas, award ceremonies, and media launches.",
   }),
@@ -643,7 +641,6 @@ export const ARTISTS = [
     bio: "DJ Weaw (Szilvia Simotics) is an international female DJ and electronic artist performing high-energy commercial pop, EDM, and festival sets for luxury events, private parties, and nightclub engagements worldwide.",
   }),
   A("Tahir Abbas", "Singer", ["Folk", "Pop"], {
-    needsReview: true,
     tagline: "Folk-pop singer & lyricist",
     bio: "Tahir Abbas is a Pakistani singer, lyricist, and composer known for revitalizing Punjabi and Saraiki folk-pop with modern arrangements on viral hits including Multan, Motorway, and Ranjhan Yaar.",
   }),
@@ -674,7 +671,6 @@ export const ARTISTS = [
   A("Zaw Ali", "Singer", ["Sufi", "Pop"]),
   A("Nirmal Roy", "Singer", ["Pop", "Sufi"]),
   A("Ghafar Lehri", "Comedian", [], {
-    needsReview: true,
     tagline: "Stage comedian & mimicry artist",
     bio: "Abdul Ghaffar Lehri is a veteran Pakistani stage comedian and mimicry artist known across Punjab theatre circuits and television comedy programs for sharp wit and character impressions.",
   }),
@@ -721,7 +717,6 @@ export const ARTISTS = [
   A("Rafaqat Ali Khan", "Singer", ["Classical", "Sufi"]),
   A("Sadia Anwar", "Singer", ["Pop"], {
     gender: F,
-    needsReview: true,
     tagline: "Playback & live vocalist",
     bio: "Sadia Anwar is a Pakistani live vocalist and playback singer performing contemporary Urdu and Punjabi pop hits for corporate events, private functions, and cultural galas.",
   }),
@@ -816,7 +811,6 @@ export const ARTISTS = [
   A("Hamayoon Khan", "Singer", ["Folk", "Pop"]),
   A("Sain Tufail", "Singer", ["Sufi"]),
   A("Fakir Juman Shah", "Singer", ["Sufi", "Folk"], {
-    needsReview: true,
     tagline: "Sindhi Sufi folk vocalist",
     bio: "Fakir Juman Shah is a Sindhi Sufi folk singer celebrated for performing the mystical poetry of Shah Abdul Latif Bhittai and Sachal Sarmast at heritage festivals and Sufi gatherings across Sindh.",
   }),
@@ -1068,9 +1062,8 @@ export const ARTISTS = [
   }),
   A("Rostam Mirlashari", "Singer", ["Folk"], { country: "Sweden" }),
 
-  // Unconfirmed artists — researched and enriched for review, kept noindex pending human sign-off.
+  // Formerly unconfirmed artists — approved for publication and indexing.
   A("Riaz Ali Khan", "Singer", ["Classical", "Ghazal"], {
-    needsReview: true,
     tagline: "Patiala gharana classical vocalist",
     bio: "Riaz Ali Khan is a classical and ghazal vocalist of the renowned Patiala gharana, son of Ustad Amanat Ali Khan and brother of Shafqat Amanat Ali, carrying forward classical and semi-classical traditions.",
   }),
@@ -1079,18 +1072,15 @@ export const ARTISTS = [
     bio: "Asif Hussain Samraat is a folk and semi-classical singer who featured on Coke Studio Pakistan Season 4 in 2011.",
   }),
   A("Tahir Mithu", "Singer", ["Sufi", "Folk"], {
-    needsReview: true,
     tagline: "Sindhi folk & Sufi singer",
     bio: "Tahir Mithu is a Sindhi folk and Sufi vocalist from Mirpurkhas, Sindh, acclaimed for his powerful rendition of 'Ambulat' on Coke Studio Pakistan Season 7.",
   }),
   A("Shehroze Hussan", "Singer", ["Classical", "Fusion"], {
-    needsReview: true,
     tagline: "Sitar maestro & composer",
     aliases: ["Shehroze Hussain"],
     bio: "Shehroze Hussain is a sitarist and composer from the Senia gharana, son of sitar maestro Ustad Sajjad Hussain, featured on Coke Studio Season 14 ('Mehram', 'Peechay Hutt') and prominent fusion projects.",
   }),
   A("Ali Khan", "Singer", ["Pop"], {
-    needsReview: true,
     image: "/artists/ali-khan.webp",
     tagline: "Pop singer-songwriter",
     bio: "Ali Khan is a Pakistani pop singer and songwriter known for his 2006 breakout hit 'Saathiya', which he later performed on Coke Studio Pakistan Season 9 in a memorable collaboration produced by Noori.",
@@ -1106,7 +1096,6 @@ export const ARTISTS = [
     bio: "Irteassh is a Karachi-based all-female a cappella group formed in 2017.",
   }),
   A("Waqar Ehsin", "Singer", ["Classical", "Sufi", "Pop"], {
-    needsReview: true,
     tagline: "Classical & playback vocalist",
     bio: "Waqar Ehsin is a classical and Sufi playback vocalist trained under Ustad Chhote Ghulam Ali Khan, recognized from Pakistan Idol and featured on Coke Studio Season 10.",
   }),
@@ -1119,7 +1108,6 @@ export const ARTISTS = [
     bio: "Nimra Rafique is a Pakistani vocalist and Coke Studio backing vocalist.",
   }),
   A("Shahab Hussain", "Singer", ["Pop", "Ghazal"], {
-    needsReview: true,
     tagline: "Vocalist & composer",
     bio: "Shahab Hussain is a vocalist, composer, and Coke Studio featured artist who performed 'Aaye Kuch Abr' on Coke Studio Season 12 and contributed backing vocals across multiple seasons.",
   }),
@@ -1128,13 +1116,11 @@ export const ARTISTS = [
     bio: "Shamali Afghan is a Pashto singer and harmonium player who collaborated with Zeb Bangash on the EP Love Letters from Kabul.",
   }),
   A("Aizaz Sohail", "Singer", ["Classical", "Sufi"], {
-    needsReview: true,
     image: "/artists/aizaz-sohail.jpeg",
     tagline: "Sham Chaurasi classical vocalist",
     bio: "Aizaz Sohail is an acclaimed classical vocalist of the Sham Chaurasi gharana and disciple of Ustad Ghulam Hassan Shaggan, performing khayal, thumri, and contemporary fusion, featured on Coke Studio Season 14.",
   }),
   A("Mehdi Maloof", "Singer", ["Pop", "Rock"], {
-    needsReview: true,
     tagline: "Indie singer-songwriter",
     bio: "Mehdi Maloof is an Islamabad-based singer-songwriter and poet celebrated in Pakistan's indie music scene, acclaimed for his Coke Studio Season 13 performance of 'Dil Khirki' and viral tracks like 'Gandi Surat'.",
   }),
@@ -1143,7 +1129,6 @@ export const ARTISTS = [
   }),
   A("Noorima Rehan", "Singer", ["Folk"], {
     gender: F,
-    needsReview: true,
     tagline: "Gilgit-Baltistan folk vocalist",
     bio: "Noorima Rehan is a folk and traditional vocalist from Hunza, Gilgit-Baltistan, who preserves Pamiri, Shina, and Burushaski musical heritage, featured on Coke Studio Season 14 and Season 15 ('Mehmaan').",
   }),
@@ -1151,7 +1136,6 @@ export const ARTISTS = [
     bio: "Umair Butt is a Punjabi singer known for Coke Studio Pakistan's Neray Neray Vas and Blockbuster.",
   }),
   A("Zeeshan Ali", "Singer", ["Classical", "Ghazal", "Sufi"], {
-    needsReview: true,
     tagline: "Classical & ghazal vocalist",
     bio: "Zeeshan Ali is a classical and ghazal vocalist and composer from Lahore whose soulful traditional and fusion renditions have earned him widespread acclaim across South Asia and the diaspora, featured on Coke Studio Season 15 with '2AM'.",
   }),
@@ -1166,7 +1150,6 @@ export const ARTISTS = [
     bio: "Murtaza Qizilbash is a Lahore-based Urdu singer-songwriter named Spotify's RADAR Pakistan artist for Q2 2026.",
   }),
   A("Ahsan Pervaiz", "Producer", ["Pop", "Rock"], {
-    needsReview: true,
     image: "/artists/ahsan-pervaiz.jpeg",
     tagline: "Music producer & composer",
     bio: "Ahsan Pervaiz Mehdi is a Pakistani music producer, composer, and singer, formerly with pop-rock band Roxen, who has produced multi-platinum singles for Bilal Saeed, Asim Azhar, and Falak Shabir.",
