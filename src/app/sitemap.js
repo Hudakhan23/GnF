@@ -6,6 +6,7 @@ export default function sitemap() {
   const staticPages = [
     ["", 1, "weekly"],
     ["/artists", 0.9, "weekly"],
+    ["/work", 0.8, "monthly"],
     ["/how-to-book", 0.7, "monthly"],
     ["/about", 0.6, "monthly"],
     ["/contact", 0.8, "monthly"],

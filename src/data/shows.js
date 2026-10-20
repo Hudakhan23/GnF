@@ -7,24 +7,6 @@ export const occasions = [
   "Private Parties",
 ];
 
-// Newest event first. Every poster lives in /public/RecentShows/ — swap
-// entries here to re-curate the home marquee.
-export const showPosters = [
-  "2026-10-10-ns-chauhan-faisalabad.jpeg",
-  "2026-04-25-sarmad-qadeer-kot-momin.jpeg",
-  "2026-04-16-abrar-ul-haq-lahore.jpeg",
-  "2026-02-12-falak-shabir-faisalabad.jpeg",
-  "2026-02-04-ali-zafar-lahore.jpeg",
-  "2026-02-02-sahara-uk-faisalabad.jpeg",
-  "2026-02-01-sarmad-qadeer-multan.jpeg",
-  "2026-01-30-nimra-mehra-faisalabad.jpeg",
-  "2026-01-30-humaira-channa-lahore.jpeg",
-  "2025-12-24-nabeel-shaukat-ali-gujrat.jpeg",
-  "2025-12-22-ns-chauhan-faisalabad.jpeg",
-  "2025-12-05-ali-badar-miandad-qawwali.jpeg",
-  "2025-12-02-ns-chauhan-sialkot.jpeg",
-].map((file) => `/RecentShows/${file}`);
-
 export const marqueeHighlights = [1, 3, 4, 5, 7, 9, 11, 12, 14, 17].map(
   (number) => `/EventHighlights/E${number}.jpeg`,
 );

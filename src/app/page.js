@@ -8,11 +8,20 @@ import Marquee from "@/components/Marquee/Marquee";
 import Reveal from "@/components/Reveal/Reveal";
 import { featuredArtists, getArtist, homepageNextWaveArtists } from "@/data/artists";
 import {
+  HOME_FEATURED_EVENTS,
+  SIGNATURE_EVENTS,
+  categoryLabel,
+  eventHeadline,
+  eventPlace,
+  formatEventDate,
+  getEvent,
+  getEventStats,
+} from "@/data/events";
+import {
   allyLogos,
   marqueeHighlights,
   occasions,
   services,
-  showPosters,
 } from "@/data/shows";
 import {
   ORGANIZATION_SCHEMA_ID,
@@ -43,6 +52,11 @@ const serviceSchema = {
     servicePhone: { "@type": "ContactPoint", telephone: PHONE_PRIMARY.e164 },
   },
 };
+
+const workStats = getEventStats();
+const workFeatureProject = SIGNATURE_EVENTS[0];
+const workFeature = getEvent(workFeatureProject.slug);
+const workEvents = HOME_FEATURED_EVENTS.map(getEvent);
 
 const exclusiveHomeArtist = getArtist("nish-asher");
 const nextWaveArtists = homepageNextWaveArtists.map(
@@ -259,25 +273,70 @@ export default function Home() {
           <div className={styles.workHeading}>
             <div>
               <p className={styles.eyebrow}>The work</p>
-              <h2>Star-studded shows, season after season</h2>
+              <h2>
+                Star-studded shows, <em>season after season</em>
+              </h2>
             </div>
-            <p>
-              Each poster tells the story of an incredible experience, capturing
-              the energy of our shows and live productions.
-            </p>
+            <dl className={styles.workStats}>
+              <div><dt>Shows on record</dt><dd>{workStats.shows}</dd></div>
+              <div><dt>Cities in Pakistan</dt><dd>{workStats.pakistanCities}</dd></div>
+              <div><dt>Stages abroad</dt><dd>{workStats.countriesAbroad.length}</dd></div>
+            </dl>
           </div>
-          <Marquee
-            items={showPosters}
-            duration="60s"
-            pauseOnHover
-            className={styles.posterMarquee}
-            ariaLabel="Recent GnF Events show posters"
-            renderItem={(poster, index) => (
-              <div className={styles.poster} key={`${poster}-${index}`} aria-hidden={index >= showPosters.length}>
-                <Image src={poster} alt={index < showPosters.length ? `GnF Events recent show poster ${index + 1}` : ""} fill sizes="280px" />
-              </div>
-            )}
-          />
+          <div className={styles.workGrid}>
+            <a className={styles.workFeature} href={`/work#${workFeature.slug}`}>
+              <span className={styles.workPoster}>
+                <Image
+                  src={workFeature.poster}
+                  alt={`Original poster: ${eventHeadline(workFeature)}, ${workFeature.title}, ${formatEventDate(workFeature)}`}
+                  fill
+                  sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 34vw"
+                />
+              </span>
+              <span className={styles.workFeatureBody}>
+                <span className={styles.workMeta}>Signature · {workFeatureProject.tag}</span>
+                <span className={styles.workFeatureTitle}>{workFeatureProject.title}</span>
+                <span className={styles.workPlace}>{eventPlace(workFeature)} · {formatEventDate(workFeature)}</span>
+              </span>
+            </a>
+            {workEvents.map((event) => (
+              <a className={styles.workCard} href={`/work#${event.slug}`} key={event.slug}>
+                <span className={styles.workPoster}>
+                  <Image
+                    src={event.poster}
+                    alt={`Original poster: ${eventHeadline(event)}, ${event.title}, ${formatEventDate(event)}`}
+                    fill
+                    sizes="(max-width: 700px) 50vw, (max-width: 1050px) 33vw, 22vw"
+                  />
+                </span>
+                <span className={styles.workMeta}>
+                  {formatEventDate(event)} · {categoryLabel(event.category)}
+                </span>
+                <span className={styles.workName}>{eventHeadline(event)}</span>
+                <span className={styles.workPlace}>{eventPlace(event)}</span>
+              </a>
+            ))}
+          </div>
+          <div className={styles.workFooter}>
+            <p>
+              Concerts, campus festivals, corporate nights, private events and
+              international stages, with every poster dated and labelled.
+            </p>
+            <div className={styles.actions}>
+              <a className={styles.primaryButton} href="/work">
+                Explore all {workStats.shows} shows
+              </a>
+              <a
+                className={styles.secondaryButton}
+                href={whatsappLink(WHATSAPP_GENERAL_MESSAGE)}
+                target="_blank"
+                rel="noreferrer"
+                data-cta="home_work"
+              >
+                Discuss your event
+              </a>
+            </div>
+          </div>
           <Marquee
             items={marqueeHighlights}
             duration="50s"
