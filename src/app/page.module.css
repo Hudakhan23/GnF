@@ -523,6 +523,32 @@
   object-fit: cover;
 }
 
+.posterMarquee {
+  padding-bottom: 18px;
+}
+
+.posterTile {
+  position: relative;
+  display: block;
+  width: 260px;
+  height: 260px;
+  margin-right: 18px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--gold-border);
+  background: var(--surface);
+  transition: border-color 200ms ease;
+}
+
+.posterTile img {
+  object-fit: contain;
+}
+
+.posterTile:hover,
+.posterTile:focus-visible {
+  border-color: rgba(198, 160, 92, 0.6);
+}
+
 .highlightMarquee {
   padding-bottom: 96px;
 }
@@ -1056,6 +1082,11 @@
   }
 
   .marqueeHighlight { height: 230px; }
+
+  .posterTile {
+    width: 200px;
+    height: 200px;
+  }
 
   .cta > div {
     padding-block: 92px;

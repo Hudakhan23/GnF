@@ -61,6 +61,9 @@ const workStats = getEventStats();
 const workFeatureProject = SIGNATURE_EVENTS[0];
 const workFeature = getEvent(workFeatureProject.slug);
 const workEvents = HOME_FEATURED_EVENTS.map(getEvent);
+// Every other poster, newest first, for the moving strip under the grid.
+const workShownSlugs = new Set([workFeature.slug, ...HOME_FEATURED_EVENTS]);
+const workMarqueeEvents = EVENTS.filter((event) => !workShownSlugs.has(event.slug));
 const workCategories = EVENT_CATEGORIES.map((category) => ({
   ...category,
   count: EVENTS.filter((event) => event.category === category.key).length,
@@ -377,6 +380,32 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <Marquee
+            items={workMarqueeEvents}
+            duration="220s"
+            pauseOnHover
+            className={styles.posterMarquee}
+            ariaLabel="More GnF Events show posters"
+            renderItem={(event, index) => {
+              const copy = index >= workMarqueeEvents.length;
+              return (
+                <a
+                  className={styles.posterTile}
+                  href={`/work#${event.slug}`}
+                  key={`${event.slug}-${index}`}
+                  aria-hidden={copy || undefined}
+                  tabIndex={copy ? -1 : undefined}
+                >
+                  <Image
+                    src={event.poster}
+                    alt={copy ? "" : `Original poster: ${eventHeadline(event)}, ${formatEventDate(event)}`}
+                    fill
+                    sizes="260px"
+                  />
+                </a>
+              );
+            }}
+          />
           <Marquee
             items={marqueeHighlights}
             duration="50s"
