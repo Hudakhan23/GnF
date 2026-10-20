@@ -1304,6 +1304,47 @@ export const ARTISTS = [
     tagline: "Legendary playback vocalist",
     bio: "Sonu Nigam is a legendary Indian playback singer and live concert performer with a career spanning over three decades, performing in more than a dozen languages and headlining prestigious concert halls worldwide.",
   }),
+  A("Humera Arshad", "Singer", ["Pop", "Ghazal", "Folk"], {
+    gender: F,
+    tagline: "Pop & ghazal vocalist",
+    bio: "Humera Arshad is an acclaimed Pakistani pop and ghazal singer trained under Ustad Nusrat Fateh Ali Khan. With multi-award-winning hits including 'Sada Hoon Apnay Pyar Ki', 'Aashiqan Toon Tan Man', and 'Has Sadqe', she is a celebrated headliner for weddings, private galas, and television broadcasts.",
+  }),
+  A("Hamza Akram Qawwal", "Qawwal", ["Qawwali", "Sufi"], {
+    tagline: "Sufi qawwali ensemble",
+    aliases: ["Hamza Akram", "Hamza Akram Qawwal & Brothers"],
+    bio: "Hamza Akram Qawwal & Brothers are 26th-generation Sufi qawwali exponents descending from Mian Taansen. Winners of the Lux Style Award for Best Emerging Talent, they have toured extensively across the US, UK, and Middle East, performing classical Sufi poetry and spiritual kalam.",
+  }),
+  A("Mooroo", "Singer", ["Pop", "Rock"], {
+    tagline: "Indie singer-songwriter & producer",
+    aliases: ["Taimoor Salahuddin"],
+    bio: "Mooroo (Taimoor Salahuddin) is an influential Pakistani indie singer-songwriter, music producer, and filmmaker from Lahore. Celebrated for distinctive narrative songwriting and viral releases including 'Mariam', 'Kahani', 'Tasveer', and 'Bandar', he is a favorite across university and indie music festivals.",
+  }),
+  A("Shubh", "Singer", ["Rap / Hip-Hop", "Bhangra", "Pop"], {
+    country: "Canada",
+    internationalOnly: true,
+    tagline: "Global Punjabi hip-hop artist",
+    aliases: ["Shubhneet Singh"],
+    bio: "Shubh (Shubhneet Singh) is an Indian-born Canadian rapper and singer who achieved global streaming dominance with modern Punjabi hip-hop tracks like 'Baller', 'Cheques', 'No Love', and 'Still Rollin', performing for international arena concerts and high-profile private events.",
+  }),
+  A("Jasleen Royal", "Singer", ["Pop", "Playback"], {
+    gender: F,
+    country: "India",
+    internationalOnly: true,
+    tagline: "Bollywood & indie-pop vocalist",
+    bio: "Jasleen Royal is a multi-award-winning Indian singer, songwriter, and composer celebrated for viral romance anthems including 'Heeriye', 'Din Shagna Da', and 'Ranjha'. She is one of the most in-demand vocalists for luxury destination weddings and international galas across Dubai, Turkey, and Europe.",
+  }),
+  A("Prateek Kuhad", "Singer", ["Pop"], {
+    country: "India",
+    internationalOnly: true,
+    tagline: "Global indie-pop singer-songwriter",
+    bio: "Prateek Kuhad is an internationally acclaimed indie singer-songwriter praised by Barack Obama and NPR. Known for soulful acoustic compositions including 'cold/mess', 'Kasoor', and 'Tum Jab Paas', he headlines sold-out theater and arena tours across North America, Europe, and Asia.",
+  }),
+  A("Jay Sean", "Singer", ["Pop", "Rap / Hip-Hop"], {
+    country: "UK",
+    tagline: "Pioneering British-Asian R&B icon",
+    aliases: ["Kamaljit Singh Jhooti"],
+    bio: "Jay Sean is a pioneering British-Asian R&B singer and songwriter who made history as the first South Asian solo artist to top the US Billboard Hot 100 with 'Down'. With global hits like 'Ride It' and 'Do You Remember', he is a perennial headliner for international concerts, luxury weddings, and corporate summits.",
+  }),
 ];
 
 // ------------------------------------------------------------------ selectors
