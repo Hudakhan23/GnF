@@ -20,6 +20,10 @@
 .DS_Store
 *.pem
 graphify-out/
+.codex*
+.serena/
+deliverables/
+design_handoff_gnf_redesign/
 
 # debug
 npm-debug.log*
