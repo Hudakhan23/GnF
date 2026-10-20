@@ -139,8 +139,6 @@
 .gallery {
   padding-top: 110px;
   padding-bottom: 110px;
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
 }
 
 .gallery h2 {

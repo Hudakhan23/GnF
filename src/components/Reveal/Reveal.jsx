@@ -45,8 +45,10 @@ export default function Reveal({
         observer.disconnect();
       },
       {
-        rootMargin: "0px 0px -8% 0px",
-        threshold: 0.08,
+        // Start just before the section scrolls in, so it is already
+        // fading in (and its images loading) when it reaches the screen.
+        rootMargin: "0px 0px 15% 0px",
+        threshold: 0,
       },
     );
 

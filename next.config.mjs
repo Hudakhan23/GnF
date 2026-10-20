@@ -27,6 +27,19 @@ const SECURITY_HEADERS = [
   },
 ];
 
+// Artwork in /public is served by Vercel with "max-age=0, must-revalidate",
+// so browsers re-check every image (and every optimized /_next/image
+// variant) on each visit. Let them reuse images for a week and refresh in the
+// background for a month. Replaced files should get a new file name.
+const IMAGE_CACHE_HEADERS = [
+  {
+    key: "Cache-Control",
+    value: "public, max-age=604800, stale-while-revalidate=2592000",
+  },
+];
+const IMAGE_DIRECTORIES =
+  "RecentShows|EventHighlights|artists|images|Allies|partners|ContactusBackground|FooterBackground";
+
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
@@ -53,7 +66,11 @@ const nextConfig = {
     ];
   },
   async headers() {
-    return [{ source: "/:path*", headers: SECURITY_HEADERS }];
+    return [
+      { source: "/:path*", headers: SECURITY_HEADERS },
+      { source: `/:dir(${IMAGE_DIRECTORIES})/:file*`, headers: IMAGE_CACHE_HEADERS },
+      { source: "/logo-gold.png", headers: IMAGE_CACHE_HEADERS },
+    ];
   },
 };
 

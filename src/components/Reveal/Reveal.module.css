@@ -4,18 +4,18 @@
 
 .pending {
   opacity: 0;
-  transform: translate3d(0, 38px, 0);
+  transform: translate3d(0, 24px, 0);
 }
 
 .visible {
-  animation: revealIn 850ms var(--reveal-delay)
+  animation: revealIn 550ms var(--reveal-delay)
     cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes revealIn {
   from {
     opacity: 0;
-    transform: translate3d(0, 38px, 0);
+    transform: translate3d(0, 24px, 0);
   }
 
   to {

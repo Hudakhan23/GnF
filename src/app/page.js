@@ -164,7 +164,7 @@ export default function Home() {
 
         <GenZArtistCarousel artists={nextWaveArtists} />
 
-        <Reveal className={`${styles.positioning} ${styles.deferred}`}>
+        <Reveal className={`${styles.positioning}`}>
           <h2>Your gateway to extraordinary entertainment experiences</h2>
           <div>
             <p>
@@ -182,7 +182,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal className={`${styles.exclusiveFeature} ${styles.deferred}`}>
+        <Reveal className={`${styles.exclusiveFeature}`}>
           <div className={styles.exclusivePoster}>
             <Image
               src={exclusiveHomeArtist.profile.poster}
@@ -231,7 +231,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal className={`${styles.artistSection} ${styles.deferred}`}>
+        <Reveal className={`${styles.artistSection}`}>
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.eyebrow}>The roster</p>
@@ -251,7 +251,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal id="services" className={`${styles.services} ${styles.deferred}`}>
+        <Reveal id="services" className={`${styles.services}`}>
           <div className={styles.serviceInner}>
             <div className={styles.serviceHeading}>
               <div>
@@ -281,7 +281,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal id="work" className={`${styles.work} ${styles.deferred}`}>
+        <Reveal id="work" className={`${styles.work}`}>
           <div className={styles.workHeading}>
             <div>
               <p className={styles.eyebrow}>The work</p>
@@ -392,7 +392,7 @@ export default function Home() {
           />
         </Reveal>
 
-        <Reveal className={`${styles.leadership} ${styles.deferred}`}>
+        <Reveal className={`${styles.leadership}`}>
           <div className={styles.leadershipInner}>
             <div className={styles.ceoImage}>
               <Image
@@ -417,7 +417,7 @@ export default function Home() {
           </div>
         </Reveal>
 
-        <Reveal className={`${styles.allies} ${styles.deferred}`} aria-label="Trusted allies">
+        <Reveal className={`${styles.allies}`} aria-label="Trusted allies">
           <p>Our trusted allies</p>
           <Marquee
             items={allyLogos}
@@ -430,7 +430,7 @@ export default function Home() {
           />
         </Reveal>
 
-        <Reveal className={`${styles.cta} ${styles.deferred}`}>
+        <Reveal className={`${styles.cta}`}>
           <Image src="/EventHighlights/E12.jpeg" alt="Concert stage" fill sizes="100vw" />
           <span />
           <div>
