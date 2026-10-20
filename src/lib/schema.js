@@ -143,13 +143,14 @@ export function artistsDirectorySchema(roster = []) {
     numberOfItems: roster.length,
     itemListElement: roster.map((artist, index) => {
       const isBand = artist.artistType === "Band";
+      const href = artist.href || `/artists/${artist.slug}`;
       return {
         "@type": "ListItem",
         position: index + 1,
         item: {
           "@type": isBand ? "MusicGroup" : "Person",
           name: artist.name,
-          url: `${SITE_URL}${artist.href}`,
+          url: `${SITE_URL}${href}`,
           ...(artist.image ? { image: `${SITE_URL}${artist.image}` } : {}),
           description: artist.tagline || artist.description,
         },

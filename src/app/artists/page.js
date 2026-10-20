@@ -5,7 +5,7 @@ import ExclusiveSpotlight from "@/components/ExclusiveSpotlight/ExclusiveSpotlig
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
-import { ARTISTS, ARTIST_OPTIONS, EXCLUSIVE_ARTISTS } from "@/data/artists";
+import { ARTISTS, ARTIST_OPTIONS, EXCLUSIVE_ARTISTS, artists } from "@/data/artists";
 import { SITE_URL } from "@/data/site";
 import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
 import { breadcrumbSchema, artistsDirectorySchema } from "@/lib/schema";
@@ -31,7 +31,7 @@ const COUNTRIES = new Set(ARTISTS.map((a) => a.country));
 export default function ArtistsPage() {
   const schema = [
     breadcrumbSchema([["Artists", "/artists"]]),
-    artistsDirectorySchema(ARTISTS),
+    artistsDirectorySchema(artists),
   ];
 
   return (
