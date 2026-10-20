@@ -2,6 +2,8 @@ export const SITE_URL = "https://www.gnfevents.com.pk";
 export const SITE_NAME = "GnF Events";
 export const ORGANIZATION_SCHEMA_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_SCHEMA_ID = `${SITE_URL}/#website`;
+/** Year GnF Events started delivering shows. */
+export const FOUNDING_YEAR = 2016;
 export const EMAIL = "gnfeventspakistan@gmail.com";
 
 /**

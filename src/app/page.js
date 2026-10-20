@@ -27,6 +27,7 @@ import {
   services,
 } from "@/data/shows";
 import {
+  FOUNDING_YEAR,
   ORGANIZATION_SCHEMA_ID,
   PHONE_PRIMARY,
   SITE_URL,
@@ -289,9 +290,9 @@ export default function Home() {
               </h2>
             </div>
             <dl className={styles.workStats}>
-              <div><dt>Shows on record</dt><dd>{workStats.shows}</dd></div>
-              <div><dt>Cities in Pakistan</dt><dd>{workStats.pakistanCities}</dd></div>
-              <div><dt>Countries abroad</dt><dd>{workStats.countriesAbroad.length}</dd></div>
+              <div><dt>Delivering shows since</dt><dd>{FOUNDING_YEAR}</dd></div>
+              <div><dt>Shows all over Pakistan</dt><dd>Nationwide</dd></div>
+              <div><dt>Countries</dt><dd>{workStats.countriesAbroad.length + 1}</dd></div>
             </dl>
           </div>
           <nav className={styles.workTypes} aria-label="Browse our work by event type">
@@ -363,7 +364,7 @@ export default function Home() {
             </p>
             <div className={styles.actions}>
               <a className={styles.primaryButton} href="/work">
-                Explore all {workStats.shows} shows
+                Explore our work
               </a>
               <a
                 className={styles.secondaryButton}
