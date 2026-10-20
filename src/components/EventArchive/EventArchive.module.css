@@ -246,6 +246,24 @@
   margin: 0;
 }
 
+.artistLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.artistProfileLink {
+  color: var(--gold);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.artistProfileLink:hover {
+  color: var(--gold-light, #ffd700);
+}
+
 .note {
   margin: 0;
   color: var(--text-muted);

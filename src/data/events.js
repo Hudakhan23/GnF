@@ -211,8 +211,67 @@ export const getEvent = (slug) => EVENTS.find((event) => event.slug === slug);
 export const categoryLabel = (key) =>
   EVENT_CATEGORIES.find((category) => category.key === key)?.label ?? key;
 
-export const isSuperiorEvent = (event) =>
-  /Superior/.test(`${event.title} ${event.venue}`);
+export function isSuperiorEvent(event) {
+  return /Superior/.test(`${event.title} ${event.venue}`);
+}
+
+/**
+ * Resolves an event artist name to an artist profile in the roster.
+ */
+export function getArtistForEventArtist(aName, roster = []) {
+  if (!aName) return null;
+  const lower = aName.toLowerCase().trim();
+  return (
+    roster.find((a) => {
+      if (a.name.toLowerCase().trim() === lower) return true;
+      if (a.slug === lower.replace(/[^a-z0-9]+/g, "-")) return true;
+      if (a.aliases?.some((al) => al.toLowerCase().trim() === lower)) return true;
+      if (a.slug === "ali-zafar" && lower === "ali zafar") return true;
+      if (a.slug === "abrar-ul-haq" && lower === "abrar ul haq") return true;
+      if (a.slug === "falak-shabir" && (lower === "falak shabir" || lower === "falak shabbir")) return true;
+      if (a.slug === "sahir-ali-bagga" && lower === "sahir ali bagga") return true;
+      if (a.slug === "sarmad-qadeer" && lower === "sarmad qadeer") return true;
+      if (a.slug === "nabeel-shaukat-ali" && lower === "nabeel shaukat ali") return true;
+      if (a.slug === "javed-bashir" && lower.includes("javed bashir")) return true;
+      if (a.slug === "shahbaz-fayyaz-qawwal" && lower.includes("shahbaz fayaz")) return true;
+      if (a.slug === "surj-rdb" && (lower === "rdb" || lower.includes("rdb"))) return true;
+      if (a.slug === "tahseen-sakina" && (lower === "tehsin sakina" || lower === "tahseen sakina")) return true;
+      if (a.slug === "nadeem-abbas-loonay-wala" && lower.includes("nadeem abbas")) return true;
+      return false;
+    }) || null
+  );
+}
+
+/**
+ * Returns all past shows/events delivered by GnF Events featuring this artist.
+ */
+export function getEventsForArtist(artistOrSlug) {
+  if (!artistOrSlug) return [];
+  const slug = typeof artistOrSlug === "string" ? artistOrSlug : artistOrSlug.slug;
+  const name = typeof artistOrSlug === "object" ? artistOrSlug.name : null;
+  const aliases = typeof artistOrSlug === "object" && artistOrSlug.aliases ? artistOrSlug.aliases : [];
+
+  return EVENTS.filter((event) => {
+    return event.artists.some((aName) => {
+      const lower = aName.toLowerCase().trim();
+      if (name && lower === name.toLowerCase().trim()) return true;
+      if (slug && lower.replace(/[^a-z0-9]+/g, "-") === slug) return true;
+      if (aliases.some((al) => al.toLowerCase().trim() === lower)) return true;
+      if (slug === "ali-zafar" && lower === "ali zafar") return true;
+      if (slug === "abrar-ul-haq" && lower === "abrar ul haq") return true;
+      if (slug === "falak-shabir" && (lower === "falak shabir" || lower === "falak shabbir")) return true;
+      if (slug === "sahir-ali-bagga" && lower === "sahir ali bagga") return true;
+      if (slug === "sarmad-qadeer" && lower === "sarmad qadeer") return true;
+      if (slug === "nabeel-shaukat-ali" && lower === "nabeel shaukat ali") return true;
+      if (slug === "javed-bashir" && lower.includes("javed bashir")) return true;
+      if (slug === "shahbaz-fayyaz-qawwal" && lower.includes("shahbaz fayaz")) return true;
+      if (slug === "surj-rdb" && (lower === "rdb" || lower.includes("rdb"))) return true;
+      if (slug === "tahseen-sakina" && (lower === "tehsin sakina" || lower === "tahseen sakina")) return true;
+      if (slug === "nadeem-abbas-loonay-wala" && lower.includes("nadeem abbas")) return true;
+      return false;
+    });
+  });
+}
 
 /** Figures shown on the site — derived from EVENTS and partners, never typed in. */
 export function getEventStats(events = EVENTS, partners = INTERNATIONAL_PARTNERS) {

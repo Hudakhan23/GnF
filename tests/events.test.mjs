@@ -11,7 +11,9 @@ import {
   SIGNATURE_EVENTS,
   eventPlace,
   formatEventDate,
+  getArtistForEventArtist,
   getEvent,
+  getEventsForArtist,
   getEventStats,
   joinNames,
 } from "../src/data/events.js";
@@ -82,5 +84,28 @@ describe("event formatting", () => {
     assert.equal(stats.shows, EVENTS.length);
     assert.deepEqual(stats.countriesAbroad.sort(), ["Canada", "Denmark", "USA"]);
     assert.ok(stats.pakistanCities > 0 && stats.artists > 0);
+  });
+});
+
+describe("portfolio cross-linking", () => {
+  it("resolves past shows for marquee artists", () => {
+    const aliZafarEvents = getEventsForArtist("ali-zafar");
+    assert.ok(aliZafarEvents.length >= 2, "Ali Zafar should have at least 2 events");
+
+    const abrarEvents = getEventsForArtist("abrar-ul-haq");
+    assert.ok(abrarEvents.length >= 3, "Abrar ul Haq should have at least 3 events");
+
+    const falakEvents = getEventsForArtist("falak-shabir");
+    assert.ok(falakEvents.length >= 3, "Falak Shabir should have at least 3 events");
+  });
+
+  it("resolves artist profiles from event artist names", () => {
+    const dummyRoster = [
+      { name: "Ali Zafar", slug: "ali-zafar", href: "/artists/ali-zafar" },
+      { name: "Abrar ul Haq", slug: "abrar-ul-haq", href: "/artists/abrar-ul-haq" },
+    ];
+    const match = getArtistForEventArtist("Ali Zafar", dummyRoster);
+    assert.ok(match);
+    assert.equal(match.slug, "ali-zafar");
   });
 });

@@ -17,6 +17,11 @@ import {
   suitabilityFor,
 } from "@/data/artists";
 import {
+  eventPlace,
+  formatEventDate,
+  getEventsForArtist,
+} from "@/data/events";
+import {
   ORGANIZATION_SCHEMA_ID,
   SITE_NAME,
   SITE_URL,
@@ -92,6 +97,7 @@ export default async function ArtistBookingPage({ params }) {
   const management = MANAGEMENT[artist.managementType];
   const related = relatedArtists(artist);
   const suitability = suitabilityFor(artist);
+  const pastEvents = getEventsForArtist(artist);
   const bookingUrl = whatsappLink(
     `Hi GnF Events, I want to enquire about booking ${artist.name}. My event date/city is: `,
   );
@@ -504,6 +510,54 @@ export default async function ArtistBookingPage({ params }) {
                   <h3>{item.question}</h3>
                   <p>{item.answer}</p>
                 </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {pastEvents.length > 0 && (
+          <section
+            className={styles.pastEvents}
+            aria-labelledby={`${artist.slug}-past-events-heading`}
+          >
+            <div className={styles.pastEventsHeading}>
+              <p className={styles.eyebrow}>Portfolio · On Stage</p>
+              <h2 id={`${artist.slug}-past-events-heading`}>
+                Shows delivered with {artist.name}
+              </h2>
+              <p className={styles.pastEventsSubtitle}>
+                Original concert posters and event history from GnF Events shows
+                featuring {artist.name}. Select any poster to view the full details
+                in our show archive.
+              </p>
+            </div>
+            <div className={styles.pastEventsGrid}>
+              {pastEvents.map((event) => (
+                <a
+                  key={event.slug}
+                  href={`/work#${event.slug}`}
+                  className={styles.pastEventCard}
+                  title={`View ${event.title || event.headline} on /work`}
+                >
+                  <div className={styles.pastEventPoster}>
+                    <Image
+                      src={event.poster}
+                      alt={`Concert poster: ${event.title || event.headline}`}
+                      fill
+                      sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 320px"
+                    />
+                  </div>
+                  <div className={styles.pastEventInfo}>
+                    <span className={styles.pastEventDate}>
+                      {formatEventDate(event)}
+                    </span>
+                    <h3>{event.title || event.headline}</h3>
+                    <p className={styles.pastEventVenue}>{eventPlace(event)}</p>
+                    <span className={styles.pastEventAction}>
+                      View poster in archive →
+                    </span>
+                  </div>
+                </a>
               ))}
             </div>
           </section>

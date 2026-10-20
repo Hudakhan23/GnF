@@ -3,6 +3,7 @@ import EventArchive from "@/components/EventArchive/EventArchive";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import JsonLd from "@/components/JsonLd/JsonLd";
+import { artists } from "@/data/artists";
 import {
   EVENTS,
   EVENT_CATEGORIES,
@@ -14,6 +15,7 @@ import {
   eventHeadline,
   eventPlace,
   formatEventDate,
+  getArtistForEventArtist,
   getEvent,
   getEventStats,
   isSuperiorEvent,
@@ -51,6 +53,13 @@ function toArchiveItem(event) {
   const headline = eventHeadline(event);
   const dateLabel = formatEventDate(event);
   const where = eventPlace({ ...event, venue: "" });
+  const artistLinks = event.artists
+    .map((name) => {
+      const a = getArtistForEventArtist(name, artists);
+      return a ? { name: a.name, href: a.href, slug: a.slug } : null;
+    })
+    .filter(Boolean);
+
   return {
     slug: event.slug,
     poster: event.poster,
@@ -64,6 +73,7 @@ function toArchiveItem(event) {
     place: eventPlace(event),
     creditLabel: EVENT_CREDITS[event.credit],
     superior: isSuperiorEvent(event),
+    artistLinks,
     alt: `Original poster: ${[headline, event.title, where, event.date ? dateLabel : ""].filter(Boolean).join(", ")}`,
   };
 }

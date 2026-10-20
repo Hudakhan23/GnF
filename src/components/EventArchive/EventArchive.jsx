@@ -238,6 +238,18 @@ export default function EventArchive({ events, categories }) {
                 <dd>{current.where || "—"}</dd>
                 <dt>Our role</dt>
                 <dd>{current.creditLabel}</dd>
+                {current.artistLinks && current.artistLinks.length > 0 && (
+                  <>
+                    <dt>Artist</dt>
+                    <dd className={styles.artistLinks}>
+                      {current.artistLinks.map((al) => (
+                        <a key={al.slug} href={al.href} className={styles.artistProfileLink}>
+                          {al.name} (View Profile &amp; Booking) →
+                        </a>
+                      ))}
+                    </dd>
+                  </>
+                )}
               </dl>
               <p className={styles.note}>Details are taken from the original poster shown here.</p>
               <div className={styles.dialogActions}>
