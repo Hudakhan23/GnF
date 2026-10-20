@@ -15,10 +15,21 @@ export const aboutHighlights = [1, 3, 5, 7, 9, 11, 14, 17].map(
   (number) => `/EventHighlights/E${number}.jpeg`,
 );
 
-export const allyLogos = Array.from(
-  { length: 12 },
-  (_, index) => `/Allies/Allies${index + 1}.png`,
-);
+// Names read from each logo file; used as alt text so the partners are named.
+export const allyLogos = [
+  "APEX",
+  "Aspire Group of Colleges",
+  "Copenhagen Mela Festival",
+  "Horizon",
+  "LGS",
+  "Pakistan Association of America",
+  "Punjab Colleges",
+  "Queens College for Women",
+  "Solvurs",
+  "Superior Group of Colleges",
+  "Superior University",
+  "Vibrant Summer Fest",
+].map((name, index) => ({ name, src: `/Allies/Allies${index + 1}.png` }));
 
 export const services = [
   {

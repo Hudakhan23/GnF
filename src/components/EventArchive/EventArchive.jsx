@@ -45,7 +45,7 @@ export default function EventArchive({ events, categories }) {
       setOpenSlug(slug);
       return true;
     };
-    const frame = window.requestAnimationFrame(() => {
+    const timer = window.setTimeout(() => {
       const type = new URLSearchParams(window.location.search).get("type");
       const known = type === SUPERIOR || categories.some((category) => category.key === type);
       if (known) {
@@ -53,7 +53,7 @@ export default function EventArchive({ events, categories }) {
         setShowAll(true);
       }
       openFromHash();
-    });
+    }, 0);
     const onHashChange = () => {
       setFilter((currentFilter) => {
         const slug = decodeURIComponent(window.location.hash.slice(1));
@@ -68,7 +68,7 @@ export default function EventArchive({ events, categories }) {
     };
     window.addEventListener("hashchange", onHashChange);
     return () => {
-      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
       window.removeEventListener("hashchange", onHashChange);
     };
   }, [categories, events]);

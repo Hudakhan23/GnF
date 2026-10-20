@@ -8,6 +8,7 @@ import {
   EVENT_CATEGORIES,
   EVENT_CREDITS,
   EVENT_HOSTS,
+  INTERNATIONAL_PARTNERS,
   SIGNATURE_EVENTS,
   categoryLabel,
   eventHeadline,
@@ -77,6 +78,14 @@ const signature = SIGNATURE_EVENTS.map((project) => ({
 }));
 
 const abroad = stats.countriesAbroad.join(", ");
+const partnerCountries = INTERNATIONAL_PARTNERS.map((partner) => partner.country).join(" and ");
+const partnerEventSlugs = new Set(INTERNATIONAL_PARTNERS.flatMap((partner) => partner.events));
+const overseasShows = archive.filter(
+  (event) => event.category === "international" && !partnerEventSlugs.has(event.slug),
+);
+
+const INTERNATIONAL_MESSAGE =
+  "Hi GnF Events, I'd like to discuss booking Pakistani artists for an event abroad.\nEvent / festival: \nCountry & city: \nDate: ";
 
 export default function WorkPage() {
   return (
@@ -135,7 +144,7 @@ export default function WorkPage() {
                 <dd>{stats.pakistanCities}</dd>
               </div>
               <div>
-                <dt>Stages abroad · {abroad}</dt>
+                <dt>Countries abroad · {abroad}</dt>
                 <dd>{stats.countriesAbroad.length}</dd>
               </div>
             </dl>
@@ -184,6 +193,72 @@ export default function WorkPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section id="international" className={styles.section} aria-labelledby="international-title">
+          <div className={styles.heading}>
+            <div>
+              <p className="eyebrow">International legacy</p>
+              <h2 id="international-title">
+                Pakistani artists on <em>stages abroad</em>
+              </h2>
+            </div>
+            <p>
+              We have provided artists to festivals in {partnerCountries} across
+              multiple editions, and delivered shows for Pakistani communities
+              overseas.
+            </p>
+          </div>
+          <ul className={styles.intlGrid}>
+            {INTERNATIONAL_PARTNERS.map((partner) => (
+              <li className={styles.intlCard} key={partner.name}>
+                <span className={styles.intlLogo}>
+                  <Image src={partner.logo} alt={`${partner.name} logo`} fill sizes="96px" />
+                </span>
+                <div>
+                  <p className={styles.tag}>
+                    {partner.city}, {partner.country}
+                  </p>
+                  <h3>{partner.name}</h3>
+                  <p>{partner.role}</p>
+                  {partner.events.map((slug) => (
+                    <a className={styles.intlLink} href={`#${slug}`} key={slug}>
+                      View the {formatEventDate(getEvent(slug)).split(" ").at(-1)} poster →
+                    </a>
+                  ))}
+                </div>
+              </li>
+            ))}
+            {overseasShows.map((event) => (
+              <li className={styles.intlCard} key={event.slug}>
+                <a className={styles.intlPoster} href={`#${event.slug}`} aria-label={`View poster: ${event.title}`}>
+                  <Image src={event.poster} alt={event.alt} fill sizes="96px" />
+                </a>
+                <div>
+                  <p className={styles.tag}>{event.where}</p>
+                  <h3>{event.title}</h3>
+                  <p>
+                    {event.headline} · {event.dateLabel}
+                  </p>
+                  <a className={styles.intlLink} href={`#${event.slug}`}>
+                    View the poster →
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.intlCta}>
+            <p>Organising a festival or community event abroad?</p>
+            <a
+              className="btn-gold"
+              href={whatsappLink(INTERNATIONAL_MESSAGE)}
+              target="_blank"
+              rel="noreferrer"
+              data-cta="work_international"
+            >
+              Discuss an international booking
+            </a>
           </div>
         </section>
 

@@ -124,6 +124,29 @@ export const HOME_FEATURED_EVENTS = [
   "2025-02-23-abrar-ul-haq-superior-musical-concerts",
 ];
 
+/**
+ * Overseas festivals GnF Events has supplied artists to, as confirmed by the
+ * business. `events` links to any archived poster from that festival.
+ */
+export const INTERNATIONAL_PARTNERS = [
+  {
+    name: "Vibrant Brampton Festival",
+    logo: "/partners/vibrant-brampton.png",
+    city: "Brampton",
+    country: "Canada",
+    role: "Artists provided across multiple editions",
+    events: ["2023-07-22-falak-shabir-vibrant-brampton-festival"],
+  },
+  {
+    name: "Copenhagen Mela",
+    logo: "/partners/copenhagen-mela.webp",
+    city: "Copenhagen",
+    country: "Denmark",
+    role: "Artists provided across multiple editions",
+    events: [],
+  },
+];
+
 /** Organisations and venues named on the posters. */
 export const EVENT_HOSTS = [
   "APSUP — Association of Private Sector Universities of Pakistan",
@@ -140,6 +163,7 @@ export const EVENT_HOSTS = [
   "Army Medical College, Rawalpindi",
   "Pakistan Society for Rheumatology",
   "Vibrant Brampton Festival, Canada",
+  "Copenhagen Mela, Denmark",
   "PC Hotel Lahore",
   "Lahore Global Village",
   "Gujrat Gymkhana",
@@ -178,15 +202,16 @@ export const categoryLabel = (key) =>
 export const isSuperiorEvent = (event) =>
   /Superior/.test(`${event.title} ${event.venue}`);
 
-/** Figures shown on the site — all derived from EVENTS, never typed in. */
-export function getEventStats(events = EVENTS) {
+/** Figures shown on the site — derived from EVENTS and partners, never typed in. */
+export function getEventStats(events = EVENTS, partners = INTERNATIONAL_PARTNERS) {
   const artists = new Set(events.flatMap((event) => event.artists));
   const pakistanCities = new Set(
     events.filter((event) => event.country === "Pakistan").flatMap((event) => event.cities),
   );
-  const countriesAbroad = new Set(
-    events.filter((event) => event.country !== "Pakistan").map((event) => event.country),
-  );
+  const countriesAbroad = new Set([
+    ...events.filter((event) => event.country !== "Pakistan").map((event) => event.country),
+    ...partners.map((partner) => partner.country),
+  ]);
   const years = events.filter((event) => event.date).map((event) => Number(event.date.slice(0, 4)));
   return {
     shows: events.length,

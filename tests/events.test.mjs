@@ -7,6 +7,7 @@ import {
   EVENT_CATEGORIES,
   EVENT_CREDITS,
   HOME_FEATURED_EVENTS,
+  INTERNATIONAL_PARTNERS,
   SIGNATURE_EVENTS,
   eventPlace,
   formatEventDate,
@@ -42,8 +43,15 @@ describe("event archive data", () => {
     }
   });
 
-  it("only features events that exist", () => {
-    for (const slug of [...HOME_FEATURED_EVENTS, ...SIGNATURE_EVENTS.map((s) => s.slug)]) {
+  it("only features events and partner logos that exist", () => {
+    for (const partner of INTERNATIONAL_PARTNERS) {
+      assert.ok(fs.existsSync(path.join(PUBLIC, partner.logo)), `${partner.name}: missing ${partner.logo}`);
+    }
+    for (const slug of [
+      ...HOME_FEATURED_EVENTS,
+      ...SIGNATURE_EVENTS.map((s) => s.slug),
+      ...INTERNATIONAL_PARTNERS.flatMap((p) => p.events),
+    ]) {
       assert.ok(getEvent(slug), `${slug} is featured but not in EVENTS`);
     }
   });
@@ -72,7 +80,7 @@ describe("event formatting", () => {
   it("derives stats from the data", () => {
     const stats = getEventStats();
     assert.equal(stats.shows, EVENTS.length);
-    assert.deepEqual(stats.countriesAbroad.sort(), ["Canada", "USA"]);
+    assert.deepEqual(stats.countriesAbroad.sort(), ["Canada", "Denmark", "USA"]);
     assert.ok(stats.pakistanCities > 0 && stats.artists > 0);
   });
 });
