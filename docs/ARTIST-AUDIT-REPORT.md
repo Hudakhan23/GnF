@@ -22,9 +22,9 @@ A comprehensive data quality, research verification, SEO, and metadata audit was
 | **Total Artist Profiles** | **336** | Exact active roster (311 canonical foundation + 25 third-intake verified additions) |
 | **Exclusive Management** | **1** | Nish Asher (`nish-asher`) — verified with custom ProfilePage schema & assets |
 | **Network Facilitation** | **335** | Standard facilitating network disclaimer and booking enquiry flow |
-| **Indexable Profiles** | **319** | Included in `sitemap.xml` with self-referencing canonicals and crawlable inbound links |
-| **Noindex Profiles (`needsReview`)** | **17** | Deliberately marked `needsReview: true`, returning `robots: "noindex, follow"`, excluded from sitemap |
-| **XML Sitemap URLs** | **325** | 319 indexable artist URLs + 6 core static pages (`/`, `/about`, `/artists`, `/contact`, `/how-to-book`, `/work`) |
+| **Indexable Profiles** | **336** | 100% included in `sitemap.xml` with self-referencing canonicals and crawlable inbound links |
+| **Noindex Profiles (`needsReview`)** | **0** | All 17 previously unconfirmed profiles approved by stakeholder and indexed |
+| **XML Sitemap URLs** | **342** | 336 indexable artist URLs + 6 core static pages (`/`, `/about`, `/artists`, `/contact`, `/how-to-book`, `/work`) |
 | **Prerendered SSG Pages** | **351** | 342 standard pages (including all 336 artist routes) + 404 + icon/manifest endpoints |
 | **Portraits in `/public`** | **315 / 315** | 100% of referenced directory portraits physically exist with 0 broken references (21 have no image reference) |
 | **Image Rights Status** | **25 Approved**<br>**15 Client-Supplied**<br>**275 Unverified**<br>**21 None** | Validated against `docs/image-rights/IMAGE-SOURCES.md` via `scripts/check-image-rights.mjs` (0 violations) |
@@ -116,11 +116,9 @@ Over 60 priority profiles in `src/data/artists.js` were enriched with verified b
 
 ---
 
-## Group B: Items for Human Approval (17 Unconfirmed Profiles)
+## Group B: Stakeholder-Approved Artist Profiles (17 Profiles Promoted to Indexable)
 
-To strictly adhere to SEO safety boundaries, the deliberate `noindex` directives on the following 17 artists have been **preserved in code** (`needsReview: true`). They remain fully accessible at their respective URLs with `robots: "noindex, follow"` and are excluded from `sitemap.xml`.
-
-The factual research below is submitted for executive review. Once approved, clearing `needsReview: true` will immediately promote them into the indexable XML sitemap.
+The factual research for the following 17 artists was reviewed and **approved by the project stakeholder**. All `needsReview: true` flags have been cleared in [`src/data/artists.js`](file:///Users/NoumanRana/Desktop/Wov_Projects/GnF/src/data/artists.js). All 17 profiles now serve `robots: "index, follow"` and are published in `sitemap.xml`, expanding the indexable roster to 336 artists (342 sitemap URLs).
 
 | # | Artist Name | Slug | Current Status in Code | Researched Industry Facts | Proposed Type & Genres | Proposed Tagline & Bio | Recommendation |
 | :-: | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
