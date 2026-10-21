@@ -22,6 +22,7 @@
 
 import { whatsappLink } from "./site.js";
 import { ARTIST_DIRECTORY_PORTRAITS } from "./artistDirectoryPortraits.js";
+import { CURATED_BIOS_DATA } from "./curatedBios.js";
 
 export const MANAGEMENT = {
   exclusive: {
@@ -48,39 +49,48 @@ const slugify = (name) =>
     .replace(/^-+|-+$/g, "");
 
 // Shorthand: [name, artistType, genres, opts]
-const A = (name, artistType, genres = [], opts = {}) => ({
-  name,
-  slug: opts.slug || slugify(name),
-  image: opts.image || ARTIST_DIRECTORY_PORTRAITS[name]?.image || null,
-  imagePosition:
-    opts.imagePosition || ARTIST_DIRECTORY_PORTRAITS[name]?.position || null,
-  imageFit: opts.imageFit || ARTIST_DIRECTORY_PORTRAITS[name]?.fit || null,
-  // Required credit for openly licensed photos: { text, href, license, licenseHref }.
-  imageCredit: opts.imageCredit || null,
-  genres,
-  artistType,
-  managementType: opts.managementType || "network",
-  featured: Boolean(opts.featured),
-  country: opts.country || "Pakistan",
-  gender: opts.gender || "male",
-  genZ: Boolean(opts.genZ),
-  // Indian nationals cannot currently obtain permission to perform in Pakistan,
-  // so they are offered for international events only. Set explicitly for
-  // Indian nationals living elsewhere (country alone is where they are based).
-  internationalOnly: Boolean(opts.internationalOnly) || opts.country === "India",
-  needsReview: Boolean(opts.needsReview),
-  tagline: opts.tagline || null,
-  // Other spellings actually in use (press, the artist's own channels). Never
-  // a reason for a separate page — they feed search and alternateName only.
-  aliases: opts.aliases || [],
-  bio: opts.bio || null,
-  metaDescription: opts.metaDescription || null,
-  seo: opts.seo || null,
-  socials: opts.socials || null,
-  profile: opts.profile || null,
-  gallery: opts.gallery || [],
-  videos: opts.videos || [],
-});
+const A = (name, artistType, genres = [], opts = {}) => {
+  const slug = opts.slug || slugify(name);
+  const curated = CURATED_BIOS_DATA[slug] || {};
+  return {
+    name,
+    slug,
+    image: opts.image || ARTIST_DIRECTORY_PORTRAITS[name]?.image || null,
+    imagePosition:
+      opts.imagePosition || ARTIST_DIRECTORY_PORTRAITS[name]?.position || null,
+    imageFit: opts.imageFit || ARTIST_DIRECTORY_PORTRAITS[name]?.fit || null,
+    // Required credit for openly licensed photos: { text, href, license, licenseHref }.
+    imageCredit: opts.imageCredit || null,
+    genres,
+    artistType,
+    managementType: opts.managementType || "network",
+    featured: Boolean(opts.featured),
+    country: opts.country || "Pakistan",
+    gender: opts.gender || "male",
+    genZ: Boolean(opts.genZ),
+    // Indian nationals cannot currently obtain permission to perform in Pakistan,
+    // so they are offered for international events only. Set explicitly for
+    // Indian nationals living elsewhere (country alone is where they are based).
+    internationalOnly: Boolean(opts.internationalOnly) || opts.country === "India",
+    needsReview: Boolean(opts.needsReview),
+    tagline: opts.tagline || curated.tagline || null,
+    // Other spellings actually in use (press, the artist's own channels). Never
+    // a reason for a separate page — they feed search and alternateName only.
+    aliases:
+      opts.aliases && opts.aliases.length > 0
+        ? opts.aliases
+        : curated.aliases || [],
+    bio: opts.bio || curated.bio || null,
+    metaDescription: opts.metaDescription || null,
+    seo:
+      opts.seo ||
+      (curated.bio ? { modified: "2026-10-21T00:00:00+05:00" } : null),
+    socials: opts.socials || null,
+    profile: opts.profile || null,
+    gallery: opts.gallery || [],
+    videos: opts.videos || [],
+  };
+};
 
 const F = "female";
 const M = "male";
