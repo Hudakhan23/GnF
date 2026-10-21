@@ -134,7 +134,7 @@
 .details dt {
   margin-bottom: 8px;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -304,7 +304,7 @@
   padding: 9px 18px;
   background: var(--gold);
   color: var(--background);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -339,7 +339,7 @@
 .managementLabel {
   margin: 0 0 10px;
   color: var(--gold);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -426,7 +426,7 @@
 .profileStats dd {
   margin: 10px 0 0;
   color: var(--text-muted);
-  font-size: 9.5px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
   line-height: 1.5;
@@ -536,7 +536,7 @@
 .youtubeHeading p {
   margin: 0 0 8px;
   color: var(--gold);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -551,7 +551,7 @@
   padding: 8px 11px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: var(--text-muted);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -581,7 +581,7 @@
 .youtubeStats dd {
   margin: 8px 0 0;
   color: var(--text-muted);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.12em;
   line-height: 1.45;
@@ -621,7 +621,7 @@
   margin-top: 24px;
   color: var(--gold);
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;

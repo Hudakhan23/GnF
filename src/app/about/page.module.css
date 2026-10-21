@@ -89,7 +89,7 @@
 
 .stats span {
   color: var(--text-muted);
-  font-size: 10.5px;
+  font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
