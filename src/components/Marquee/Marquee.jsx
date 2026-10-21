@@ -14,6 +14,7 @@ export default function Marquee({
   return (
     <div
       className={`${styles.viewport} ${pauseOnHover ? styles.pause : ""} ${className}`}
+      role={ariaLabel ? "group" : undefined}
       aria-label={ariaLabel}
     >
       <div

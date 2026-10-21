@@ -52,7 +52,7 @@ export default function Header({
             src="/logo-gold.png"
             width={52}
             height={52}
-            alt="GnF Events"
+            alt=""
             className={styles.logo}
             priority
           />

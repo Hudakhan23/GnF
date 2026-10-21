@@ -89,6 +89,9 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body>
+        <a className="skip-link" href="#content">
+          Skip to content
+        </a>
         <JsonLd data={[organizationSchema, websiteSchema]} />
         {children}
         <ConversionTracker />

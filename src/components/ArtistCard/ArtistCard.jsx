@@ -13,7 +13,7 @@ export default function ArtistCard({ artist, priority, featured = false }) {
       className={`${styles.card} ${featured ? styles.featured : ""}`}
     >
       <div className={styles.media}>
-        <ArtistPortrait artist={artist} priority={priority} />
+        <ArtistPortrait artist={artist} priority={priority} alt="" />
         <div className={styles.scrim} />
         {isExclusive && (
           <span className={styles.badge}>{MANAGEMENT.exclusive.badge}</span>

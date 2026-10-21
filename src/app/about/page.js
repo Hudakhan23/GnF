@@ -41,7 +41,7 @@ export default function AboutPage() {
     <>
       <JsonLd data={[aboutSchema, breadcrumbSchema([["About", "/about"]])]} />
       <Header active="about" />
-      <main>
+      <main id="content">
         <section className={styles.hero}>
           <p>About GnF Events</p>
           <h1>Your gateway to <em>extraordinary</em> entertainment experiences</h1>

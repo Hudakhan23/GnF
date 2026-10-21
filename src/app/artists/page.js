@@ -37,7 +37,7 @@ export default function ArtistsPage() {
     <>
       <JsonLd data={schema} />
       <Header active="artists" />
-      <main>
+      <main id="content">
         <section className={styles.hero}>
           <p className={`eyebrow ${styles.heroEyebrow}`}>The roster</p>
           <h1 className={styles.title}>
@@ -96,7 +96,7 @@ export default function ArtistsPage() {
         <ArtistIndex />
 
         <section className={styles.enquiryWrap}>
-          <aside className={styles.enquiry}>
+          <div className={styles.enquiry}>
             <div>
               <h2 className={styles.enquiryTitle}>
                 Looking for someone not listed here?
@@ -109,7 +109,7 @@ export default function ArtistsPage() {
             <BookingButton artists={ARTIST_OPTIONS} source="artists_not_listed">
               Start an enquiry
             </BookingButton>
-          </aside>
+          </div>
           <p className={styles.disclaimer}>
             Availability is subject to the artist&apos;s schedule and
             confirmation. GnF Events facilitates booking enquiries and event

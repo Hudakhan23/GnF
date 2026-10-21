@@ -291,7 +291,7 @@ export default async function ArtistBookingPage({ params }) {
     <>
       <JsonLd data={schema} />
       <Header active="artists" bookingHref={bookingUrl} />
-      <main data-artist={artist.slug}>
+      <main id="content" data-artist={artist.slug}>
         <section className={styles.hero}>
           <div className={styles.portraitWrap}>
             <div className={styles.portrait}>

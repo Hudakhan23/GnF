@@ -13,7 +13,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main id="content" className={styles.main}>
         <p className="eyebrow">404 · Page not found</p>
         <h1>
           This page has <em>left the stage</em>

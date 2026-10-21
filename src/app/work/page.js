@@ -104,7 +104,7 @@ export default function WorkPage() {
       <JsonLd data={breadcrumbSchema([["Our work", "/work"]])} />
       <JsonLd data={eventsArchiveSchema(EVENTS, artists)} />
       <Header active="work" overlay />
-      <main>
+      <main id="content">
         <section className={styles.hero}>
           <Image
             src="/EventHighlights/E14.jpeg"

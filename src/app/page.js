@@ -110,7 +110,7 @@ export default function Home() {
     <>
       <JsonLd data={serviceSchema} />
       <Header active="home" overlay />
-      <main>
+      <main id="content">
         <section className={styles.hero}>
           <div className={styles.heroMedia}>
             <Image
@@ -178,7 +178,7 @@ export default function Home() {
               or Islamabad to end-to-end event coordination, our team keeps every
               detail seamless.
             </p>
-            <div className={styles.stats} aria-label="GnF Events at a glance">
+            <div className={styles.stats} role="group" aria-label="GnF Events at a glance">
               <div><strong>2016</strong><span>Founded</span></div>
               <div><strong>24/7</strong><span>Support</span></div>
               <div><strong>{workStats.countriesAbroad.length + 1}</strong><span>Countries</span></div>

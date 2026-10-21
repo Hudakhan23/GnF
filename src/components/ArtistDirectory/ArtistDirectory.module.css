@@ -207,7 +207,7 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(246, 243, 237, 0.45);
+  color: var(--text-muted);
 }
 
 .clear {

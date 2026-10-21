@@ -55,7 +55,7 @@ export default function ContactPage() {
     <>
       <JsonLd data={[contactSchema, breadcrumbSchema([["Contact", "/contact"]])]} />
       <Header active="contact" />
-      <main className={styles.main}>
+      <main id="content" className={styles.main}>
         <section className={styles.contactInfo}>
           <p className={styles.eyebrow}>Contact</p>
           <h1>Tell us about <em>your event</em></h1>

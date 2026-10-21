@@ -21,12 +21,17 @@ const angle = (name) => {
  * Artist portrait. Falls back to a neutral gold monogram when we have no
  * verified photograph — never a stand-in face.
  */
-export default function ArtistPortrait({ artist, className = "", priority }) {
+export default function ArtistPortrait({
+  artist,
+  className = "",
+  priority,
+  alt = artist.name,
+}) {
   if (artist.image) {
     return (
       <Image
         src={artist.image}
-        alt={artist.name}
+        alt={alt}
         fill
         sizes="(max-width: 360px) calc(100vw - 40px), (max-width: 900px) 50vw, 30vw"
         className={`${styles.image} ${className}`}

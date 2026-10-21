@@ -164,7 +164,6 @@ export default function EventArchive({ events, categories }) {
               type="button"
               className={styles.card}
               onClick={() => open(event.slug)}
-              aria-label={`View poster: ${event.headline}, ${event.dateLabel}`}
             >
               <span className={styles.frame}>
                 <Image

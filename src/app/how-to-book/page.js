@@ -130,7 +130,7 @@ export default function HowToBookPage() {
     <>
       <JsonLd data={schema} />
       <Header />
-      <main className={styles.main}>
+      <main id="content" className={styles.main}>
         <header className={styles.hero}>
           <p className="eyebrow">Booking guide</p>
           <h1>
