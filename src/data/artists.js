@@ -338,6 +338,7 @@ export const ARTISTS = [
     image: "/artists/amanat-ali-official.jpg",
     tagline: "Patiala gharana vocalist & Sa Re Ga Ma Pa finalist",
     bio: "Amanat Ali is a celebrated Pakistani classical and pop vocalist from the Patiala gharana, who gained international recognition as a finalist on Sa Re Ga Ma Pa Challenge 2007. Known for Coke Studio performances and hits such as 'Thumri' and 'Khabar Nahi', he headlines campus concerts, corporate events, and weddings across Pakistan.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Annie Khalid", "Singer", ["Pop"], {
     gender: F,
@@ -395,6 +396,7 @@ export const ARTISTS = [
     gender: F,
     tagline: "Pashto & Urdu folk-pop vocalist",
     bio: "Gul Panra is an acclaimed Pakistani folk-pop and playback singer celebrated for her breakthrough Coke Studio Season 8 duet 'Man Aamadeh Am' with Atif Aslam. She performs for nationwide cultural festivals, corporate conferences, and private events across Pakistan and overseas.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Jaz Dhami", "Singer", ["Bhangra"], { country: "UK" }),
   A("Hamid Ali Khan", "Singer", ["Classical", "Ghazal"], {
@@ -521,6 +523,7 @@ export const ARTISTS = [
   A("Malkoo", "Singer", ["Folk"], {
     tagline: "High-energy Punjabi folk singer",
     bio: "Malkoo is a popular Pakistani Punjabi folk singer known for high-octane festive hits including 'Kala Joda', 'Nak Da Koka', and 'Billo'. A fixture of corporate dinners, Punjabi cultural festivals, and energetic wedding celebrations, he delivers engaging live performances nationwide.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Natasha Baig", "Singer", ["Sufi", "Rock"], { gender: F }),
   A("Annural Khalid", "Singer", ["Pop"], {
@@ -579,6 +582,7 @@ export const ARTISTS = [
     genZ: true,
     tagline: "Viral Punjabi folk-pop vocalist",
     bio: "Nimra Mehra is a prominent Pakistani contemporary folk and pop singer known for viral releases including 'Guddi Wangu', 'Je Pata Hunda', and 'Zehreela'. Highly sought-after for private weddings, festive occasions, and club concerts, she brings dynamic vocal energy to live stages across Pakistan.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Saira Naseem", "Singer", ["Pop", "Folk"], { gender: F }),
   A("Humaira Channa", "Singer", ["Folk", "Playback"], {
@@ -599,6 +603,7 @@ export const ARTISTS = [
     aliases: ["Shahbaz Fayaz", "Shahbaz Fayyaz", "Shahbaz Fayyaz Qawwali Group"],
     tagline: "Premier Faisalabad-based Qawwali ensemble",
     bio: "Shahbaz Fayyaz Qawwal is a celebrated Pakistani classical and devotional Qawwali group from Faisalabad, known for dynamic live mehfils, powerful vocal jugalbandis, and traditional Sufi kalam of Hazrat Amir Khusrau and Bulleh Shah.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Akbar Ali Khan", "Qawwal", ["Qawwali", "Classical"], {
     image: "/artists/akbar-ali-khan.jpg",
@@ -614,6 +619,7 @@ export const ARTISTS = [
     aliases: ["RDB", "Rhythm Dhol Bass"],
     tagline: "RDB frontman & British-Asian hitmaker",
     bio: "Surj RDB is the frontman and surviving member of the legendary UK Bhangra pioneering group RDB (Rhythm Dhol Bass), celebrated for international crossover anthems including 'Aloo Chaat', 'Singh is Kinng', and 'Shera Di Kaum'.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Manj Musik", "Singer", ["Bhangra", "Rap / Hip-Hop"], { country: "UK" }),
   A("Sahara UK", "Band", ["Bhangra", "Pop"], {
@@ -801,6 +807,7 @@ export const ARTISTS = [
   A("Nabeel Shaukat Ali", "Singer", ["Pop", "Playback"], {
     tagline: "Sur Kshetra winner & playback vocalist",
     bio: "Nabeel Shaukat Ali is a premier Pakistani vocalist and winner of the pan-South Asian singing competition Sur Kshetra (2012). Known for acclaimed Coke Studio appearances including 'Umran Langiyaan' and beloved drama OSTs, he is a headline performer for campus concerts, corporate galas, and private weddings across Pakistan.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Wahdat Rameez", "Singer", ["Classical", "Sufi", "Folk"], {
     bio: "Wahdat Rameez is a classical, Sufi and folk vocalist from Pakpattan.",
@@ -821,6 +828,7 @@ export const ARTISTS = [
     gender: F,
     tagline: "Classical & playback vocalist, Sa Re Ga Ma Pa",
     bio: "Sara Raza Khan is an acclaimed Pakistani playback and classical vocalist who represented Pakistan on Sa Re Ga Ma Pa Challenge 2009. Known for appearances on Coke Studio Season 12 and popular television OSTs, she performs for corporate galas, ghazal evenings, and private receptions.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Sain Zahoor", "Singer", ["Sufi", "Folk"]),
   A("Raheem Shah", "Singer", ["Folk", "Pop"]),
@@ -834,6 +842,7 @@ export const ARTISTS = [
   A("Sarmad Qadeer", "Singer", ["Pop", "Folk"], {
     tagline: "Punjabi pop & bhangra hitmaker",
     bio: "Sarmad Qadeer is a popular Pakistani Punjabi singer, songwriter, and composer with hit singles including 'Tere Piche', 'Desi Da Drum', and 'Gaddi'. A regular headliner for collegiate youth festivals and high-energy wedding celebrations across Punjab, he brings electric live energy to the stage.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Alamgir", "Singer", ["Pop"], {
     image: "/artists/alamgir-commons.jpg",
@@ -903,6 +912,7 @@ export const ARTISTS = [
     image: "/artists/adnan-dhool-official.jpg",
     tagline: "Soch Band frontman, composer & vocalist",
     bio: "Adnan Dhool is the lead vocalist, songwriter, and composer of Soch Band, celebrated for Bollywood and Pakistani hits including 'Awari' (Ek Villain) and 'Bol Hu'. A prolific composer for cinema and television, he performs dynamic live acoustic and Sufi-rock sets for campus concerts and corporate summits.",
+    seo: { modified: "2026-10-21T00:00:00+05:00" },
   }),
   A("Faraz Anwar", "Singer", ["Rock"], { tagline: "Guitarist & composer" }),
   A("Farhan Rais Khan", "Singer", ["Classical"], { tagline: "Sitar maestro" }),
