@@ -48,7 +48,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Artist Booking in Pakistan | GnF Events",
     description: "Pakistani singer booking and event management from GnF Events.",
-    images: ["/EventHighlights/E14.jpeg"],
+    images: ["/og-default.jpg"],
   },
   // index/follow is the default; stating it here would contradict the
   // noindex Next.js adds to 404s and to non-indexable artist pages.

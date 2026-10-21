@@ -71,6 +71,7 @@ const nextConfig = {
       { source: "/:path*", headers: SECURITY_HEADERS },
       { source: `/:dir(${IMAGE_DIRECTORIES})/:file*`, headers: IMAGE_CACHE_HEADERS },
       { source: "/logo-gold.png", headers: IMAGE_CACHE_HEADERS },
+      { source: "/og-default.jpg", headers: IMAGE_CACHE_HEADERS },
     ];
   },
 };

@@ -15,10 +15,10 @@ export const DEFAULT_OPEN_GRAPH = {
     "Bring Pakistan's leading artists to your stage with end-to-end booking and event coordination.",
   images: [
     {
-      url: "/EventHighlights/E14.jpeg",
-      width: 1080,
-      height: 707,
-      alt: "Live concert produced by GnF Events",
+      url: "/og-default.jpg",
+      width: 1200,
+      height: 630,
+      alt: "GnF Events — Artist Booking in Pakistan",
     },
   ],
 };

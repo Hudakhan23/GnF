@@ -24,7 +24,7 @@ export const organizationSchema = {
   name: SITE_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/logo-gold.png`,
-  image: `${SITE_URL}/EventHighlights/E14.jpeg`,
+  image: `${SITE_URL}/og-default.jpg`,
   description:
     "Artist facilitation and event management company providing singer, celebrity and entertainment bookings across Pakistan.",
   foundingDate: String(FOUNDING_YEAR),
