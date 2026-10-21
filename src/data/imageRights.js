@@ -43,6 +43,19 @@ export const APPROVED_IMAGES = new Set([
   "/artists/anwar-maqsood-commons.jpg",
   "/artists/arif-lohar-commons.jpg",
   "/artists/arooj-aftab-commons.jpg",
+  "/artists/diljit-dosanjh.jpg",
+  "/artists/ap-dhillon.jpg",
+  "/artists/anuv-jain.jpg",
+  "/artists/haroon.jpg",
+  "/artists/jasleen-royal.jpg",
+  "/artists/jay-sean.jpg",
+  "/artists/karan-aujla.jpg",
+  "/artists/prateek-kuhad.jpg",
+  "/artists/sonu-nigam.jpg",
+  "/artists/sunidhi-chauhan.jpg",
+  "/artists/laal-band.jpg",
+  "/artists/laila-khan.jpg",
+  "/artists/aunty-disco-project-live.jpg",
 ]);
 
 export const CLIENT_SUPPLIED_IMAGES = new Set([

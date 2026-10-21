@@ -26,7 +26,7 @@ export const organizationSchema = {
   logo: `${SITE_URL}/logo-gold.png`,
   image: `${SITE_URL}/EventHighlights/E14.jpeg`,
   description:
-    "Lahore-based artist facilitation and event management company for singer, celebrity and entertainment bookings in Pakistan.",
+    "Artist facilitation and event management company providing singer, celebrity and entertainment bookings across Pakistan.",
   foundingDate: String(FOUNDING_YEAR),
   email: EMAIL,
   telephone: PHONE_PRIMARY.e164,

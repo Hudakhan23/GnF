@@ -27,6 +27,8 @@ import {
   SITE_URL,
   whatsappLink,
 } from "@/data/site";
+import { imageRightsStatus } from "@/data/imageRights";
+import { DEFAULT_OPEN_GRAPH } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
 import styles from "./page.module.css";
 
@@ -41,14 +43,16 @@ export async function generateMetadata({ params }) {
 
   const title = artist.seoTitle;
   const socialTitle = artist.seo?.title || `${title} | ${SITE_NAME}`;
-  const image = artist.image
-    ? {
-        url: artist.image,
-        width: artist.slug === "nish-asher" ? 1125 : undefined,
-        height: artist.slug === "nish-asher" ? 1386 : undefined,
-        alt: `${artist.name} — ${artist.tag}`,
-      }
-    : null;
+  const isApprovedImage = imageRightsStatus(artist.image) === "approved";
+  const image =
+    isApprovedImage && artist.image
+      ? {
+          url: artist.image,
+          width: artist.slug === "nish-asher" ? 1125 : undefined,
+          height: artist.slug === "nish-asher" ? 1386 : undefined,
+          alt: `${artist.name} — ${artist.tag}`,
+        }
+      : null;
 
   return {
     title: artist.seo?.title ? { absolute: artist.seo.title } : title,
@@ -62,13 +66,13 @@ export async function generateMetadata({ params }) {
       siteName: SITE_NAME,
       locale: "en_PK",
       type: "profile",
-      images: image ? [image] : undefined,
+      images: image ? [image] : DEFAULT_OPEN_GRAPH.images,
     },
     twitter: {
       card: "summary_large_image",
       title: socialTitle,
       description: artist.description,
-      images: image ? [image] : undefined,
+      images: image ? [image] : DEFAULT_OPEN_GRAPH.images,
     },
   };
 }
@@ -145,7 +149,8 @@ export default async function ArtistBookingPage({ params }) {
 
   const artistUrl = `${SITE_URL}${artist.href}`;
   const artistId = `${artistUrl}#artist`;
-  const imageUrl = artist.image ? `${SITE_URL}${artist.image}` : null;
+  const isApprovedImage = imageRightsStatus(artist.image) === "approved";
+  const imageUrl = isApprovedImage && artist.image ? `${SITE_URL}${artist.image}` : null;
   const isBand = artist.artistType === "Band";
   const entitySchema = {
     "@type": isBand ? "MusicGroup" : "Person",
@@ -180,9 +185,11 @@ export default async function ArtistBookingPage({ params }) {
     ...(isBand
       ? { genre: artist.genres }
       : {
-          jobTitle: artist.profile
-            ? ["Singer", "Pop vocalist", "OST performer"]
-            : artist.artistType,
+          jobTitle:
+            artist.profile?.jobTitles ||
+            (artist.slug === "nish-asher"
+              ? ["Singer", "Pop vocalist", "OST performer"]
+              : artist.artistType),
           ...(artist.country !== "Pakistan"
             ? {
                 homeLocation: {
@@ -194,11 +201,17 @@ export default async function ArtistBookingPage({ params }) {
             : {}),
         }),
     ...(artist.socials ? { sameAs: Object.values(artist.socials) } : {}),
-    ...(artist.profile
+    ...(artist.profile?.award ||
+    (artist.slug === "nish-asher" &&
+      "BBC Asian Network Future Sounds Artist 2021")
       ? {
-          award: "BBC Asian Network Future Sounds Artist 2021",
-          affiliation: { "@id": ORGANIZATION_SCHEMA_ID },
+          award:
+            artist.profile?.award ||
+            "BBC Asian Network Future Sounds Artist 2021",
         }
+      : {}),
+    ...(artist.managementType === "exclusive"
+      ? { affiliation: { "@id": ORGANIZATION_SCHEMA_ID } }
       : {}),
   };
 

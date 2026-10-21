@@ -336,6 +336,8 @@ export const ARTISTS = [
   }),
   A("Amanat Ali", "Singer", ["Pop", "Classical"], {
     image: "/artists/amanat-ali-official.jpg",
+    tagline: "Patiala gharana vocalist & Sa Re Ga Ma Pa finalist",
+    bio: "Amanat Ali is a celebrated Pakistani classical and pop vocalist from the Patiala gharana, who gained international recognition as a finalist on Sa Re Ga Ma Pa Challenge 2007. Known for Coke Studio performances and hits such as 'Thumri' and 'Khabar Nahi', he headlines campus concerts, corporate events, and weddings across Pakistan.",
   }),
   A("Annie Khalid", "Singer", ["Pop"], {
     gender: F,
@@ -389,7 +391,11 @@ export const ARTISTS = [
     tagline: "Patiala gharana ghazal maestro",
     bio: "Ustad Ghulam Ali is a legendary Pakistani ghazal maestro of the Patiala gharana, celebrated worldwide for masterful classical phrasing and timeless compositions including Chupke Chupke Raat Din, Hangama Hai Kyon Barpa, and Awargi. A Pride of Performance and Sitara-i-Imtiaz recipient, he is one of South Asia's greatest living classical vocalists.",
   }),
-  A("Gul Panra", "Singer", ["Folk", "Pop"], { gender: F }),
+  A("Gul Panra", "Singer", ["Folk", "Pop"], {
+    gender: F,
+    tagline: "Pashto & Urdu folk-pop vocalist",
+    bio: "Gul Panra is an acclaimed Pakistani folk-pop and playback singer celebrated for her breakthrough Coke Studio Season 8 duet 'Man Aamadeh Am' with Atif Aslam. She performs for nationwide cultural festivals, corporate conferences, and private events across Pakistan and overseas.",
+  }),
   A("Jaz Dhami", "Singer", ["Bhangra"], { country: "UK" }),
   A("Hamid Ali Khan", "Singer", ["Classical", "Ghazal"], {
     tagline: "Patiala gharana classical maestro",
@@ -418,6 +424,7 @@ export const ARTISTS = [
     bio: "Jal Band is an influential Pakistani pop-rock band formed in Lahore by guitarist and songwriter Goher Mumtaz, whose debut album Aadat became a defining pop phenomenon across South Asia. With perennial hits including Sajni and Woh Lamhe, the band continues to headline major collegiate festivals and concert tours.",
   }),
   A("Javed Bashir", "Singer", ["Classical", "Sufi"], {
+    aliases: ["Ustad Javed Bashir Khan", "Javed Bashir Khan"],
     tagline: "Patiala gharana classical & Sufi vocalist",
     bio: "Ustad Javed Bashir is an acclaimed Pakistani classical, Sufi, and playback singer from the Patiala gharana, known for powerhouse vocals with Mekaal Hasan Band and Coke Studio highlights like Aj Latha Naeeo and Dholna.",
   }),
@@ -511,7 +518,10 @@ export const ARTISTS = [
     bio: "Abdul Hannan is a Pakistani singer-songwriter whose heartfelt indie-pop releases Bikhra and Iraaday achieved viral global popularity, establishing him as one of Spotify's most-streamed artists in Pakistan. With acoustic-driven melodies and appearances on Coke Studio Season 15, he is an engaging live performer for concerts and campus stages.",
   }),
   A("Shazia Manzoor", "Singer", ["Folk"], { gender: F }),
-  A("Malkoo", "Singer", ["Folk"]),
+  A("Malkoo", "Singer", ["Folk"], {
+    tagline: "High-energy Punjabi folk singer",
+    bio: "Malkoo is a popular Pakistani Punjabi folk singer known for high-octane festive hits including 'Kala Joda', 'Nak Da Koka', and 'Billo'. A fixture of corporate dinners, Punjabi cultural festivals, and energetic wedding celebrations, he delivers engaging live performances nationwide.",
+  }),
   A("Natasha Baig", "Singer", ["Sufi", "Rock"], { gender: F }),
   A("Annural Khalid", "Singer", ["Pop"], {
     gender: F,
@@ -564,7 +574,12 @@ export const ARTISTS = [
     tagline: "Sufi qawwali masters, Delhi gharana",
     bio: "Ustad Fareed Ayaz and Abu Muhammad Qawwal are world-renowned exponents of classical qawwali from the 700-year-old Qawwal Bachhon Ka Gharana of Delhi. Celebrated for intellectual command of Amir Khusrau's poetry and Coke Studio masterpieces like Kangna and Ghar Nari, they headline sacred music festivals worldwide.",
   }),
-  A("Nimra Mehra", "Singer", ["Pop"], { gender: F, genZ: true }),
+  A("Nimra Mehra", "Singer", ["Pop", "Folk"], {
+    gender: F,
+    genZ: true,
+    tagline: "Viral Punjabi folk-pop vocalist",
+    bio: "Nimra Mehra is a prominent Pakistani contemporary folk and pop singer known for viral releases including 'Guddi Wangu', 'Je Pata Hunda', and 'Zehreela'. Highly sought-after for private weddings, festive occasions, and club concerts, she brings dynamic vocal energy to live stages across Pakistan.",
+  }),
   A("Saira Naseem", "Singer", ["Pop", "Folk"], { gender: F }),
   A("Humaira Channa", "Singer", ["Folk", "Playback"], {
     gender: F,
@@ -580,7 +595,11 @@ export const ARTISTS = [
     tagline: "Sufi qawwali virtuoso",
     bio: "Asif Ali Santoo Khan is an internationally celebrated Pakistani qawwal and direct disciple of Ustad Nusrat Fateh Ali Khan, renowned for carrying forward the master's impassioned vocal style and complex sargams. He headlines spiritual mehfils, weddings, and international Sufi festivals worldwide.",
   }),
-  A("Shahbaz Fayyaz Qawwal", "Qawwal", ["Qawwali"]),
+  A("Shahbaz Fayyaz Qawwal", "Qawwal", ["Qawwali"], {
+    aliases: ["Shahbaz Fayaz", "Shahbaz Fayyaz", "Shahbaz Fayyaz Qawwali Group"],
+    tagline: "Premier Faisalabad-based Qawwali ensemble",
+    bio: "Shahbaz Fayyaz Qawwal is a celebrated Pakistani classical and devotional Qawwali group from Faisalabad, known for dynamic live mehfils, powerful vocal jugalbandis, and traditional Sufi kalam of Hazrat Amir Khusrau and Bulleh Shah.",
+  }),
   A("Akbar Ali Khan", "Qawwal", ["Qawwali", "Classical"], {
     image: "/artists/akbar-ali-khan.jpg",
   }),
@@ -590,7 +609,12 @@ export const ARTISTS = [
     gender: G,
     country: "Canada",
   }),
-  A("Surj RDB", "Singer", ["Bhangra", "Rap / Hip-Hop"], { country: "UK" }),
+  A("Surj RDB", "Singer", ["Bhangra", "Rap / Hip-Hop"], {
+    country: "UK",
+    aliases: ["RDB", "Rhythm Dhol Bass"],
+    tagline: "RDB frontman & British-Asian hitmaker",
+    bio: "Surj RDB is the frontman and surviving member of the legendary UK Bhangra pioneering group RDB (Rhythm Dhol Bass), celebrated for international crossover anthems including 'Aloo Chaat', 'Singh is Kinng', and 'Shera Di Kaum'.",
+  }),
   A("Manj Musik", "Singer", ["Bhangra", "Rap / Hip-Hop"], { country: "UK" }),
   A("Sahara UK", "Band", ["Bhangra", "Pop"], {
     gender: G,
@@ -610,6 +634,7 @@ export const ARTISTS = [
   }),
   A("Tahseen Sakina", "Singer", ["Sufi", "Folk"], {
     gender: F,
+    aliases: ["Tehsin Sakina", "Tehseen Sakina"],
     bio: "Tahseen Sakina is a Sufi singer from Gujranwala who performed an Abida Parveen tribute at the UK's Sangam Festival in 2022.",
   }),
   A("Khadija Dilnawaz", "Singer", ["Sufi", "Folk"], {
@@ -655,7 +680,17 @@ export const ARTISTS = [
     image: "/artists/alka-yagnik.jpg",
   }),
   A("Mulazim Hussain", "Singer", ["Sufi", "Folk"]),
-  A("Laal Band", "Band", ["Rock", "Sufi"], { gender: G }),
+  A("Laal Band", "Band", ["Rock", "Sufi"], {
+    gender: G,
+    image: "/artists/laal-band.jpg",
+    imageFit: "contain",
+    imageCredit: {
+      text: "Dewaar",
+      href: "https://commons.wikimedia.org/wiki/File:Laal_Performing.jpg",
+      license: "CC BY-SA 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/3.0/",
+    },
+  }),
   A("Roxen", "Band", ["Rock"], { gender: G, tagline: "Roxen Band" }),
   A("Shreya Ghoshal", "Singer", ["Playback"], { gender: F, country: "India" }),
   A("Arijit Singh", "Singer", ["Playback"], {
@@ -750,10 +785,23 @@ export const ARTISTS = [
   A("Shakeel Siddiqui", "Comedian", []),
   A("Naseem Vicky", "Comedian", []),
   A("Iftikhar Thakur", "Comedian", []),
-  A("Laila Khan", "Singer", ["Folk", "Pop"], { gender: F }),
+  A("Laila Khan", "Singer", ["Folk", "Pop"], {
+    gender: F,
+    image: "/artists/laila-khan.jpg",
+    imagePosition: "50% 14%",
+    imageCredit: {
+      text: "Lailakhandolll",
+      href: "https://commons.wikimedia.org/wiki/File:Laila_khan_Singer.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
+  }),
   A("Komal Rizvi", "Singer", ["Pop"], { gender: F }),
   A("Naeem Abbas Rufi", "Singer", ["Folk"]),
-  A("Nabeel Shaukat Ali", "Singer", ["Pop", "Playback"]),
+  A("Nabeel Shaukat Ali", "Singer", ["Pop", "Playback"], {
+    tagline: "Sur Kshetra winner & playback vocalist",
+    bio: "Nabeel Shaukat Ali is a premier Pakistani vocalist and winner of the pan-South Asian singing competition Sur Kshetra (2012). Known for acclaimed Coke Studio appearances including 'Umran Langiyaan' and beloved drama OSTs, he is a headline performer for campus concerts, corporate galas, and private weddings across Pakistan.",
+  }),
   A("Wahdat Rameez", "Singer", ["Classical", "Sufi", "Folk"], {
     bio: "Wahdat Rameez is a classical, Sufi and folk vocalist from Pakpattan.",
   }),
@@ -769,7 +817,11 @@ export const ARTISTS = [
   A("Khalil Haider", "Singer", ["Ghazal"]),
   A("Sara Haider", "Singer", ["Pop"], { gender: F }),
   A("Shabnam Majeed", "Singer", ["Ghazal", "Sufi"], { gender: F }),
-  A("Sara Raza Khan", "Singer", ["Sufi", "Pop"], { gender: F }),
+  A("Sara Raza Khan", "Singer", ["Sufi", "Pop"], {
+    gender: F,
+    tagline: "Classical & playback vocalist, Sa Re Ga Ma Pa",
+    bio: "Sara Raza Khan is an acclaimed Pakistani playback and classical vocalist who represented Pakistan on Sa Re Ga Ma Pa Challenge 2009. Known for appearances on Coke Studio Season 12 and popular television OSTs, she performs for corporate galas, ghazal evenings, and private receptions.",
+  }),
   A("Sain Zahoor", "Singer", ["Sufi", "Folk"]),
   A("Raheem Shah", "Singer", ["Folk", "Pop"]),
   A("Sanam Marvi", "Singer", ["Sufi", "Folk"], {
@@ -779,7 +831,10 @@ export const ARTISTS = [
   }),
 
   // ---------------------------------------------- second intake (added later)
-  A("Sarmad Qadeer", "Singer", ["Pop", "Folk"]),
+  A("Sarmad Qadeer", "Singer", ["Pop", "Folk"], {
+    tagline: "Punjabi pop & bhangra hitmaker",
+    bio: "Sarmad Qadeer is a popular Pakistani Punjabi singer, songwriter, and composer with hit singles including 'Tere Piche', 'Desi Da Drum', and 'Gaddi'. A regular headliner for collegiate youth festivals and high-energy wedding celebrations across Punjab, he brings electric live energy to the stage.",
+  }),
   A("Alamgir", "Singer", ["Pop"], {
     image: "/artists/alamgir-commons.jpg",
     imageCredit: {
@@ -846,6 +901,8 @@ export const ARTISTS = [
   A("Uzair Jaswal", "Singer", ["Rock", "Pop"]),
   A("Adnan Dhool", "Singer", ["Pop", "Sufi"], {
     image: "/artists/adnan-dhool-official.jpg",
+    tagline: "Soch Band frontman, composer & vocalist",
+    bio: "Adnan Dhool is the lead vocalist, songwriter, and composer of Soch Band, celebrated for Bollywood and Pakistani hits including 'Awari' (Ek Villain) and 'Bol Hu'. A prolific composer for cinema and television, he performs dynamic live acoustic and Sufi-rock sets for campus concerts and corporate summits.",
   }),
   A("Faraz Anwar", "Singer", ["Rock"], { tagline: "Guitarist & composer" }),
   A("Farhan Rais Khan", "Singer", ["Classical"], { tagline: "Sitar maestro" }),
@@ -938,7 +995,17 @@ export const ARTISTS = [
     tagline: "Rock & nu-metal band, Irtiqa",
     bio: "Entity Paradigm (EP) is a pioneering Pakistani alternative rock and nu-metal band formed in Lahore in 2000 featuring Fawad Khan and Ahmed Ali Butt. Their landmark 2003 debut album Irtiqa and runner-up finish on Pepsi Battle of the Bands established them as cult icons of the Pakistani underground rock movement.",
   }),
-  A("Aunty Disco Project", "Band", ["Rock", "Pop"], { gender: G }),
+  A("Aunty Disco Project", "Band", ["Rock", "Pop"], {
+    gender: G,
+    image: "/artists/aunty-disco-project-live.jpg",
+    imageFit: "contain",
+    imageCredit: {
+      text: "Dewaar",
+      href: "https://commons.wikimedia.org/wiki/File:Auntydiscoprojectlive.jpg",
+      license: "CC BY-SA 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/3.0/",
+    },
+  }),
   A("Karavan", "Band", ["Rock"], { gender: G }),
   A("Mizraab", "Band", ["Rock"], { gender: G }),
   A("Overload", "Band", ["Rock", "Folk"], { gender: G }),
@@ -1236,6 +1303,12 @@ export const ARTISTS = [
     bio: "Badnaam is a Lahore-based Sufi rock band, runners-up of Pepsi Battle of the Bands Season 2, known for intense live energy and hard-hitting Sufi-rock adaptations including 'Khawaja Kay Diwanay' and 'Bismillah'.",
   }),
   A("Haroon", "Singer", ["Pop"], {
+    imageCredit: {
+      text: "Unicorn Black",
+      href: "https://commons.wikimedia.org/wiki/File:Haroon_in_2017.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
     tagline: "Pop icon & creator",
     aliases: ["Haroon Rashid"],
     bio: "Haroon (Haroon Rashid) is a legendary Pakistani pop singer, composer, and producer. Co-founder of the seminal 90s pop group Awaz and a celebrated solo artist behind hits like 'Mehbooba' and 'Dil Se', he has sold millions of records worldwide.",
@@ -1274,18 +1347,36 @@ export const ARTISTS = [
   A("Karan Aujla", "Singer", ["Bhangra", "Rap / Hip-Hop"], {
     country: "Canada",
     internationalOnly: true,
+    imageCredit: {
+      text: "Gagan Sandhu / Karan Aujla",
+      href: "https://commons.wikimedia.org/wiki/File:Karan_Aujla_2020.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
     tagline: "Punjabi music sensation",
     bio: "Karan Aujla is an internationally acclaimed Indian-born Canadian Punjabi singer, rapper, and songwriter known for global smash hits including 'Tauba Tauba', 'Softly', and 'Making Memories', headlining sold-out arena tours worldwide.",
   }),
   A("Diljit Dosanjh", "Singer", ["Bhangra", "Pop", "Playback"], {
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Aashutosh21",
+      href: "https://commons.wikimedia.org/wiki/File:Diljit_Dosanjh.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
     tagline: "Global Punjabi icon",
     bio: "Diljit Dosanjh is a global Punjabi superstar, singer, and actor who made history as the first Punjabi artist to perform at Coachella. With blockbuster world tours including the Dil-Luminati Tour, he is one of the most sought-after live performers in South Asian entertainment.",
   }),
   A("AP Dhillon", "Singer", ["Pop", "Rap / Hip-Hop"], {
     country: "Canada",
     internationalOnly: true,
+    imageCredit: {
+      text: "Bollywood Hungama",
+      href: "https://commons.wikimedia.org/wiki/File:AP_Dhillon_CA.jpg",
+      license: "CC BY 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by/3.0/",
+    },
     tagline: "Indo-Canadian pop & hip-hop artist",
     aliases: ["Amritpal Singh Dhillon"],
     bio: "AP Dhillon (Amritpal Singh Dhillon) is an Indo-Canadian singer, songwriter, and record producer who transformed contemporary Punjabi music with global viral hits such as 'Brown Munde', 'Excuses', 'With You', and 'Insane'.",
@@ -1293,6 +1384,12 @@ export const ARTISTS = [
   A("Anuv Jain", "Singer", ["Pop"], {
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Harjoban singh",
+      href: "https://commons.wikimedia.org/wiki/File:Anuv_Jain_at_Ludhiana_concert.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
     tagline: "Indie-pop singer-songwriter",
     bio: "Anuv Jain is an Indian indie-pop singer-songwriter known for intimate acoustic guitar ballads and poetic storytelling. His viral releases including 'Husn', 'Baarishein', and 'Alag Aasmaan' have made him a marquee headliner for youth concerts and corporate festivals.",
   }),
@@ -1300,12 +1397,24 @@ export const ARTISTS = [
     gender: F,
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Sumit Surai",
+      href: "https://commons.wikimedia.org/wiki/File:Sunidhi_Chauhan_performing_in_Delhi.jpg",
+      license: "CC BY 2.0",
+      licenseHref: "https://creativecommons.org/licenses/by/2.0/",
+    },
     tagline: "Bollywood live powerhouse",
     bio: "Sunidhi Chauhan is one of India's most celebrated playback singers and dynamic live performers, renowned for electrifying stage presence and a vast catalog of Bollywood, pop, and dance anthems.",
   }),
   A("Sonu Nigam", "Singer", ["Playback", "Pop", "Classical"], {
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Bollywood Hungama",
+      href: "https://commons.wikimedia.org/wiki/File:Sonu_Nigam123.jpg",
+      license: "CC BY 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by/3.0/",
+    },
     tagline: "Legendary playback vocalist",
     bio: "Sonu Nigam is a legendary Indian playback singer and live concert performer with a career spanning over three decades, performing in more than a dozen languages and headlining prestigious concert halls worldwide.",
   }),
@@ -1330,17 +1439,35 @@ export const ARTISTS = [
     gender: F,
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Bollywood Hungama",
+      href: "https://commons.wikimedia.org/wiki/File:Jasleen_Royal_performing_in_Rajasthan_(cropped).jpg",
+      license: "CC BY-SA 3.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/3.0/",
+    },
     tagline: "Bollywood & indie-pop vocalist",
     bio: "Jasleen Royal is a multi-award-winning Indian singer, songwriter, and composer celebrated for viral romance anthems including 'Heeriye', 'Din Shagna Da', and 'Ranjha'. She is one of the most in-demand vocalists for luxury destination weddings and international galas across Dubai, Turkey, and Europe.",
   }),
   A("Prateek Kuhad", "Singer", ["Pop"], {
     country: "India",
     internationalOnly: true,
+    imageCredit: {
+      text: "Wikimedia Commons",
+      href: "https://commons.wikimedia.org/wiki/File:Prateek_Kuhad_New.jpg",
+      license: "CC BY-SA 4.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/4.0/",
+    },
     tagline: "Global indie-pop singer-songwriter",
     bio: "Prateek Kuhad is an internationally acclaimed indie singer-songwriter praised by Barack Obama and NPR. Known for soulful acoustic compositions including 'cold/mess', 'Kasoor', and 'Tum Jab Paas', he headlines sold-out theater and arena tours across North America, Europe, and Asia.",
   }),
   A("Jay Sean", "Singer", ["Pop", "Rap / Hip-Hop"], {
     country: "UK",
+    imageCredit: {
+      text: "Eva Rinaldi",
+      href: "https://commons.wikimedia.org/wiki/File:JaySean-3110.jpg",
+      license: "CC BY-SA 2.0",
+      licenseHref: "https://creativecommons.org/licenses/by-sa/2.0/",
+    },
     tagline: "Pioneering British-Asian R&B icon",
     aliases: ["Kamaljit Singh Jhooti"],
     bio: "Jay Sean is a pioneering British-Asian R&B singer and songwriter who made history as the first South Asian solo artist to top the US Billboard Hot 100 with 'Down'. With global hits like 'Ride It' and 'Do You Remember', he is a perennial headliner for international concerts, luxury weddings, and corporate summits.",
@@ -1649,7 +1776,7 @@ const seoTitleFor = (a) => {
 
 const seoDescriptionFor = (a) => {
   const [first, second] = suitabilityFor(a).map((o) => o.toLowerCase());
-  return `Book ${a.name}, ${describe(a, { inline: true })}, for ${first} and ${second}. GnF Events in Lahore checks availability through its artist network.`;
+  return `Book ${a.name}, ${describe(a, { inline: true })}, for ${first} and ${second}. GnF Events coordinates artist bookings across Pakistan through its talent network.`;
 };
 
 // ---------------------------------------------------- compatibility exports

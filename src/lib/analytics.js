@@ -31,7 +31,7 @@ const PARAM_RULES = {
   event_type: (v) => EVENT_TYPES.includes(v),
 };
 
-const STATIC_ROUTES = new Set(["/", "/about", "/artists", "/contact", "/how-to-book"]);
+const STATIC_ROUTES = new Set(["/", "/about", "/artists", "/contact", "/how-to-book", "/work"]);
 
 /** Maps any pathname to a fixed route ID; unknown paths become "/other". */
 export function routeIdFor(pathname) {

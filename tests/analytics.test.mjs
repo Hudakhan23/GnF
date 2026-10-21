@@ -39,6 +39,7 @@ describe("routeIdFor", () => {
   it("maps known pages to themselves and artist pages to a template", () => {
     assert.equal(routeIdFor("/"), "/");
     assert.equal(routeIdFor("/contact/"), "/contact");
+    assert.equal(routeIdFor("/work"), "/work");
     assert.equal(routeIdFor("/artists/atif-aslam"), "/artists/:slug");
     assert.equal(routeIdFor(HOSTILE_PATH), "/artists/:slug");
   });

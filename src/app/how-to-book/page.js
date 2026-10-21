@@ -91,6 +91,21 @@ const BOOKING_FAQS = [
     answer:
       "Yes. GnF Events regularly coordinates international concerts, private destination weddings, and cultural festivals across Dubai, Turkey, the UK, Europe, and North America, handling international riders and travel logistics.",
   },
+  {
+    question: "How do wedding artist bookings work for Mehndi, Barat, and Walima events?",
+    answer:
+      "Wedding bookings are tailored to the ceremony format. Mehndi nights typically feature high-energy Bhangra and Punjabi pop performers; Barat receptions favor acoustic and soulful vocalists; Walimas and Sufi musical evenings frequently host traditional Qawwali parties. For peak winter wedding season (November through February), we recommend checking availability 6 to 12 weeks in advance.",
+  },
+  {
+    question: "How does GnF Events support corporate conferences, galas, and tax compliance?",
+    answer:
+      "For corporate dinners, annual conferences, and brand launches across Pakistan, GnF Events coordinates direct management contracts, official company invoicing, and compliance with provincial tax deduction frameworks (including PRA, SRB, and KPRA withholding taxes), alongside complete sound rider and on-ground stage coordination.",
+  },
+  {
+    question: "Can we book traditional Qawwali parties or Sufi musical ensembles?",
+    answer:
+      "Yes. GnF Events regularly coordinates celebrated Pakistani Qawwali ensembles (8 to 12-member parties with complete baithak carpet risers, harmonium, and acoustic sound engineering) for corporate Sufi nights, private mehfils, and cultural festivals nationwide.",
+  },
 ];
 
 export default function HowToBookPage() {
@@ -122,9 +137,10 @@ export default function HowToBookPage() {
             How to book an artist with <em>GnF Events</em>
           </h1>
           <p className={styles.lede}>
-            GnF Events is an artist facilitation and event management company
-            based in Lahore. Here is how a booking enquiry works, from your
-            first message to the show.
+            GnF Events coordinates artist bookings and event management for
+            corporate galas, weddings, campus festivals, and private concerts
+            across Pakistan and overseas. Here is how a booking enquiry works,
+            from your first message to the show.
           </p>
         </header>
 

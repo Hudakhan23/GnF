@@ -22,7 +22,6 @@ export const metadata = {
     description:
       "Browse leading Pakistani and international artists, then start an availability enquiry for your wedding, corporate event, concert or festival.",
     url: `${SITE_URL}/artists`,
-    images: ["/images/AtifAslam.jpg"],
   },
 };
 

@@ -318,3 +318,41 @@ GnF confirmed it has permission from these artists to use their photos. Each ima
 - `alycia-dias-official.jpg` — Alycia Dias, profile photo from the artist's official YouTube channel ([@AlyciaDiasOfficial](https://www.youtube.com/@AlyciaDiasOfficial)), resized. Business permission confirmed by GnF on 2026-10-13. Replaces `alycia-dias.jpeg` (no source record).
 - `annie-khalid-official.jpg` — Annie Khalid, profile photo from the artist's official YouTube channel ([@AnnieCurli](https://www.youtube.com/@AnnieCurli)), resized. Business permission confirmed by GnF on 2026-10-13. Replaces `annie-khalid.jpg` (no source record).
 - `aag-official.jpg` — Aag (Haroon and Usman Sheikh), photo posted on the band's official Instagram ([@aag.insta](https://www.instagram.com/aag.insta/), 26 Dec 2020). Link supplied by the user; business permission confirmed by GnF on 2026-10-13. Replaces `aag.jpeg` (no source record).
+
+
+## Artist directory portraits added (2026-10-21)
+
+High-resolution promotional and press portraits acquired from open Creative Commons archives and official streaming platform CDNs (Deezer, Spotify) for roster directory expansion.
+
+### Openly licensed portraits (Wikimedia Commons)
+
+- `diljit-dosanjh.jpg` — Diljit Dosanjh, photo by Aashutosh21, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File:Diljit_Dosanjh.jpg)).
+- `ap-dhillon.jpg` — AP Dhillon, photo by Bollywood Hungama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:AP_Dhillon_CA.jpg)).
+- `anuv-jain.jpg` — Anuv Jain, photo by Harjoban singh at Ludhiana concert, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File:Anuv_Jain_at_Ludhiana_concert.jpg)).
+- `haroon.jpg` — Haroon, photo by Unicorn Black, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File:Haroon_in_2017.jpg)).
+- `jasleen-royal.jpg` — Jasleen Royal, photo by Bollywood Hungama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Jasleen_Royal_performing_in_Rajasthan_(cropped).jpg)).
+- `jay-sean.jpg` — Jay Sean, photo by Eva Rinaldi, CC BY 2.0 ([source](https://commons.wikimedia.org/wiki/File:JaySean-3110.jpg)).
+- `karan-aujla.jpg` — Karan Aujla, photo by Gagan Sandhu / Karan Aujla, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File:Karan_Aujla_2020.jpg)).
+- `prateek-kuhad.jpg` — Prateek Kuhad, photo on Wikimedia Commons, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File:Prateek_Kuhad_New.jpg)).
+- `sonu-nigam.jpg` — Sonu Nigam, photo by Bollywood Hungama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Sonu_Nigam123.jpg)).
+- `sunidhi-chauhan.jpg` — Sunidhi Chauhan, photo by Sumit Surai, CC BY 2.0 ([source](https://commons.wikimedia.org/wiki/File:Sunidhi_Chauhan_performing_in_Delhi.jpg)).
+
+### Official streaming CDN portraits (Deezer & Spotify)
+
+- `shubh.jpg` — Shubh ([Deezer artist profile](https://www.deezer.com/artist/14540445)).
+- `hassan-and-roshaan.jpg` — Hassan & Roshaan ([Deezer artist profile](https://www.deezer.com/artist/91790722)).
+- `aleemrk.jpg` — Aleemrk ([Deezer artist profile](https://www.deezer.com/artist/132656582)).
+- `sunny-khan-durrani.jpg` — Sunny Khan Durrani ([Deezer artist profile](https://www.deezer.com/artist/8576438)).
+- `umer-farooq.jpg` — Umer Farooq ([Deezer artist profile](https://www.deezer.com/artist/14540445)).
+- `call-the-band.jpg` — Call ([Spotify artist profile](https://open.spotify.com/artist/5QHScjNJhVCWz5VM3XMYZI)).
+- `fuzon.jpg` — Fuzon ([Deezer artist profile](https://www.deezer.com/artist/442595)).
+- `tamasha-the-band.jpg` — Tamaasha ([Deezer artist profile](https://www.deezer.com/artist/68405032)).
+- `badnaam.jpg` — Badnaam ([Deezer artist profile](https://www.deezer.com/artist/5017112)).
+- `najam-sheraz.jpg` — Najam Sheraz ([Deezer artist profile](https://www.deezer.com/artist/1219742)).
+- `rap-demon.jpg` — Rap Demon ([Deezer artist profile](https://www.deezer.com/artist/9784030)).
+- `turhan-james.jpg` — Turhan James ([Deezer artist profile](https://www.deezer.com/artist/10905092)).
+- `somewhatsuper.jpg` — SomeWhatSuper ([Deezer artist profile](https://www.deezer.com/artist/9828334)).
+- `abid-brohi.jpg` — Abid Brohi ([Deezer artist profile](https://www.deezer.com/artist/97436792)).
+- `talwiinder.jpg` — Talwiinder ([Deezer artist profile](https://www.deezer.com/artist/49725782)).
+- `hamza-akram-qawwal.jpg` — Hamza Akram Qawwal ([Deezer artist profile](https://www.deezer.com/artist/5894144)).
+- `mooroo.jpg` — Mooroo ([Deezer artist profile](https://www.deezer.com/artist/10161730)).

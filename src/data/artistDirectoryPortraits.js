@@ -809,4 +809,88 @@ export const ARTIST_DIRECTORY_PORTRAITS = {
   "Zohaib Hassan": {
     "image": "/artists/zohaib-hassan.webp"
   },
+  "Hassan & Roshaan": {
+    "image": "/artists/hassan-and-roshaan.jpg"
+  },
+  "Aleemrk": {
+    "image": "/artists/aleemrk.jpg"
+  },
+  "Sunny Khan Durrani": {
+    "image": "/artists/sunny-khan-durrani.jpg"
+  },
+  "Umer Farooq": {
+    "image": "/artists/umer-farooq.jpg"
+  },
+  "Call": {
+    "image": "/artists/call-the-band.jpg"
+  },
+  "Fuzon": {
+    "image": "/artists/fuzon.jpg"
+  },
+  "Tamasha": {
+    "image": "/artists/tamasha-the-band.jpg"
+  },
+  "Badnaam": {
+    "image": "/artists/badnaam.jpg"
+  },
+  "Haroon": {
+    "image": "/artists/haroon.jpg"
+  },
+  "Najam Sheraz": {
+    "image": "/artists/najam-sheraz.jpg"
+  },
+  "Rap Demon": {
+    "image": "/artists/rap-demon.jpg"
+  },
+  "Turhan James": {
+    "image": "/artists/turhan-james.jpg"
+  },
+  "SomeWhatSuper": {
+    "image": "/artists/somewhatsuper.jpg"
+  },
+  "Abid Brohi": {
+    "image": "/artists/abid-brohi.jpg"
+  },
+  "Talwiinder": {
+    "image": "/artists/talwiinder.jpg"
+  },
+  "Karan Aujla": {
+    "image": "/artists/karan-aujla.jpg"
+  },
+  "Diljit Dosanjh": {
+    "image": "/artists/diljit-dosanjh.jpg"
+  },
+  "AP Dhillon": {
+    "image": "/artists/ap-dhillon.jpg"
+  },
+  "Anuv Jain": {
+    "image": "/artists/anuv-jain.jpg"
+  },
+  "Sunidhi Chauhan": {
+    "image": "/artists/sunidhi-chauhan.jpg"
+  },
+  "Sonu Nigam": {
+    "image": "/artists/sonu-nigam.jpg"
+  },
+  "Hamza Akram Qawwal": {
+    "image": "/artists/hamza-akram-qawwal.jpg"
+  },
+  "Mooroo": {
+    "image": "/artists/mooroo.jpg"
+  },
+  "Shubh": {
+    "image": "/artists/shubh.jpg"
+  },
+  "Jasleen Royal": {
+    "image": "/artists/jasleen-royal.jpg"
+  },
+  "Prateek Kuhad": {
+    "image": "/artists/prateek-kuhad.jpg"
+  },
+  "Jay Sean": {
+    "image": "/artists/jay-sean.jpg"
+  },
+  "Meesha Shafi": {
+    "image": "/artists/meesha-shafi.jpg"
+  },
 };
