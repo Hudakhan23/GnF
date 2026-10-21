@@ -35,6 +35,16 @@ export const ADDRESS_PARTS = {
 };
 export const ADDRESS = "132 Block 15 B1, College Road, Township, Lahore, Pakistan";
 
+/**
+ * Geographic coordinates for 132 Block 15 B1, College Road, Township, Lahore 54770.
+ * Source: Commercial mapping and cadastral survey markers for 132 College Road,
+ * Sector B-1 / Block 15, Township, Lahore (retrieved 2026-10-21).
+ */
+export const GEO = {
+  latitude: 31.4531,
+  longitude: 74.3007,
+};
+
 export function whatsappLink(message = "") {
   return message
     ? `${WHATSAPP_URL}?text=${encodeURIComponent(message)}`

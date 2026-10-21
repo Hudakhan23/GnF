@@ -3,6 +3,7 @@ import {
   ADDRESS_PARTS,
   EMAIL,
   FOUNDING_YEAR,
+  GEO,
   ORGANIZATION_SCHEMA_ID,
   PHONE_PRIMARY,
   SITE_NAME,
@@ -31,6 +32,11 @@ export const organizationSchema = {
   email: EMAIL,
   telephone: PHONE_PRIMARY.e164,
   address: { "@type": "PostalAddress", ...ADDRESS_PARTS },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: GEO.latitude,
+    longitude: GEO.longitude,
+  },
   areaServed: [
     { "@type": "City", name: "Lahore" },
     { "@type": "Country", name: "Pakistan" },
