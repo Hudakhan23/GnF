@@ -268,7 +268,11 @@ export default async function ArtistBookingPage({ params }) {
       ["Artists", "/artists"],
       [artist.name, artist.href],
     ]),
-    ...(faqs.length
+    // FAQPage markup only where the answers are artist-specific (curated
+    // profiles). The generated booking FAQ stays visible on the page but is
+    // not marked up: identical templated answers on hundreds of pages add
+    // no rich-result eligibility and read as boilerplate to search engines.
+    ...(artist.profile?.faqs?.length
       ? [
           {
             "@context": "https://schema.org",

@@ -1785,13 +1785,23 @@ const describe = (a, { inline = false } = {}) => {
     .join(" ");
 };
 
-// The layout appends " | GnF Events"; drop "for Events" when the result
-// would run past ~65 characters in search results.
+// The layout appends " | GnF Events" (13 characters) and Google truncates
+// titles at roughly 60, so the body must fit in 47. Try the fullest form
+// first and drop detail from the end until it fits; the name is never cut.
+const TITLE_SUFFIX_LENGTH = " | GnF Events".length;
+const TITLE_MAX = 60 - TITLE_SUFFIX_LENGTH;
+
 const seoTitleFor = (a) => {
-  const base = `Book ${a.name} – ${describe(a)}`;
-  return base.length + " for Events | GnF Events".length <= 65
-    ? `${base} for Events`
-    : base;
+  const full = describe(a);
+  const noNationality = full.replace(`${NATIONALITY[a.country]} `, "");
+  const candidates = [
+    `Book ${a.name} – ${full} for Events`,
+    `Book ${a.name} – ${full}`,
+    `Book ${a.name} – ${noNationality}`,
+    `Book ${a.name} – ${a.artistType}`,
+    `Book ${a.name}`,
+  ];
+  return candidates.find((t) => t.length <= TITLE_MAX) || candidates.at(-1);
 };
 
 const seoDescriptionFor = (a) => {
