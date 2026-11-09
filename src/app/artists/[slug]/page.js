@@ -605,10 +605,10 @@ export default async function ArtistBookingPage({ params }) {
             <div className={styles.pastEventsHeading}>
               <p className={styles.eyebrow}>Portfolio · On Stage</p>
               <h2 id={`${artist.slug}-past-events-heading`}>
-                Shows delivered with {artist.name}
+                Shows with {artist.name}
               </h2>
               <p className={styles.pastEventsSubtitle}>
-                Original concert posters and event history from GnF Events shows
+                Original event posters from GnF Events shows
                 featuring {artist.name}. Select any poster to view the full details
                 in our show archive.
               </p>

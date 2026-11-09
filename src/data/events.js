@@ -5,7 +5,8 @@
  * Every entry is transcribed from its original poster in /public/RecentShows/
  * (or details confirmed by the business). Never add an event, artist, venue
  * or figure that is not on a poster or supplied by GnF. Keep entries newest
- * first; `date` is null when the poster has no date.
+ * first; `date` is null when the poster has no full date. Preserve partial
+ * dates in `dateLabel` without inferring a year.
  *
  * Artist names use one spelling per artist so the stats count people, not
  * spelling variants.
@@ -31,6 +32,8 @@ export const EVENT_CREDITS = {
 const poster = (file) => `/RecentShows/${file}`;
 
 export const EVENTS = [
+  { slug: "nabeel-shaukat-ali-corporate-lahore-13-nov", date: null, dateLabel: "13 Nov", artists: ["Nabeel Shaukat Ali"], title: "Live in Lahore — corporate event", venue: "", cities: ["Lahore"], country: "Pakistan", category: "corporate", credit: "powered", poster: poster("nabeel-shaukat-ali-corporate-lahore-13-nov.png") },
+  { slug: "raafay-israr-private-lahore-13-nov", date: null, dateLabel: "13 Nov", artists: ["Raafay Israr"], title: "Live in Lahore — private event", venue: "", cities: ["Lahore"], country: "Pakistan", category: "private", credit: "powered", poster: poster("raafay-israr-private-lahore-13-nov.png") },
   { slug: "2026-10-10-ns-chauhan-faisalabad", date: "2026-10-10", artists: ["NS Chauhan"], title: "Live in Faisalabad", venue: "", cities: ["Faisalabad"], country: "Pakistan", category: "concert", credit: "powered", poster: poster("2026-10-10-ns-chauhan-faisalabad.jpeg") },
   { slug: "2026-10-03-gul-panra-psr-conference-peshawar", date: "2026-10-03", artists: ["Gul Panra"], title: "Gul Panra Live — 29th Annual International PSR Conference 2026", venue: "Pakistan Society for Rheumatology", cities: ["Peshawar"], country: "Pakistan", category: "corporate", credit: "powered", poster: poster("2026-10-03-gul-panra-peshawar.jpeg") },
   { slug: "2026-04-25-sarmad-qadeer-alpha-kot-momin", date: "2026-04-25", artists: ["Sarmad Qadeer"], title: "About You — one day, two concerts", venue: "Alpha Group of Colleges", cities: ["Kot Momin"], country: "Pakistan", category: "campus", credit: "powered", poster: poster("2026-04-25-sarmad-qadeer-kot-momin.jpeg") },
@@ -116,12 +119,12 @@ export const SIGNATURE_EVENTS = [
 
 /** Shows picked for the home page "work" section, in display order. */
 export const HOME_FEATURED_EVENTS = [
+  "nabeel-shaukat-ali-corporate-lahore-13-nov",
+  "raafay-israr-private-lahore-13-nov",
   "2026-10-10-ns-chauhan-faisalabad",
   "2026-10-03-gul-panra-psr-conference-peshawar",
   "2026-04-25-sarmad-qadeer-alpha-kot-momin",
   "2026-04-16-abrar-ul-haq-lahore",
-  "2026-02-14-ali-zafar-apsup-olympiad-lahore",
-  "2025-02-23-abrar-ul-haq-superior-musical-concerts",
 ];
 
 /**
@@ -243,7 +246,7 @@ export function getArtistForEventArtist(aName, roster = []) {
 }
 
 /**
- * Returns all past shows/events delivered by GnF Events featuring this artist.
+ * Returns all listed GnF Events shows featuring this artist.
  */
 export function getEventsForArtist(artistOrSlug) {
   if (!artistOrSlug) return [];

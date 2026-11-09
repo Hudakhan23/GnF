@@ -74,7 +74,7 @@ function toArchiveItem(event) {
     creditLabel: EVENT_CREDITS[event.credit],
     superior: isSuperiorEvent(event),
     artistLinks,
-    alt: `Original poster: ${[headline, event.title, where, event.date ? dateLabel : ""].filter(Boolean).join(", ")}`,
+    alt: `Original poster: ${[headline, event.title, where, event.date || event.dateLabel ? dateLabel : ""].filter(Boolean).join(", ")}`,
   };
 }
 
